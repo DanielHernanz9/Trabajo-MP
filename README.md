@@ -1,2 +1,0 @@
-# Trabajo-MP
-Dani putero
