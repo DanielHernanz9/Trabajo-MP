@@ -1,0 +1,6 @@
+
+/**
+ * 
+ */
+public enum Enumeration1 {
+}
