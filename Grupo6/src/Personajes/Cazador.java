@@ -1,6 +1,4 @@
-
-import java.io.*;
-import java.util.*;
+package Personajes;
 
 /**
  * 
@@ -18,4 +16,13 @@ public class Cazador extends PersonajeBase {
      */
     private Integer Rabia;
 
+    @Override
+    public void hacerHabilidadEspecial() {
+
+    }
+
+    @Override
+    public void atacar() {
+
+    }
 }

@@ -1,6 +1,4 @@
-
-import java.io.*;
-import java.util.*;
+package Personajes;
 
 /**
  * 
@@ -18,4 +16,13 @@ public class Licántropo extends PersonajeBase {
      */
     private Integer Voluntad;
 
+    @Override
+    public void hacerHabilidadEspecial() {
+
+    }
+
+    @Override
+    public void atacar() {
+
+    }
 }

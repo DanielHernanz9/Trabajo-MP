@@ -1,6 +1,4 @@
-
-import java.io.*;
-import java.util.*;
+package Personajes;
 
 /**
  * 
@@ -23,4 +21,13 @@ public class Vampiro extends PersonajeBase {
      */
     private Pacto Pacto;
 
+    @Override
+    public void hacerHabilidadEspecial() {
+
+    }
+
+    @Override
+    public void atacar() {
+
+    }
 }

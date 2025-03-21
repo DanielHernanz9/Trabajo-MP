@@ -1,17 +1,11 @@
-
-import java.io.*;
-import java.util.*;
+package Personajes;
 
 /**
  * 
  */
-public abstract class Personaje {
+public interface Personaje {
 
-    /**
-     * Default constructor
-     */
-    public Personaje() {
-    }
+
 
     /**
      * 

@@ -1,5 +1,6 @@
 
-import java.io.*;
+import Personajes.PersonajeBase;
+
 import java.util.*;
 
 /**
