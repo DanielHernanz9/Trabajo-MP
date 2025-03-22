@@ -1,33 +1,25 @@
-package sistemaDeGuardado;
-
-import Personajes.Personaje;
+package Grupo6.src.sistemaDeGuardado;
+import Grupo6.src.Personajes.Personaje;
+import Grupo6.src.App.Usuario;
+import Grupo6.src.Combate.Combate;
 
 /**
  * 
  */
 public interface interfazAlmacen {
-
-
-
     /**
-     * @param UserInfo user
+     * @param
      */
-    public abstract void registrarUsuario( UserInfo user);
+    public abstract void registrarUsuario(Usuario user);
 
     /**
-     * @param Combate combate
+     * @param
      */
-    public abstract void addFight( Combate combate);
+    public abstract void addFight(Combate combate);
 
     /**
-     * @param Usuario User 
+     * @param
      * @return
      */
     public Personaje loadCharacterFromUser(Usuario User);
-
 }
-
-/**LOS ERRORES QUE SE MUESTRAN EN ESTA CLASE SE DEBEN A QUE HAY QUE IMPORTAR CLASES COMO USUARIO,COMBATE, ETC...
- *
- * CREAR PAQUETES EN LOS QUE ORGANIZAR LA ESTRUCTURA DEL SISTEMA
- */

@@ -3,17 +3,12 @@ package Grupo6.src.Personajes;
 /**
  * 
  */
-public class Pacto {
+public class FactoryVampiros extends FactoryPersonaje {
 
     /**
      * Default constructor
      */
-    public Pacto() {
+    public FactoryVampiros() {
     }
-
-    /**
-     * 
-     */
-    private String Desc;
 
 }

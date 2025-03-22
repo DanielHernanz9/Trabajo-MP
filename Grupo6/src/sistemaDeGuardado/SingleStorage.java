@@ -1,39 +1,41 @@
 package Grupo6.src.sistemaDeGuardado;
-import Grupo6.src.Combate.Combate;
 import Grupo6.src.Personajes.Personaje;
 
 /**
  * 
  */
-public class AlmacenXML implements interfazAlmacen {
+public class SingleStorage {
 
     /**
      * Default constructor
      */
-    public AlmacenXML() {
+    public SingleStorage() {
     }
 
     /**
      * 
      */
-    private String RutaXMLUsuario;
+    private static SingleStorage Instance;
 
     /**
      * 
      */
-    private String RutaXMLCombate;
-
-    /**
-     * @param UserInfo user
-     */
-    public void registrarUsuario( UserInfo user) {
+    private SingleStorage() {
         // TODO implement here
     }
 
     /**
-     * @param
+     * @return
      */
-    public void addFight( Combate combate) {
+    public static SingleStorage getInstance() {
+        // TODO implement here
+        return null;
+    }
+
+    /**
+     * @param UserInfo user
+     */
+    public void registrarUsuario(UserInfo user) {
         // TODO implement here
     }
 
@@ -47,6 +49,3 @@ public class AlmacenXML implements interfazAlmacen {
     }
 
 }
-    /**
-     * @param UserInfo user
-     */

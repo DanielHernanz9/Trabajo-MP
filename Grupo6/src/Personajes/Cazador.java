@@ -1,4 +1,4 @@
-package Personajes;
+package Grupo6.src.Personajes;
 
 /**
  * 

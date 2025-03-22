@@ -1,0 +1,110 @@
+package Grupo6.src.App;
+import Grupo6.src.Desafio.Desafio;
+import Grupo6.src.Personajes.FactoryPersonaje;
+
+import java.util.ArrayList;
+
+/**
+ * 
+ */
+public class Jugador extends Usuario {
+
+    /**
+     * Default constructor
+     */
+    public Jugador() {
+    }
+
+    /**
+     * 
+     */
+    private Integer NumeroRegistro;
+
+    /**
+     * 
+     */
+    private FactoryPersonaje FabricaPersonaje;
+
+    /**
+     * 
+     */
+    private ArrayList<Desafio> DesafiosPendientes;
+
+    /**
+     * 
+     */
+    private int [] HistorialOro;
+
+    /**
+     * @param
+     */
+    public void registrarPersonaje(FactoryPersonaje factory) {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void darDeBajaPersonaje() {
+        // TODO implement here
+    }
+
+    /**
+     * @param
+     */
+    public void desafiarUsuario(Desafio desafio) {
+        // TODO implement here
+    }
+
+    /**
+     * @param
+     */
+    public void aceptarDesafio(Desafio desafio) {
+        // TODO implement here
+    }
+
+    /**
+     * @param
+     */
+    public void rechazarDesafio(Desafio desafio) {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void consultarHistorial() {
+        // TODO implement here
+    }
+
+    /**
+     * @param
+     */
+    public void mostrarNotificacionDesafio() {
+        // TODO implement here
+        // De momento he quitado el contexto que se le pasaba a estos metodos porque no sabemos exactamente qué
+        //datos necesitamos pasar a este metodo.
+    }
+
+    /**
+     * @param
+     */
+    public void mostrarResultado() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void mostrarNotificacionBloqueo() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void mostrarNotificacionDesbloqueo() {
+        // TODO implement here
+    }
+
+}
