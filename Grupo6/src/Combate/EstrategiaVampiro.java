@@ -10,23 +10,18 @@ import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
-/**
- * 
- */
+
+
 public class EstrategiaVampiro {
 
-    /**
-     * Default constructor
-     */
     public EstrategiaVampiro() {
     }
 
     /**
      * @return
      */
-    public int calcularPotencial() {
-        // TODO implement here
-        return 0;
+    public int calcularPotencial(Vampiro vampiro) {
+        return vampiro.getPoder() + vampiro.getDisciplina().getAtaque() + vampiro.getValorEquipo();
     }
 
 }

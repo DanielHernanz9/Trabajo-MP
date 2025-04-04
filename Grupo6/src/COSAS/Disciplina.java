@@ -10,20 +10,17 @@ import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
-/**
- * 
- */
-public class Disciplina extends Habilidad_Especial {
 
-    /**
-     * Default constructor
-     */
-    public Disciplina() {
+public class Disciplina extends Habilidad_Especial {
+    private int Coste;
+    private int Ataque;
+
+    public Disciplina(int ataque, int coste) {
+        this.Ataque = ataque;
+        this.Coste = coste;
     }
 
-    /**
-     * 
-     */
-    private int Coste;
-
+    public int getAtaque(){
+        return this.Ataque;
+    }
 }

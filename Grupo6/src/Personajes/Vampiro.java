@@ -21,11 +21,8 @@ public class Vampiro extends PersonajeBase {
 
     private Integer Sangre;
     private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO
+    public Disciplina Disciplina;
 
-
-    /**
-     * Default constructor
-     */
     public Vampiro() {
         Random rand = new Random();
 
@@ -68,11 +65,6 @@ public class Vampiro extends PersonajeBase {
         Sangre = sangre;
     }
 
-    /**
-     * 
-     */
-
-
     @Override
     public void hacerHabilidadEspecial() {
 
@@ -82,5 +74,13 @@ public class Vampiro extends PersonajeBase {
     @Override
     public void atacar() {
 
+    }
+
+    public Disciplina getDisciplina(){
+        return this.Disciplina;
+    }
+
+    public int getValorEquipo(){
+        return 0;
     }
 }

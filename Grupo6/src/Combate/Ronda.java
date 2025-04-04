@@ -11,50 +11,17 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
-/**
- * 
- */
 public class Ronda {
 
-    /**
-     * Default constructor
-     */
     public Ronda() {
     }
 
-    /**
-     * 
-     */
     private PersonajeBase Atacante;
-
-    /**
-     * 
-     */
     private PersonajeBase Atacado;
-
-    /**
-     * 
-     */
     private int PotencialAtaqueJ1;
-
-    /**
-     * 
-     */
     private int PotencialAtaqueJ2;
-
-    /**
-     * 
-     */
     private EstrategiaPotencial EstrategiaAtacante;
-
-    /**
-     * 
-     */
     private EstrategiaPotencial EstrategiaAtacado;
-
-    /**
-     * 
-     */
     public void reducirSalud() {
         // TODO implement here
     }
