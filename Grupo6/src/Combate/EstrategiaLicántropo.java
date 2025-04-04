@@ -8,25 +8,18 @@ import Grupo6.src.DesafioNotify.*;
 import Grupo6.src.Equipo.*;
 import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
-import Grupo6.src.sistemaDeGuardado.*;
-import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+
 /**
  * 
  */
 public class EstrategiaLicántropo {
 
-    /**
-     * Default constructor
-     */
     public EstrategiaLicántropo() {
+
     }
 
-    /**
-     * @return
-     */
-    public int calcularPotencial() {
-        // TODO implement here
-        return 0;
+    public int calcularPotencial(Licantropo licantropo) {
+        return licantropo.getPoder() + licantropo.getDon().getAtaque() + licantropo.getRabia();
     }
 
 }

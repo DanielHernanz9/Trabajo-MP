@@ -18,18 +18,10 @@ public class Vampiro extends PersonajeBase {
 
     private Integer Sangre;
     private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO
+    public Disciplina Disciplina;
 
-
-    /**
-     * Default constructor
-     */
     public Vampiro() {
     }
-
-    /**
-     * 
-     */
-
 
     @Override
     public void hacerHabilidadEspecial() {
@@ -40,5 +32,13 @@ public class Vampiro extends PersonajeBase {
     @Override
     public void atacar() {
 
+    }
+
+    public Disciplina getDisciplina(){
+        return this.Disciplina;
+    }
+
+    public int getValorequipo(){
+        return 0;
     }
 }

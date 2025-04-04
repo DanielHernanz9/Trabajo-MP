@@ -11,20 +11,14 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
-/**
- * 
- */
 public class Cazador extends PersonajeBase {
 
     private Integer Voluntad;
+    private Talento Talento;
 
     public Cazador() {
 
     }
-
-    /**
-     * 
-     */
 
     @Override
     public void hacerHabilidadEspecial() {
@@ -34,5 +28,13 @@ public class Cazador extends PersonajeBase {
     @Override
     public void atacar() {
 
+    }
+
+    public Talento getTalento(){
+        return this.Talento;
+    }
+
+    public int getVoluntad(){
+        return this.Voluntad;
     }
 }

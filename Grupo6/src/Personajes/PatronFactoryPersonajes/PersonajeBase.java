@@ -14,36 +14,25 @@ import java.util.List;
 public abstract class PersonajeBase implements Personaje {
 
     protected String Nombre;
-
     protected Habilidad_Especial Habilidad;
-
     protected List<Arma> Armas;
-
     protected Arma ArmaActiva1;
-
     protected Arma ArmaActiva2;
-
     protected List<Armadura> Armaduras;
-
     protected Armadura ArmaduraActiva;
-
     protected List<Esbirro> Esbirros;
-
     protected Integer Oro;
-
     protected Integer Health;
-
     protected Integer Poder;
-
     protected List<DebilidadHandler> Debilidades;
-
     protected List<FortalezaHandler> Fortalezas;
 
 
-
-
     public abstract void hacerHabilidadEspecial();
-
     public abstract void atacar();
+    public boolean hasEsbirros(){
+        return Esbirros.isEmpty();
+    }
+    public int getPoder() { return this.Poder;}
 
 }

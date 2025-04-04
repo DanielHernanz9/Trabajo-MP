@@ -15,16 +15,18 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
  * 
  */
 public class Don extends Habilidad_Especial {
-
+    private int Rabia;
+    private int Ataque;
     /**
      * Default constructor
      */
-    public Don() {
+    public Don(int rabia, int ataque) {
+        this.Rabia = rabia;
+        this.Ataque = ataque;
     }
 
-    /**
-     * 
-     */
-    private int Coste;
+    public int getAtaque(){
+        return this.Ataque;
+    }
 
 }

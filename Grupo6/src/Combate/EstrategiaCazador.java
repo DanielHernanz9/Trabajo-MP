@@ -15,18 +15,11 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
  */
 public class EstrategiaCazador {
 
-    /**
-     * Default constructor
-     */
     public EstrategiaCazador() {
     }
 
-    /**
-     * @return
-     */
-    public int calcularPotencial() {
-        // TODO implement here
-        return 0;
+    public int calcularPotencial(Cazador cazador) {
+        return cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
     }
 
 }

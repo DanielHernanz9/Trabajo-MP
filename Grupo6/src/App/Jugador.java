@@ -1,6 +1,15 @@
 package Grupo6.src.App;
-import Grupo6.src.Desafio.Desafio;
-import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;
+
+import Grupo6.src.COSAS.*;
+import Grupo6.src.App.*;
+import Grupo6.src.Combate.*;
+import Grupo6.src.Desafio.*;
+import Grupo6.src.DesafioNotify.*;
+import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.*;
+import Grupo6.src.Personajes.*;
+import Grupo6.src.sistemaDeGuardado.*;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
 
@@ -12,7 +21,7 @@ public class Jugador extends Usuario {
     /**
      * Default constructor
      */
-    public Jugador(String nombre, String pass) {
+    public Jugador() {
     }
 
     /**
@@ -110,14 +119,5 @@ public class Jugador extends Usuario {
     // Getter para DesafiosPendientes
     public ArrayList<Desafio> getDesafiosPendientes() {
         return this.DesafiosPendientes;
-    }
-
-    public String getNombre() {
-        // TODO implement here
-        return null;
-    }
-
-    public void agregarDesafio(Desafio d) {
-        // TODO implement here
     }
 }

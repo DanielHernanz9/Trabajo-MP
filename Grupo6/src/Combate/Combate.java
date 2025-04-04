@@ -11,68 +11,37 @@ import java.util.ArrayList;
  * Grupo6.src.Combate.Combate tiene muchos atributos y he intentado con el patron builder evitar hacer un constructor muy grande
  */
 public class Combate {
-
-    /**
-     * Default constructor
-     */
-    public Combate(Jugador jugador1, Jugador jugador2) {
-    }
-
-    /**
-     * 
-     */
     private Jugador Desafiante;
-
-    /**
-     * 
-     */
     private Jugador Desafiado;
-
-    /**
-     * 
-     */
+    private JuegoCombateManager manager;
     private int NumRondas;
-
-    /**
-     * 
-     */
     private Date FechaCombate;
-
-    /**
-     * 
-     */
     private Jugador Ganador;
-
-    /**
-     * 
-     */
-    private Jugador JugadorSinEsbirrosDerrotados;
-
-    /**
-     * 
-     */
     private int OroGanado;
-
-    /**
-     * 
-     */
     private ArrayList<Ronda> Rondas;
-
-    /**
-     * 
-     */
     private PersonajeBase PersonajeDesafiante;
-
-    /**
-     * 
-     */
     private PersonajeBase PersonajeDesafiado;
 
-    /**
-     * 
-     */
-    public void niciarCombate() {
-        // TODO implement here
+    public Combate(Jugador desafiante, Jugador desafiado) {
+        this.Desafiante = desafiante;
+        this.Desafiado = desafiado;
+        this.Rondas = new ArrayList<>();
+        this.NumRondas = 0;
+        this.Ganador = null;
+    }
+
+    public void IniciarCombate() {
+        if (Desafiante != null && Desafiado != null) {
+            System.out.println("Iniciando combate entre " + Desafiante + " y " + Desafiado);
+            Combate combate = new Combate(Desafiante, Desafiado);
+            manager.registrarCombate(combate);
+
+            while (Ganador == null){
+                Rondas.add(new Ronda());
+            }
+        } else {
+            System.out.println("No se han registrado suficientes jugadores.");
+        }
     }
 
     /**
