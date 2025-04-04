@@ -1,0 +1,17 @@
+import org.json.JSONObject;
+import org.json.XML;
+
+public class XMLToJSONAdapter implements JSONData {
+    private XMLData xmlData;
+
+    public XMLToJSONAdapter(AlmacenXML xml) {
+        this.xmlData= xml;
+    }
+
+    @Override
+    public String getJSON() {
+        String xml = xmlData.getXML();
+        JSONObject json = XML.toJSONObject(xml);
+        return json.toString(); 
+    }
+}
