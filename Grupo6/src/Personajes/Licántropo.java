@@ -22,6 +22,13 @@ public class Licántropo extends PersonajeBase {
      * Default constructor
      */
     public Licántropo() {
+
+        crearEsbirros();
+
+    }
+
+    public void setRabia(Integer rabia) {
+        Rabia = rabia;
     }
 
     /**

@@ -11,15 +11,24 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
+import java.util.ArrayList;
+import java.util.Random;
 /**
- * 
+ *
  */
 public class Cazador extends PersonajeBase {
 
     private Integer Voluntad;
 
     public Cazador() {
+        //Creacion de los esbirros de los cazadores
+        crearEsbirros();
 
+
+    }
+
+    public void setVoluntad(Integer voluntad) {
+        Voluntad = voluntad;
     }
 
     /**

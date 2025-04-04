@@ -23,7 +23,7 @@ public class FactoryCazadores extends FactoryPersonaje {
 
     @Override
     public Personaje createPersonaje() {
-        return null;
+        return new Cazador();
     }
 
 }
