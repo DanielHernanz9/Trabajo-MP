@@ -16,25 +16,19 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
  */
 public abstract class Usuario {
 
-    /**
-     * Default constructor
-     */
+    private String Nombre;
+    private String Nick;
+    private String Password;
+
+    // Interfaz Constructor
     public Usuario() {
     }
 
-    /**
-     * 
-     */
-    private String Nombre;
+    public String getNombre() {
+        return "";
+    }
 
-    /**
-     * 
-     */
-    private String Nick;
-
-    /**
-     * 
-     */
-    private String Password;
-
+    public Object getPassword() {
+        return null;
+    }
 }

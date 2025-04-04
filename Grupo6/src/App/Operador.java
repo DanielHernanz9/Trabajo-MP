@@ -12,7 +12,7 @@ public class Operador extends Usuario {
     /**
      * Default constructor
      */
-    public Operador() {
+    public Operador(String admin, String admin123) {
     }
 
     /**
