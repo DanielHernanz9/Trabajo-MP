@@ -16,4 +16,5 @@ public class Ghoul extends EsbirroBase {
      */
     private int Dependencia;
 
+
 }

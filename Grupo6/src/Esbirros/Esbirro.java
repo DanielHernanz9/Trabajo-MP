@@ -14,6 +14,5 @@ public abstract class Esbirro {
     /**
      * 
      */
-    public abstract void recibirDaño();
 
 }
