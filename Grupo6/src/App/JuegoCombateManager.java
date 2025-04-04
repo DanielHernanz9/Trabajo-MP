@@ -26,7 +26,7 @@ public class JuegoCombateManager {
     public JuegoCombateManager() {
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
-        this.operador = new Operador();
+        this.operador = new Operador(null, null);
     }
 
     // TODO Method para iniciar el juego y gestionar los combates
