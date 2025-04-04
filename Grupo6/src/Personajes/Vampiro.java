@@ -38,7 +38,7 @@ public class Vampiro extends PersonajeBase {
         return this.Disciplina;
     }
 
-    public int getValorequipo(){
+    public int getValorEquipo(){
         return 0;
     }
 }
