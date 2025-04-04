@@ -42,4 +42,13 @@ public class Desafio {
         // TODO implement here
     }
 
+    public String getDesafiante() {
+        // TODO implement here
+        return null;
+    }
+
+    public String getDesafiado() {
+        // TODO implement here
+        return null;
+    }
 }

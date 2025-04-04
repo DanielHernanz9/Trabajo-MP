@@ -1,21 +1,22 @@
 package Grupo6.src.App;
 
 /**
- * 
+ * Clase principal para ejecutar el juego de combate.
  */
 public class JuegoCombate {
 
     /**
-     * Default constructor
+     * Constructor por defecto.
      */
     public JuegoCombate() {
     }
 
     /**
-     * 
+     * Método principal que inicia el juego.
      */
-    public static void main(String [] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) {
+        JuegoCombateManager juegoCombateManager = new JuegoCombateManager();
+        juegoCombateManager.IniciarJuego();
     }
 
 }

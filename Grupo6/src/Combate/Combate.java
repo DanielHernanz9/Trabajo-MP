@@ -16,7 +16,7 @@ public class Combate {
     /**
      * Default constructor
      */
-    public Combate() {
+    public Combate(Jugador jugador1, Jugador jugador2) {
     }
 
     /**
@@ -83,4 +83,18 @@ public class Combate {
         // TODO implement here
     }
 
+    public String getJugador1() {
+        // TODO implement here
+        return null;
+    }
+
+    public String getJugador2() {
+        // TODO implement here
+        return null;
+    }
+
+    public String getResultado() {
+        // TODO implement here
+        return null;
+    }
 }
