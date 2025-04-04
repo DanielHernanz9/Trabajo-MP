@@ -37,10 +37,14 @@ public abstract class EsbirroBase extends Esbirro {
      * tambien conviene implementar los getters y setters de los atributos comunes
      * @return
      */
+
     public int recibirDaño(){
-        Salud--;
+        if(Salud - 1 < 0){      //Vamos a cosiderar que la vida no puede ser negativa
+            Salud--;
+        }
         return Salud;
     }
+
     public int getSalud(){
         return Salud;
     }

@@ -13,15 +13,14 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 public class Humano extends EsbirroBase {
     private Lealtad lealtad = Lealtad.ALTA;
-    private String nombre;
+    private String Nombre;
 
-    public Humano(String nombre) {
-        super(nombre);
+    public Humano(String Nombre) {
+        super(Nombre);
         this.lealtad = Lealtad.MEDIA;
     }
 
-    // Hacer la enumeración pública y estática
-    public static enum Lealtad {
+    public enum Lealtad {
         BAJA,
         MEDIA,
         ALTA;

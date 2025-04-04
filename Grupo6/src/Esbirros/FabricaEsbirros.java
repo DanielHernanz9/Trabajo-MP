@@ -14,7 +14,7 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 /**
  * 
  */
-public class FabricaEsbirros {
+public abstract class FabricaEsbirros {
 
     /**
      * Default constructor
@@ -26,8 +26,6 @@ public class FabricaEsbirros {
      * @return
      */
 
-    public Esbirro createEsbirro(String Nombre) {
-        return null;
-    }
+    public abstract Esbirro createEsbirro(String Nombre);
 
 }
