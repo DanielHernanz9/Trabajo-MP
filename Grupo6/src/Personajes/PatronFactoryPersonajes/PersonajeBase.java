@@ -13,31 +13,31 @@ import java.util.List;
  */
 public abstract class PersonajeBase implements Personaje {
 
-    private String Nombre;
+    protected String Nombre;
 
-    private Habilidad_Especial Habilidad;
+    protected Habilidad_Especial Habilidad;
 
-    private List<Arma> Armas;
+    protected List<Arma> Armas;
 
-    private Arma ArmaActiva1;
+    protected Arma ArmaActiva1;
 
-    private Arma ArmaActiva2;
+    protected Arma ArmaActiva2;
 
-    private List<Armadura> Armaduras;
+    protected List<Armadura> Armaduras;
 
-    private Armadura ArmaduraActiva;
+    protected Armadura ArmaduraActiva;
 
-    private List<Esbirro> Esbirros;
+    protected List<Esbirro> Esbirros;
 
-    private Integer Oro;
+    protected Integer Oro;
 
-    private Integer Health;
+    protected Integer Health;
 
-    private Integer Poder;
+    protected Integer Poder;
 
-    private List<DebilidadHandler> Debilidades;
+    protected List<DebilidadHandler> Debilidades;
 
-    private List<FortalezaHandler> Fortalezas;
+    protected List<FortalezaHandler> Fortalezas;
 
 
 

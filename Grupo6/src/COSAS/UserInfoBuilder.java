@@ -1,5 +1,15 @@
 package Grupo6.src.COSAS;
 
+import Grupo6.src.COSAS.*;
+import Grupo6.src.App.*;
+import Grupo6.src.Combate.*;
+import Grupo6.src.Desafio.*;
+import Grupo6.src.DesafioNotify.*;
+import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.*;
+import Grupo6.src.Personajes.*;
+import Grupo6.src.sistemaDeGuardado.*;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 /**
  * 
  */
@@ -14,19 +24,19 @@ public class UserInfoBuilder extends Builder {
     /**
      * 
      */
-    private userInfo result;
+    private Usuario result;
 
     /**
-     * @param String name
+     *
      */
-    public void agregarNombre(void String name) {
+    public void agregarNombre (String name) {
         // TODO implement here
     }
 
     /**
-     * @param String contrasenia
+     *
      */
-    public void agregarContrasenia(void String contrasenia) {
+    public void agregarContrasenia(String contrasenia) {
         // TODO implement here
     }
 
@@ -35,12 +45,14 @@ public class UserInfoBuilder extends Builder {
      */
     public void getResult() {
         // TODO implement here
-        return null;
+
     }
 
     /**
      * 
      */
-    public abstract void reset();
+    public void reset(){
+
+    }
 
 }

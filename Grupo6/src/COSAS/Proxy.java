@@ -1,6 +1,15 @@
 package Grupo6.src.COSAS;
 
-import Grupo6.src.App.Operador;
+import Grupo6.src.COSAS.*;
+import Grupo6.src.App.*;
+import Grupo6.src.Combate.*;
+import Grupo6.src.Desafio.*;
+import Grupo6.src.DesafioNotify.*;
+import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.*;
+import Grupo6.src.Personajes.*;
+import Grupo6.src.sistemaDeGuardado.*;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 /**
  * 
@@ -27,9 +36,9 @@ public class Proxy {
     }
 
     /**
-     * @param Jugador J
+     *
      */
-    public void editarPersonaje(void Jugador J) {
+    public void editarPersonaje( Jugador J) {
         // TODO implement here
     }
 
