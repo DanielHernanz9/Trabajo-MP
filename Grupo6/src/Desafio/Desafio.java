@@ -51,4 +51,9 @@ public class Desafio {
         // TODO implement here
         return null;
     }
+
+    public boolean isEmpty() {
+        // TODO implement here
+        return false;
+    }
 }

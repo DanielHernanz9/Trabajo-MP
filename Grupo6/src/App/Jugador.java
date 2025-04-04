@@ -107,4 +107,8 @@ public class Jugador extends Usuario {
         // TODO implement here
     }
 
+    // Getter para DesafiosPendientes
+    public ArrayList<Desafio> getDesafiosPendientes() {
+        return this.DesafiosPendientes;
+    }
 }
