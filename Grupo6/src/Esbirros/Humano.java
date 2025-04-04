@@ -1,40 +1,31 @@
 package Grupo6.src.Esbirros;
 
-/**
- * 
- */
 public class Humano extends EsbirroBase {
+    private Lealtad lealtad = Lealtad.ALTA;
+    private String nombre;
 
-    /**
-     * Default constructor
-     */
-    public Humano() {
+    public Humano(String nombre) {
+        super(nombre);
+        this.lealtad = Lealtad.MEDIA;
     }
 
-    /**
-     * enum lealtad implementado aquí dentro por eficiencia
-     */
-    private enum Lealtad {
+    // Hacer la enumeración pública y estática
+    public static enum Lealtad {
         BAJA,
         MEDIA,
         ALTA;
-        //uso ordinal para ver su posición en el enum. Baja=0, Alta=2
+
         public Lealtad subir() {
             int next = this.ordinal() + 1;
             if (next >= 3) return this;
-            else {
-                return Lealtad.values()[next];
-            }
+            return values()[next];
         }
 
         public Lealtad bajar() {
             int prev = this.ordinal() - 1;
             if (prev < 0) return this;
-            else {
-                return Lealtad.values()[prev];
-            }
+            return values()[prev];
         }
-
 
         public String lealtadString() {
             return switch (this) {
@@ -45,12 +36,7 @@ public class Humano extends EsbirroBase {
         }
     }
 
-    private Lealtad lealtad = Lealtad.ALTA;
-
-    /**
-     * 
-     */
-
-
-
+    public Lealtad getLealtad() {
+        return this.lealtad;
+    }
 }

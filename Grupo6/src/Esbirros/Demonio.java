@@ -1,7 +1,5 @@
 package Grupo6.src.Esbirros;
 
-import Personajes.Pacto;
-
 /**
  * 
  */
@@ -10,13 +8,15 @@ public class Demonio extends EsbirroBase {
     /**
      * Default constructor
      */
-    public Demonio() {
+    public Demonio(String Nombre, String Pacto) {
+        super(Nombre);
+        this.Pacto = Pacto;
     }
 
     /**
      * 
      */
-    private Pacto Pacto;
+    private String Pacto;
 
     /**
      * 

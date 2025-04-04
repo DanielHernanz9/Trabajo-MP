@@ -1,20 +1,12 @@
 package Grupo6.src.Esbirros;
-
 /**
- * 
+ *
  */
 public class Ghoul extends EsbirroBase {
+    private int dependencia;
 
-    /**
-     * Default constructor
-     */
-    public Ghoul() {
+    public Ghoul(String nombre, int dependencia) {
+        super(nombre);
+        this.dependencia = dependencia;
     }
-
-    /**
-     * 
-     */
-    private int Dependencia;
-
-
 }

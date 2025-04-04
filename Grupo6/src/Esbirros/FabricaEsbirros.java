@@ -3,7 +3,7 @@ package Grupo6.src.Esbirros;
 /**
  * 
  */
-public abstract class FabricaEsbirros {
+public class FabricaEsbirros {
 
     /**
      * Default constructor
@@ -14,8 +14,8 @@ public abstract class FabricaEsbirros {
     /**
      * @return
      */
-    private Esbirro createEsbirro() {
-        // TODO implement here
+
+    public Esbirro createEsbirro(String Nombre) {
         return null;
     }
 

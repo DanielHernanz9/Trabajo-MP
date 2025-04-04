@@ -6,12 +6,6 @@ package Grupo6.src.Esbirros;
 public abstract class EsbirroBase extends Esbirro {
 
     /**
-     * Default constructor, no se deberia instanciar este
-     */
-    public EsbirroBase() {
-    }
-
-    /**
      * 
      */
     private String Nombre;
@@ -19,7 +13,14 @@ public abstract class EsbirroBase extends Esbirro {
     /**
      * 
      */
-    private int Salud;
+    private int Salud = 3;
+
+    /**
+     * Default constructor, no se deberia instanciar este
+     */
+    public EsbirroBase(String Nombre) {
+        this.Nombre = Nombre;
+    }
 
     /**
      * Conviene implementar aquí el metodo recibir daño ya que es comun para todos
