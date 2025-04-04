@@ -1,37 +1,48 @@
 package Grupo6.src.sistemaDeGuardado;
-
-import Grupo6.src.COSAS.*;
-import Grupo6.src.App.*;
-import Grupo6.src.Combate.*;
-import Grupo6.src.Desafio.*;
-import Grupo6.src.DesafioNotify.*;
-import Grupo6.src.Equipo.*;
-import Grupo6.src.Esbirros.*;
-import Grupo6.src.Personajes.*;
-import Grupo6.src.sistemaDeGuardado.*;
-import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.Personaje;
 
 /**
  * 
  */
 public class SingleStorage {
 
-    private static SingleStorage Instance;
-
+    /**
+     * Default constructor
+     */
     public SingleStorage() {
     }
 
+    /**
+     * 
+     */
+    private static SingleStorage Instance;
 
+    /**
+     * 
+     */
+    private SingleStorage() {
+        // TODO implement here
+    }
+
+    /**
+     * @return
+     */
     public static SingleStorage getInstance() {
         // TODO implement here
         return null;
     }
 
-
-    public void registrarUsuario(Usuario user) {
+    /**
+     * @param UserInfo user
+     */
+    public void registrarUsuario(UserInfo user) {
         // TODO implement here
     }
 
+    /**
+     * @param Usuario User 
+     * @return
+     */
     public Personaje loadCharacterFromUser(Usuario User) {
         // TODO implement here
         return null;
