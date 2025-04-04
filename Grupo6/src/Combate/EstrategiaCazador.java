@@ -19,7 +19,7 @@ public class EstrategiaCazador {
     }
 
     public int calcularPotencial(Cazador cazador) {
-        return cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
+        return 0; //cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
     }
 
 }
