@@ -1,50 +1,56 @@
 package Grupo6.src.Esbirros;
 
+import Grupo6.src.COSAS.*;
+import Grupo6.src.App.*;
+import Grupo6.src.Combate.*;
+import Grupo6.src.Desafio.*;
+import Grupo6.src.DesafioNotify.*;
+import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.*;
+import Grupo6.src.Personajes.*;
+import Grupo6.src.sistemaDeGuardado.*;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-/**
- * 
- */
-public class EsbirrosComposite {
+public class EsbirrosComposite extends EsbirroBase {
+    private List<EsbirroBase> childrenComposite = new ArrayList<>();
+    private int demonIndex;
 
     /**
-     * Default constructor
+     * Default constructor, no se deberia instanciar este
+     *
+     * @param Nombre
      */
-    public EsbirrosComposite() {
+    public EsbirrosComposite(String Nombre) {
+        super(Nombre);
+        this.demonIndex = 0;
     }
 
-    /**
-     * 
-     */
-    private Esbirro childrenComposite;
-
-    /**
-     * @param
-     */
-    public void add(Esbirro esbirro) {
-        // TODO implement here
+    public void add(EsbirroBase esbirro) {
+        childrenComposite.add(esbirro);
     }
 
-    /**
-     * @param
-     */
     public void remove(Esbirro esbirro) {
-        // TODO implement here
+        childrenComposite.remove(esbirro);
     }
 
-    /**
-     * @return
-     */
-    public ArrayList<Esbirro> getChildren() {
-        // TODO implement here
-        return null;
+    public List<EsbirroBase> getChildren() {
+        return childrenComposite;
     }
 
-    /**
-     * 
-     */
-    public void recibirDaño() {
-        // TODO implement here
-    }
+    @Override
+    public int recibirDaño() {
+        if (!childrenComposite.isEmpty()) {
+            EsbirroBase lastEsbirro = childrenComposite.get(childrenComposite.size() - 1);
+            lastEsbirro.recibirDaño();
 
+            if (lastEsbirro.getSalud() <= 0) {
+                childrenComposite.remove(lastEsbirro);
+            }
+        }
+        return childrenComposite.size();
+    }
 }

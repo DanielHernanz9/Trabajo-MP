@@ -1,5 +1,18 @@
 package Grupo6.src.sistemaDeGuardado;
 
+import Grupo6.src.COSAS.*;
+import Grupo6.src.App.*;
+import Grupo6.src.Combate.*;
+import Grupo6.src.Desafio.*;
+import Grupo6.src.DesafioNotify.*;
+import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.*;
+import Grupo6.src.Personajes.*;
+import Grupo6.src.sistemaDeGuardado.*;
+
+import java.util.Date;
+
+
 /**
  * 
  */
@@ -14,61 +27,61 @@ public class CombatBuilder extends Builder {
     /**
      * 
      */
-    private combate Result;
+    private Combate Result;
 
     /**
-     * @param Jugador desafiante
+     *
      */
-    public void agregarDesafiante(void Jugador desafiante) {
+    public void agregarDesafiante(Jugador desafiante) {
         // TODO implement here
     }
 
     /**
-     * @param Jugador Desafiado
+     *
      */
-    public void agregarDesafiado(void Jugador Desafiado) {
+    public void agregarDesafiado(Jugador Desafiado) {
         // TODO implement here
     }
 
     /**
-     * @param Int numRondas
+     *
      */
-    public void agregarNumRondas(void Int numRondas) {
+    public void agregarNumRondas(int numRondas) {
         // TODO implement here
     }
 
     /**
-     * @param Date fecha
+     *
      */
-    public void agregarFechaCombate(void Date fecha) {
+    public void agregarFechaCombate( Date fecha) {
         // TODO implement here
     }
 
     /**
-     * @param Jugador ganador
+     *
      */
-    public void agregarGanador(void Jugador ganador) {
+    public void agregarGanador( Jugador ganador) {
         // TODO implement here
     }
 
     /**
-     * @param Jugador jugador
+     *
      */
-    public void agregarjugadorSinEsbirrosDerrotados(void Jugador jugador) {
+    public void agregarjugadorSinEsbirrosDerrotados( Jugador jugador) {
         // TODO implement here
     }
 
     /**
-     * @param Int Oro
+     *
      */
-    public void agregarOroGanado(void Int Oro) {
+    public void agregarOroGanado(int Oro) {
         // TODO implement here
     }
 
     /**
      * @return
      */
-    public combate getResult() {
+    public Combate getResult() {
         // TODO implement here
         return null;
     }
@@ -79,10 +92,4 @@ public class CombatBuilder extends Builder {
     public void reset() {
         // TODO implement here
     }
-
-    /**
-     * 
-     */
-    public abstract void reset();
-
 }
