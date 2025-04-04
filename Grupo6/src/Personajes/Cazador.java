@@ -1,20 +1,21 @@
 package Grupo6.src.Personajes;
 
+import Grupo6.src.Personajes.PatronFactoryPersonajes.PersonajeBase;
+
 /**
  * 
  */
 public class Cazador extends PersonajeBase {
 
-    /**
-     * Default constructor
-     */
+    private Integer Voluntad;
+
     public Cazador() {
+
     }
 
     /**
      * 
      */
-    private Integer Rabia;
 
     @Override
     public void hacerHabilidadEspecial() {

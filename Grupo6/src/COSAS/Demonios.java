@@ -1,3 +1,4 @@
+package Grupo6.src.COSAS;
 
 import Grupo6.src.Esbirros.EsbirroBase;
 

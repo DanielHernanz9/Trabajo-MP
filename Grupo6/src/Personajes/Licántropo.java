@@ -1,9 +1,13 @@
 package Grupo6.src.Personajes;
 
+import Grupo6.src.Personajes.PatronFactoryPersonajes.PersonajeBase;
+
 /**
  * 
  */
 public class Licántropo extends PersonajeBase {
+
+    private Integer Rabia;
 
     /**
      * Default constructor
@@ -14,7 +18,7 @@ public class Licántropo extends PersonajeBase {
     /**
      * 
      */
-    private Integer Voluntad;
+
 
     @Override
     public void hacerHabilidadEspecial() {

@@ -1,5 +1,5 @@
 package Grupo6.src.sistemaDeGuardado;
-import Grupo6.src.Personajes.Personaje;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.Personaje;
 
 /**
  * El cliente a través de la interfaz no sabe que esta usando un adaptador que traduce de xml a json por ejemplo

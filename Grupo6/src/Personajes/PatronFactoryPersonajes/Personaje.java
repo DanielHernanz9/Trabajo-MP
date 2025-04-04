@@ -1,4 +1,4 @@
-package Grupo6.src.Personajes;
+package Grupo6.src.Personajes.PatronFactoryPersonajes;
 
 /**
  * 

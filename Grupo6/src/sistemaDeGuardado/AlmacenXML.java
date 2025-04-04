@@ -1,6 +1,6 @@
 package Grupo6.src.sistemaDeGuardado;
 import Grupo6.src.Combate.Combate;
-import Grupo6.src.Personajes.Personaje;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.Personaje;
 
 /**
  * 

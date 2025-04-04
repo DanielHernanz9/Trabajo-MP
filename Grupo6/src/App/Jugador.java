@@ -1,6 +1,6 @@
 package Grupo6.src.App;
 import Grupo6.src.Desafio.Desafio;
-import Grupo6.src.Personajes.FactoryPersonaje;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;
 
 import java.util.ArrayList;
 

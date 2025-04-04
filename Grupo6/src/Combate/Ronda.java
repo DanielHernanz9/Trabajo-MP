@@ -1,6 +1,6 @@
 package Grupo6.src.Combate;
 
-import Grupo6.src.Personajes.PersonajeBase;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.PersonajeBase;
 
 /**
  * 

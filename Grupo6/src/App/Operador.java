@@ -1,11 +1,13 @@
 package Grupo6.src.App;
 
-import Handler;
+import Grupo6.src.Desafio.*;
 
 /**
  * 
  */
 public class Operador extends Usuario {
+
+    private Handler ValidadorDesafio;
 
     /**
      * Default constructor
@@ -16,13 +18,12 @@ public class Operador extends Usuario {
     /**
      * 
      */
-    private Handler ValidadorDesafio;
 
     /**
      * @param Desafio 
      * @return
      */
-    public Boolean validarDesafio(void Desafio) {
+    public Boolean validarDesafio(Desafio Desafio) {
         // TODO implement here
         return null;
     }
@@ -30,29 +31,23 @@ public class Operador extends Usuario {
     /**
      * @param Jugador
      */
-    public void editarPersonaje(void Jugador) {
+    public void editarPersonaje(Jugador Jugador) {
         // TODO implement here
     }
 
     /**
      * @param Jugador
      */
-    public void bloquearUsuario(void Jugador) {
+    public void bloquearUsuario(Jugador Jugador) {
         // TODO implement here
     }
 
     /**
      * @param Jugador
      */
-    public void desbloquearUsuario(void Jugador) {
+    public void desbloquearUsuario(Jugador Jugador) {
         // TODO implement here
     }
 
-    /**
-     * @param Jugador
-     */
-    public void desbloquearUsuario(void Jugador) {
-        // TODO implement here
-    }
 
 }

@@ -1,5 +1,5 @@
 package Grupo6.src.Pantallas;
-
+import Grupo6.src.COSAS.*;
 /**
  * 
  */

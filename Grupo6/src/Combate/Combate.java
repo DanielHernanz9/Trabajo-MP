@@ -1,7 +1,7 @@
 package Grupo6.src.Combate;
 
 import Grupo6.src.App.Jugador;
-import Grupo6.src.Personajes.PersonajeBase;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.PersonajeBase;
 
 import java.util.Date;
 import java.util.ArrayList;

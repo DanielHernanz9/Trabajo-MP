@@ -1,6 +1,6 @@
+package Grupo6.src.COSAS;
 
-import java.io.*;
-import java.util.*;
+import Grupo6.src.App.*;
 
 /**
  * 
@@ -14,9 +14,9 @@ public class InterfazEditar {
     }
 
     /**
-     * @param Jugador J
+     *
      */
-    public void editarPersonaje(void Jugador J) {
+    public void editarPersonaje(Jugador J) {
         // TODO implement here
     }
 

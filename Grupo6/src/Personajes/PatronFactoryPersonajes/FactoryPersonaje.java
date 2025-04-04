@@ -1,4 +1,4 @@
-package Grupo6.src.Personajes;
+package Grupo6.src.Personajes.PatronFactoryPersonajes;
 
 /**
  * 
@@ -14,8 +14,6 @@ public abstract class FactoryPersonaje {
     /**
      * 
      */
-    public void createPersonaje() {
-        // TODO implement here
-    }
+    public abstract Personaje createPersonaje();
 
 }

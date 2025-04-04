@@ -1,6 +1,4 @@
-
-import java.io.*;
-import java.util.*;
+package Grupo6.src.COSAS;
 
 /**
  * 

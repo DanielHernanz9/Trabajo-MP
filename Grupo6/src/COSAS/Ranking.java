@@ -1,28 +1,27 @@
+package Grupo6.src.COSAS;
 
 import Grupo6.src.Pantallas.BaseDecorator;
 
 /**
  * 
  */
-public class PlayerDecorator extends BaseDecorator {
+public class Ranking extends BaseDecorator {
 
     /**
      * Default constructor
      */
-    public PlayerDecorator() {
+    public Ranking() {
     }
 
     /**
      * 
      */
-    public void show() {
-        // TODO implement here
-    }
+    private ListaJugadores Jugadores;
 
     /**
      * 
      */
-    public void getNext() {
+    public void ordenarJugadores() {
         // TODO implement here
     }
 
