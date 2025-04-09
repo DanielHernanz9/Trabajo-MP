@@ -11,24 +11,39 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
+import java.util.Random;
+
 /**
  * 
  */
 public abstract class Usuario {
 
-    private String Nombre;
-    private String Nick;
-    private String Password;
+    private final String Nombre;
+    private final String Nick;
+    private final String Password;
 
     // Interfaz Constructor
-    public Usuario() {
+    public Usuario(String nombre,String nick,String password) {
+
+        Nombre=nombre;
+        Nick=nick;
+        Password=password;
+
+
     }
+
+
 
     public String getNombre() {
-        return "";
+        return Nombre;
     }
 
-    public Object getPassword() {
-        return null;
+    public String getPassword() {
+
+        return Password;
+    }
+    public String getNick() {
+
+        return Nick;
     }
 }

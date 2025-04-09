@@ -12,33 +12,58 @@ import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Jugador extends Usuario {
-
-    /**
-     * Default constructor
-     */
-    public Jugador() {
-    }
 
     private Integer NumeroRegistro;
     private FactoryPersonaje FabricaPersonaje;
     private ArrayList<Desafio> DesafiosPendientes;
     private int [] HistorialOro;
-    private PersonajeBase Personaje;
+    private Personaje Personaje;
+
+    //Numero de registro, solo lo tienen los jugadores y es unico para cada jugador
+    private final String RegNum;
+
+    /**
+     * Default constructor
+     */
+    public Jugador(String name, String nick, String pass) {
+
+        super(name, nick, pass);
+        //Establecemos el codigo LNNLL unico de cada usuario al nuevo usuario
+        RegNum=setRegNumber();
+    }
+
+    private String setRegNumber(){
+        Random random= new Random();
+        StringBuilder regnum= new StringBuilder();
+
+        //construimos el formato LNNLL
+        regnum.append((char) ('A' + random.nextInt(26)));
+        regnum.append(random.nextInt(10));
+        regnum.append(random.nextInt(10));
+        regnum.append((char) ('A' + random.nextInt(26)));
+        regnum.append((char) ('A' + random.nextInt(26)));
+
+        return regnum.toString();
+
+
+    }
+
 
     /**
      * @param
      */
     public void registrarPersonaje(FactoryPersonaje factory) {
-        // TODO implement here
+        Personaje=factory.createPersonaje();
     }
 
     /**
      * 
      */
     public void darDeBajaPersonaje() {
-        // TODO implement here
+        Personaje = null;
     }
 
     /**
@@ -104,5 +129,5 @@ public class Jugador extends Usuario {
         return this.DesafiosPendientes;
     }
 
-    public PersonajeBase getPersonaje() { return this.Personaje; }
+    public Personaje getPersonaje() { return this.Personaje; }
 }

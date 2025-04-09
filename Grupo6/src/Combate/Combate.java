@@ -52,8 +52,8 @@ public class Combate {
             manager.registrarCombate(this);
             System.out.println("Iniciando combate entre " + Desafiante + " y " + Desafiado);
 
-            PersonajeBase personajeDesafiado = Desafiado.getPersonaje();
-            PersonajeBase personajeDesafiante = Desafiado.getPersonaje();
+            Personaje personajeDesafiado = Desafiado.getPersonaje();
+            Personaje personajeDesafiante = Desafiado.getPersonaje();
 
             if (personajeDesafiado.hasEsbirros()){
                 configEsbirroSalud(personajeDesafiado.getEsbirros());

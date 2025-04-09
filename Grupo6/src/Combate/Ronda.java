@@ -14,8 +14,8 @@ import java.util.Random;
 
 public class Ronda {
 
-    private PersonajeBase Atacante;
-    private PersonajeBase Atacado;
+    private Personaje Atacante;
+    private Personaje Atacado;
     private int PotencialAtaqueP1;
     private int PotencialAtaqueP2;
     private int PotencialDefensaP1;
@@ -23,7 +23,7 @@ public class Ronda {
     private EstrategiaPotencial EstrategiaAtacante;
     private EstrategiaPotencial EstrategiaAtacado;
 
-    public Ronda(PersonajeBase atacante, PersonajeBase atacado) {
+    public Ronda(Personaje atacante, Personaje atacado) {
         this.Atacante = atacante;
         this.Atacado = atacado;
         EstrategiaPotencial Estrategia1 = null;
@@ -52,7 +52,7 @@ public class Ronda {
         setEstrategia(Estrategia1, Estrategia2);
     }
 
-    private int calcularPotencialDeAtaque(PersonajeBase personaje, int personajeIndex) {
+    private int calcularPotencialDeAtaque(Personaje personaje, int personajeIndex) {
         switch (personajeIndex){
             case 1: return EstrategiaAtacante.calcularPotencialAtaque(personaje);
             case 2: return EstrategiaAtacado.calcularPotencialAtaque(personaje);
@@ -61,7 +61,7 @@ public class Ronda {
 
     }
 
-    private int calcularPotencialDeDefensa(PersonajeBase personaje, int personajeIndex) {
+    private int calcularPotencialDeDefensa(Personaje personaje, int personajeIndex) {
         switch (personajeIndex){
             case 1: return EstrategiaAtacante.calcularPotencialDefensa(personaje);
             case 2: return EstrategiaAtacado.calcularPotencialDefensa(personaje);

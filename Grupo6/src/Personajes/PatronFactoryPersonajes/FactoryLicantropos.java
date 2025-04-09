@@ -24,7 +24,7 @@ public class FactoryLicantropos extends FactoryPersonaje {
     @Override
     public Personaje createPersonaje() {
 
-        return new Licántropo();
+        return new Licantropo();
     }
 
 }

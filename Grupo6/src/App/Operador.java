@@ -12,7 +12,9 @@ public class Operador extends Usuario {
     /**
      * Default constructor
      */
-    public Operador(String admin, String admin123) {
+    public Operador(String nombre,String nick,String password) {
+        super(nombre,nick,password);
+
     }
 
     /**

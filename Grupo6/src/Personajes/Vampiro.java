@@ -24,15 +24,20 @@ public class Vampiro extends PersonajeBase {
     public Disciplina Disciplina;
 
     public Vampiro() {
+
+        setNombre("Vampiro");
+
         Random rand = new Random();
 
         Esbirros= new ArrayList<>();
 
         //Creacion de los esbirros de los Vampiros
+        crearEsbirros();
 
     }
 
     @Override
+    //Este metodo sobreescribe al original ya que los vampiros no pueden tener esbirros humanos
     public void crearEsbirros() {
         Random rand = new Random();
 
@@ -44,8 +49,6 @@ public class Vampiro extends PersonajeBase {
             FabricaEsbirros actualFactory;
             if (num==0){
                 actualFactory= new FabricaGhouls();
-
-
 
             }else{
                 actualFactory= new FabricaDemonios();

@@ -15,6 +15,9 @@ public class Licantropo extends PersonajeBase {
      * Default constructor
      */
     public Licantropo() {
+        setNombre("Licantropo");
+
+        crearEsbirros();
     }
 
     /**

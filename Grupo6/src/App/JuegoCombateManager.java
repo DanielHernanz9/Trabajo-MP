@@ -1,9 +1,12 @@
 package Grupo6.src.App;
 
 import Grupo6.src.Combate.Combate;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryCazadores;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryLicantropos;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;
 import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.Personajes.*;
+import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryVampiros;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,7 +24,7 @@ public class JuegoCombateManager {
     public JuegoCombateManager() {
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
-        this.operador = new Operador("admin", "admin123"); // operador por defecto
+        this.operador = new Operador("admin", "admin33","12345"); // operador por defecto
         usuarios.add(operador); // registrar operador
     }
 
@@ -81,6 +84,13 @@ public class JuegoCombateManager {
     public void MostrarMenuJugador() {
         Scanner sc = new Scanner(System.in);
         while (true) {
+
+            //En el caso de que el jugador no tenga personajes asociados
+            if (jugador1.getPersonaje()==null){
+                System.out.println("No has seleccionado ningún personaje");
+                registrarPersonaje(jugador1);
+            }
+
             System.out.println("\nMenú Jugador:");
             System.out.println("1. Desafiar y Combatir");
             System.out.println("2. Ver Ranking");
@@ -93,7 +103,7 @@ public class JuegoCombateManager {
                 case 1 -> {
                     if (jugador1 != null && jugador2 != null) {
                         Desafio d = new Desafio(jugador1, jugador2);
-                        //jugador2.agregarDesafio(d);
+                        jugador2.desafiarUsuario(d);
                         validarDesafio(d);
                         IniciarCombate();
                     } else {
@@ -137,9 +147,9 @@ public class JuegoCombateManager {
             }
             System.out.println("Usuario no encontrado o contraseña incorrecta.");
         } else {
-            Jugador nuevo = new Jugador();
+            Jugador nuevo = new Jugador(nombre,"Jugador 1",pass);
             registrarUsuario(nuevo);
-            registrarPersonaje(nuevo);
+            //registrarPersonaje(nuevo);
             if (jugador1 == null) setJugador1(nuevo);
             else setJugador2(nuevo);
         }
@@ -203,7 +213,30 @@ public class JuegoCombateManager {
     }
 
     public void registrarPersonaje(Jugador jugador) {
+
+        //En caso de ser nuevo el jugador, en otro caso lo que haremos sera recoger el personaje ya creado
         if (jugador != null) {
+
+            Scanner sc = new Scanner(System.in);
+
+            System.out.println("Selecciona el personaje que desea usar");
+            System.out.println("1. Vampiro");
+            System.out.println("2. Licántropo");
+            System.out.println("3. Cazador");
+            int personaje=sc.nextInt();
+
+            if(personaje==1){
+
+                factory= new FactoryVampiros();
+            }
+            else if(personaje==2){
+
+                factory= new FactoryLicantropos();
+            }else{
+
+                factory= new FactoryCazadores();
+            }
+
             jugador.registrarPersonaje(factory);
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
         }
@@ -211,8 +244,8 @@ public class JuegoCombateManager {
 
     public void darDeBajaPersonaje(Jugador jugador) {
         if (jugador != null) {
+            System.out.println("Personaje "+jugador.getPersonaje().getNombre()+" dado de baja para el jugador: " + jugador.getNombre());
             jugador.darDeBajaPersonaje();
-            System.out.println("Personaje dado de baja para el jugador: " + jugador.getNombre());
         }
     }
 

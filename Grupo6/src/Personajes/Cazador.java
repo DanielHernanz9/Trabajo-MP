@@ -22,6 +22,8 @@ public class Cazador extends PersonajeBase {
     private Talento Talento;
 
     public Cazador() {
+        //Nombre: Cazador, puede que se tenga q cambiar en el futuro
+        setNombre("Cazador");
         //Creacion de los esbirros de los cazadores
         crearEsbirros();
     }
