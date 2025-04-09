@@ -17,7 +17,7 @@ public class FabricaHumanos extends FabricaEsbirros {
     }
 
     @Override
-    public Esbirro createEsbirro(String Nombre) {
+    public EsbirroBase createEsbirro(String Nombre) {
         return new Humano(Nombre);
     }
 }

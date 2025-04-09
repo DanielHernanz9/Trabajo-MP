@@ -19,12 +19,11 @@ import java.util.Random;
 public class Cazador extends PersonajeBase {
 
     private Integer Voluntad;
+    private Talento Talento;
 
     public Cazador() {
         //Creacion de los esbirros de los cazadores
         crearEsbirros();
-
-
     }
 
     public void setVoluntad(Integer voluntad) {
@@ -43,5 +42,13 @@ public class Cazador extends PersonajeBase {
     @Override
     public void atacar() {
 
+    }
+
+    public Talento getTalento(){
+        return this.Talento;
+    }
+
+    public int getVoluntad(){
+        return this.Voluntad;
     }
 }

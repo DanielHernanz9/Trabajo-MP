@@ -10,23 +10,13 @@ import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
-/**
- * 
- */
-public class EstrategiaPotencial {
 
-    /**
-     * Default constructor
-     */
+public abstract class EstrategiaPotencial {
+
     public EstrategiaPotencial() {
     }
 
-    /**
-     * @return
-     */
-    public int calcularPotencial() {
-        // TODO implement here
-        return 0;
-    }
+    public abstract int calcularPotencialAtaque(Object o);
 
+    public abstract int calcularPotencialDefensa(Object o);
 }

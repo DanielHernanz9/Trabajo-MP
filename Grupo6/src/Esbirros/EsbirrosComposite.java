@@ -17,16 +17,9 @@ import java.util.List;
 
 public class EsbirrosComposite extends EsbirroBase {
     private List<EsbirroBase> childrenComposite = new ArrayList<>();
-    private int demonIndex;
 
-    /**
-     * Default constructor, no se deberia instanciar este
-     *
-     * @param Nombre
-     */
     public EsbirrosComposite(String Nombre) {
         super(Nombre);
-        this.demonIndex = 0;
     }
 
     public void add(EsbirroBase esbirro) {

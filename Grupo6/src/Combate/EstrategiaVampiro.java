@@ -11,17 +11,24 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
-
-public class EstrategiaVampiro {
+public class EstrategiaVampiro extends EstrategiaPotencial {
 
     public EstrategiaVampiro() {
     }
 
-    /**
-     * @return
-     */
-    public int calcularPotencial(Vampiro vampiro) {
-        return vampiro.getPoder() + vampiro.getDisciplina().getAtaque() + vampiro.getValorEquipo();
+    @Override
+    public int calcularPotencialAtaque(Object o) {
+        if (o instanceof Vampiro vampiro) {
+            return vampiro.getPoder() + vampiro.getDisciplina().getAtaque() + vampiro.getValorEquipo();
+        }
+        throw new IllegalArgumentException("Objeto no es un Vampiro");
     }
 
+    @Override
+    public int calcularPotencialDefensa(Object o) {
+        if (o instanceof Vampiro vampiro) {
+            return vampiro.getPoder() + vampiro.getDisciplina().getDefensa() + vampiro.getValorEquipo();
+        }
+        throw new IllegalArgumentException("Objeto no es un Vampiro");
+    }
 }

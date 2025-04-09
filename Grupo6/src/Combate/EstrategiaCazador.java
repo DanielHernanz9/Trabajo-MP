@@ -13,13 +13,24 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 /**
  * 
  */
-public class EstrategiaCazador {
+public class EstrategiaCazador extends EstrategiaPotencial {
 
     public EstrategiaCazador() {
     }
 
-    public int calcularPotencial(Cazador cazador) {
-        return 0; //cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
+    @Override
+    public int calcularPotencialAtaque(Object o) {
+        if (o instanceof Cazador cazador) {
+            return cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
+        }
+        throw new IllegalArgumentException("Objeto no es un Cazador");
     }
 
+    @Override
+    public int calcularPotencialDefensa(Object o) {
+        if (o instanceof Cazador cazador) {
+            return cazador.getPoder() + cazador.getTalento().getDefensa() + cazador.getVoluntad();
+        }
+        throw new IllegalArgumentException("Objeto no es un Cazador");
+    }
 }

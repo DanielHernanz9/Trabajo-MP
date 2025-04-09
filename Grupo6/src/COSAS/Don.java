@@ -11,15 +11,12 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
-/**
- * 
- */
+
 public class Don extends Habilidad_Especial {
     private int Rabia;
     private int Ataque;
-    /**
-     * Default constructor
-     */
+    private int Defensa;
+
     public Don(int rabia, int ataque) {
         this.Rabia = rabia;
         this.Ataque = ataque;
@@ -27,6 +24,10 @@ public class Don extends Habilidad_Especial {
 
     public int getAtaque(){
         return this.Ataque;
+    }
+
+    public int getDefensa(){
+        return this.Defensa;
     }
 
 }

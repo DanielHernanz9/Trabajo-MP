@@ -26,6 +26,6 @@ public abstract class FabricaEsbirros {
      * @return
      */
 
-    public abstract Esbirro createEsbirro(String Nombre);
+    public abstract EsbirroBase createEsbirro(String Nombre);
 
 }

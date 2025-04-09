@@ -1,9 +1,12 @@
 package Grupo6.src.Combate;
 
 import Grupo6.src.App.*;
+import Grupo6.src.Esbirros.EsbirroBase;
+import Grupo6.src.Esbirros.EsbirrosComposite;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * No he usado la estructura completa porque solo va a haber un tipo de combate, sino si que podriamos usar una interfaz como esta en el aula con el director, de todas formas hay que preguntar al profe si asi se puede usar
@@ -30,35 +33,71 @@ public class Combate {
         this.Ganador = null;
     }
 
+    public void configEsbirroSalud(List<EsbirroBase> listaEsbirros){
+        for (EsbirroBase esbirro: listaEsbirros){
+            esbirro.setSalud(3);
+            if (esbirro instanceof EsbirrosComposite){
+                List<EsbirroBase> listaSubordinados = ((EsbirrosComposite) esbirro).getChildren();
+                for (EsbirroBase subordinado: listaSubordinados){
+                    configEsbirroSalud(listaSubordinados);
+                    //Si los esbirros tienen subordinados, se llama de manera recusriva al metodo
+                    //para inicializar la salud de los subordinados y los subordinados de los subordinados, etc.
+                }
+            }
+        }
+    }
+
     public void IniciarCombate() {
         if (Desafiante != null && Desafiado != null) {
+            manager.registrarCombate(this);
             System.out.println("Iniciando combate entre " + Desafiante + " y " + Desafiado);
-            Combate combate = new Combate(Desafiante, Desafiado);
-            manager.registrarCombate(combate);
 
-            while (Ganador == null){
-                Rondas.add(new Ronda());
+            PersonajeBase personajeDesafiado = Desafiado.getPersonaje();
+            PersonajeBase personajeDesafiante = Desafiado.getPersonaje();
+
+            if (personajeDesafiado.hasEsbirros()){
+                configEsbirroSalud(personajeDesafiado.getEsbirros());
+            }
+
+            if (personajeDesafiante.hasEsbirros()){
+                configEsbirroSalud(personajeDesafiante.getEsbirros());
+            }
+
+            Ronda newRonda = null;
+            boolean swapper = false; //Esta variable va alternando en cada ronda.
+            //Segun sea true o false, el peronaje atacante sera uno u otro
+            //Considreamos que el primero en atacar es el personaje del jugador desafiante.
+
+            while (newRonda == null || !newRonda.verificarFinCombate()){
+
+                if (swapper){
+                    newRonda = new Ronda(personajeDesafiado, personajeDesafiante);
+                }
+                else{
+                    newRonda = new Ronda(personajeDesafiante, personajeDesafiado);
+                }
+
+                Rondas.add(newRonda);
+                newRonda.ejecutarRonda();
+                swapper = !swapper;
+            }
+            if (personajeDesafiado.getSalud() == 0){
+                Ganador = Desafiado;
+            }
+            else if (personajeDesafiante.getSalud() == 0){
+                Ganador = Desafiado;
             }
         } else {
             System.out.println("No se han registrado suficientes jugadores.");
         }
     }
 
-    /**
-     * 
-     */
-    public void combate() {
-        // TODO implement here
+    public Jugador getDesafiante() {
+        return this.Desafiante;
     }
 
-    public String getJugador1() {
-        // TODO implement here
-        return null;
-    }
-
-    public String getJugador2() {
-        // TODO implement here
-        return null;
+    public Jugador getDesafiado() {
+        return this.Desafiado;
     }
 
     public String getResultado() {

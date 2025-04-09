@@ -16,6 +16,7 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 public class Talento extends Habilidad_Especial {
     private int Coste;
     private int Ataque;
+    private int Defensa;
 
     public Talento(int Ataque, int Coste) {
         this.Ataque = Ataque;
@@ -25,6 +26,10 @@ public class Talento extends Habilidad_Especial {
 
     public int getAtaque(){
         return this.Ataque;
+    }
+
+    public int getDefensa(){
+        return this.Defensa;
     }
 
 }

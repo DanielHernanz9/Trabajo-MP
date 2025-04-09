@@ -14,6 +14,7 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 public class Disciplina extends Habilidad_Especial {
     private int Coste;
     private int Ataque;
+    private int Defensa;
 
     public Disciplina(int ataque, int coste) {
         this.Ataque = ataque;
@@ -22,5 +23,9 @@ public class Disciplina extends Habilidad_Especial {
 
     public int getAtaque(){
         return this.Ataque;
+    }
+
+    public int getDefensa(){
+        return this.Defensa;
     }
 }

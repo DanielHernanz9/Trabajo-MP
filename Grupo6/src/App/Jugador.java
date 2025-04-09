@@ -13,9 +13,6 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
 
-/**
- * 
- */
 public class Jugador extends Usuario {
 
     /**
@@ -24,25 +21,11 @@ public class Jugador extends Usuario {
     public Jugador() {
     }
 
-    /**
-     * 
-     */
     private Integer NumeroRegistro;
-
-    /**
-     * 
-     */
     private FactoryPersonaje FabricaPersonaje;
-
-    /**
-     * 
-     */
     private ArrayList<Desafio> DesafiosPendientes;
-
-    /**
-     * 
-     */
     private int [] HistorialOro;
+    private PersonajeBase Personaje;
 
     /**
      * @param
@@ -120,4 +103,6 @@ public class Jugador extends Usuario {
     public ArrayList<Desafio> getDesafiosPendientes() {
         return this.DesafiosPendientes;
     }
+
+    public PersonajeBase getPersonaje() { return this.Personaje; }
 }

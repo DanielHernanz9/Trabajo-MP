@@ -10,24 +10,12 @@ import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
-/**
- * 
- */
+
 public abstract class EsbirroBase extends Esbirro {
 
-    /**
-     * 
-     */
     private String Nombre;
-
-    /**
-     * 
-     */
     private int Salud = 3;
 
-    /**
-     * Default constructor, no se deberia instanciar este
-     */
     public EsbirroBase(String Nombre) {
         this.Nombre = Nombre;
     }

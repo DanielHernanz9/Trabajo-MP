@@ -10,32 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- */
 public abstract class PersonajeBase implements Personaje {
 
     protected String Nombre;
-
     protected Habilidad_Especial Habilidad;
-
     protected List<Arma> Armas;
-
     protected Arma ArmaActiva1;
-
     protected Arma ArmaActiva2;
-
     protected List<Armadura> Armaduras;
-
     protected Armadura ArmaduraActiva;
-
-    protected List<Esbirro> Esbirros;
-
-    protected Integer Oro;
-
-    protected Integer Health;
-
-    protected Integer Poder;
+    protected List<EsbirroBase> Esbirros;
+    protected int Oro;
+    protected Integer Salud;
+    protected int Poder;
 
     public Habilidad_Especial getHabilidad() {
         return Habilidad;
@@ -65,19 +52,15 @@ public abstract class PersonajeBase implements Personaje {
         return ArmaduraActiva;
     }
 
-    public List<Esbirro> getEsbirros() {
+    public List<EsbirroBase> getEsbirros() {
         return Esbirros;
     }
 
-    public Integer getOro() {
+    public int getOro() {
         return Oro;
     }
 
-    public Integer getHealth() {
-        return Health;
-    }
-
-    public Integer getPoder() {
+    public int getPoder() {
         return Poder;
     }
 
@@ -119,19 +102,19 @@ public abstract class PersonajeBase implements Personaje {
         ArmaduraActiva = armaduraActiva;
     }
 
-    public void setEsbirros(List<Esbirro> esbirros) {
+    public void setEsbirros(List<EsbirroBase> esbirros) {
         Esbirros = esbirros;
     }
 
-    public void setOro(Integer oro) {
+    public void setOro(int oro) {
         Oro = oro;
     }
 
-    public void setHealth(Integer health) {
-        Health = health;
+    public void setSalud(int salud) {
+        Salud = salud;
     }
 
-    public void setPoder(Integer poder) {
+    public void setPoder(int poder) {
         Poder = poder;
     }
 
@@ -145,38 +128,37 @@ public abstract class PersonajeBase implements Personaje {
 
     protected List<FortalezaHandler> Fortalezas;
 
-
-
-
     public abstract void hacerHabilidadEspecial();
 
     public abstract void atacar();
 
     public void crearEsbirros() {
         Random rand = new Random();
-
         Esbirros = new ArrayList<>();
 
-        //Creacion de los esbirros de los cazadores
+        //Creacion de los esbirros de los personajes
         int num;
         for (int i = 0; i < 20; i++) {
             num = rand.nextInt(3);
-            FabricaEsbirros actualFactory;
+            FabricaEsbirros currentFactory;
             if (num == 0) {
-                actualFactory = new FabricaGhouls();
-
-
+                currentFactory = new FabricaGhouls();
             } else if (num == 1) {
 
-                actualFactory = new FabricaHumanos();
+                currentFactory = new FabricaHumanos();
             } else {
 
-                actualFactory = new FabricaDemonios();
+                currentFactory = new FabricaDemonios();
 
             }
-            Esbirros.add(actualFactory.createEsbirro("Esbirro_" + i));
-
+            Esbirros.add(currentFactory.createEsbirro("Esbirro_" + i));
         }
     }
 
+    public int getSalud(){
+        return this.Salud;
+    }
+    public boolean hasEsbirros(){
+        return !this.Esbirros.isEmpty();
+    }
 }
