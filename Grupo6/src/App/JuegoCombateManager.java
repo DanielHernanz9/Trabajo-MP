@@ -257,6 +257,7 @@ public class JuegoCombateManager {
                 XMLEncoder encoder = new XMLEncoder(
                         new BufferedOutputStream(
                                 new FileOutputStream("Usuarios.xml")));
+                jugador.registrarPersonaje(factory);
                 encoder.writeObject(usuarios);
                 encoder.close();
             }
@@ -264,7 +265,6 @@ public class JuegoCombateManager {
                 System.out.println(e.getMessage());
             }
 
-            jugador.registrarPersonaje(factory);
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
         }
