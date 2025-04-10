@@ -21,7 +21,7 @@ public abstract class PersonajeBase implements Personaje {
     protected Armadura ArmaduraActiva;
     protected List<EsbirroBase> Esbirros;
     protected int Oro;
-    protected Integer Salud;
+    protected int Salud;
     protected int Poder;
 
     public Habilidad_Especial getHabilidad() {
@@ -160,5 +160,9 @@ public abstract class PersonajeBase implements Personaje {
     }
     public boolean hasEsbirros(){
         return !this.Esbirros.isEmpty();
+    }
+
+    public void setSalud(Integer salud) {
+        Salud = salud;
     }
 }

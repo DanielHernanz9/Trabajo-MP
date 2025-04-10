@@ -4,10 +4,17 @@ public class Demonio extends EsbirroBase {
     private String pacto;
     private EsbirrosComposite subordinados;
 
-    public Demonio(String nombre, String pacto) {
-        super(nombre);
+    public Demonio(){
+        super();
+
+    }
+
+    public void registrarDemonio(String nombre, String pacto) {
+        this.Nombre = nombre;
         this.pacto = pacto;
-        this.subordinados = new EsbirrosComposite(nombre + "_Subordinados");
+        EsbirrosComposite NewSubordinados = new EsbirrosComposite();
+        NewSubordinados.setNombre(nombre + "_Subordinados");
+        this.subordinados = NewSubordinados;
     }
 
     public void addSubordinado(EsbirroBase esbirro) {
@@ -36,5 +43,13 @@ public class Demonio extends EsbirroBase {
 
     public String getPacto(){
         return this.pacto;
+    }
+
+    public void setSubordinados(EsbirrosComposite subordinados) {
+        this.subordinados = subordinados;
+    }
+
+    public void setPacto(String pacto) {
+        this.pacto = pacto;
     }
 }

@@ -18,6 +18,8 @@ public class FabricaHumanos extends FabricaEsbirros {
 
     @Override
     public EsbirroBase createEsbirro(String Nombre) {
-        return new Humano(Nombre);
+        Humano humano = new Humano();
+        humano.setNombre(Nombre);
+        return humano;
     }
 }

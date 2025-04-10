@@ -17,8 +17,15 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 public class Ghoul extends EsbirroBase {
     private int dependencia;
 
-    public Ghoul(String nombre, int dependencia) {
-        super(nombre);
+    public Ghoul() {
+        super();
+    }
+
+    public int getDependencia() {
+        return dependencia;
+    }
+
+    public void setDependencia(int dependencia) {
         this.dependencia = dependencia;
     }
 }

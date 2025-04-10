@@ -16,8 +16,8 @@ public abstract class EsbirroBase extends Esbirro {
     protected String Nombre;
     private int Salud = 3;
 
-    public EsbirroBase(String Nombre) {
-        this.Nombre = Nombre;
+    public EsbirroBase() {
+
     }
 
     /**
@@ -38,5 +38,13 @@ public abstract class EsbirroBase extends Esbirro {
     }
     public void setSalud(int salud){
         Salud = salud;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getNombre() {
+        return Nombre;
     }
 }

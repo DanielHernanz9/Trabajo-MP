@@ -13,22 +13,14 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.Random;
 
-/**
- * 
- */
 public abstract class Usuario {
 
-    private final String Nombre;
-    private final String Nick;
-    private final String Password;
+    protected String Nombre;
+    protected String Nick;
+    protected String Password;
 
     // Interfaz Constructor
-    public Usuario(String nombre,String nick,String password) {
-
-        Nombre=nombre;
-        Nick=nick;
-        Password=password;
-
+    public Usuario() {
 
     }
 
@@ -45,5 +37,9 @@ public abstract class Usuario {
     public String getNick() {
 
         return Nick;
+    }
+
+    public String getName() {
+        return this.Nombre;
     }
 }

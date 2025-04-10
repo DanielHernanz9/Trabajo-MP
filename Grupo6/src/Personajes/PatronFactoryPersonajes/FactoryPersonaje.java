@@ -24,6 +24,6 @@ public abstract class FactoryPersonaje {
     /**
      * 
      */
-    public abstract Personaje createPersonaje();
+    public abstract PersonajeBase createPersonaje();
 
 }

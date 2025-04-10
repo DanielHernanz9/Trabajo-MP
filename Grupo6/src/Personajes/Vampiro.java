@@ -86,4 +86,16 @@ public class Vampiro extends PersonajeBase {
     public int getValorEquipo(){
         return 0;
     }
+
+    public Integer getSangre() {
+        return Sangre;
+    }
+
+    public String getPacto() {
+        return Pacto;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        Disciplina = disciplina;
+    }
 }

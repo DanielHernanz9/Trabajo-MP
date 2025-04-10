@@ -15,9 +15,22 @@ public class Humano extends EsbirroBase {
     private Lealtad lealtad = Lealtad.ALTA;
     private String Nombre;
 
-    public Humano(String Nombre) {
-        super(Nombre);
-        this.lealtad = Lealtad.MEDIA;
+    public Humano() {
+        super();
+    }
+
+    @Override
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setLealtad(Lealtad lealtad) {
+        this.lealtad = lealtad;
+    }
+
+    @Override
+    public void setNombre(String nombre) {
+        Nombre = nombre;
     }
 
     public enum Lealtad {

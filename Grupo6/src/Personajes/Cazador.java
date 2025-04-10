@@ -53,4 +53,8 @@ public class Cazador extends PersonajeBase {
     public int getVoluntad(){
         return this.Voluntad;
     }
+
+    public void setTalento(Talento talento) {
+        Talento = talento;
+    }
 }

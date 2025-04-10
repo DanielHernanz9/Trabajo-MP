@@ -18,6 +18,8 @@ public class FabricaDemonios extends FabricaEsbirros {
 
     @Override
     public EsbirroBase createEsbirro(String Nombre) {
-        return new Demonio(Nombre, "Pacto Normal");
+        Demonio demonio = new Demonio();
+        demonio.registrarDemonio(Nombre, "Pacto Normal");
+        return demonio;
     }
 }

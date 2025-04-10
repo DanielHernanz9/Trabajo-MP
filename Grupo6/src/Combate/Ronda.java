@@ -101,7 +101,7 @@ public class Ronda {
 
     }
 
-    public boolean ejecutarRonda(){
+    public void ejecutarRonda(){
         System.out.println();
         System.out.println("¡Comienza la ronda " + NumeroRonda + " !");
         // Si bien el enunciado pide los potenciales de cada tipo para cada personaje,
@@ -155,8 +155,6 @@ public class Ronda {
             System.out.println("¡ " + nombreAtacado + " ha caido!");
             System.out.println("¡La victoria es para " + nombreAtacante + "! ");
         }
-
-        return verificarFinCombate();
 
     }
 

@@ -18,6 +18,9 @@ public class FabricaGhouls extends FabricaEsbirros {
 
     @Override
     public EsbirroBase createEsbirro(String Nombre) {
-        return new Ghoul(Nombre, 50); // 50 representa el nivel de dependencia
+        Ghoul ghoul = new Ghoul();
+        ghoul.setNombre(Nombre);
+        ghoul.setDependencia(50);
+        return ghoul;
     }
 }

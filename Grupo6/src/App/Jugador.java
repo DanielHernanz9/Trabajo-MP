@@ -1,14 +1,6 @@
 package Grupo6.src.App;
 
-import Grupo6.src.COSAS.*;
-import Grupo6.src.App.*;
-import Grupo6.src.Combate.*;
 import Grupo6.src.Desafio.*;
-import Grupo6.src.DesafioNotify.*;
-import Grupo6.src.Equipo.*;
-import Grupo6.src.Esbirros.*;
-import Grupo6.src.Personajes.*;
-import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
@@ -16,23 +8,27 @@ import java.util.Random;
 
 public class Jugador extends Usuario {
 
-    private Integer NumeroRegistro;
+    private int NumeroRegistro;
     private FactoryPersonaje FabricaPersonaje;
     private ArrayList<Desafio> DesafiosPendientes;
     private int [] HistorialOro;
     private Personaje Personaje;
 
     //Numero de registro, solo lo tienen los jugadores y es unico para cada jugador
-    private final String RegNum;
+    private String RegNum;
 
     /**
      * Default constructor
      */
-    public Jugador(String name, String nick, String pass) {
+    public Jugador() {
 
-        super(name, nick, pass);
-        //Establecemos el codigo LNNLL unico de cada usuario al nuevo usuario
-        RegNum=setRegNumber();
+    }
+
+    public void registrarDatos(String nick, String nombre, String password, int regsitro){
+        this.Nombre = nombre;
+        this.Nick = String.valueOf(this.hashCode());
+        this.Password = password;
+        this.NumeroRegistro = 0;
     }
 
     private String setRegNumber(){
@@ -51,12 +47,47 @@ public class Jugador extends Usuario {
 
     }
 
+    public String getNombre(){
+        return this.Nombre;
+    }
+
+    public String getRegNum(){
+        return this.RegNum;
+    }
+
+    public String getNick(){
+        return this.Nick;
+    }
+
+    public String getPassword(){
+        return this.Password;
+    }
+
+    public void setNombre(String name){
+        this.Nombre = name;
+    }
+
+    public void setPassword(String password){
+        this.Password = password;
+    }
+
+    public Personaje getPersonaje(){
+        return this.Personaje;
+    }
+
+    public void setPersonaje(Personaje p){
+        this.Personaje = p;
+    }
+
+    public void setNick(String nick){
+        this.Nick = nick;
+    }
 
     /**
      * @param
      */
     public void registrarPersonaje(FactoryPersonaje factory) {
-        Personaje=factory.createPersonaje();
+        Personaje = factory.createPersonaje();
     }
 
     /**
@@ -128,6 +159,4 @@ public class Jugador extends Usuario {
     public ArrayList<Desafio> getDesafiosPendientes() {
         return this.DesafiosPendientes;
     }
-
-    public Personaje getPersonaje() { return this.Personaje; }
 }

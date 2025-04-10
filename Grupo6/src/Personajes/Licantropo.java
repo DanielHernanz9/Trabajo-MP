@@ -41,4 +41,12 @@ public class Licantropo extends PersonajeBase {
     public int getRabia(){
         return this.Rabia;
     }
+
+    public void setRabia(Integer rabia) {
+        Rabia = rabia;
+    }
+
+    public void setDon(Don don) {
+        Don = don;
+    }
 }

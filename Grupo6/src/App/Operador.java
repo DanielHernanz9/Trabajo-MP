@@ -12,19 +12,41 @@ public class Operador extends Usuario {
     /**
      * Default constructor
      */
-    public Operador(String nombre,String nick,String password) {
-        super(nombre,nick,password);
+    public Operador() {
+        super();
 
     }
 
-    /**
-     * 
-     */
+    public void registrarDatos(String nick, String nombre, String password){
+        this.Nombre = nombre;
+        this.Nick = String.valueOf(this.hashCode());
+        this.Password = password;
+    }
 
-    /**
-     * @param Desafio 
-     * @return
-     */
+    public String getNombre(){
+        return this.Nombre;
+    }
+
+    public String getNick(){
+        return this.Nick;
+    }
+
+    public String getPassword(){
+        return this.Password;
+    }
+
+    public void setNombre(String name){
+        this.Nombre = name;
+    }
+
+    public void setPassword(String password){
+        this.Password = password;
+    }
+
+    public void setNick(String nick){
+        this.Nick = nick;
+    }
+
     public Boolean validarDesafio(Desafio Desafio) {
         // TODO implement here
         return null;

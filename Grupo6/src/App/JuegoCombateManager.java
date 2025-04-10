@@ -5,9 +5,10 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryCazadores;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryLicantropos;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;
 import Grupo6.src.Desafio.Desafio;
-import Grupo6.src.Personajes.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryVampiros;
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,20 +16,42 @@ import java.util.Scanner;
 public class JuegoCombateManager {
 
     private FactoryPersonaje factory;
-    private final ArrayList<Usuario> usuarios;
+    private ArrayList<Usuario> usuarios;
     private Jugador jugador1;
     private Jugador jugador2;
     private final Operador operador;
     private final ArrayList<Combate> combates;
+    private int registro;
 
     public JuegoCombateManager() {
+        registro = 0;
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
-        this.operador = new Operador("admin", "admin33","12345"); // operador por defecto
+
+        try {
+            File file = new File("Usuarios.xml");
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(file))
+            );
+            if (!(file.length() == 0)){
+                usuarios = (ArrayList<Usuario>) decoder.readObject();
+                decoder.close();
+            }
+            else{
+                FileOutputStream output = new FileOutputStream("Usuarios.xml");
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        this.operador = new Operador(); // operador por defecto
+        this.operador.registrarDatos("adimin", "admin33", "12345");
         usuarios.add(operador); // registrar operador
     }
 
     public void IniciarJuego() {
+        System.out.println("¡Bienvenido!");
         IniciarProcesoRegistro();
         Scanner sc = new Scanner(System.in);
 
@@ -136,9 +159,9 @@ public class JuegoCombateManager {
             for (Usuario u : usuarios) {
                 if (u.getNombre().equals(nombre) && u.getPassword().equals(pass)) {
                     if (u instanceof Operador) {
-                        System.out.println("Bienvenido Operador.");
+                        System.out.println("Bienvenido Operador." + u.getName());
                     } else if (u instanceof Jugador j) {
-                        System.out.println("Bienvenido Jugador.");
+                        System.out.println("Bienvenido Jugador: " + u.getName());
                         if (jugador1 == null) setJugador1(j);
                         else setJugador2(j);
                     }
@@ -147,7 +170,9 @@ public class JuegoCombateManager {
             }
             System.out.println("Usuario no encontrado o contraseña incorrecta.");
         } else {
-            Jugador nuevo = new Jugador(nombre,"Jugador 1",pass);
+            Jugador nuevo = new Jugador();
+            nuevo.registrarDatos("Jugador", nombre ,pass, registro);
+            registro ++;
             registrarUsuario(nuevo);
             //registrarPersonaje(nuevo);
             if (jugador1 == null) setJugador1(nuevo);
@@ -163,15 +188,6 @@ public class JuegoCombateManager {
             mostrarResultado(combate);
         } else {
             System.out.println("No se han registrado suficientes jugadores.");
-        }
-    }
-
-    public void registrarUsuario(Usuario user) {
-        if (!usuarios.contains(user)) {
-            usuarios.add(user);
-            System.out.println("Usuario registrado: " + user.getNombre());
-        } else {
-            System.out.println("El usuario ya está registrado.");
         }
     }
 
@@ -219,7 +235,7 @@ public class JuegoCombateManager {
 
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("Selecciona el personaje que desea usar");
+            System.out.println("Selecciona el personaje que deseas usar");
             System.out.println("1. Vampiro");
             System.out.println("2. Licántropo");
             System.out.println("3. Cazador");
@@ -237,8 +253,20 @@ public class JuegoCombateManager {
                 factory= new FactoryCazadores();
             }
 
+            try{
+                XMLEncoder encoder = new XMLEncoder(
+                        new BufferedOutputStream(
+                                new FileOutputStream("Usuarios.xml")));
+                encoder.writeObject(usuarios);
+                encoder.close();
+            }
+            catch (IOException e){
+                System.out.println(e.getMessage());
+            }
+
             jugador.registrarPersonaje(factory);
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
+
         }
     }
 
@@ -281,6 +309,30 @@ public class JuegoCombateManager {
 
     public void setJugador2(Jugador jugador2) {
         this.jugador2 = jugador2;
+    }
+
+    public void registrarUsuario(Jugador user) {
+        if (!usuarios.contains(user)) {
+            usuarios.add(user);
+            System.out.println("Usuario registrado: " + user.getNombre());
+            registrarPersonaje((Jugador) user);
+            usuarios.add((Jugador) user); //Vamos a guardar al jugador cuando ya tenga personaje.
+
+            try{
+                XMLEncoder encoder = new XMLEncoder(
+                        new BufferedOutputStream(
+                                new FileOutputStream("Usuarios.xml")));
+                encoder.writeObject(usuarios);
+                encoder.close();
+            }
+            catch (IOException e){
+                System.out.println(e.getMessage());
+            }
+            System.out.println("El registro del usuario " + user.getNombre() + " ha sido exitoso.");
+        }
+        else {
+            System.out.println("El usuario ya está registrado.");
+        }
     }
 
     private Jugador buscarJugador(String nombre) {

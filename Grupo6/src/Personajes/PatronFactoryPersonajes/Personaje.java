@@ -11,6 +11,7 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**

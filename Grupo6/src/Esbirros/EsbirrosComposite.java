@@ -18,8 +18,8 @@ import java.util.List;
 public class EsbirrosComposite extends EsbirroBase {
     private List<EsbirroBase> childrenComposite = new ArrayList<>();
 
-    public EsbirrosComposite(String Nombre) {
-        super(Nombre);
+    public EsbirrosComposite() {
+        super();
     }
 
     public void add(EsbirroBase esbirro) {
@@ -46,5 +46,13 @@ public class EsbirrosComposite extends EsbirroBase {
         }
 
         return childrenComposite.size();
+    }
+
+    public List<EsbirroBase> getChildrenComposite() {
+        return childrenComposite;
+    }
+
+    public void setChildrenComposite(List<EsbirroBase> childrenComposite) {
+        this.childrenComposite = childrenComposite;
     }
 }
