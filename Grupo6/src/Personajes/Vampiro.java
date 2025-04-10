@@ -19,7 +19,7 @@ import java.util.Random;
  */
 public class Vampiro extends PersonajeBase {
 
-    private Integer Sangre;
+    private int Sangre;
     private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO
     public Disciplina Disciplina;
 

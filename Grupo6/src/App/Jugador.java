@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Jugador extends Usuario {
 
-    private int NumeroRegistro;
+    private String NumeroRegistro;
     private FactoryPersonaje FabricaPersonaje;
     private ArrayList<Desafio> DesafiosPendientes;
     private int [] HistorialOro;
@@ -22,16 +22,16 @@ public class Jugador extends Usuario {
      */
     public Jugador() {
 
+        setRegNumber();
     }
 
-    public void registrarDatos(String nick, String nombre, String password, int regsitro){
+    public void registrarDatos(String nick, String nombre, String password){
         this.Nombre = nombre;
         this.Nick = String.valueOf(this.hashCode());
         this.Password = password;
-        this.NumeroRegistro = 0;
     }
 
-    private String setRegNumber(){
+    private void setRegNumber(){
         Random random= new Random();
         StringBuilder regnum= new StringBuilder();
 
@@ -42,7 +42,7 @@ public class Jugador extends Usuario {
         regnum.append((char) ('A' + random.nextInt(26)));
         regnum.append((char) ('A' + random.nextInt(26)));
 
-        return regnum.toString();
+        NumeroRegistro= regnum.toString();
 
 
     }

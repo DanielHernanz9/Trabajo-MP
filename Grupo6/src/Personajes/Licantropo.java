@@ -8,7 +8,7 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
  */
 public class Licantropo extends PersonajeBase {
 
-    private Integer Rabia;
+    private int Rabia;
     private Don Don;
 
     /**

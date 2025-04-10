@@ -18,7 +18,7 @@ import java.util.Random;
  */
 public class Cazador extends PersonajeBase {
 
-    private Integer Voluntad;
+    private int Voluntad;
     private Talento Talento;
 
     public Cazador() {
