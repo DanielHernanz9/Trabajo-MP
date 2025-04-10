@@ -64,6 +64,7 @@ public class Combate {
             }
 
             Ronda newRonda = null;
+            int numeroRonda = 1;
             boolean swapper = false; //Esta variable va alternando en cada ronda.
             //Segun sea true o false, el peronaje atacante sera uno u otro
             //Considreamos que el primero en atacar es el personaje del jugador desafiante.
@@ -71,15 +72,16 @@ public class Combate {
             while (newRonda == null || !newRonda.verificarFinCombate()){
 
                 if (swapper){
-                    newRonda = new Ronda(personajeDesafiado, personajeDesafiante);
+                    newRonda = new Ronda(personajeDesafiado, personajeDesafiante,numeroRonda);
                 }
                 else{
-                    newRonda = new Ronda(personajeDesafiante, personajeDesafiado);
+                    newRonda = new Ronda(personajeDesafiante, personajeDesafiado, numeroRonda);
                 }
 
                 Rondas.add(newRonda);
                 newRonda.ejecutarRonda();
                 swapper = !swapper;
+                numeroRonda += 1;
             }
             if (personajeDesafiado.getSalud() == 0){
                 Ganador = Desafiado;

@@ -13,7 +13,7 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 public abstract class EsbirroBase extends Esbirro {
 
-    private String Nombre;
+    protected String Nombre;
     private int Salud = 3;
 
     public EsbirroBase(String Nombre) {

@@ -17,15 +17,18 @@ public class Ronda {
     private Personaje Atacante;
     private Personaje Atacado;
     private int PotencialAtaqueP1;
-    private int PotencialAtaqueP2;
-    private int PotencialDefensaP1;
     private int PotencialDefensaP2;
     private EstrategiaPotencial EstrategiaAtacante;
     private EstrategiaPotencial EstrategiaAtacado;
+    private int NumeroRonda;
+    private String nombreAtacante;
+    private String nombreAtacado;
 
-    public Ronda(Personaje atacante, Personaje atacado) {
+    public Ronda(Personaje atacante, Personaje atacado, int numeroRonda) {
         this.Atacante = atacante;
         this.Atacado = atacado;
+        this.nombreAtacado = Atacado.getNombre();
+        this.nombreAtacante = Atacante.getNombre();
         EstrategiaPotencial Estrategia1 = null;
         EstrategiaPotencial Estrategia2 = null;
 
@@ -50,6 +53,7 @@ public class Ronda {
         }
 
         setEstrategia(Estrategia1, Estrategia2);
+        this.NumeroRonda = numeroRonda;
     }
 
     private int calcularPotencialDeAtaque(Personaje personaje, int personajeIndex) {
@@ -70,8 +74,10 @@ public class Ronda {
 
     }
 
+    //Como solo puede cambiar la salud del atacado, sera la que comprobemos para verificar si ha terminado el combate.
+    //La del atacante no va a ser nunca 0 (o no deberia entrar a una ronda sin salud)
     public boolean verificarFinCombate() {
-        return Atacante.getSalud() == 0 || Atacante.getSalud() == 0;
+        return Atacado.getSalud() == 0;
     }
 
     private void setEstrategia(EstrategiaPotencial strategyAtacante, EstrategiaPotencial strategyAtacado ) {
@@ -80,13 +86,33 @@ public class Ronda {
     }
 
     public void reducirSalud() {
-        Atacado.setSalud(Atacado.getSalud() - 1);
+        if (Atacante.hasEsbirros()){
+            int l = Atacante.getEsbirros().size();
+            EsbirroBase esbirro = Atacante.getEsbirros().get(l - 1);
+            System.out.println("¡ " + nombreAtacante + " ha inflingido daño a un esbirro de " + nombreAtacado  + " !");
+            esbirro.recibirDaño();
+
+        }
+        else{
+            Atacado.setSalud(Atacado.getSalud() - 1);
+            System.out.println("¡ " + nombreAtacante + " ha inflingido 1 punto de daño a " + nombreAtacado + "!");
+            System.out.println("La salaud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
+        }
+
     }
 
-
-    public void ejecutarRonda(){
+    public boolean ejecutarRonda(){
+        System.out.println();
+        System.out.println("¡Comienza la ronda " + NumeroRonda + " !");
+        // Si bien el enunciado pide los potenciales de cada tipo para cada personaje,
+        // no tiene sentido calcular el potencial de defensa del atacante ni el potencial de
+        // ataque del atacado, pues son datos que no se van a utilizar.
         PotencialAtaqueP1 = calcularPotencialDeAtaque(Atacante, 1);
-        PotencialDefensaP1 = calcularPotencialDeDefensa(Atacado, 2);
+        PotencialDefensaP2 = calcularPotencialDeDefensa(Atacado, 2);
+
+        System.out.println(nombreAtacante + " ataca a " + nombreAtacado);
+        System.out.println("El potencial de ataque de " + nombreAtacante + " es de " + PotencialAtaqueP1);
+        System.out.println("El potencial de defensa de " + nombreAtacado + " es de " + PotencialDefensaP2);
 
         Random random = new Random();
         int totalAtaque = 0;
@@ -114,9 +140,23 @@ public class Ronda {
             }
         }
 
+        System.out.println(nombreAtacante + " ha obtenido un ataque de " + totalAtaque);
+        System.out.println((nombreAtacado) + " ha obtenido una defensa de " + totalDefensa);
+
         if (totalAtaque >= totalDefensa){
             reducirSalud();
+
         }
+        else{
+            System.out.println("¡ " + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");
+        }
+
+        if (verificarFinCombate()){
+            System.out.println("¡ " + nombreAtacado + " ha caido!");
+            System.out.println("¡La victoria es para " + nombreAtacante + "! ");
+        }
+
+        return verificarFinCombate();
 
     }
 

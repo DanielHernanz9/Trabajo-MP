@@ -38,12 +38,13 @@ public class EsbirrosComposite extends EsbirroBase {
     public int recibirDaño() {
         if (!childrenComposite.isEmpty()) {
             EsbirroBase lastEsbirro = childrenComposite.get(childrenComposite.size() - 1);
-            lastEsbirro.recibirDaño();
-
+            lastEsbirro.setSalud(lastEsbirro.getSalud() - 1);
+            System.out.println("La salud de " + lastEsbirro + " ahora es de " + lastEsbirro.getSalud());
             if (lastEsbirro.getSalud() <= 0) {
                 childrenComposite.remove(lastEsbirro);
             }
         }
+
         return childrenComposite.size();
     }
 }
