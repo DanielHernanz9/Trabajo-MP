@@ -3,6 +3,7 @@ package Grupo6.src.App;
 import Grupo6.src.Combate.Combate;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
+import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -19,6 +20,7 @@ public class JuegoCombateManager {
     private final ArrayList<Combate> combates;
     private int registro;
     private SingleStorage storage;
+    private FactoryPersonaje factory;
 
     /**
      * Constructor por defecto de JuegoCombateManager.
@@ -38,9 +40,11 @@ public class JuegoCombateManager {
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
-
+        Usuario user = null;
         int i=0;
-        Usuario user=usuarios.get(i);
+        if (i < usuarios.size()){
+            user=usuarios.get(i);
+        }
 
         while (i < usuarios.size() && (!encontrado)) {
 
@@ -362,5 +366,8 @@ public class JuegoCombateManager {
         this.jugador1 = jugador;
     }
 
+    public void setJugador2(Jugador jugador){
+        this.jugador2 = jugador;
+    }
 
 }

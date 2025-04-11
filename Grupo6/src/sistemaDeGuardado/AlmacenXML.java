@@ -56,7 +56,7 @@ public class AlmacenXML implements interfazAlmacen {
             XMLDecoder decoder = new XMLDecoder(
                     new BufferedInputStream(new FileInputStream(XMLUsuarios))
             );
-            if (!(XMLUsuarios.length() == 0)){
+            if (XMLUsuarios.length() > 0){
                 //Sacamos los usuarios del archivo XML
                 usuarios = (ArrayList<Usuario>) decoder.readObject();
 
