@@ -50,6 +50,8 @@ public class StorageAdapter implements interfazAlmacen {
         Adapter.saveList(list,route);
     }
 
-
+    public ArrayList<Jugador> loadFromXML(String ruta){
+        return Adapter.loadFromXML(ruta);
+    }
 
 }

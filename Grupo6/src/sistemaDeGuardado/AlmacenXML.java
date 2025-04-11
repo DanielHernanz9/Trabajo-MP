@@ -16,8 +16,10 @@ public class AlmacenXML implements interfazAlmacen {
 
     private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
     private File XMLjugadores = new File("src/sistemaDeGuardado/Jugadores.xml");
-    private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
-    private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Desafios.xml");
+    private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+    private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
+    private File XMLRanking= new File("Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
+
     /**
      * Default constructor
      */
@@ -72,7 +74,7 @@ public class AlmacenXML implements interfazAlmacen {
             }
             //Si no encontramos un archivo lo creamos
             else{
-                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
             }
 
         } catch (FileNotFoundException e) {
@@ -96,7 +98,7 @@ public class AlmacenXML implements interfazAlmacen {
             }
             //Si no encontramos un archivo lo creamos
             else{
-                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Desafios.xml");
+                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
             }
 
         } catch (FileNotFoundException e) {
@@ -105,7 +107,33 @@ public class AlmacenXML implements interfazAlmacen {
         return desafios;
     }
 
-    //Metodo para guardar usuarios en el archivo XML
+    public ArrayList<Jugador> loadFromXML(String ruta){
+        ArrayList<Jugador> jugadores = new ArrayList<>();
+        File route= new File(ruta);
+        try {
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(route))
+            );
+            if (route.length() > 0){
+                //Sacamos los usuarios del archivo XML
+                jugadores = (ArrayList<Jugador>) decoder.readObject();
+
+                //Cerramos el decoder
+                decoder.close();
+            }
+            //Si no encontramos un archivo lo creamos
+            else{
+                FileOutputStream output = new FileOutputStream(ruta);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return jugadores;
+    }
+
+
+    //METODO PARA GUARDAR LISTAS EN UN ARCHIVO XML
     public void saveList(ArrayList list, String route) {
         //Vaciamos el fichero para evitar duplicados
         try{

@@ -19,9 +19,10 @@ import java.util.ArrayList;
 public class SingleStorage {
 
     private static SingleStorage Instance;
+    private interfazAlmacen almacenAdapter;
 
     private SingleStorage() {
-
+        almacenAdapter= new StorageAdapter();
     }
 
 
@@ -40,21 +41,20 @@ public class SingleStorage {
     }
 
     public ArrayList<Usuario> loadUsers(){
-        interfazAlmacen almacenAdapter= new StorageAdapter();
-
         return ((StorageAdapter) almacenAdapter).loadUsers();
     }
 
     public ArrayList<Desafio> loadChallenges(){
-        interfazAlmacen almacenAdapter= new StorageAdapter();
 
         return ((StorageAdapter) almacenAdapter).loadChallenges();
     }
 
     public void saveList(ArrayList Users, String route) {
-        interfazAlmacen almacenAdapter= new StorageAdapter();
         ((StorageAdapter) almacenAdapter).saveList(Users, route);
 
+    }
+    public ArrayList<Jugador> loadFromXML(String ruta){
+        return ((StorageAdapter) almacenAdapter).loadFromXML(ruta);
     }
 
 }

@@ -293,7 +293,7 @@ public class JuegoCombateManager {
             int index = usuarios.indexOf(jugador1);
             usuarios.remove(index);
             usuarios.add(jugador1);
-            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
         }
@@ -347,7 +347,7 @@ public class JuegoCombateManager {
             System.out.println("Nuevo jugador registrado: " + nuevo.getNombre());
 
             //Actualizamos los usuarios guardados en el archivo XML
-            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
         }
     }
 

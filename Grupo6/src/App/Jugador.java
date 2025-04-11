@@ -142,7 +142,7 @@ public class Jugador extends Usuario {
             ArrayList<Desafio> listaDesafios = new ArrayList<>();
             listaDesafios.add(desafio);
             SingleStorage storage = SingleStorage.getInstance();
-            storage.saveList(listaDesafios, "Grupo6/src/sistemaDeGuardado/Desafios.xml");
+            storage.saveList(listaDesafios, "Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
             // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
             System.out.println(this.getNombre() + " ha desafiado a " + oponente.getNombre());
         } else {
