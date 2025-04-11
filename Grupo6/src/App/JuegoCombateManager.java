@@ -357,4 +357,4 @@ public class JuegoCombateManager {
         this.jugador2 = jugador;
     }
 
-}
+}//a
