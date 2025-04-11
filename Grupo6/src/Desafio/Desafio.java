@@ -60,4 +60,12 @@ public class Desafio {
     public String getName(Jugador jugador1) {
         return null;
     }
+
+    public Jugador getJugador1() {
+        return null;
+    }
+
+    public Jugador getJugador2() {
+        return null;
+    }
 }

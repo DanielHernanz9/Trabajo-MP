@@ -3,7 +3,6 @@ package Grupo6.src.App;
 import Grupo6.src.Combate.Combate;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
-import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -13,7 +12,6 @@ import java.util.Scanner;
 
 public class JuegoCombateManager {
 
-    private FactoryPersonaje factory;
     private ArrayList<Usuario> usuarios;
     private Jugador jugador1;
     private Jugador jugador2;
@@ -22,8 +20,10 @@ public class JuegoCombateManager {
     private int registro;
     private SingleStorage storage;
 
-    //Constructor por defecto de juegoCombateManager
-
+    /**
+     * Constructor por defecto de JuegoCombateManager.
+     * Inicializa las listas de combates y usuarios, y carga los datos de usuarios desde un archivo XML.
+     */
     public JuegoCombateManager() {
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
@@ -59,7 +59,10 @@ public class JuegoCombateManager {
 
     }
 
-    public void IniciarJuego(){
+    /**
+     * Inicia el juego y gestiona los menús de interacción con el usuario.
+     */
+    public void IniciarJuego() {
         System.out.println("¡Bienvenido!");
         IniciarProcesoRegistro();
         Scanner sc = new Scanner(System.in);
@@ -68,20 +71,23 @@ public class JuegoCombateManager {
             System.out.println("\n¿Menú de quién deseas ver?");
             System.out.println("1. Jugador\n2. Operador\n3. Salir");
             int opcion = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine();  // Limpiar el buffer de entrada
 
             switch (opcion) {
                 case 1 -> MostrarMenuJugador();
                 case 2 -> MostrarMenuOperador();
                 case 3 -> {
                     System.out.println("Saliendo del juego...");
-                    return;
+                    return;  // Sale del ciclo infinito
                 }
                 default -> System.out.println("Opción inválida.");
             }
         }
     }
 
+    /**
+     * Muestra el menú de opciones para el operador.
+     */
     public void MostrarMenuOperador() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -91,34 +97,44 @@ public class JuegoCombateManager {
             System.out.println("3. Desbloquear Jugador");
             System.out.println("4. Volver");
             int opcion = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine();  // Limpiar el buffer de entrada
 
             switch (opcion) {
                 case 1 -> gestionarDesafios();
-                case 2 -> {
-                    System.out.print("Nombre del jugador a bloquear: ");
-                    String nombre = sc.nextLine();
-                    Jugador j = buscarJugador(nombre);
-                    if (j != null) bloquearJugadores(j);
-                }
-                case 3 -> {
-                    System.out.print("Nombre del jugador a desbloquear: ");
-                    String nombre = sc.nextLine();
-                    Jugador j = buscarJugador(nombre);
-                    if (j != null) desbloquearJugadores(j);
-                }
+                case 2 -> bloquearDesbloquearJugador(sc, true);
+                case 3 -> bloquearDesbloquearJugador(sc, false);
                 case 4 -> { return; }
                 default -> System.out.println("Opción inválida.");
             }
         }
     }
 
+    /**
+     * Bloquea o desbloquea a un jugador según la opción seleccionada.
+     */
+    private void bloquearDesbloquearJugador(Scanner sc, boolean bloquear) {
+        System.out.print("Nombre del jugador: ");
+        String nombre = sc.nextLine();
+        Jugador j = buscarJugador(nombre);
+        if (j != null) {
+            if (bloquear) {
+                bloquearJugadores(j);
+            } else {
+                desbloquearJugadores(j);
+            }
+        }
+    }
+
+    /**
+     * Muestra el menú de opciones para el jugador.
+     */
     public void MostrarMenuJugador() {
         Scanner sc = new Scanner(System.in);
         while (true) {
 
-            //En el caso de que el jugador no tenga personajes asociados
-            if (jugador1.getPersonaje()==null){
+            // Si el jugador no tiene personaje, se le obliga a registrar uno
+            assert jugador1 != null;
+            if (jugador1.getPersonaje() == null) {
                 System.out.println("No has seleccionado ningún personaje");
                 registrarPersonaje(jugador1);
             }
@@ -129,19 +145,17 @@ public class JuegoCombateManager {
             System.out.println("3. Cambiar Personaje");
             System.out.println("4. Volver");
             int opcion = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine();  // Limpiar el buffer de entrada
 
             switch (opcion) {
                 case 1 -> {
-                    //QUITAR ESTAS LINEAS CUANDO IMPLEMENTEMOS BIEN LOS JUGADORES
-                    jugador2= new Jugador();
-                    jugador2.registrarDatos("Pepe","pepardo","12341");
+                    // Crear jugador2 para simular un combate
+                    jugador2 = new Jugador();
+                    jugador2.registrarDatos("Pepe", "pepardo", "12341");
 
                     if (jugador1 != null && jugador2 != null) {
-
-
                         Desafio d = new Desafio(jugador1, jugador2);
-                        jugador2.desafiarUsuario(d);
+                        jugador2.desafiarUsuario(d, jugador1);
                         validarDesafio(d);
                         IniciarCombate();
                     } else {
@@ -159,17 +173,16 @@ public class JuegoCombateManager {
         }
     }
 
-    //crear numero determinado de operadores y que ya no haya más
-    public void IniciarProcesoRegistro(){
-
-        boolean registered=false;
+    /**
+     * Inicia el proceso de registro de un jugador nuevo.
+     */
+    public void IniciarProcesoRegistro() {
+        boolean registered = false;
         Scanner sc = new Scanner(System.in);
 
-        //Mientras no se haya registrado correctamente
-        while (!registered){
+        while (!registered) {
             System.out.println("¿Tienes cuenta? (s/n):");
             String tieneCuenta = sc.nextLine();
-
 
             System.out.println("Por favor introduzca sus credenciales: ");
             System.out.print("Usuario: ");
@@ -177,13 +190,11 @@ public class JuegoCombateManager {
             System.out.print("Contraseña: ");
             String pass = sc.nextLine();
 
-            if (tieneCuenta.equalsIgnoreCase("s")) {//Comparacion ignorando mayusculas o minusculas
+            if (tieneCuenta.equalsIgnoreCase("s")) {
                 for (Usuario u : usuarios) {
-                    //Si el inicio de sesion es correcto entonces:
                     if (u.getNombre().equals(nombre) && u.getPassword().equals(pass)) {
-                        registered=true;
                         if (u instanceof Operador) {
-                            System.out.println("Bienvenido Operador." + u.getName());
+                            System.out.println("Bienvenido Operador: " + u.getName());
                         } else if (u instanceof Jugador j) {
                             System.out.println("Bienvenido Jugador: " + u.getName());
                             if (jugador1 == null) setJugador1(j);
@@ -314,42 +325,12 @@ public class JuegoCombateManager {
         System.out.println("Jugador desbloqueado: " + jugador.getNombre());
     }
 
-    public Jugador getJugador1() {
-        return jugador1;
-    }
-
-    public void setJugador1(Jugador jugador1) {
-        this.jugador1 = jugador1;
-    }
-
-    public Jugador getJugador2() {
-        return jugador2;
-    }
-
-    public void setJugador2(Jugador jugador2) {
-        this.jugador2 = jugador2;
-    }
-
-    public void registrarUsuario(Jugador user) {
-        if (!usuarios.contains(user)) {
-            System.out.println("Usuario registrado: " + user.getNombre());
-            registrarPersonaje( user);
-            usuarios.add(user); //Vamos a guardar al jugador cuando ya tenga personaje.
-
-            //Actualizamos los usuarios guardados en el archivo XML
-            storage.saveUsers(usuarios);
-
-            System.out.println("El registro del usuario " + user.getNombre() + " ha sido exitoso.");
-        }
-        else {
-            System.out.println("El usuario ya está registrado.");
-        }
-    }
-
-    //metodo para buscar un jugador para banearle o hacer cosas por parte del admin
-    private Jugador buscarJugador(String nombre) {
-        for (Usuario u : usuarios) {
-            if (u instanceof Jugador j && j.getNombre().equals(nombre)) {
+    /**
+     * Busca un jugador por su nombre.
+     */
+    public Jugador buscarJugador(String nombre) {
+        for (Usuario usuario : usuarios) {
+            if (usuario instanceof Jugador j && j.getNombre().equals(nombre)) {
                 return j;
             }
         }
@@ -357,6 +338,29 @@ public class JuegoCombateManager {
         return null;
     }
 
+    /**
+     * Registra un nuevo jugador en el sistema.
+     */
+    public void registrarUsuario(Jugador nuevo) {
+        if (nuevo != null) {
+            // Añadir el nuevo jugador a la lista de usuarios
+            usuarios.add(nuevo);
+            System.out.println("Nuevo jugador registrado: " + nuevo.getNombre());
+
+            //Actualizamos los usuarios guardados en el archivo XML
+            storage.saveUsers(usuarios);
+        }
+    }
+
+    /**
+     * Guarda la lista de usuarios en un archivo XML.
+     */
+    /**
+     * Establece el jugador1.
+     */
+    public void setJugador1(Jugador jugador) {
+        this.jugador1 = jugador;
+    }
 
 
 }

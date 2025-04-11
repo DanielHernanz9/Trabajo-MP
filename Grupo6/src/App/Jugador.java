@@ -8,155 +8,229 @@ import java.util.Random;
 
 public class Jugador extends Usuario {
 
-    private String NumeroRegistro;
     private FactoryPersonaje FabricaPersonaje;
-    private ArrayList<Desafio> DesafiosPendientes;
-    private int [] HistorialOro;
+    private final ArrayList<Desafio> DesafiosPendientes;
+    private final int[] HistorialOro;
     private Personaje Personaje;
 
-    //Numero de registro, solo lo tienen los jugadores y es unico para cada jugador
+    // Número de registro, solo lo tienen los jugadores y es único para cada jugador
     private String RegNum;
 
     /**
-     * Default constructor
+     * Constructor por defecto de Jugador.
+     * Inicializa la lista de desafíos pendientes y el historial de oro.
      */
     public Jugador() {
-
         setRegNumber();
+        this.DesafiosPendientes = new ArrayList<>();  // Inicializa la lista de desafíos pendientes
+        this.HistorialOro = new int[10];  // Inicializa el historial de oro (puedes modificar el tamaño)
     }
 
-    public void registrarDatos(String nick, String nombre, String password){
+    /**
+     * Registra los datos del jugador.
+     * @param nick Nick del jugador.
+     * @param nombre Nombre real del jugador.
+     * @param password Contraseña del jugador.
+     */
+    public void registrarDatos(String nick, String nombre, String password) {
         this.Nombre = nombre;
-        this.Nick = String.valueOf(this.hashCode());
+        this.Nick = nick;  // Usa el nick proporcionado en lugar de generar un hash
         this.Password = password;
     }
 
-    private void setRegNumber(){
-        Random random= new Random();
-        StringBuilder regnum= new StringBuilder();
+    /**
+     * Genera un número de registro único para cada jugador.
+     * El formato es LNNLL (Letra-Número-Número-Letra-Letra).
+     */
+    private void setRegNumber() {
+        Random random = new Random();
 
-        //construimos el formato LNNLL
-        regnum.append((char) ('A' + random.nextInt(26)));
-        regnum.append(random.nextInt(10));
-        regnum.append(random.nextInt(10));
-        regnum.append((char) ('A' + random.nextInt(26)));
-        regnum.append((char) ('A' + random.nextInt(26)));
+        // Construye el formato LNNLL (Letra-Número-Número-Letra-Letra)
 
-        NumeroRegistro= regnum.toString();
-
-
+        // Asigna el número de registro generado al campo RegNum
+        this.RegNum = String.valueOf((char) ('A' + random.nextInt(26))) +
+                random.nextInt(10) +
+                random.nextInt(10) +
+                (char) ('A' + random.nextInt(26)) +
+                (char) ('A' + random.nextInt(26));
     }
 
-    public String getNombre(){
+    // Métodos getter y setter
+
+    /**
+     * Obtiene el nombre del jugador.
+     * @return Nombre del jugador.
+     */
+    public String getNombre() {
         return this.Nombre;
     }
 
-    public String getRegNum(){
+    /**
+     * Obtiene el número de registro del jugador.
+     * @return Número de registro del jugador.
+     */
+    public String getRegNum() {
         return this.RegNum;
     }
 
-    public String getNick(){
-        return this.Nick;
-    }
-
-    public String getPassword(){
-        return this.Password;
-    }
-
-    public void setNombre(String name){
+    /**
+     * Establece el nombre del jugador.
+     * @param name Nombre del jugador.
+     */
+    public void setNombre(String name) {
         this.Nombre = name;
     }
 
-    public void setPassword(String password){
+    /**
+     * Establece la contraseña del jugador.
+     * @param password Contraseña del jugador.
+     */
+    public void setPassword(String password) {
         this.Password = password;
     }
 
-    public Personaje getPersonaje(){
+    /**
+     * Obtiene el personaje asociado al jugador.
+     * @return Personaje del jugador.
+     */
+    public Personaje getPersonaje() {
         return this.Personaje;
     }
 
-    public void setPersonaje(Personaje p){
+    /**
+     * Establece el personaje para el jugador.
+     * @param p Personaje que se asignará al jugador.
+     */
+    public void setPersonaje(Personaje p) {
         this.Personaje = p;
     }
 
-    public void setNick(String nick){
+    /**
+     * Establece el nick del jugador.
+     * @param nick Nick del jugador.
+     */
+    public void setNick(String nick) {
         this.Nick = nick;
     }
 
     /**
-     * @param
+     * Registra un personaje utilizando una fábrica de personajes.
+     * @param factory Fábrica de personajes que se utilizará para crear el personaje.
      */
-    public void registrarPersonaje(FactoryPersonaje factory) {
-        Personaje = factory.createPersonaje();
+    public void registrarPersonaje(@org.jetbrains.annotations.NotNull FactoryPersonaje factory) {
+        Personaje = factory.createPersonaje();  // Crea un personaje usando la fábrica
     }
 
     /**
-     * 
+     * Da de baja el personaje actual del jugador.
+     * El personaje se elimina (queda como null).
      */
     public void darDeBajaPersonaje() {
-        Personaje = null;
+        Personaje = null;  // El personaje se elimina (queda como null)
     }
 
     /**
-     * @param
+     * Desafía a otro jugador añadiendo un desafío a la lista de pendientes.
+     * @param desafio Desafío a agregar.
+     * @param oponente Jugador al que se le desafía.
      */
-    public void desafiarUsuario(Desafio desafio) {
-        // TODO implement here
+    public void desafiarUsuario(Desafio desafio, Jugador oponente) {
+        // Verificamos que tanto el desafío como el oponente no sean nulos
+        if (desafio != null && oponente != null) {
+            // Agrega el desafío a la lista de desafíos pendientes del jugador
+            DesafiosPendientes.add(desafio);
+            // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
+            System.out.println(this.getNombre() + " ha desafiado a " + oponente.getNombre());
+        } else {
+            // Si el desafío o el oponente son nulos, se imprime un mensaje de error
+            System.out.println("El desafío o el oponente no son válidos.");
+        }
     }
 
     /**
-     * @param
+     * Acepta un desafío.
+     * @param desafio Desafío a aceptar.
      */
     public void aceptarDesafio(Desafio desafio) {
-        // TODO implement here
+        if (desafio != null) {
+            // Asumiendo que `desafio.getJugador1()` y `desafio.getJugador2()` retornan los jugadores involucrados en el desafío
+            Jugador jugador1 = desafio.getJugador1();
+            Jugador jugador2 = desafio.getJugador2();
+
+            System.out.println(this.getNombre() + " ha aceptado el desafío de " + jugador1.getNombre() + " contra " + jugador2.getNombre());
+
+            // Aquí puedes agregar más lógica relacionada con el combate.
+        } else {
+            System.out.println("Desafío no encontrado.");
+        }
     }
 
     /**
-     * @param
+     * Rechaza un desafío eliminándolo de la lista de pendientes.
+     * @param desafio Desafío a rechazar.
      */
     public void rechazarDesafio(Desafio desafio) {
-        // TODO implement here
+        if (desafio != null) {
+            DesafiosPendientes.remove(desafio);  // Elimina el desafío de la lista
+            System.out.println(this.getNombre() + " ha rechazado el desafío de " + desafio.getJugador1().getNombre());
+        } else {
+            System.out.println("Desafío no encontrado.");
+        }
     }
 
     /**
-     * 
+     * Consulta y muestra el historial de oro del jugador.
      */
     public void consultarHistorial() {
-        // TODO implement here
+        // Muestra el historial de oro del jugador
+        for (int i = 0; i < HistorialOro.length; i++) {
+            System.out.println("Mes " + (i + 1) + ": " + HistorialOro[i] + " de oro.");
+        }
     }
 
     /**
-     * @param
+     * Muestra una notificación de desafío pendiente.
      */
     public void mostrarNotificacionDesafio() {
-        // TODO implement here
-        // De momento he quitado el contexto que se le pasaba a estos metodos porque no sabemos exactamente qué
-        //datos necesitamos pasar a este metodo.
+        System.out.println("¡Tienes un nuevo desafío pendiente!");
+        // Aquí puedes agregar más detalles si es necesario.
     }
 
     /**
-     * @param
+     * Muestra el resultado del combate.
      */
     public void mostrarResultado() {
-        // TODO implement here
+        // Este bloque podría mostrar el resultado de un combate, por ejemplo:
+        System.out.println("El combate ha terminado.");
     }
 
     /**
-     * 
+     * Muestra una notificación de bloqueo de la cuenta.
      */
     public void mostrarNotificacionBloqueo() {
-        // TODO implement here
+        System.out.println("¡Tu cuenta ha sido bloqueada!");
     }
 
     /**
-     * 
+     * Muestra una notificación de desbloqueo de la cuenta.
      */
     public void mostrarNotificacionDesbloqueo() {
-        // TODO implement here
+        System.out.println("¡Tu cuenta ha sido desbloqueada!");
     }
 
-    // Getter para DesafiosPendientes
+    /**
+     * Getter para DesafiosPendientes.
+     * @return Lista de desafíos pendientes del jugador.
+     */
     public ArrayList<Desafio> getDesafiosPendientes() {
         return this.DesafiosPendientes;
+    }
+
+    /**
+     * Establece el número de registro del jugador.
+     * @param regNum Número de registro.
+     */
+    public void setRegNum(String regNum) {
+        RegNum = regNum;
     }
 }
