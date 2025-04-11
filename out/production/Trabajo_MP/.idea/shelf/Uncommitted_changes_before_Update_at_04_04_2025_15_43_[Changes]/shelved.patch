@@ -1,0 +1,121 @@
+Index: Grupo6/src/AlmacenXML.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport java.io.*;\r\nimport java.util.*;\r\n\r\n/**\r\n * \r\n */\r\npublic class AlmacenXML extends interfazAlmacen {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public AlmacenXML() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private String RutaXMLUsuario;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private String RutaXMLCombate;\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    public void registrarUsuario(void UserInfo user) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    public void addFight(void Combate combate) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Usuario User \r\n     * @return\r\n     */\r\n    public Personaje loadCharacterFromUser(void Usuario User) {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    public abstract void registrarUsuario(void UserInfo user);\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    public abstract void addFight(void Combate combate);\r\n\r\n    /**\r\n     * @param Usuario User \r\n     * @return\r\n     */\r\n    public abstract Personaje loadCharacterFromUser(void Usuario User);\r\n\r\n}
+===================================================================
+diff --git a/Grupo6/src/AlmacenXML.java b/Grupo6/src/AlmacenXML.java
+--- a/Grupo6/src/AlmacenXML.java	(revision fe78299790444347c09296c90b1ad4348cb16f75)
++++ b/Grupo6/src/AlmacenXML.java	(date 1742499464411)
+@@ -26,14 +26,14 @@
+     /**
+      * @param UserInfo user
+      */
+-    public void registrarUsuario(void UserInfo user) {
++    public void registrarUsuario( UserInfo user) {
+         // TODO implement here
+     }
+ 
+     /**
+      * @param Combate combate
+      */
+-    public void addFight(void Combate combate) {
++    public void addFight( Combate combate) {
+         // TODO implement here
+     }
+ 
+@@ -41,7 +41,7 @@
+      * @param Usuario User 
+      * @return
+      */
+-    public Personaje loadCharacterFromUser(void Usuario User) {
++    public Personaje loadCharacterFromUser( Usuario User) {
+         // TODO implement here
+         return null;
+     }
+@@ -49,12 +49,12 @@
+     /**
+      * @param UserInfo user
+      */
+-    public abstract void registrarUsuario(void UserInfo user);
++    public abstract void registrarUsuario( UserInfo user);
+ 
+     /**
+      * @param Combate combate
+      */
+-    public abstract void addFight(void Combate combate);
++    public abstract void addFight( Combate combate);
+ 
+     /**
+      * @param Usuario User 
+Index: Grupo6/src/StorageAdapterJson.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport java.io.*;\r\nimport java.util.*;\r\n\r\n/**\r\n * El cliente a través de la interfaz no sabe que esta usando un adaptador que traduce de xml a json por ejemplo\r\n * \r\n * SingleStorageAdapter es una clase para gestionar la inserción al archivo xml y además, se pueden agregar más clases de este estilo en el caso en que queramos traducir de xml a json o otras cosas\r\n */\r\npublic class StorageAdapterJson extends interfazAlmacen {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public StorageAdapterJson() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private AlmacenXML Adapter;\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    public void registrarUsuario(void UserInfo user) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    public void addFight(void Combate combate) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Usuario User \r\n     * @return\r\n     */\r\n    public Personaje loadCharacterFromUser(void Usuario User) {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    private void registrarUsuarioDesdeJson(void UserInfo user) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    private void addFightFromJson(void Combate combate) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    public abstract void registrarUsuario(void UserInfo user);\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    public abstract void addFight(void Combate combate);\r\n\r\n    /**\r\n     * @param Usuario User \r\n     * @return\r\n     */\r\n    public abstract Personaje loadCharacterFromUser(void Usuario User);\r\n\r\n}
+===================================================================
+diff --git a/Grupo6/src/StorageAdapterJson.java b/Grupo6/src/StorageAdapterJson.java
+--- a/Grupo6/src/StorageAdapterJson.java	(revision fe78299790444347c09296c90b1ad4348cb16f75)
++++ b/Grupo6/src/StorageAdapterJson.java	(date 1742499471092)
+@@ -23,14 +23,14 @@
+     /**
+      * @param UserInfo user
+      */
+-    public void registrarUsuario(void UserInfo user) {
++    public void registrarUsuario( UserInfo user) {
+         // TODO implement here
+     }
+ 
+     /**
+      * @param Combate combate
+      */
+-    public void addFight(void Combate combate) {
++    public void addFight( Combate combate) {
+         // TODO implement here
+     }
+ 
+@@ -38,7 +38,7 @@
+      * @param Usuario User 
+      * @return
+      */
+-    public Personaje loadCharacterFromUser(void Usuario User) {
++    public Personaje loadCharacterFromUser( Usuario User) {
+         // TODO implement here
+         return null;
+     }
+@@ -46,31 +46,31 @@
+     /**
+      * @param UserInfo user
+      */
+-    private void registrarUsuarioDesdeJson(void UserInfo user) {
++    private void registrarUsuarioDesdeJson( UserInfo user) {
+         // TODO implement here
+     }
+ 
+     /**
+      * @param Combate combate
+      */
+-    private void addFightFromJson(void Combate combate) {
++    private void addFightFromJson( Combate combate) {
+         // TODO implement here
+     }
+ 
+     /**
+      * @param UserInfo user
+      */
+-    public abstract void registrarUsuario(void UserInfo user);
++    public abstract void registrarUsuario( UserInfo user);
+ 
+     /**
+      * @param Combate combate
+      */
+-    public abstract void addFight(void Combate combate);
++    public abstract void addFight( Combate combate);
+ 
+     /**
+      * @param Usuario User 
+      * @return
+      */
+-    public abstract Personaje loadCharacterFromUser(void Usuario User);
++    public abstract Personaje loadCharacterFromUser( Usuario User);
+ 
+ }
+\ No newline at end of file
