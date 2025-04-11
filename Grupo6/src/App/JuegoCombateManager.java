@@ -49,7 +49,7 @@ public class JuegoCombateManager {
         while (i < usuarios.size() && (!encontrado)) {
 
             if (user.getName().equals(operador.getNombre())) {
-                    encontrado = true;
+                encontrado = true;
             }
             i++;
 
@@ -360,4 +360,4 @@ public class JuegoCombateManager {
         this.jugador2 = jugador;
     }
 
-}
+}//commit
