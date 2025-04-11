@@ -4,7 +4,6 @@ import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * El cliente a través de la interfaz no sabe que esta usando un adaptador que traduce de xml a json por ejemplo
@@ -27,8 +26,8 @@ public class StorageAdapter implements interfazAlmacen {
     /**
      *
      */
-    public void registrarUsuario( Usuario user) {
-        Adapter.registrarUsuario(user);
+    public void registrarJugador(Jugador jugador) {
+        Adapter.registrarJugador(jugador);
     }
 
     /**

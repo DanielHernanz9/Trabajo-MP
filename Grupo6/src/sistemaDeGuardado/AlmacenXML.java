@@ -1,4 +1,5 @@
 package Grupo6.src.sistemaDeGuardado;
+import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
 
@@ -12,31 +13,28 @@ import java.util.ArrayList;
  */
 public class AlmacenXML implements interfazAlmacen {
 
-    private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
-    private File XMLjugadores = new File("src/sistemaDeGuardado/Jugadores.xml");
+    private File XMLCombates = new File("Grupo6/src/sistemaDeGuardado/Combates.xml");
+    private File XMLjugadores = new File("Grupo6/src/sistemaDeGuardado/Jugadores.xml"); //Este archivo igual se puede borrar si despues no nos importa introducir los jugadores con los operadores en la misma lista
     private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
 
     /**
      * Default constructor
      */
     public AlmacenXML() {
+
     }
 
-
-    public void registrarUsuario(Usuario user) {
+    public void registrarJugador(Jugador jugador) {
         // TODO implement here
         try(XMLEncoder encoder = new XMLEncoder
                 (new BufferedOutputStream(new FileOutputStream(XMLjugadores)))) {
-            encoder.writeObject(user);
+            encoder.writeObject(jugador);
         }
         catch(FileNotFoundException ignorar){
 
         }
     }
 
-    /**
-     * @param
-     */
     public void addFight( Combate combate) {
         // TODO implement here
             try(XMLEncoder encoder = new XMLEncoder
@@ -90,13 +88,5 @@ public class AlmacenXML implements interfazAlmacen {
         }
     }
 
-    /**
-     * @param Usuario User 
-     * @return
-     */
-
 
 }
-    /**
-     * @param UserInfo user
-     */

@@ -5,8 +5,6 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,7 +16,6 @@ public class JuegoCombateManager {
     private Jugador jugador2;
     private final Operador operador;
     private final ArrayList<Combate> combates;
-    private int registro;
     private SingleStorage storage;
     private FactoryPersonaje factory;
 
@@ -69,8 +66,8 @@ public class JuegoCombateManager {
     public void IniciarJuego() {
         System.out.println("¡Bienvenido!");
         IniciarProcesoRegistro();
-        Scanner sc = new Scanner(System.in);
 
+        //Si se ha registrado un jugador nuevo mostramos el menu
         MostrarMenuJugador();
     }
 
@@ -285,9 +282,9 @@ public class JuegoCombateManager {
                 factory= new FactoryCazadores();
             }
             jugador1.registrarPersonaje(factory);
-            int index = usuarios.indexOf(jugador1);
-            usuarios.remove(index);
-            usuarios.add(index, jugador1);
+            //int index = usuarios.indexOf(jugador1);
+            //usuarios.remove(index);
+            usuarios.add(jugador1);
             storage.saveUsers(usuarios);
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
@@ -360,4 +357,4 @@ public class JuegoCombateManager {
         this.jugador2 = jugador;
     }
 
-}//commit
+}
