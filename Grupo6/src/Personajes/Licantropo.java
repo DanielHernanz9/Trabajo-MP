@@ -1,6 +1,6 @@
 package Grupo6.src.Personajes;
 
-import Grupo6.src.COSAS.Don;
+import Grupo6.src.HabilidadesEspeciales.Don;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 /**

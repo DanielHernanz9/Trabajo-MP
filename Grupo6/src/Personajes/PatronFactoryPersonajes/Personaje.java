@@ -1,9 +1,9 @@
 package Grupo6.src.Personajes.PatronFactoryPersonajes;
 
-import Grupo6.src.COSAS.*;
 import Grupo6.src.Desafio.*;
 import Grupo6.src.Equipo.*;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.Esbirro;
+import Grupo6.src.HabilidadesEspeciales.Habilidad_Especial;
 
 import java.util.List;
 

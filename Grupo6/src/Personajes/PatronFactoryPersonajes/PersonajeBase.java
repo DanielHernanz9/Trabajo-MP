@@ -3,7 +3,7 @@ package Grupo6.src.Personajes.PatronFactoryPersonajes;
 import Grupo6.src.Desafio.DebilidadHandler;
 import Grupo6.src.Desafio.FortalezaHandler;
 import Grupo6.src.Equipo.*;
-import Grupo6.src.COSAS.Habilidad_Especial;
+import Grupo6.src.HabilidadesEspeciales.Habilidad_Especial;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.*;
 
 import java.util.ArrayList;
@@ -23,6 +23,9 @@ public abstract class PersonajeBase implements Personaje {
     protected int Oro;
     protected int Salud;
     protected int Poder;
+
+    protected Modificador debilidad;
+    protected Modificador fortaleza;
 
     public Habilidad_Especial getHabilidad() {
         return Habilidad;

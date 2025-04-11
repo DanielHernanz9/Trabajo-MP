@@ -1,9 +1,9 @@
 package Grupo6.src.Personajes;
 
-import Grupo6.src.COSAS.*;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.FabricaDemonios;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.FabricaEsbirros;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.FabricaGhouls;
+import Grupo6.src.HabilidadesEspeciales.Disciplina;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;

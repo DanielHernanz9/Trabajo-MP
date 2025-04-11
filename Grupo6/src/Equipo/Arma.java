@@ -16,22 +16,10 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
  */
 public class Arma extends EquipoBase {
 
-    /**
-     * Default constructor
-     */
+    private int Manos;
+
     public Arma() {
     }
 
-    /**
-     * 
-     */
-    private int Manos;
-
-    /**
-     * 
-     */
-    public void getModificador() {
-        // TODO implement here
-    }
 
 }

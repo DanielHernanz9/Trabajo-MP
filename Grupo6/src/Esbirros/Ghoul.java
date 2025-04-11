@@ -12,9 +12,7 @@ public class Ghoul extends EsbirroBase {
         super();
     }
 
-    public int getDependencia() {
-        return dependencia;
-    }
+   public int getDependencia() {return dependencia;}
 
     public void setDependencia(int dependencia) {
         this.dependencia = dependencia;

@@ -24,9 +24,6 @@ public abstract class FabricaEquipo {
     /**
      * @return
      */
-    public Equipo createEquipo() {
-        // TODO implement here
-        return null;
-    }
+    public abstract Equipo createEquipo();
 
 }

@@ -5,10 +5,6 @@ public abstract class EsbirroBase implements Esbirro {
     protected String Nombre;
     private int Salud = 3;
 
-    public EsbirroBase() {
-
-    }
-
     /**
      * Conviene implementar aquí el metodo recibir daño ya que es comun para todos
      * tambien conviene implementar los getters y setters de los atributos comunes
