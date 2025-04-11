@@ -71,22 +71,7 @@ public class JuegoCombateManager {
         IniciarProcesoRegistro();
         Scanner sc = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("\n¿Menú de quién deseas ver?");
-            System.out.println("1. Jugador\n2. Operador\n3. Salir");
-            int opcion = sc.nextInt();
-            sc.nextLine();  // Limpiar el buffer de entrada
-
-            switch (opcion) {
-                case 1 -> MostrarMenuJugador();
-                case 2 -> MostrarMenuOperador();
-                case 3 -> {
-                    System.out.println("Saliendo del juego...");
-                    return;  // Sale del ciclo infinito
-                }
-                default -> System.out.println("Opción inválida.");
-            }
-        }
+        MostrarMenuJugador();
     }
 
     /**
@@ -143,7 +128,7 @@ public class JuegoCombateManager {
                 registrarPersonaje(jugador1);
             }
 
-            System.out.println("\nMenú Jugador:");
+            System.out.println("\nMenú Principal:");
             System.out.println("1. Desafiar y Combatir");
             System.out.println("2. Ver Ranking");
             System.out.println("3. Cambiar Personaje");
@@ -199,10 +184,13 @@ public class JuegoCombateManager {
                     if (u.getNombre().equals(nombre) && u.getPassword().equals(pass)) {
                         if (u instanceof Operador) {
                             System.out.println("Bienvenido Operador: " + u.getName());
+                            MostrarMenuOperador();
+
                         } else if (u instanceof Jugador j) {
                             System.out.println("Bienvenido Jugador: " + u.getName());
                             if (jugador1 == null) setJugador1(j);
                             else setJugador2(j);
+                            MostrarMenuJugador();
                         }
                         return;
                     }
@@ -297,8 +285,10 @@ public class JuegoCombateManager {
                 factory= new FactoryCazadores();
             }
             jugador1.registrarPersonaje(factory);
-
-
+            int index = usuarios.indexOf(jugador1);
+            usuarios.remove(index);
+            usuarios.add(index, jugador1);
+            storage.saveUsers(usuarios);
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
         }
