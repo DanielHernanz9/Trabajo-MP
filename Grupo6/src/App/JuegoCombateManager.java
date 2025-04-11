@@ -34,8 +34,8 @@ public class JuegoCombateManager {
                 if (file.length() > 0) {
                     // Si el archivo tiene contenido, lo leemos
                     usuarios = (ArrayList<Usuario>) decoder.readObject();
+                    decoder.close();
                 }
-                decoder.close();
             } else {
                 // Si no existe el archivo, se crea uno nuevo vacío
                 new FileOutputStream("Usuarios.xml");
@@ -49,9 +49,12 @@ public class JuegoCombateManager {
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
-
+        Usuario user = null;
         int i=0;
-        Usuario user=usuarios.get(i);
+        if (i < usuarios.size()){
+            user=usuarios.get(i);
+        }
+
 
         while (i < usuarios.size() && (!encontrado)) {
 

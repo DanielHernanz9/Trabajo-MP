@@ -13,7 +13,6 @@ public class Ghoul extends EsbirroBase {
     }
 
     public int getDependencia() {
-
         return dependencia;
     }
 

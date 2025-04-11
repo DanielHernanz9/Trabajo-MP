@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Usuarios.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +102,7 @@
       <workItem from="1744287663699" duration="68000" />
       <workItem from="1744319665202" duration="1444000" />
       <workItem from="1744359365274" duration="334000" />
+      <workItem from="1744359732013" duration="924000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -248,6 +247,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Arreglado error personajes y persistencia" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombate.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="file" />
