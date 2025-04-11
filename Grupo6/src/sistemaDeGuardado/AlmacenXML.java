@@ -1,4 +1,5 @@
 package Grupo6.src.sistemaDeGuardado;
+import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
 
@@ -34,6 +35,11 @@ public class AlmacenXML implements interfazAlmacen {
         }
     }
 
+    @Override
+    public void registrarJugador(Jugador jugador) {
+
+    }
+
     /**
      * @param
      */
@@ -49,9 +55,9 @@ public class AlmacenXML implements interfazAlmacen {
 
 
     }
-    public ArrayList<Usuario>  loadUsersFromXML(){
 
-        ArrayList<Usuario> usuarios=new ArrayList<>();
+    public ArrayList<Usuario>  loadUsersFromXML(){
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         try {
             XMLDecoder decoder = new XMLDecoder(
                     new BufferedInputStream(new FileInputStream(XMLUsuarios))
@@ -75,14 +81,14 @@ public class AlmacenXML implements interfazAlmacen {
     }
 
     //Metodo para guardar usuarios en el archivo XML
-    public void saveUsers(ArrayList usuarios, String route) {
+    public void saveList(ArrayList list, String route) {
         //Vaciamos el fichero para evitar duplicados
         try{
             FileOutputStream fos = new FileOutputStream(route);
 
             XMLEncoder encoder = new XMLEncoder(
                     new BufferedOutputStream(fos));
-            encoder.writeObject(usuarios);
+            encoder.writeObject(list);
             encoder.close();
         }
         catch (IOException e){

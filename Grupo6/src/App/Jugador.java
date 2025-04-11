@@ -13,7 +13,6 @@ public class Jugador extends Usuario {
     private final int[] HistorialOro;
     private Personaje Personaje;
     private int Oro;
-    private String Nombre;
     private String RegNum; // Número de registro, solo lo tienen los jugadores y es único para cada jugador
 
     /**

@@ -34,12 +34,6 @@ public class SingleStorage {
 
     }
 
-
-    public void registrarUsuario(Usuario user) {
-       interfazAlmacen almacenAdapter= new StorageAdapter();
-       almacenAdapter.registrarUsuario(user);
-    }
-
     public Personaje loadCharacterFromUser(Usuario User) {
         // TODO implement here
         return null;
@@ -50,6 +44,7 @@ public class SingleStorage {
 
         return ((StorageAdapter) almacenAdapter).loadUsers();
     }
+
     public void saveList(ArrayList Users, String route) {
         interfazAlmacen almacenAdapter= new StorageAdapter();
         ((StorageAdapter) almacenAdapter).saveList(Users, route);
