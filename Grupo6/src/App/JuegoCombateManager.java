@@ -3,6 +3,7 @@ package Grupo6.src.App;
 import Grupo6.src.Combate.Combate;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
+import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -19,6 +20,7 @@ public class JuegoCombateManager {
     private final Operador operador;
     private final ArrayList<Combate> combates;
     private int registro;
+    private SingleStorage storage;
 
     //Constructor por defecto de juegoCombateManager
 
@@ -26,29 +28,13 @@ public class JuegoCombateManager {
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
 
-        try {
-            File file = new File("Usuarios.xml");
-            XMLDecoder decoder = new XMLDecoder(
-                    new BufferedInputStream(new FileInputStream(file))
-            );
-            if (!(file.length() == 0)){
-                //Sacamos los usuarios del archivo XML
-                usuarios = (ArrayList<Usuario>) decoder.readObject();
-
-                //Cerramos el decoder
-                decoder.close();
-            }
-            //Si no encontramos un archivo lo creamos
-            else{
-                FileOutputStream output = new FileOutputStream("Usuarios.xml");
-            }
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        storage=SingleStorage.getInstance();
 
         this.operador = new Operador(); // operador por defecto
         this.operador.registrarDatos("adminSupremo", "admin33", "12345");
+
+        //Cargamos los usuarios del disco
+        usuarios= storage.loadUsers();
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
@@ -296,8 +282,7 @@ public class JuegoCombateManager {
                 factory= new FactoryCazadores();
             }
             jugador1.registrarPersonaje(factory);
-            //Actualizamos los usuarios guardados en el archivo XML
-            //saveUserToFileXML(usuarios);
+
 
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
@@ -352,7 +337,7 @@ public class JuegoCombateManager {
             usuarios.add(user); //Vamos a guardar al jugador cuando ya tenga personaje.
 
             //Actualizamos los usuarios guardados en el archivo XML
-            saveUserToFileXML(usuarios);
+            storage.saveUsers(usuarios);
 
             System.out.println("El registro del usuario " + user.getNombre() + " ha sido exitoso.");
         }
@@ -372,23 +357,6 @@ public class JuegoCombateManager {
         return null;
     }
 
-    //Metodo para guardar usuarios en el archivo XML
-    private void saveUserToFileXML(ArrayList<Usuario> usuarios){
-
-        //Vaciamos el fichero para evitar duplicados
-        try{
-        FileOutputStream fos = new FileOutputStream("Usuarios.xml");
-
-            XMLEncoder encoder = new XMLEncoder(
-                    new BufferedOutputStream(fos));
-            encoder.writeObject(usuarios);
-            encoder.close();
-        }
-            catch (IOException e){
-            System.out.println(e.getMessage());
-        }
-
-    }
 
 
 }

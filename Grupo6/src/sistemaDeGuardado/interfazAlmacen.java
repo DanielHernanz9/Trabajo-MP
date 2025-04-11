@@ -10,7 +10,7 @@ public interface interfazAlmacen {
     /**
      * @param
      */
-    public abstract void registrarUsuario(Jugador jugador);
+    public abstract void registrarUsuario(Usuario user);
 
     /**
      * @param

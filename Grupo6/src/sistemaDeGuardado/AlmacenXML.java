@@ -1,18 +1,20 @@
 package Grupo6.src.sistemaDeGuardado;
+import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
-import Grupo6.src.App.Jugador;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.text.SimpleDateFormat;
+import java.beans.XMLDecoder;
+import java.io.*;
 import java.beans.XMLEncoder;
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 /**
  * 
  */
 public class AlmacenXML implements interfazAlmacen {
+
+    private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
+    private File XMLjugadores = new File("src/sistemaDeGuardado/Jugadores.xml");
+    private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
 
     /**
      * Default constructor
@@ -20,23 +22,12 @@ public class AlmacenXML implements interfazAlmacen {
     public AlmacenXML() {
     }
 
-    /**
-     * 
-     */
-    private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
 
-
-    /**
-     * 
-     */
-    private File XMLJugadores = new File("src/sistemaDeGuardado/Jugadores.xml");;
-
-
-    public void registrarUsuario(Jugador jugador) {
+    public void registrarUsuario(Usuario user) {
         // TODO implement here
         try(XMLEncoder encoder = new XMLEncoder
-                (new BufferedOutputStream(new FileOutputStream(XMLJugadores)))) {
-            encoder.writeObject(jugador);
+                (new BufferedOutputStream(new FileOutputStream(XMLjugadores)))) {
+            encoder.writeObject(user);
         }
         catch(FileNotFoundException ignorar){
 
@@ -57,6 +48,46 @@ public class AlmacenXML implements interfazAlmacen {
         }
 
 
+    }
+    public ArrayList<Usuario>  loadUsersFromXML(){
+
+        ArrayList<Usuario> usuarios=new ArrayList<>();
+        try {
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(XMLUsuarios))
+            );
+            if (!(XMLUsuarios.length() == 0)){
+                //Sacamos los usuarios del archivo XML
+                usuarios = (ArrayList<Usuario>) decoder.readObject();
+
+                //Cerramos el decoder
+                decoder.close();
+            }
+            //Si no encontramos un archivo lo creamos
+            else{
+                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return usuarios;
+    }
+
+    //Metodo para guardar usuarios en el archivo XML
+    public void saveUsers(ArrayList<Usuario> usuarios) {
+        //Vaciamos el fichero para evitar duplicados
+        try{
+            FileOutputStream fos = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+
+            XMLEncoder encoder = new XMLEncoder(
+                    new BufferedOutputStream(fos));
+            encoder.writeObject(usuarios);
+            encoder.close();
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
