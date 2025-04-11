@@ -1,0 +1,18 @@
+Index: Grupo6/src/App/Operador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.App;\r\n\r\nimport Handler;\r\n\r\n/**\r\n * \r\n */\r\npublic class Operador extends Usuario {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Operador() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Handler ValidadorDesafio;\r\n\r\n    /**\r\n     * @param Desafio \r\n     * @return\r\n     */\r\n    public Boolean validarDesafio(void Desafio) {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * @param Jugador\r\n     */\r\n    public void editarPersonaje(void Jugador) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Jugador\r\n     */\r\n    public void bloquearUsuario(void Jugador) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Jugador\r\n     */\r\n    public void desbloquearUsuario(void Jugador) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Jugador\r\n     */\r\n    public void desbloquearUsuario(void Jugador) {\r\n        // TODO implement here\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/App/Operador.java b/Grupo6/src/App/Operador.java
+--- a/Grupo6/src/App/Operador.java	(revision 1baf8313f14a59a26813fd3901abac6a7d060863)
++++ b/Grupo6/src/App/Operador.java	(date 1743778037178)
+@@ -1,6 +1,6 @@
+ package Grupo6.src.App;
+ 
+-import Handler;
++//import Handler;
+ 
+ /**
+  * 

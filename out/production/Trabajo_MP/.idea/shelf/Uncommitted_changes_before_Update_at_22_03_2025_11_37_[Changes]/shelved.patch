@@ -1,0 +1,34 @@
+Index: Grupo6/src/AlmacenXML.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport java.io.*;\r\nimport java.util.*;\r\n\r\n/**\r\n * \r\n */\r\npublic class AlmacenXML extends interfazAlmacen {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public AlmacenXML() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private String RutaXMLUsuario;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private String RutaXMLCombate;\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    public void registrarUsuario(void UserInfo user) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    public void addFight(void Combate combate) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param Usuario User \r\n     * @return\r\n     */\r\n    public Personaje loadCharacterFromUser(void Usuario User) {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * @param UserInfo user\r\n     */\r\n    public abstract void registrarUsuario(void UserInfo user);\r\n\r\n    /**\r\n     * @param Combate combate\r\n     */\r\n    public abstract void addFight(void Combate combate);\r\n\r\n    /**\r\n     * @param Usuario User \r\n     * @return\r\n     */\r\n    public abstract Personaje loadCharacterFromUser(void Usuario User);\r\n\r\n}
+===================================================================
+diff --git a/Grupo6/src/AlmacenXML.java b/Grupo6/src/AlmacenXML.java
+--- a/Grupo6/src/AlmacenXML.java	(revision fe78299790444347c09296c90b1ad4348cb16f75)
++++ b/Grupo6/src/AlmacenXML.java	(date 1742499515108)
+@@ -26,14 +26,14 @@
+     /**
+      * @param UserInfo user
+      */
+-    public void registrarUsuario(void UserInfo user) {
++    public void registrarUsuario(UserInfo user) {
+         // TODO implement here
+     }
+ 
+     /**
+      * @param Combate combate
+      */
+-    public void addFight(void Combate combate) {
++    public void addFight(Combate combate) {
+         // TODO implement here
+     }
+ 
+@@ -41,7 +41,7 @@
+      * @param Usuario User 
+      * @return
+      */
+-    public Personaje loadCharacterFromUser(void Usuario User) {
++    public Personaje loadCharacterFromUser(Usuario User) {
+         // TODO implement here
+         return null;
+     }

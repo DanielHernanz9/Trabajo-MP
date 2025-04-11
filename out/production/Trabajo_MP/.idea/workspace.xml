@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Usuarios.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="package-info" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarcosHM851&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DanielHernanz9/Trabajo-MP.git&quot;,
+    &quot;accountId&quot;: &quot;2cee57d8-0547-4d10-8b38-03c9339203fc&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2uapSjFf48pHmxC3e9xG3AyJ505" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JuegoCombate.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/IdeaProjects/TrabajoMP/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\grupo6" />
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\src\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="" />
+      <created>1742496540452</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742496540452</updated>
+      <workItem from="1742496541887" duration="2842000" />
+      <workItem from="1742639638758" duration="3911000" />
+      <workItem from="1743774057179" duration="4292000" />
+      <workItem from="1743779222462" duration="6729000" />
+      <workItem from="1744192254084" duration="6532000" />
+      <workItem from="1744273703413" duration="9426000" />
+      <workItem from="1744283537019" duration="3266000" />
+      <workItem from="1744287663699" duration="68000" />
+      <workItem from="1744319665202" duration="1444000" />
+      <workItem from="1744359365274" duration="334000" />
+    </task>
+    <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
+      <option name="closed" value="true" />
+      <created>1742643479783</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742643479783</updated>
+    </task>
+    <task id="LOCAL-00002" summary="He organizado en paquetes la mayoria de las clases">
+      <option name="closed" value="true" />
+      <created>1742643509998</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742643509998</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Factory Method para la creacion de esbirros.">
+      <option name="closed" value="true" />
+      <created>1743777693169</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743777693169</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Factory Method para la creacion de esbirros.">
+      <option name="closed" value="true" />
+      <created>1743777733585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743777733585</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Implementadas las jerarquías entre demonios y esbirros (compoiste)">
+      <option name="closed" value="true" />
+      <created>1743782328079</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743782328079</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implementado el inicio de los combates y las estrategias de calculo de potencial.">
+      <option name="closed" value="true" />
+      <created>1743785050556</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743785050556</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implementado el inicio de los combates y las estrategias de calculo de potencial.">
+      <option name="closed" value="true" />
+      <created>1743785118929</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743785118929</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implementado el inicio de los combates y las estrategias de calculo de potencial.">
+      <option name="closed" value="true" />
+      <created>1743785163111</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743785163111</updated>
+    </task>
+    <task id="LOCAL-00009" summary="arreglo de manager">
+      <option name="closed" value="true" />
+      <created>1743785624204</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743785624204</updated>
+    </task>
+    <task id="LOCAL-00010" summary="He avanzado con la implementacion de los combates y el funcionamiento de las rondas.">
+      <option name="closed" value="true" />
+      <created>1744198728465</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744198728465</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Terminada (o eso creo) la logica de los combates y las rondas">
+      <option name="closed" value="true" />
+      <created>1744276218551</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744276218551</updated>
+    </task>
+    <task id="LOCAL-00012" summary="La persistencia para los usuarios funciona correctamente. Ahora se guardan en un xml llamado Usuarios.xml en la raiz del proyecto. Se guardan todos los datos, incluidos personajes y esbirros">
+      <option name="closed" value="true" />
+      <created>1744287085358</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744287085358</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Añadido fichero necesario para que la persistencia pueda funcionar">
+      <option name="closed" value="true" />
+      <created>1744319928993</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744319928993</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Arreglado error personajes y persistencia">
+      <option name="closed" value="true" />
+      <created>1744321099144</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744321099144</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="He organizado en paquetes la mayoria de las clases" />
+    <MESSAGE value="Factory Method para la creacion de esbirros." />
+    <MESSAGE value="Implementadas las jerarquías entre demonios y esbirros (compoiste)" />
+    <MESSAGE value="Implementado el inicio de los combates y las estrategias de calculo de potencial." />
+    <MESSAGE value="arreglo de manager" />
+    <MESSAGE value="He avanzado con la implementacion de los combates y el funcionamiento de las rondas." />
+    <MESSAGE value="Terminada (o eso creo) la logica de los combates y las rondas" />
+    <MESSAGE value="La persistencia para los usuarios funciona correctamente. Ahora se guardan en un xml llamado Usuarios.xml en la raiz del proyecto. Se guardan todos los datos, incluidos personajes y esbirros" />
+    <MESSAGE value="Añadido fichero necesario para que la persistencia pueda funcionar" />
+    <MESSAGE value="Arreglado error personajes y persistencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglado error personajes y persistencia" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="file" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

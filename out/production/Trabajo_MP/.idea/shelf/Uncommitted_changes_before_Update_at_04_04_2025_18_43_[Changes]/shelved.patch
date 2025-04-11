@@ -1,0 +1,1035 @@
+Index: Grupo6/src/Personajes/Licántropo.java
+===================================================================
+diff --git a/Grupo6/src/Personajes/Licántropo.java b/Grupo6/src/Personajes/Licántropo.java
+deleted file mode 100644
+--- a/Grupo6/src/Personajes/Licántropo.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ /dev/null	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
+@@ -1,41 +0,0 @@
+-package Grupo6.src.Personajes;
+-
+-import Grupo6.src.COSAS.*;
+-import Grupo6.src.App.*;
+-import Grupo6.src.Combate.*;
+-import Grupo6.src.Desafio.*;
+-import Grupo6.src.DesafioNotify.*;
+-import Grupo6.src.Equipo.*;
+-import Grupo6.src.Esbirros.*;
+-import Grupo6.src.Personajes.*;
+-import Grupo6.src.sistemaDeGuardado.*;
+-import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+-
+-/**
+- * 
+- */
+-public class Licántropo extends PersonajeBase {
+-
+-    private Integer Rabia;
+-
+-    /**
+-     * Default constructor
+-     */
+-    public Licántropo() {
+-    }
+-
+-    /**
+-     * 
+-     */
+-
+-
+-    @Override
+-    public void hacerHabilidadEspecial() {
+-
+-    }
+-
+-    @Override
+-    public void atacar() {
+-
+-    }
+-}
+\ No newline at end of file
+Index: Grupo6/src/COSAS/Disciplina.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.COSAS;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n/**\r\n * \r\n */\r\npublic class Disciplina extends Habilidad_Especial {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Disciplina() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int Coste;\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/COSAS/Disciplina.java b/Grupo6/src/COSAS/Disciplina.java
+--- a/Grupo6/src/COSAS/Disciplina.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/COSAS/Disciplina.java	(date 1743784990482)
+@@ -10,20 +10,17 @@
+ import Grupo6.src.Personajes.*;
+ import Grupo6.src.sistemaDeGuardado.*;
+ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+-/**
+- * 
+- */
++
+ public class Disciplina extends Habilidad_Especial {
+-
+-    /**
+-     * Default constructor
+-     */
+-    public Disciplina() {
+-    }
+-
+-    /**
+-     * 
+-     */
+     private int Coste;
++    private int Ataque;
+ 
++    public Disciplina(int ataque, int coste) {
++        this.Ataque = ataque;
++        this.Coste = coste;
++    }
++
++    public int getAtaque(){
++        return this.Ataque;
++    }
+ }
+\ No newline at end of file
+Index: Grupo6/src/Combate/Ronda.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Combate;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n\r\n/**\r\n * \r\n */\r\npublic class Ronda {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Ronda() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private PersonajeBase Atacante;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private PersonajeBase Atacado;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int PotencialAtaqueJ1;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int PotencialAtaqueJ2;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private EstrategiaPotencial EstrategiaAtacante;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private EstrategiaPotencial EstrategiaAtacado;\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void reducirSalud() {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     * @return\r\n     */\r\n    public int calcularValorDeAtaque(int potencial) {\r\n        // TODO implement here\r\n        return 0;\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     * @return\r\n     */\r\n    public int calcularValorDeDefensa(int potencial) {\r\n        // TODO implement here\r\n        return 0;\r\n    }\r\n\r\n    /**\r\n     * @return\r\n     */\r\n    public boolean verificarFinCombate() {\r\n        // TODO implement here\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void setEstrategia(EstrategiaPotencial startegy) {\r\n        // TODO implement here\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Combate/Ronda.java b/Grupo6/src/Combate/Ronda.java
+--- a/Grupo6/src/Combate/Ronda.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Combate/Ronda.java	(date 1743784275563)
+@@ -11,50 +11,17 @@
+ import Grupo6.src.sistemaDeGuardado.*;
+ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+ 
+-/**
+- * 
+- */
+ public class Ronda {
+ 
+-    /**
+-     * Default constructor
+-     */
+     public Ronda() {
+     }
+ 
+-    /**
+-     * 
+-     */
+     private PersonajeBase Atacante;
+-
+-    /**
+-     * 
+-     */
+     private PersonajeBase Atacado;
+-
+-    /**
+-     * 
+-     */
+     private int PotencialAtaqueJ1;
+-
+-    /**
+-     * 
+-     */
+     private int PotencialAtaqueJ2;
+-
+-    /**
+-     * 
+-     */
+     private EstrategiaPotencial EstrategiaAtacante;
+-
+-    /**
+-     * 
+-     */
+     private EstrategiaPotencial EstrategiaAtacado;
+-
+-    /**
+-     * 
+-     */
+     public void reducirSalud() {
+         // TODO implement here
+     }
+Index: Grupo6/src/Personajes/Cazador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Personajes;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n\r\n/**\r\n * \r\n */\r\npublic class Cazador extends PersonajeBase {\r\n\r\n    private Integer Voluntad;\r\n\r\n    public Cazador() {\r\n\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n\r\n    @Override\r\n    public void hacerHabilidadEspecial() {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void atacar() {\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Personajes/Cazador.java b/Grupo6/src/Personajes/Cazador.java
+--- a/Grupo6/src/Personajes/Cazador.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Personajes/Cazador.java	(date 1743784683531)
+@@ -11,21 +11,15 @@
+ import Grupo6.src.sistemaDeGuardado.*;
+ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+ 
+-/**
+- * 
+- */
+ public class Cazador extends PersonajeBase {
+ 
+     private Integer Voluntad;
++    private Talento Talento;
+ 
+     public Cazador() {
+ 
+     }
+ 
+-    /**
+-     * 
+-     */
+-
+     @Override
+     public void hacerHabilidadEspecial() {
+ 
+@@ -35,4 +29,12 @@
+     public void atacar() {
+ 
+     }
++
++    public Talento getTalento(){
++        return this.Talento;
++    }
++
++    public int getVoluntad(){
++        return this.Voluntad;
++    }
+ }
+\ No newline at end of file
+Index: Grupo6/src/COSAS/Don.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.COSAS;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n\r\n/**\r\n * \r\n */\r\npublic class Don extends Habilidad_Especial {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Don() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int Coste;\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/COSAS/Don.java b/Grupo6/src/COSAS/Don.java
+--- a/Grupo6/src/COSAS/Don.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/COSAS/Don.java	(date 1743784278152)
+@@ -15,16 +15,18 @@
+  * 
+  */
+ public class Don extends Habilidad_Especial {
+-
++    private int Rabia;
++    private int Ataque;
+     /**
+      * Default constructor
+      */
+-    public Don() {
++    public Don(int rabia, int ataque) {
++        this.Rabia = rabia;
++        this.Ataque = ataque;
+     }
+ 
+-    /**
+-     * 
+-     */
+-    private int Coste;
++    public int getAtaque(){
++        return this.Ataque;
++    }
+ 
+ }
+\ No newline at end of file
+Index: Grupo6/src/Personajes/Licantropo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Personajes/Licantropo.java b/Grupo6/src/Personajes/Licantropo.java
+new file mode 100644
+--- /dev/null	(date 1743784278167)
++++ b/Grupo6/src/Personajes/Licantropo.java	(date 1743784278167)
+@@ -0,0 +1,41 @@
++package Grupo6.src.Personajes;
++
++import Grupo6.src.COSAS.Don;
++import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
++
++/**
++ * 
++ */
++public class Licantropo extends PersonajeBase {
++
++    private Integer Rabia;
++    private Don Don;
++
++    /**
++     * Default constructor
++     */
++    public Licantropo() {
++    }
++
++    /**
++     * 
++     */
++
++    @Override
++    public void hacerHabilidadEspecial() {
++
++    }
++
++    @Override
++    public void atacar() {
++
++    }
++
++    public Don getDon(){
++        return this.Don;
++    }
++
++    public int getRabia(){
++        return this.Rabia;
++    }
++}
+\ No newline at end of file
+Index: Grupo6/src/COSAS/Talento.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.COSAS;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n/**\r\n * \r\n */\r\npublic class Talento extends Habilidad_Especial {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Talento() {\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/COSAS/Talento.java b/Grupo6/src/COSAS/Talento.java
+--- a/Grupo6/src/COSAS/Talento.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/COSAS/Talento.java	(date 1743784594842)
+@@ -14,11 +14,17 @@
+  * 
+  */
+ public class Talento extends Habilidad_Especial {
++    private int Coste;
++    private int Ataque;
++
++    public Talento(int Ataque, int Coste) {
++        this.Ataque = Ataque;
++        this.Coste = Coste;
+ 
+-    /**
+-     * Default constructor
+-     */
+-    public Talento() {
++    }
++
++    public int getAtaque(){
++        return this.Ataque;
+     }
+ 
+ }
+\ No newline at end of file
+Index: Grupo6/src/Personajes/Vampiro.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Personajes;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n\r\n/**\r\n * \r\n */\r\npublic class Vampiro extends PersonajeBase {\r\n\r\n    private Integer Sangre;\r\n    private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO\r\n\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Vampiro() {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n\r\n\r\n    @Override\r\n    public void hacerHabilidadEspecial() {\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    public void atacar() {\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Personajes/Vampiro.java b/Grupo6/src/Personajes/Vampiro.java
+--- a/Grupo6/src/Personajes/Vampiro.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Personajes/Vampiro.java	(date 1743784990509)
+@@ -18,19 +18,11 @@
+ 
+     private Integer Sangre;
+     private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO
++    public Disciplina Disciplina;
+ 
+-
+-    /**
+-     * Default constructor
+-     */
+     public Vampiro() {
+     }
+ 
+-    /**
+-     * 
+-     */
+-
+-
+     @Override
+     public void hacerHabilidadEspecial() {
+ 
+@@ -41,4 +33,12 @@
+     public void atacar() {
+ 
+     }
++
++    public Disciplina getDisciplina(){
++        return this.Disciplina;
++    }
++
++    public int getValorequipo(){
++        return 0;
++    }
+ }
+\ No newline at end of file
+Index: Grupo6/src/Combate/Combate.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Combate;\r\n\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\nimport java.util.Date;\r\nimport java.util.ArrayList;\r\n\r\n/**\r\n * No he usado la estructura completa porque solo va a haber un tipo de combate, sino si que podriamos usar una interfaz como esta en el aula con el director, de todas formas hay que preguntar al profe si asi se puede usar\r\n * \r\n * Grupo6.src.Combate.Combate tiene muchos atributos y he intentado con el patron builder evitar hacer un constructor muy grande\r\n */\r\npublic class Combate {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Combate(Jugador jugador1, Jugador jugador2) {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Jugador Desafiante;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Jugador Desafiado;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int NumRondas;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Date FechaCombate;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Jugador Ganador;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Jugador JugadorSinEsbirrosDerrotados;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int OroGanado;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private ArrayList<Ronda> Rondas;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private PersonajeBase PersonajeDesafiante;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private PersonajeBase PersonajeDesafiado;\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void niciarCombate() {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void combate() {\r\n        // TODO implement here\r\n    }\r\n\r\n    public String getJugador1() {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    public String getJugador2() {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    public String getResultado() {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    public String getName(Jugador jugador1) {\r\n        return null;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Combate/Combate.java b/Grupo6/src/Combate/Combate.java
+--- a/Grupo6/src/Combate/Combate.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Combate/Combate.java	(date 1743784275578)
+@@ -11,68 +11,37 @@
+  * Grupo6.src.Combate.Combate tiene muchos atributos y he intentado con el patron builder evitar hacer un constructor muy grande
+  */
+ public class Combate {
+-
+-    /**
+-     * Default constructor
+-     */
+-    public Combate(Jugador jugador1, Jugador jugador2) {
+-    }
+-
+-    /**
+-     * 
+-     */
+     private Jugador Desafiante;
+-
+-    /**
+-     * 
+-     */
+     private Jugador Desafiado;
+-
+-    /**
+-     * 
+-     */
++    private JuegoCombateManager manager;
+     private int NumRondas;
+-
+-    /**
+-     * 
+-     */
+     private Date FechaCombate;
+-
+-    /**
+-     * 
+-     */
+     private Jugador Ganador;
+-
+-    /**
+-     * 
+-     */
+-    private Jugador JugadorSinEsbirrosDerrotados;
+-
+-    /**
+-     * 
+-     */
+     private int OroGanado;
+-
+-    /**
+-     * 
+-     */
+     private ArrayList<Ronda> Rondas;
+-
+-    /**
+-     * 
+-     */
+     private PersonajeBase PersonajeDesafiante;
+-
+-    /**
+-     * 
+-     */
+     private PersonajeBase PersonajeDesafiado;
+ 
+-    /**
+-     * 
+-     */
+-    public void niciarCombate() {
+-        // TODO implement here
++    public Combate(Jugador desafiante, Jugador desafiado) {
++        this.Desafiante = desafiante;
++        this.Desafiado = desafiado;
++        this.Rondas = new ArrayList<>();
++        this.NumRondas = 0;
++        this.Ganador = null;
++    }
++
++    public void IniciarCombate() {
++        if (Desafiante != null && Desafiado != null) {
++            System.out.println("Iniciando combate entre " + Desafiante + " y " + Desafiado);
++            Combate combate = new Combate(Desafiante, Desafiado);
++            manager.registrarCombate(combate);
++
++            while (Ganador == null){
++                Rondas.add(new Ronda());
++            }
++        } else {
++            System.out.println("No se han registrado suficientes jugadores.");
++        }
+     }
+ 
+     /**
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_24\" default=\"true\" project-jdk-name=\"21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/.idea/misc.xml	(date 1743784290055)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Grupo6/src/App/JuegoCombateManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.App;\r\n\r\nimport Grupo6.src.Combate.Combate;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;\r\nimport Grupo6.src.Desafio.Desafio;\r\nimport Grupo6.src.Personajes.*;\r\n\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.Scanner;\r\n\r\npublic class JuegoCombateManager {\r\n\r\n    private FactoryPersonaje factory;\r\n    private final ArrayList<Usuario> usuarios;\r\n    private Jugador jugador1;\r\n    private Jugador jugador2;\r\n    private final Operador operador;\r\n    private final ArrayList<Combate> combates;\r\n\r\n    public JuegoCombateManager() {\r\n        this.combates = new ArrayList<>();\r\n        this.usuarios = new ArrayList<>();\r\n        this.operador = new Operador(\"admin\", \"admin123\"); // operador por defecto\r\n        usuarios.add(operador); // registrar operador\r\n    }\r\n\r\n    public void IniciarJuego() {\r\n        IniciarProcesoRegistro();\r\n        Scanner sc = new Scanner(System.in);\r\n\r\n        while (true) {\r\n            System.out.println(\"\\n¿Menú de quién deseas ver?\");\r\n            System.out.println(\"1. Jugador\\n2. Operador\\n3. Salir\");\r\n            int opcion = sc.nextInt();\r\n            sc.nextLine();\r\n\r\n            switch (opcion) {\r\n                case 1 -> MostrarMenuJugador();\r\n                case 2 -> MostrarMenuOperador();\r\n                case 3 -> {\r\n                    System.out.println(\"Saliendo del juego...\");\r\n                    return;\r\n                }\r\n                default -> System.out.println(\"Opción inválida.\");\r\n            }\r\n        }\r\n    }\r\n\r\n    public void MostrarMenuOperador() {\r\n        Scanner sc = new Scanner(System.in);\r\n        while (true) {\r\n            System.out.println(\"\\nMenú Operador:\");\r\n            System.out.println(\"1. Validar Desafíos\");\r\n            System.out.println(\"2. Bloquear Jugador\");\r\n            System.out.println(\"3. Desbloquear Jugador\");\r\n            System.out.println(\"4. Volver\");\r\n            int opcion = sc.nextInt();\r\n            sc.nextLine();\r\n\r\n            switch (opcion) {\r\n                case 1 -> gestionarDesafios();\r\n                case 2 -> {\r\n                    System.out.print(\"Nombre del jugador a bloquear: \");\r\n                    String nombre = sc.nextLine();\r\n                    Jugador j = buscarJugador(nombre);\r\n                    if (j != null) bloquearJugadores(j);\r\n                }\r\n                case 3 -> {\r\n                    System.out.print(\"Nombre del jugador a desbloquear: \");\r\n                    String nombre = sc.nextLine();\r\n                    Jugador j = buscarJugador(nombre);\r\n                    if (j != null) desbloquearJugadores(j);\r\n                }\r\n                case 4 -> { return; }\r\n                default -> System.out.println(\"Opción inválida.\");\r\n            }\r\n        }\r\n    }\r\n\r\n    public void MostrarMenuJugador() {\r\n        Scanner sc = new Scanner(System.in);\r\n        while (true) {\r\n            System.out.println(\"\\nMenú Jugador:\");\r\n            System.out.println(\"1. Desafiar y Combatir\");\r\n            System.out.println(\"2. Ver Ranking\");\r\n            System.out.println(\"3. Cambiar Personaje\");\r\n            System.out.println(\"4. Volver\");\r\n            int opcion = sc.nextInt();\r\n            sc.nextLine();\r\n\r\n            switch (opcion) {\r\n                case 1 -> {\r\n                    if (jugador1 != null && jugador2 != null) {\r\n                        Desafio d = new Desafio(jugador1, jugador2);\r\n                        jugador2.agregarDesafio(d);\r\n                        validarDesafio(d);\r\n                        IniciarCombate();\r\n                    } else {\r\n                        System.out.println(\"Debe haber 2 jugadores registrados.\");\r\n                    }\r\n                }\r\n                case 2 -> System.out.println(\"Ranking: (funcionalidad pendiente)\");\r\n                case 3 -> {\r\n                    darDeBajaPersonaje(jugador1);\r\n                    registrarPersonaje(jugador1);\r\n                }\r\n                case 4 -> { return; }\r\n                default -> System.out.println(\"Opción inválida.\");\r\n            }\r\n        }\r\n    }\r\n\r\n    //crear numero determinado de operadores y que ya no haya más\r\n    public void IniciarProcesoRegistro() {\r\n        Scanner sc = new Scanner(System.in);\r\n        System.out.println(\"¿Tienes cuenta? (s/n):\");\r\n        String tieneCuenta = sc.nextLine();\r\n\r\n        System.out.print(\"Usuario: \");\r\n        String nombre = sc.nextLine();\r\n        System.out.print(\"Contraseña: \");\r\n        String pass = sc.nextLine();\r\n\r\n        if (tieneCuenta.equalsIgnoreCase(\"s\")) {\r\n            for (Usuario u : usuarios) {\r\n                if (u.getNombre().equals(nombre) && u.getPassword().equals(pass)) {\r\n                    if (u instanceof Operador) {\r\n                        System.out.println(\"Bienvenido Operador.\");\r\n                    } else if (u instanceof Jugador j) {\r\n                        System.out.println(\"Bienvenido Jugador.\");\r\n                        if (jugador1 == null) setJugador1(j);\r\n                        else setJugador2(j);\r\n                    }\r\n                    return;\r\n                }\r\n            }\r\n            System.out.println(\"Usuario no encontrado o contraseña incorrecta.\");\r\n        } else {\r\n            Jugador nuevo = new Jugador(nombre, pass);\r\n            registrarUsuario(nuevo);\r\n            registrarPersonaje(nuevo);\r\n            if (jugador1 == null) setJugador1(nuevo);\r\n            else setJugador2(nuevo);\r\n        }\r\n    }\r\n\r\n    public void IniciarCombate() {\r\n        if (jugador1 != null && jugador2 != null) {\r\n            System.out.println(\"Iniciando combate entre \" + jugador1.getNombre() + \" y \" + jugador2.getNombre());\r\n            Combate combate = new Combate(jugador1, jugador2);\r\n            registrarCombate(combate);\r\n            mostrarResultado(combate);\r\n        } else {\r\n            System.out.println(\"No se han registrado suficientes jugadores.\");\r\n        }\r\n    }\r\n\r\n    public void registrarUsuario(Usuario user) {\r\n        if (!usuarios.contains(user)) {\r\n            usuarios.add(user);\r\n            System.out.println(\"Usuario registrado: \" + user.getNombre());\r\n        } else {\r\n            System.out.println(\"El usuario ya está registrado.\");\r\n        }\r\n    }\r\n\r\n    public void darDeBajaUsuario(Usuario user) {\r\n        if (usuarios.contains(user)) {\r\n            usuarios.remove(user);\r\n            System.out.println(\"Usuario dado de baja: \" + user.getNombre());\r\n        }\r\n    }\r\n\r\n    public void registrarCombate(Combate combate) {\r\n        combates.add(combate);\r\n        System.out.println(\"Combate registrado entre: \" + combate.getName(jugador1) + \" y \" + combate.getName(jugador2));\r\n        try (FileWriter fw = new FileWriter(\"combates.txt\", true);\r\n             BufferedWriter bw = new BufferedWriter(fw)) {\r\n            bw.write(combate.toString() + \"\\n\");\r\n        } catch (IOException e) {\r\n            System.out.println(\"Error al guardar combate.\");\r\n        }\r\n    }\r\n\r\n    public void mostrarNotificacionDesafio(Desafio desafio) {\r\n        System.out.println(\"¡Nuevo desafío de: \" + desafio.getName(jugador1) + \" a \" + desafio.getName(jugador2));\r\n    }\r\n\r\n    public void mostrarResultado(Combate combate) {\r\n        System.out.println(\"Resultado del combate: \" + combate.getResultado());\r\n    }\r\n\r\n    public void gestionarDesafios() {\r\n        for (Usuario usuario : usuarios) {\r\n            if (usuario instanceof Jugador jugador) {\r\n                for (Desafio desafio : jugador.getDesafiosPendientes()) {\r\n                    mostrarNotificacionDesafio(desafio);\r\n                    validarDesafio(desafio);\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    public void registrarPersonaje(Jugador jugador) {\r\n        if (jugador != null) {\r\n            jugador.registrarPersonaje(factory);\r\n            System.out.println(\"Personaje registrado para el jugador: \" + jugador.getNombre());\r\n        }\r\n    }\r\n\r\n    public void darDeBajaPersonaje(Jugador jugador) {\r\n        if (jugador != null) {\r\n            jugador.darDeBajaPersonaje();\r\n            System.out.println(\"Personaje dado de baja para el jugador: \" + jugador.getNombre());\r\n        }\r\n    }\r\n\r\n    public void validarDesafio(Desafio desafio) {\r\n        if (operador.validarDesafio(desafio)) {\r\n            System.out.println(\"Desafío validado por el operador.\");\r\n        } else {\r\n            System.out.println(\"Desafío no válido.\");\r\n        }\r\n    }\r\n\r\n    public void bloquearJugadores(Jugador jugador) {\r\n        operador.bloquearUsuario(jugador);\r\n        System.out.println(\"Jugador bloqueado: \" + jugador.getNombre());\r\n    }\r\n\r\n    public void desbloquearJugadores(Jugador jugador) {\r\n        operador.desbloquearUsuario(jugador);\r\n        System.out.println(\"Jugador desbloqueado: \" + jugador.getNombre());\r\n    }\r\n\r\n    public Jugador getJugador1() {\r\n        return jugador1;\r\n    }\r\n\r\n    public void setJugador1(Jugador jugador1) {\r\n        this.jugador1 = jugador1;\r\n    }\r\n\r\n    public Jugador getJugador2() {\r\n        return jugador2;\r\n    }\r\n\r\n    public void setJugador2(Jugador jugador2) {\r\n        this.jugador2 = jugador2;\r\n    }\r\n\r\n    private Jugador buscarJugador(String nombre) {\r\n        for (Usuario u : usuarios) {\r\n            if (u instanceof Jugador j && j.getNombre().equals(nombre)) {\r\n                return j;\r\n            }\r\n        }\r\n        System.out.println(\"Jugador no encontrado.\");\r\n        return null;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/App/JuegoCombateManager.java b/Grupo6/src/App/JuegoCombateManager.java
+--- a/Grupo6/src/App/JuegoCombateManager.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/App/JuegoCombateManager.java	(date 1743784275516)
+@@ -1,13 +1,17 @@
+ package Grupo6.src.App;
+ 
+-import Grupo6.src.Combate.Combate;
+-import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;
+-import Grupo6.src.Desafio.Desafio;
++import Grupo6.src.COSAS.*;
++import Grupo6.src.App.*;
++import Grupo6.src.Combate.*;
++import Grupo6.src.Desafio.*;
++import Grupo6.src.DesafioNotify.*;
++import Grupo6.src.Equipo.*;
++import Grupo6.src.Esbirros.*;
+ import Grupo6.src.Personajes.*;
++import Grupo6.src.sistemaDeGuardado.*;
++import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+ 
+-import java.io.*;
+ import java.util.ArrayList;
+-import java.util.Scanner;
+ 
+ public class JuegoCombateManager {
+ 
+@@ -16,206 +20,96 @@
+     private Jugador jugador1;
+     private Jugador jugador2;
+     private final Operador operador;
+-    private final ArrayList<Combate> combates;
++    private ArrayList<Combate> combates;
+ 
++    // Constructor
+     public JuegoCombateManager() {
+         this.combates = new ArrayList<>();
+         this.usuarios = new ArrayList<>();
+-        this.operador = new Operador("admin", "admin123"); // operador por defecto
+-        usuarios.add(operador); // registrar operador
++        this.operador = new Operador();
+     }
+ 
++    // TODO Method para iniciar el juego y gestionar los combates
+     public void IniciarJuego() {
+-        IniciarProcesoRegistro();
+-        Scanner sc = new Scanner(System.in);
+-
+-        while (true) {
+-            System.out.println("\n¿Menú de quién deseas ver?");
+-            System.out.println("1. Jugador\n2. Operador\n3. Salir");
+-            int opcion = sc.nextInt();
+-            sc.nextLine();
+-
+-            switch (opcion) {
+-                case 1 -> MostrarMenuJugador();
+-                case 2 -> MostrarMenuOperador();
+-                case 3 -> {
+-                    System.out.println("Saliendo del juego...");
+-                    return;
+-                }
+-                default -> System.out.println("Opción inválida.");
+-            }
+-        }
+-    }
+-
+-    public void MostrarMenuOperador() {
+-        Scanner sc = new Scanner(System.in);
+-        while (true) {
+-            System.out.println("\nMenú Operador:");
+-            System.out.println("1. Validar Desafíos");
+-            System.out.println("2. Bloquear Jugador");
+-            System.out.println("3. Desbloquear Jugador");
+-            System.out.println("4. Volver");
+-            int opcion = sc.nextInt();
+-            sc.nextLine();
+-
+-            switch (opcion) {
+-                case 1 -> gestionarDesafios();
+-                case 2 -> {
+-                    System.out.print("Nombre del jugador a bloquear: ");
+-                    String nombre = sc.nextLine();
+-                    Jugador j = buscarJugador(nombre);
+-                    if (j != null) bloquearJugadores(j);
+-                }
+-                case 3 -> {
+-                    System.out.print("Nombre del jugador a desbloquear: ");
+-                    String nombre = sc.nextLine();
+-                    Jugador j = buscarJugador(nombre);
+-                    if (j != null) desbloquearJugadores(j);
+-                }
+-                case 4 -> { return; }
+-                default -> System.out.println("Opción inválida.");
+-            }
+-        }
+-    }
+-
+-    public void MostrarMenuJugador() {
+-        Scanner sc = new Scanner(System.in);
+-        while (true) {
+-            System.out.println("\nMenú Jugador:");
+-            System.out.println("1. Desafiar y Combatir");
+-            System.out.println("2. Ver Ranking");
+-            System.out.println("3. Cambiar Personaje");
+-            System.out.println("4. Volver");
+-            int opcion = sc.nextInt();
+-            sc.nextLine();
+-
+-            switch (opcion) {
+-                case 1 -> {
+-                    if (jugador1 != null && jugador2 != null) {
+-                        Desafio d = new Desafio(jugador1, jugador2);
+-                        jugador2.agregarDesafio(d);
+-                        validarDesafio(d);
+-                        IniciarCombate();
+-                    } else {
+-                        System.out.println("Debe haber 2 jugadores registrados.");
+-                    }
+-                }
+-                case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
+-                case 3 -> {
+-                    darDeBajaPersonaje(jugador1);
+-                    registrarPersonaje(jugador1);
+-                }
+-                case 4 -> { return; }
+-                default -> System.out.println("Opción inválida.");
+-            }
+-        }
+-    }
+-
+-    //crear numero determinado de operadores y que ya no haya más
+-    public void IniciarProcesoRegistro() {
+-        Scanner sc = new Scanner(System.in);
+-        System.out.println("¿Tienes cuenta? (s/n):");
+-        String tieneCuenta = sc.nextLine();
+-
+-        System.out.print("Usuario: ");
+-        String nombre = sc.nextLine();
+-        System.out.print("Contraseña: ");
+-        String pass = sc.nextLine();
+-
+-        if (tieneCuenta.equalsIgnoreCase("s")) {
+-            for (Usuario u : usuarios) {
+-                if (u.getNombre().equals(nombre) && u.getPassword().equals(pass)) {
+-                    if (u instanceof Operador) {
+-                        System.out.println("Bienvenido Operador.");
+-                    } else if (u instanceof Jugador j) {
+-                        System.out.println("Bienvenido Jugador.");
+-                        if (jugador1 == null) setJugador1(j);
+-                        else setJugador2(j);
+-                    }
+-                    return;
+-                }
+-            }
+-            System.out.println("Usuario no encontrado o contraseña incorrecta.");
+-        } else {
+-            Jugador nuevo = new Jugador(nombre, pass);
+-            registrarUsuario(nuevo);
+-            registrarPersonaje(nuevo);
+-            if (jugador1 == null) setJugador1(nuevo);
+-            else setJugador2(nuevo);
+-        }
+-    }
+-
+-    public void IniciarCombate() {
+         if (jugador1 != null && jugador2 != null) {
+-            System.out.println("Iniciando combate entre " + jugador1.getNombre() + " y " + jugador2.getNombre());
++            System.out.println("Iniciando combate entre " + jugador1 + " y " + jugador2);
+             Combate combate = new Combate(jugador1, jugador2);
+             registrarCombate(combate);
+-            mostrarResultado(combate);
++            // Aquí podrías implementar la lógica de combate, la determinación de ganador, etc.
+         } else {
+             System.out.println("No se han registrado suficientes jugadores.");
+         }
+     }
+ 
++    // Method para registrar al usuario
+     public void registrarUsuario(Usuario user) {
+         if (!usuarios.contains(user)) {
+             usuarios.add(user);
+-            System.out.println("Usuario registrado: " + user.getNombre());
++            System.out.println("Usuario registrado: " + user);
+         } else {
+             System.out.println("El usuario ya está registrado.");
+         }
+     }
+ 
++    // Method para dar de baja al usuario
+     public void darDeBajaUsuario(Usuario user) {
+         if (usuarios.contains(user)) {
+             usuarios.remove(user);
+-            System.out.println("Usuario dado de baja: " + user.getNombre());
++            System.out.println("Usuario dado de baja: " + user);
++        } else {
++            System.out.println("El usuario no está registrado.");
+         }
+     }
+ 
++    // TODO Method para registrar los combates
+     public void registrarCombate(Combate combate) {
+         combates.add(combate);
+-        System.out.println("Combate registrado entre: " + combate.getName(jugador1) + " y " + combate.getName(jugador2));
+-        try (FileWriter fw = new FileWriter("combates.txt", true);
+-             BufferedWriter bw = new BufferedWriter(fw)) {
+-            bw.write(combate.toString() + "\n");
+-        } catch (IOException e) {
+-            System.out.println("Error al guardar combate.");
+-        }
++        //hay que guardarlo en el almacen / fichero
++        System.out.println("Combate registrado entre: " + combate.getJugador1() + " y " + combate.getJugador2());
+     }
+ 
++    // TODO Métodos de interacción con los jugadores
+     public void mostrarNotificacionDesafio(Desafio desafio) {
+-        System.out.println("¡Nuevo desafío de: " + desafio.getName(jugador1) + " a " + desafio.getName(jugador2));
++        // Mostrar una notificación cuando un desafío sea enviado o aceptado
++        System.out.println("¡Nuevo desafío de: " + desafio.getDesafiante() + " a " + desafio.getDesafiado());
+     }
+ 
++    // Method para mostrar el resultado
+     public void mostrarResultado(Combate combate) {
+         System.out.println("Resultado del combate: " + combate.getResultado());
+     }
+ 
++    // TODO Method para manejar los desafíos entre jugadores
+     public void gestionarDesafios() {
+         for (Usuario usuario : usuarios) {
+             if (usuario instanceof Jugador jugador) {
+-                for (Desafio desafio : jugador.getDesafiosPendientes()) {
+-                    mostrarNotificacionDesafio(desafio);
+-                    validarDesafio(desafio);
++                if (!jugador.getDesafiosPendientes().isEmpty()) {
++                    for (Desafio desafio : jugador.getDesafiosPendientes()) {
++                        mostrarNotificacionDesafio(desafio);
++                        // Aquí podrías permitir que el jugador acepte o rechace el desafío
++                    }
+                 }
+             }
+         }
+     }
+ 
++    // Method de registro de personajes para los jugadores
+     public void registrarPersonaje(Jugador jugador) {
+         if (jugador != null) {
+             jugador.registrarPersonaje(factory);
+-            System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
++            System.out.println("Personaje registrado para el jugador: " + jugador);
+         }
+     }
+ 
++    // Method para dar de baja personajes para los jugadores
+     public void darDeBajaPersonaje(Jugador jugador) {
+         if (jugador != null) {
+             jugador.darDeBajaPersonaje();
+-            System.out.println("Personaje dado de baja para el jugador: " + jugador.getNombre());
++            System.out.println("Personaje dado de baja para el jugador: " + jugador);
+         }
+     }
+ 
++    // Method para que el operador valide desafíos
+     public void validarDesafio(Desafio desafio) {
+         if (operador.validarDesafio(desafio)) {
+             System.out.println("Desafío validado por el operador.");
+@@ -224,39 +118,35 @@
+         }
+     }
+ 
++    // Method para bloquear jugadores
+     public void bloquearJugadores(Jugador jugador) {
+         operador.bloquearUsuario(jugador);
+-        System.out.println("Jugador bloqueado: " + jugador.getNombre());
++        System.out.println("Jugador bloqueado: " + jugador);
+     }
+ 
++    // Method para desbloquear jugadores
+     public void desbloquearJugadores(Jugador jugador) {
+         operador.desbloquearUsuario(jugador);
+-        System.out.println("Jugador desbloqueado: " + jugador.getNombre());
++        System.out.println("Jugador desbloqueado: " + jugador);
+     }
+ 
++    // Method para obtener el jugador 1
+     public Jugador getJugador1() {
+         return jugador1;
+     }
+ 
++    // Method para establecer el jugador 1
+     public void setJugador1(Jugador jugador1) {
+         this.jugador1 = jugador1;
+     }
+ 
++    // Method para obtener el jugador 2
+     public Jugador getJugador2() {
+         return jugador2;
+     }
+ 
++    // Method para establecer el jugador 2
+     public void setJugador2(Jugador jugador2) {
+         this.jugador2 = jugador2;
+     }
+-
+-    private Jugador buscarJugador(String nombre) {
+-        for (Usuario u : usuarios) {
+-            if (u instanceof Jugador j && j.getNombre().equals(nombre)) {
+-                return j;
+-            }
+-        }
+-        System.out.println("Jugador no encontrado.");
+-        return null;
+-    }
+ }
+Index: Grupo6/src/App/JuegoCombate.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.App;\r\n\r\n/**\r\n * Clase principal para ejecutar el juego de combate.\r\n */\r\npublic class JuegoCombate {\r\n\r\n    /**\r\n     * Constructor por defecto.\r\n     */\r\n    public JuegoCombate() {\r\n    }\r\n\r\n    /**\r\n     * Método principal que inicia el juego.\r\n     */\r\n    public static void main(String[] args) {\r\n        JuegoCombateManager juegoCombateManager = new JuegoCombateManager();\r\n        juegoCombateManager.IniciarJuego();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/App/JuegoCombate.java b/Grupo6/src/App/JuegoCombate.java
+--- a/Grupo6/src/App/JuegoCombate.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/App/JuegoCombate.java	(date 1743784275547)
+@@ -19,4 +19,4 @@
+         juegoCombateManager.IniciarJuego();
+     }
+ 
+-}
++}
+\ No newline at end of file
+Index: Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Personajes.PatronFactoryPersonajes;\r\n\r\nimport Grupo6.src.Desafio.DebilidadHandler;\r\nimport Grupo6.src.Desafio.FortalezaHandler;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.Esbirro;\r\nimport Grupo6.src.COSAS.Habilidad_Especial;\r\n\r\nimport java.util.List;\r\n\r\n/**\r\n * \r\n */\r\npublic abstract class PersonajeBase implements Personaje {\r\n\r\n    protected String Nombre;\r\n\r\n    protected Habilidad_Especial Habilidad;\r\n\r\n    protected List<Arma> Armas;\r\n\r\n    protected Arma ArmaActiva1;\r\n\r\n    protected Arma ArmaActiva2;\r\n\r\n    protected List<Armadura> Armaduras;\r\n\r\n    protected Armadura ArmaduraActiva;\r\n\r\n    protected List<Esbirro> Esbirros;\r\n\r\n    protected Integer Oro;\r\n\r\n    protected Integer Health;\r\n\r\n    protected Integer Poder;\r\n\r\n    protected List<DebilidadHandler> Debilidades;\r\n\r\n    protected List<FortalezaHandler> Fortalezas;\r\n\r\n\r\n\r\n\r\n    public abstract void hacerHabilidadEspecial();\r\n\r\n    public abstract void atacar();\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java b/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java
+--- a/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java	(date 1743784275578)
+@@ -14,36 +14,25 @@
+ public abstract class PersonajeBase implements Personaje {
+ 
+     protected String Nombre;
+-
+     protected Habilidad_Especial Habilidad;
+-
+     protected List<Arma> Armas;
+-
+     protected Arma ArmaActiva1;
+-
+     protected Arma ArmaActiva2;
+-
+     protected List<Armadura> Armaduras;
+-
+     protected Armadura ArmaduraActiva;
+-
+     protected List<Esbirro> Esbirros;
+-
+     protected Integer Oro;
+-
+     protected Integer Health;
+-
+     protected Integer Poder;
+-
+     protected List<DebilidadHandler> Debilidades;
+-
+     protected List<FortalezaHandler> Fortalezas;
+ 
+ 
+-
+-
+     public abstract void hacerHabilidadEspecial();
+-
+     public abstract void atacar();
++    public boolean hasEsbirros(){
++        return Esbirros.isEmpty();
++    }
++    public int getPoder() { return this.Poder;}
+ 
+ }
+\ No newline at end of file
+Index: Grupo6/src/App/Jugador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.App;\r\nimport Grupo6.src.Desafio.Desafio;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;\r\n\r\nimport java.util.ArrayList;\r\n\r\n/**\r\n * \r\n */\r\npublic class Jugador extends Usuario {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public Jugador(String nombre, String pass) {\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    private Integer NumeroRegistro;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private FactoryPersonaje FabricaPersonaje;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private ArrayList<Desafio> DesafiosPendientes;\r\n\r\n    /**\r\n     * \r\n     */\r\n    private int [] HistorialOro;\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void registrarPersonaje(FactoryPersonaje factory) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void darDeBajaPersonaje() {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void desafiarUsuario(Desafio desafio) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void aceptarDesafio(Desafio desafio) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void rechazarDesafio(Desafio desafio) {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void consultarHistorial() {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void mostrarNotificacionDesafio() {\r\n        // TODO implement here\r\n        // De momento he quitado el contexto que se le pasaba a estos metodos porque no sabemos exactamente qué\r\n        //datos necesitamos pasar a este metodo.\r\n    }\r\n\r\n    /**\r\n     * @param\r\n     */\r\n    public void mostrarResultado() {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void mostrarNotificacionBloqueo() {\r\n        // TODO implement here\r\n    }\r\n\r\n    /**\r\n     * \r\n     */\r\n    public void mostrarNotificacionDesbloqueo() {\r\n        // TODO implement here\r\n    }\r\n\r\n    // Getter para DesafiosPendientes\r\n    public ArrayList<Desafio> getDesafiosPendientes() {\r\n        return this.DesafiosPendientes;\r\n    }\r\n\r\n    public String getNombre() {\r\n        // TODO implement here\r\n        return null;\r\n    }\r\n\r\n    public void agregarDesafio(Desafio d) {\r\n        // TODO implement here\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/App/Jugador.java b/Grupo6/src/App/Jugador.java
+--- a/Grupo6/src/App/Jugador.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/App/Jugador.java	(date 1743784278121)
+@@ -1,6 +1,15 @@
+ package Grupo6.src.App;
+-import Grupo6.src.Desafio.Desafio;
+-import Grupo6.src.Personajes.PatronFactoryPersonajes.FactoryPersonaje;
++
++import Grupo6.src.COSAS.*;
++import Grupo6.src.App.*;
++import Grupo6.src.Combate.*;
++import Grupo6.src.Desafio.*;
++import Grupo6.src.DesafioNotify.*;
++import Grupo6.src.Equipo.*;
++import Grupo6.src.Esbirros.*;
++import Grupo6.src.Personajes.*;
++import Grupo6.src.sistemaDeGuardado.*;
++import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+ 
+ import java.util.ArrayList;
+ 
+@@ -12,7 +21,7 @@
+     /**
+      * Default constructor
+      */
+-    public Jugador(String nombre, String pass) {
++    public Jugador() {
+     }
+ 
+     /**
+@@ -111,13 +120,4 @@
+     public ArrayList<Desafio> getDesafiosPendientes() {
+         return this.DesafiosPendientes;
+     }
+-
+-    public String getNombre() {
+-        // TODO implement here
+-        return null;
+-    }
+-
+-    public void agregarDesafio(Desafio d) {
+-        // TODO implement here
+-    }
+ }
+\ No newline at end of file
+Index: Grupo6/src/Combate/EstrategiaCazador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Combate;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n/**\r\n * \r\n */\r\npublic class EstrategiaCazador {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public EstrategiaCazador() {\r\n    }\r\n\r\n    /**\r\n     * @return\r\n     */\r\n    public int calcularPotencial() {\r\n        // TODO implement here\r\n        return 0;\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Combate/EstrategiaCazador.java b/Grupo6/src/Combate/EstrategiaCazador.java
+--- a/Grupo6/src/Combate/EstrategiaCazador.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Combate/EstrategiaCazador.java	(date 1743784683547)
+@@ -15,18 +15,11 @@
+  */
+ public class EstrategiaCazador {
+ 
+-    /**
+-     * Default constructor
+-     */
+     public EstrategiaCazador() {
+     }
+ 
+-    /**
+-     * @return
+-     */
+-    public int calcularPotencial() {
+-        // TODO implement here
+-        return 0;
++    public int calcularPotencial(Cazador cazador) {
++        return cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
+     }
+ 
+ }
+\ No newline at end of file
+Index: Grupo6/src/Combate/EstrategiaLicántropo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Combate;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n/**\r\n * \r\n */\r\npublic class EstrategiaLicántropo {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public EstrategiaLicántropo() {\r\n    }\r\n\r\n    /**\r\n     * @return\r\n     */\r\n    public int calcularPotencial() {\r\n        // TODO implement here\r\n        return 0;\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Combate/EstrategiaLicántropo.java b/Grupo6/src/Combate/EstrategiaLicántropo.java
+--- a/Grupo6/src/Combate/EstrategiaLicántropo.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Combate/EstrategiaLicántropo.java	(date 1743784278183)
+@@ -8,25 +8,18 @@
+ import Grupo6.src.Equipo.*;
+ import Grupo6.src.Esbirros.*;
+ import Grupo6.src.Personajes.*;
+-import Grupo6.src.sistemaDeGuardado.*;
+-import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
++
+ /**
+  * 
+  */
+ public class EstrategiaLicántropo {
+ 
+-    /**
+-     * Default constructor
+-     */
+     public EstrategiaLicántropo() {
++
+     }
+ 
+-    /**
+-     * @return
+-     */
+-    public int calcularPotencial() {
+-        // TODO implement here
+-        return 0;
++    public int calcularPotencial(Licantropo licantropo) {
++        return licantropo.getPoder() + licantropo.getDon().getAtaque() + licantropo.getRabia();
+     }
+ 
+ }
+\ No newline at end of file
+Index: Grupo6/src/Combate/EstrategiaVampiro.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grupo6.src.Combate;\r\n\r\nimport Grupo6.src.COSAS.*;\r\nimport Grupo6.src.App.*;\r\nimport Grupo6.src.Combate.*;\r\nimport Grupo6.src.Desafio.*;\r\nimport Grupo6.src.DesafioNotify.*;\r\nimport Grupo6.src.Equipo.*;\r\nimport Grupo6.src.Esbirros.*;\r\nimport Grupo6.src.Personajes.*;\r\nimport Grupo6.src.sistemaDeGuardado.*;\r\nimport Grupo6.src.Personajes.PatronFactoryPersonajes.*;\r\n/**\r\n * \r\n */\r\npublic class EstrategiaVampiro {\r\n\r\n    /**\r\n     * Default constructor\r\n     */\r\n    public EstrategiaVampiro() {\r\n    }\r\n\r\n    /**\r\n     * @return\r\n     */\r\n    public int calcularPotencial() {\r\n        // TODO implement here\r\n        return 0;\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Grupo6/src/Combate/EstrategiaVampiro.java b/Grupo6/src/Combate/EstrategiaVampiro.java
+--- a/Grupo6/src/Combate/EstrategiaVampiro.java	(revision 2519ddc0755092d80e092ad14480d76fcd81560b)
++++ b/Grupo6/src/Combate/EstrategiaVampiro.java	(date 1743784990498)
+@@ -10,23 +10,18 @@
+ import Grupo6.src.Personajes.*;
+ import Grupo6.src.sistemaDeGuardado.*;
+ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+-/**
+- * 
+- */
++
++
+ public class EstrategiaVampiro {
+ 
+-    /**
+-     * Default constructor
+-     */
+     public EstrategiaVampiro() {
+     }
+ 
+     /**
+      * @return
+      */
+-    public int calcularPotencial() {
+-        // TODO implement here
+-        return 0;
++    public int calcularPotencial(Vampiro vampiro) {
++        return vampiro.getPoder() + vampiro.getDisciplina().getAtaque() + vampiro.getValorEquipo();
+     }
+ 
+ }
+\ No newline at end of file
