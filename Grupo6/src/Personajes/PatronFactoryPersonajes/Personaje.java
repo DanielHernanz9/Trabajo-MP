@@ -1,17 +1,10 @@
 package Grupo6.src.Personajes.PatronFactoryPersonajes;
 
 import Grupo6.src.COSAS.*;
-import Grupo6.src.App.*;
-import Grupo6.src.Combate.*;
 import Grupo6.src.Desafio.*;
-import Grupo6.src.DesafioNotify.*;
 import Grupo6.src.Equipo.*;
-import Grupo6.src.Esbirros.*;
-import Grupo6.src.Personajes.*;
-import Grupo6.src.sistemaDeGuardado.*;
-import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+import Grupo6.src.Esbirros.PatronFactoryEsbirros.Esbirro;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -29,7 +22,7 @@ public interface Personaje {
     Arma getArmaActiva2();
     List<Armadura> getArmaduras();
     Armadura getArmaduraActiva();
-    List<EsbirroBase> getEsbirros();
+    List<Esbirro> getEsbirros();
     int getOro();
     int getPoder();
     int getSalud();
@@ -45,7 +38,7 @@ public interface Personaje {
     void setArmaActiva2(Arma armaActiva2);
     void setArmaduras(List<Armadura> armaduras);
     void setArmaduraActiva(Armadura armaduraActiva);
-    void setEsbirros(List<EsbirroBase> esbirros);
+    void setEsbirros(List<Esbirro> esbirros);
     void setOro(int oro);
     void setPoder(int poder);
     void setSalud(int salud);

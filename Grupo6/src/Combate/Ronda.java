@@ -1,15 +1,11 @@
 package Grupo6.src.Combate;
 
-import Grupo6.src.Esbirros.Esbirro;
-import Grupo6.src.Esbirros.EsbirroBase;
-import Grupo6.src.Esbirros.EsbirrosComposite;
+import Grupo6.src.Esbirros.PatronFactoryEsbirros.Esbirro;
 import Grupo6.src.Personajes.Cazador;
 import Grupo6.src.Personajes.Licantropo;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Personajes.Vampiro;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Ronda {
@@ -88,7 +84,7 @@ public class Ronda {
     public void reducirSalud() {
         if (Atacante.hasEsbirros()){
             int l = Atacante.getEsbirros().size();
-            EsbirroBase esbirro = Atacante.getEsbirros().get(l - 1);
+            Esbirro esbirro = Atacante.getEsbirros().get(l - 1);
             System.out.println("¡ " + nombreAtacante + " ha inflingido daño a un esbirro de " + nombreAtacado  + " !");
             esbirro.recibirDaño();
 

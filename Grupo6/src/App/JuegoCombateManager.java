@@ -49,7 +49,28 @@ public class JuegoCombateManager {
 
         this.operador = new Operador(); // operador por defecto
         this.operador.registrarDatos("adminSupremo", "admin33", "12345");
-        usuarios.add(operador); // registrar operador por defecto
+
+        //metemos el operador por defecto solo si no lo hemos metido antes
+        boolean encontrado=false;
+
+        int i=0;
+        Usuario user=usuarios.get(i);
+
+        while (i < usuarios.size() && (!encontrado)) {
+
+            if (user.getName().equals(operador.getNombre())) {
+                    encontrado = true;
+            }
+            i++;
+
+        }
+
+
+        //Si no esta en la lista de usuarios lo metemos
+        if (!encontrado){
+            usuarios.add(operador); // registrar operador por defecto
+        }
+
     }
 
     public void IniciarJuego(){

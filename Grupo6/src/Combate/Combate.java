@@ -1,7 +1,7 @@
 package Grupo6.src.Combate;
 
 import Grupo6.src.App.*;
-import Grupo6.src.Esbirros.EsbirroBase;
+import Grupo6.src.Esbirros.PatronFactoryEsbirros.Esbirro;
 import Grupo6.src.Esbirros.EsbirrosComposite;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import java.util.Date;
@@ -33,12 +33,12 @@ public class Combate {
         this.Ganador = null;
     }
 
-    public void configEsbirroSalud(List<EsbirroBase> listaEsbirros){
-        for (EsbirroBase esbirro: listaEsbirros){
+    public void configEsbirroSalud(List<Esbirro> listaEsbirros){
+        for (Esbirro esbirro: listaEsbirros){
             esbirro.setSalud(3);
             if (esbirro instanceof EsbirrosComposite){
-                List<EsbirroBase> listaSubordinados = ((EsbirrosComposite) esbirro).getChildren();
-                for (EsbirroBase subordinado: listaSubordinados){
+                List<Esbirro> listaSubordinados = ((EsbirrosComposite) esbirro).getChildren();
+                for (Esbirro subordinado: listaSubordinados){
                     configEsbirroSalud(listaSubordinados);
                     //Si los esbirros tienen subordinados, se llama de manera recusriva al metodo
                     //para inicializar la salud de los subordinados y los subordinados de los subordinados, etc.
