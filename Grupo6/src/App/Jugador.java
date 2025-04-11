@@ -2,6 +2,7 @@ package Grupo6.src.App;
 
 import Grupo6.src.Desafio.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -138,7 +139,10 @@ public class Jugador extends Usuario {
             // Agrega el desafío a la lista de desafíos pendientes del jugador
             Desafio desafio = new Desafio(this, oponente, oro);
             JuegoCombateManager manager = new JuegoCombateManager();
-            manager.getDesafiosPendientes().add(desafio);
+            ArrayList<Desafio> listaDesafios = new ArrayList<>();
+            listaDesafios.add(desafio);
+            SingleStorage storage = SingleStorage.getInstance();
+            storage.saveList(listaDesafios, "Grupo6/src/sistemaDeGuardado/Desafios.xml");
             // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
             System.out.println(this.getNombre() + " ha desafiado a " + oponente.getNombre());
         } else {
@@ -232,5 +236,9 @@ public class Jugador extends Usuario {
      */
     public void setRegNum(String regNum) {
         RegNum = regNum;
+    }
+
+    public int getOro() {
+        return Oro;
     }
 }

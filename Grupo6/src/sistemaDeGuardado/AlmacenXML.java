@@ -2,6 +2,7 @@ package Grupo6.src.sistemaDeGuardado;
 import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
+import Grupo6.src.Desafio.Desafio;
 
 import java.beans.XMLDecoder;
 import java.io.*;
@@ -16,7 +17,7 @@ public class AlmacenXML implements interfazAlmacen {
     private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
     private File XMLjugadores = new File("src/sistemaDeGuardado/Jugadores.xml");
     private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
-
+    private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Desafios.xml");
     /**
      * Default constructor
      */
@@ -78,6 +79,30 @@ public class AlmacenXML implements interfazAlmacen {
             throw new RuntimeException(e);
         }
         return usuarios;
+    }
+
+    public ArrayList<Desafio>  loadChallengesFromXML(){
+        ArrayList<Desafio> desafios = new ArrayList<>();
+        try {
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(XMLDesafios))
+            );
+            if (XMLDesafios.length() > 0){
+                //Sacamos los usuarios del archivo XML
+                desafios = (ArrayList<Desafio>) decoder.readObject();
+
+                //Cerramos el decoder
+                decoder.close();
+            }
+            //Si no encontramos un archivo lo creamos
+            else{
+                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Desafios.xml");
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return desafios;
     }
 
     //Metodo para guardar usuarios en el archivo XML

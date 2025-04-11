@@ -2,6 +2,7 @@ package Grupo6.src.sistemaDeGuardado;
 import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
+import Grupo6.src.Desafio.Desafio;
 
 import java.util.ArrayList;
 
@@ -39,6 +40,10 @@ public class StorageAdapter implements interfazAlmacen {
 
     public ArrayList<Usuario> loadUsers(){
        return Adapter.loadUsersFromXML();
+    }
+
+    public ArrayList<Desafio> loadChallenges(){
+        return Adapter.loadChallengesFromXML();
     }
 
     public void saveList(ArrayList list, String route) {

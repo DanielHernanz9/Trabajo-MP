@@ -45,6 +45,12 @@ public class SingleStorage {
         return ((StorageAdapter) almacenAdapter).loadUsers();
     }
 
+    public ArrayList<Desafio> loadChallenges(){
+        interfazAlmacen almacenAdapter= new StorageAdapter();
+
+        return ((StorageAdapter) almacenAdapter).loadChallenges();
+    }
+
     public void saveList(ArrayList Users, String route) {
         interfazAlmacen almacenAdapter= new StorageAdapter();
         ((StorageAdapter) almacenAdapter).saveList(Users, route);

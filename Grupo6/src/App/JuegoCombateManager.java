@@ -7,6 +7,7 @@ import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class JuegoCombateManager {
@@ -27,6 +28,7 @@ public class JuegoCombateManager {
     public JuegoCombateManager() {
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
+        this.desafiosPendientes = new ArrayList();
 
         storage=SingleStorage.getInstance();
 
@@ -35,6 +37,7 @@ public class JuegoCombateManager {
 
         //Cargamos los usuarios del disco
         usuarios= storage.loadUsers();
+        desafiosPendientes = storage.loadChallenges();
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
@@ -127,7 +130,7 @@ public class JuegoCombateManager {
             }
 
             System.out.println("\nMenú Principal:");
-            System.out.println("1. Desafiar y Combatir");
+            System.out.println("1. Desafiar a otro usuario");
             System.out.println("2. Ver Ranking");
             System.out.println("3. Cambiar Personaje");
             System.out.println("4. Volver");
@@ -136,7 +139,7 @@ public class JuegoCombateManager {
 
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("Escribe el nombre de usuario del jugador al que quieres desafiar: ");
+                    iniciarDesafio();
                 }
                 case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
                 case 3 -> {
@@ -177,7 +180,6 @@ public class JuegoCombateManager {
                             System.out.println("Bienvenido Jugador: " + u.getName());
                             if (jugador1 == null) setJugador1(j);
                             else setJugador2(j);
-                            MostrarMenuJugador();
                         }
                         return;
                     }
@@ -237,14 +239,7 @@ public class JuegoCombateManager {
     }
 
     public void gestionarDesafios() {
-        for (Usuario usuario : usuarios) {
-            if (usuario instanceof Jugador jugador) {
-                for (Desafio desafio : jugador.getDesafiosPendientes()) {
-                    mostrarNotificacionDesafio(desafio);
-                    validarDesafio(desafio);
-                }
-            }
-        }
+
     }
 
     public void registrarPersonaje(Jugador jugador){
@@ -349,5 +344,47 @@ public class JuegoCombateManager {
 
     public ArrayList<Desafio> getDesafiosPendientes() {
         return desafiosPendientes;
+    }
+    public void iniciarDesafio(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escribe el nombre del usuario al que quieres desafiar: ");
+        String playerName = sc.nextLine();
+
+        System.out.println("¿Cuánto oro quieres apostar?");
+        int apuesta = sc.nextInt();
+        boolean isCorrect = true;
+        do{
+
+            if (jugador1.getOro() <= apuesta){
+                System.out.println("No puedes apostar tanto oro (tienes " + jugador1.getOro() + " monedas de oro.)");
+                System.out.println("Introduce una cantidad que puedas permitirte: ");
+                isCorrect = false;
+            }
+            else{
+                isCorrect = true;
+            }
+        }while(!isCorrect);
+
+        boolean found = false;
+        Usuario u = null;
+        int userIndex = 0;
+        Iterator iterator = usuarios.iterator();
+        while (! found){
+            if (iterator.hasNext()){
+                u = (Usuario) iterator.next();
+                if (u instanceof Jugador && u.getName().equals(playerName)){
+                    found = true;
+                }
+                userIndex++;
+            }
+        }
+        if (found){
+            jugador1.desafiarUsuario((Jugador) usuarios.get(userIndex), apuesta);
+            System.out.println("¡Se ha enviado un desafio a " + playerName + "!");
+        }
+        else{
+            System.out.println("El usuario " + playerName + " no se ha encontrado.");
+            System.out.println("Asegúrate de que el usuario está registrado e inténtalo de nuevo.");
+        }
     }
 }
