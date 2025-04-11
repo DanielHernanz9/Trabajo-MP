@@ -50,9 +50,9 @@ public class SingleStorage {
 
         return ((StorageAdapter) almacenAdapter).loadUsers();
     }
-    public void saveUsers(ArrayList<Usuario> Users) {
+    public void saveList(ArrayList Users, String route) {
         interfazAlmacen almacenAdapter= new StorageAdapter();
-        ((StorageAdapter) almacenAdapter).saveUsers(Users);
+        ((StorageAdapter) almacenAdapter).saveList(Users, route);
 
     }
 

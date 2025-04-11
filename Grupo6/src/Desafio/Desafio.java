@@ -2,31 +2,17 @@ package Grupo6.src.Desafio;
 
 import Grupo6.src.App.*;
 
-/**
- * 
- */
 public class Desafio {
 
-    /**
-     * Default constructor
-     */
-    public Desafio(Jugador jugador1, Jugador jugador2) {
-    }
-
-    /**
-     * 
-     */
     private Integer OroApostado;
-
-    /**
-     * 
-     */
     private Jugador UsuarioOrigen;
-
-    /**
-     * 
-     */
     private Jugador UsuarioDestino;
+
+    public Desafio(Jugador jugador1, Jugador jugador2, int oro) {
+        this.OroApostado = oro;
+        this.UsuarioOrigen = jugador1;
+        this.UsuarioDestino = jugador2;
+    }
 
     /**
      * @param

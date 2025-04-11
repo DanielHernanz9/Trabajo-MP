@@ -21,6 +21,7 @@ public class JuegoCombateManager {
     private int registro;
     private SingleStorage storage;
     private FactoryPersonaje factory;
+    private ArrayList<Desafio> desafiosPendientes;
 
     /**
      * Constructor por defecto de JuegoCombateManager.
@@ -126,6 +127,8 @@ public class JuegoCombateManager {
             if (jugador1.getPersonaje() == null) {
                 System.out.println("No has seleccionado ningún personaje");
                 registrarPersonaje(jugador1);
+                overWriteUserInList(jugador1);
+                System.out.println("Perosnaje " + jugador1.getPersonaje().getNombre() + " registrado.");
             }
 
             System.out.println("\nMenú Principal:");
@@ -138,23 +141,39 @@ public class JuegoCombateManager {
 
             switch (opcion) {
                 case 1 -> {
-                    // Crear jugador2 para simular un combate
-                    jugador2 = new Jugador();
-                    jugador2.registrarDatos("Pepe", "pepardo", "12341");
+                    if(usuarios.size() > 1){
+                        System.out.println("¿A qué jugador quieres desafiar? Escribe su nombre de usuario: ");
+                        String playerName = sc.nextLine();
+                        boolean hasPlayer = false;
+                        for (Usuario u: usuarios){
+                            if ((u instanceof Jugador) && (u.getName().equals(playerName))){
+                                hasPlayer = true;
+                                jugador2 = (Jugador) u;
+                            }
+                        }
+                        if (hasPlayer){
+                            System.out.println("Se ha encontrado al jugador " + playerName + ". ¿Cuanto oro quieres apostar?");
+                            int apuesta = sc.nextInt();
+                            jugador1.desafiarUsuario(jugador2, apuesta);
 
-                    if (jugador1 != null && jugador2 != null) {
-                        Desafio d = new Desafio(jugador1, jugador2);
-                        jugador2.desafiarUsuario(d, jugador1);
-                        validarDesafio(d);
-                        IniciarCombate();
-                    } else {
-                        System.out.println("Debe haber 2 jugadores registrados.");
+                            //Se sobreescribe para que el desafio quede guardado cuando el oponente inicie sesion.
+                            overWriteUserInList(jugador2);
+                            storage.saveList(desafiosPendientes, "Grupo6/src/sistemaDeGuardado/Desafios.xml");
+                        }
+                        else{
+                            System.out.println("No se ha encontrado al jugador " + playerName + ". Verifica que el jugador esta registrado e inténtalo de nuevo");
+                        }
                     }
+                    else{
+                        System.out.println("No hay sufcientes jugadores registrados.");
+                    }
+
                 }
                 case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
                 case 3 -> {
                     darDeBajaPersonaje(jugador1);
                     registrarPersonaje(jugador1);
+                    break;
                 }
                 case 4 -> { return; }
                 default -> System.out.println("Opción inválida.");
@@ -285,10 +304,7 @@ public class JuegoCombateManager {
                 factory= new FactoryCazadores();
             }
             jugador1.registrarPersonaje(factory);
-            int index = usuarios.indexOf(jugador1);
-            usuarios.remove(index);
-            usuarios.add(index, jugador1);
-            storage.saveUsers(usuarios);
+
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
         }
@@ -342,7 +358,7 @@ public class JuegoCombateManager {
             System.out.println("Nuevo jugador registrado: " + nuevo.getNombre());
 
             //Actualizamos los usuarios guardados en el archivo XML
-            storage.saveUsers(usuarios);
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
         }
     }
 
@@ -360,4 +376,14 @@ public class JuegoCombateManager {
         this.jugador2 = jugador;
     }
 
+    private void overWriteUserInList(Usuario u){
+        int index = usuarios.indexOf(u);
+        usuarios.remove(index);
+        usuarios.add(index, u);
+        storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+    }
+
+    public ArrayList<Desafio> getDesafiosPendientes() {
+        return desafiosPendientes;
+    }
 }

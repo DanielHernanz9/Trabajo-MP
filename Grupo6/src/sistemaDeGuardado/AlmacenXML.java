@@ -75,10 +75,10 @@ public class AlmacenXML implements interfazAlmacen {
     }
 
     //Metodo para guardar usuarios en el archivo XML
-    public void saveUsers(ArrayList<Usuario> usuarios) {
+    public void saveUsers(ArrayList usuarios, String route) {
         //Vaciamos el fichero para evitar duplicados
         try{
-            FileOutputStream fos = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+            FileOutputStream fos = new FileOutputStream(route);
 
             XMLEncoder encoder = new XMLEncoder(
                     new BufferedOutputStream(fos));
@@ -90,13 +90,4 @@ public class AlmacenXML implements interfazAlmacen {
         }
     }
 
-    /**
-     * @param Usuario User 
-     * @return
-     */
-
-
 }
-    /**
-     * @param UserInfo user
-     */
