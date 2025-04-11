@@ -12,9 +12,8 @@ public class Jugador extends Usuario {
     private final ArrayList<Desafio> DesafiosPendientes;
     private final int[] HistorialOro;
     private Personaje Personaje;
-
-    // Número de registro, solo lo tienen los jugadores y es único para cada jugador
-    private String RegNum;
+    private int Oro;
+    private String RegNum; // Número de registro, solo lo tienen los jugadores y es único para cada jugador
 
     /**
      * Constructor por defecto de Jugador.
@@ -24,6 +23,7 @@ public class Jugador extends Usuario {
         setRegNumber();
         this.DesafiosPendientes = new ArrayList<>();  // Inicializa la lista de desafíos pendientes
         this.HistorialOro = new int[10];  // Inicializa el historial de oro (puedes modificar el tamaño)
+        this.Oro = 500;
     }
 
     /**
@@ -131,14 +131,14 @@ public class Jugador extends Usuario {
 
     /**
      * Desafía a otro jugador añadiendo un desafío a la lista de pendientes.
-     * @param desafio Desafío a agregar.
      * @param oponente Jugador al que se le desafía.
      */
-    public void desafiarUsuario(Desafio desafio, Jugador oponente) {
-        // Verificamos que tanto el desafío como el oponente no sean nulos
-        if (desafio != null && oponente != null) {
+    public void desafiarUsuario(Jugador oponente, int oro) {
+        if (oponente != null) { // Verificamos que tanto el desafío como el oponente no sean nulos
             // Agrega el desafío a la lista de desafíos pendientes del jugador
-            DesafiosPendientes.add(desafio);
+            Desafio desafio = new Desafio(this, oponente, oro);
+            JuegoCombateManager manager = new JuegoCombateManager();
+            manager.getDesafiosPendientes().add(desafio);
             // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
             System.out.println(this.getNombre() + " ha desafiado a " + oponente.getNombre());
         } else {

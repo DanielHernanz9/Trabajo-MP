@@ -12,7 +12,7 @@ public interface interfazAlmacen {
 
     public abstract void addFight(Combate combate);
 
-    public  abstract void saveUsers(ArrayList<Usuario> Users);
+    public  abstract void saveList(ArrayList list, String route);
 
 
 }

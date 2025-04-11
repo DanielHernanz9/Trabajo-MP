@@ -41,8 +41,8 @@ public class StorageAdapter implements interfazAlmacen {
        return Adapter.loadUsersFromXML();
     }
 
-    public void saveUsers(ArrayList<Usuario> Users) {
-        Adapter.saveUsers( Users);
+    public void saveList(ArrayList list, String route) {
+        Adapter.saveList(list,route);
     }
 
 

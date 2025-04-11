@@ -18,6 +18,7 @@ public class JuegoCombateManager {
     private final ArrayList<Combate> combates;
     private SingleStorage storage;
     private FactoryPersonaje factory;
+    private ArrayList<Desafio> desafiosPendientes;
 
     /**
      * Constructor por defecto de JuegoCombateManager.
@@ -135,18 +136,7 @@ public class JuegoCombateManager {
 
             switch (opcion) {
                 case 1 -> {
-                    // Crear jugador2 para simular un combate
-                    jugador2 = new Jugador();
-                    jugador2.registrarDatos("Pepe", "pepardo", "12341");
-
-                    if (jugador1 != null && jugador2 != null) {
-                        Desafio d = new Desafio(jugador1, jugador2);
-                        jugador2.desafiarUsuario(d, jugador1);
-                        validarDesafio(d);
-                        IniciarCombate();
-                    } else {
-                        System.out.println("Debe haber 2 jugadores registrados.");
-                    }
+                    System.out.println("Escribe el nombre de usuario del jugador al que quieres desafiar: ");
                 }
                 case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
                 case 3 -> {
@@ -285,7 +275,7 @@ public class JuegoCombateManager {
             //int index = usuarios.indexOf(jugador1);
             //usuarios.remove(index);
             usuarios.add(jugador1);
-            storage.saveUsers(usuarios);
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 
         }
@@ -339,7 +329,7 @@ public class JuegoCombateManager {
             System.out.println("Nuevo jugador registrado: " + nuevo.getNombre());
 
             //Actualizamos los usuarios guardados en el archivo XML
-            storage.saveUsers(usuarios);
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
         }
     }
 
@@ -357,4 +347,7 @@ public class JuegoCombateManager {
         this.jugador2 = jugador;
     }
 
-}//a
+    public ArrayList<Desafio> getDesafiosPendientes() {
+        return desafiosPendientes;
+    }
+}

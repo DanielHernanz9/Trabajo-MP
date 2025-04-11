@@ -1,6 +1,14 @@
 package Grupo6.src.sistemaDeGuardado;
 
+import Grupo6.src.COSAS.*;
 import Grupo6.src.App.*;
+import Grupo6.src.Combate.*;
+import Grupo6.src.Desafio.*;
+import Grupo6.src.DesafioNotify.*;
+import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.*;
+import Grupo6.src.Personajes.*;
+import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
@@ -26,28 +34,20 @@ public class SingleStorage {
 
     }
 
-    //Este metodo de momento no se usa porque usamos el de saveUsers
-    public void registrarUsuario(Jugador jugador) {
-       interfazAlmacen almacenAdapter= new StorageAdapter();
-       almacenAdapter.registrarJugador(jugador);
-    }
-
     public Personaje loadCharacterFromUser(Usuario User) {
         // TODO implement here
         return null;
     }
 
-    //Obtener usuarios de disco
     public ArrayList<Usuario> loadUsers(){
         interfazAlmacen almacenAdapter= new StorageAdapter();
 
         return ((StorageAdapter) almacenAdapter).loadUsers();
     }
 
-    //guardar usuarios en disco
-    public void saveUsers(ArrayList<Usuario> Users) {
+    public void saveList(ArrayList Users, String route) {
         interfazAlmacen almacenAdapter= new StorageAdapter();
-        ((StorageAdapter) almacenAdapter).saveUsers(Users);
+        ((StorageAdapter) almacenAdapter).saveList(Users, route);
 
     }
 
