@@ -17,3 +17,6 @@ public class AdaptadorXMLtoJSON  {//implements JSONData
        // return json.toString();
     }
 }
+
+
+//ES POSIBLE QUE ESTA CLASE NO HAGA FALTA YA QUE TENEMOS STORAGE ADAPTER

@@ -3,23 +3,16 @@ import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
 
-/**
- * 
- */
-public interface interfazAlmacen {
-    /**
-     * @param
-     */
-    public abstract void registrarUsuario(Usuario user);
+import java.util.ArrayList;
 
-    /**
-     * @param
-     */
+
+public interface interfazAlmacen {
+
+    public abstract void registrarJugador(Jugador jugador);
+
     public abstract void addFight(Combate combate);
 
-    /**
-     * @param
-     * @return
-     */
+    public  abstract void saveUsers(ArrayList<Usuario> Users);
+
 
 }
