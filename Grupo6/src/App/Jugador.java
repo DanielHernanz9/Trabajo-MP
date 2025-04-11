@@ -241,4 +241,12 @@ public class Jugador extends Usuario {
     public int getOro() {
         return Oro;
     }
+
+    public FactoryPersonaje getFabricaPersonaje() {
+        return FabricaPersonaje;
+    }
+
+    public int[] getHistorialOro() {
+        return HistorialOro;
+    }
 }

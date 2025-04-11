@@ -129,6 +129,10 @@ public class JuegoCombateManager {
                 registrarPersonaje(jugador1);
             }
 
+            if (!jugador1.getDesafiosPendientes().isEmpty()){
+                mostrarNotificacionDesafio();
+            }
+
             System.out.println("\nMenú Principal:");
             System.out.println("1. Desafiar a otro usuario");
             System.out.println("2. Ver Ranking");
@@ -230,8 +234,12 @@ public class JuegoCombateManager {
         }
     }
 
-    public void mostrarNotificacionDesafio(Desafio desafio) {
-        System.out.println("¡Nuevo desafío de: " + desafio.getName(jugador1) + " a " + desafio.getName(jugador2));
+    public void mostrarNotificacionDesafio() {
+        ArrayList<Desafio> listaDesafio = jugador1.getDesafiosPendientes();
+        System.out.println("¡Tienes " + listaDesafio.size() + "desafios pendientes!");
+        for(Desafio d: listaDesafio){
+            System.out.println(d.getUsuarioOrigen().getName());
+        }
     }
 
     public void mostrarResultado(Combate combate) {
@@ -239,7 +247,22 @@ public class JuegoCombateManager {
     }
 
     public void gestionarDesafios() {
-
+        System.out.println("Hay " + desafiosPendientes.size() + " desafios pendientes por validar.");
+        Scanner sc = new Scanner(System.in);
+        for (Desafio d: desafiosPendientes){
+            Jugador origen = d.getUsuarioOrigen();
+            Jugador destino = d.getUsuarioDestino();
+            System.out.println("Desafio de " + origen.getName() + " a " + destino.getName());
+            System.out.println("¿Validar este desafio? (s/n)");
+            String ans = sc.nextLine();
+            if (ans.equals("s")){
+                destino.getDesafiosPendientes().add(d);
+                int index = usuarios.indexOf(destino);
+                usuarios.add(destino);
+                storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
+            }
+            desafiosPendientes.remove(d);
+        }
     }
 
     public void registrarPersonaje(Jugador jugador){
@@ -267,8 +290,8 @@ public class JuegoCombateManager {
                 factory= new FactoryCazadores();
             }
             jugador1.registrarPersonaje(factory);
-            //int index = usuarios.indexOf(jugador1);
-            //usuarios.remove(index);
+            int index = usuarios.indexOf(jugador1);
+            usuarios.remove(index);
             usuarios.add(jugador1);
             storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
