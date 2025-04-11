@@ -1,5 +1,7 @@
 package Grupo6.src.Esbirros;
 
+import Grupo6.src.Esbirros.PatronFactoryEsbirros.EsbirroBase;
+
 public class Demonio extends EsbirroBase {
     private String pacto;
     private EsbirrosComposite subordinados;

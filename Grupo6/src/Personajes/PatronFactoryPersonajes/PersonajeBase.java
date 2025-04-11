@@ -3,8 +3,8 @@ package Grupo6.src.Personajes.PatronFactoryPersonajes;
 import Grupo6.src.Desafio.DebilidadHandler;
 import Grupo6.src.Desafio.FortalezaHandler;
 import Grupo6.src.Equipo.*;
-import Grupo6.src.Esbirros.*;
 import Grupo6.src.COSAS.Habilidad_Especial;
+import Grupo6.src.Esbirros.PatronFactoryEsbirros.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public abstract class PersonajeBase implements Personaje {
     protected Arma ArmaActiva2;
     protected List<Armadura> Armaduras;
     protected Armadura ArmaduraActiva;
-    protected List<EsbirroBase> Esbirros;
+    protected List<Esbirro> Esbirros;
     protected int Oro;
     protected int Salud;
     protected int Poder;
@@ -52,7 +52,7 @@ public abstract class PersonajeBase implements Personaje {
         return ArmaduraActiva;
     }
 
-    public List<EsbirroBase> getEsbirros() {
+    public List<Esbirro> getEsbirros() {
         return Esbirros;
     }
 
@@ -102,7 +102,7 @@ public abstract class PersonajeBase implements Personaje {
         ArmaduraActiva = armaduraActiva;
     }
 
-    public void setEsbirros(List<EsbirroBase> esbirros) {
+    public void setEsbirros(List<Esbirro> esbirros) {
         Esbirros = esbirros;
     }
 
