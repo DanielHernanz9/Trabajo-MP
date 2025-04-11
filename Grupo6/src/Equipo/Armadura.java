@@ -21,11 +21,7 @@ public class Armadura extends EquipoBase {
     public Armadura() {
     }
 
-    /**
-     * 
-     */
-    public void getModificador() {
-        // TODO implement here
-    }
+
+
 
 }

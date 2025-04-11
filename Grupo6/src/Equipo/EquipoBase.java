@@ -10,25 +10,19 @@ import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+
+import java.lang.ref.PhantomReference;
+
 /**
  * 
  */
-public abstract class EquipoBase {
+public abstract class EquipoBase implements Equipo {
 
-    /**
-     * Default constructor
-     */
-    public EquipoBase() {
+    protected String Nombre;
+    protected Modificador modificador;
+
+
+    public Modificador getModificador() {
+        return modificador;
     }
-
-    /**
-     * 
-     */
-    private String Nombre;
-
-    /**
-     * 
-     */
-    private Modificador Modificador;
-
 }
