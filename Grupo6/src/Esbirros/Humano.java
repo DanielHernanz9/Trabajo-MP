@@ -24,11 +24,15 @@ public class Humano extends EsbirroBase {
         Nombre = nombre;
     }
 
+
+
+
+
+
     public enum Lealtad {
         BAJA,
         MEDIA,
         ALTA;
-
         public Lealtad subir() {
             int next = this.ordinal() + 1;
             if (next >= 3) return this;
@@ -51,6 +55,8 @@ public class Humano extends EsbirroBase {
     }
 
     public Lealtad getLealtad() {
+
         return this.lealtad;
     }
 }
+

@@ -14,5 +14,7 @@ public interface interfazAlmacen {
 
     public  abstract void saveList(ArrayList list, String route);
 
+    public abstract ArrayList<Jugador> loadFromXML(String ruta);
+
 
 }
