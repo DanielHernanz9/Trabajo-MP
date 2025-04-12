@@ -422,7 +422,7 @@ public class JuegoCombateManager {
             storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
         }
     }
-//COMIT
+
     /**
      * Guarda la lista de usuarios en un archivo XML.
      */
