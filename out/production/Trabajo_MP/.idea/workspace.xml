@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="158a6c52-5573-48be-8d7b-46c1c6eeccba" name="Changes" comment="Arreglados errores en el commit (REVISAR PORQUE PUEDEN FALTAR COSAS)" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="mas cosas de la validacion de desafios (no funciona bien todavia)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,65 +13,67 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;DanielHernanz9&quot;
+    &quot;assignee&quot;: &quot;MarcosHM851&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/DanielHernanz9/Trabajo-MP.git&quot;,
-    &quot;accountId&quot;: &quot;f0abb487-9a52-49a7-812b-09ae47c52930&quot;
+    &quot;accountId&quot;: &quot;2cee57d8-0547-4d10-8b38-03c9339203fc&quot;
   }
 }</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2uancUcP55OmWNNtyEzm0GJZRJ7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2uapSjFf48pHmxC3e9xG3AyJ505" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JuegoCombate.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Adrián/IdeaProjects/Trabajo_MP/Grupo6&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JuegoCombate.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/usuario/IdeaProjects/TrabajoMP/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Adrián\IdeaProjects\Trabajo_MP\Grupo6" />
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\grupo6" />
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\src\src" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -85,81 +87,234 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="158a6c52-5573-48be-8d7b-46c1c6eeccba" name="Changes" comment="" />
-      <created>1742495631378</created>
+      <changelist id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="" />
+      <created>1742496540452</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1742495631378</updated>
-      <workItem from="1742495632464" duration="3834000" />
-      <workItem from="1742573464507" duration="185000" />
-      <workItem from="1743774209694" duration="11688000" />
-      <workItem from="1744382954705" duration="430000" />
+      <updated>1742496540452</updated>
+      <workItem from="1742496541887" duration="2842000" />
+      <workItem from="1742639638758" duration="3911000" />
+      <workItem from="1743774057179" duration="4292000" />
+      <workItem from="1743779222462" duration="6729000" />
+      <workItem from="1744192254084" duration="6532000" />
+      <workItem from="1744273703413" duration="9426000" />
+      <workItem from="1744283537019" duration="3266000" />
+      <workItem from="1744287663699" duration="68000" />
+      <workItem from="1744319665202" duration="1444000" />
+      <workItem from="1744359365274" duration="334000" />
+      <workItem from="1744359732013" duration="2516000" />
+      <workItem from="1744362578818" duration="4513000" />
+      <workItem from="1744382966901" duration="6865000" />
     </task>
-    <task id="LOCAL-00001" summary="primer commit">
+    <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
-      <created>1742495728072</created>
+      <created>1742643479783</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1742495728072</updated>
+      <updated>1742643479783</updated>
     </task>
-    <task id="LOCAL-00002" summary="commit">
+    <task id="LOCAL-00002" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
-      <created>1742499225428</created>
+      <created>1742643509998</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1742499225428</updated>
+      <updated>1742643509998</updated>
     </task>
-    <task id="LOCAL-00003" summary="cambios en varias clases">
+    <task id="LOCAL-00003" summary="Factory Method para la creacion de esbirros.">
       <option name="closed" value="true" />
-      <created>1743778407008</created>
+      <created>1743777693169</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1743778407008</updated>
+      <updated>1743777693169</updated>
     </task>
-    <task id="LOCAL-00004" summary="Arreglados errores en TODAS las clases, metodos duplicados,etc">
+    <task id="LOCAL-00004" summary="Factory Method para la creacion de esbirros.">
       <option name="closed" value="true" />
-      <created>1743782166902</created>
+      <created>1743777733585</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1743782166902</updated>
+      <updated>1743777733585</updated>
     </task>
-    <task id="LOCAL-00005" summary="Creacion de esbirros">
+    <task id="LOCAL-00005" summary="Implementadas las jerarquías entre demonios y esbirros (compoiste)">
       <option name="closed" value="true" />
-      <created>1743785406565</created>
+      <created>1743782328079</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1743785406565</updated>
+      <updated>1743782328079</updated>
     </task>
-    <task id="LOCAL-00006" summary="Creacion de esbirros">
+    <task id="LOCAL-00006" summary="Implementado el inicio de los combates y las estrategias de calculo de potencial.">
       <option name="closed" value="true" />
-      <created>1743785422607</created>
+      <created>1743785050556</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1743785422607</updated>
+      <updated>1743785050556</updated>
     </task>
-    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;Grupo6/src/Personajes/Cazador.java&#10;#&#9;Grupo6/src/Personajes/Licántropo.java&#10;#&#9;Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/Jugador.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/Operador.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/Usuario.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Desafio/Desafio.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/Licántropo.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryCazadores.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryLicantropos.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryVampiros.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class">
+    <task id="LOCAL-00007" summary="Implementado el inicio de los combates y las estrategias de calculo de potencial.">
       <option name="closed" value="true" />
-      <created>1743785475389</created>
+      <created>1743785118929</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1743785475389</updated>
+      <updated>1743785118929</updated>
     </task>
-    <task id="LOCAL-00008" summary="Arreglados errores en el commit (REVISAR PORQUE PUEDEN FALTAR COSAS)">
+    <task id="LOCAL-00008" summary="Implementado el inicio de los combates y las estrategias de calculo de potencial.">
       <option name="closed" value="true" />
-      <created>1743786043210</created>
+      <created>1743785163111</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1743786043210</updated>
+      <updated>1743785163111</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="arreglo de manager">
+      <option name="closed" value="true" />
+      <created>1743785624204</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743785624204</updated>
+    </task>
+    <task id="LOCAL-00010" summary="He avanzado con la implementacion de los combates y el funcionamiento de las rondas.">
+      <option name="closed" value="true" />
+      <created>1744198728465</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744198728465</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Terminada (o eso creo) la logica de los combates y las rondas">
+      <option name="closed" value="true" />
+      <created>1744276218551</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744276218551</updated>
+    </task>
+    <task id="LOCAL-00012" summary="La persistencia para los usuarios funciona correctamente. Ahora se guardan en un xml llamado Usuarios.xml en la raiz del proyecto. Se guardan todos los datos, incluidos personajes y esbirros">
+      <option name="closed" value="true" />
+      <created>1744287085358</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744287085358</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Añadido fichero necesario para que la persistencia pueda funcionar">
+      <option name="closed" value="true" />
+      <created>1744319928993</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744319928993</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Arreglado error personajes y persistencia">
+      <option name="closed" value="true" />
+      <created>1744321099144</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744321099144</updated>
+    </task>
+    <task id="LOCAL-00015" summary="error git">
+      <option name="closed" value="true" />
+      <created>1744360835228</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1744360835228</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Correccion errores">
+      <option name="closed" value="true" />
+      <created>1744361592407</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744361592407</updated>
+    </task>
+    <task id="LOCAL-00017" summary="errores">
+      <option name="closed" value="true" />
+      <created>1744361673395</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744361673395</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Corregidos bugs relacionados con el patron adapter">
+      <option name="closed" value="true" />
+      <created>1744362731151</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744362731151</updated>
+    </task>
+    <task id="LOCAL-00019" summary="El metodo guardar personaje no actualizaba la lista XML al registrar el personaje, lo que causaba que los personajes no fueran persistentes. Ahora el programa no pregunta que menu quieres ver, te muestra el correspondiente menu segun tu tipo de cuenta">
+      <option name="closed" value="true" />
+      <created>1744364015519</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744364015519</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Desafios implementados correctamente (por algun motivo el nombre de los usuarios se registra como null)">
+      <option name="closed" value="true" />
+      <created>1744366823858</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744366823858</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Correccion errores">
+      <option name="closed" value="true" />
+      <created>1744384444181</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1744384444181</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Implementacion de desafios entre usuarios,a falta de validadacion por parte de operadores">
+      <option name="closed" value="true" />
+      <created>1744387588828</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744387588828</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Implementacion de desafios entre usuarios,a falta de validadacion por parte de operadores">
+      <option name="closed" value="true" />
+      <created>1744387625278</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1744387625278</updated>
+    </task>
+    <task id="LOCAL-00024" summary="mas cosas de la validacion de desafios (no funciona bien todavia)">
+      <option name="closed" value="true" />
+      <created>1744389722177</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1744389722177</updated>
+    </task>
+    <task id="LOCAL-00025" summary="mas cosas de la validacion de desafios (no funciona bien todavia)">
+      <option name="closed" value="true" />
+      <created>1744389762827</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1744389762827</updated>
+    </task>
+    <task id="LOCAL-00026" summary="mas cosas de la validacion de desafios (no funciona bien todavia)">
+      <option name="closed" value="true" />
+      <created>1744389792745</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1744389792745</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,13 +332,44 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="primer commit" />
-    <MESSAGE value="commit" />
-    <MESSAGE value="cambios en varias clases" />
-    <MESSAGE value="Arreglados errores en TODAS las clases, metodos duplicados,etc" />
-    <MESSAGE value="Creacion de esbirros" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;Grupo6/src/Personajes/Cazador.java&#10;#&#9;Grupo6/src/Personajes/Licántropo.java&#10;#&#9;Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/Jugador.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/Operador.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/App/Usuario.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Desafio/Desafio.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/Licántropo.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryCazadores.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryLicantropos.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryVampiros.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.class&#10;#&#9;out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" />
-    <MESSAGE value="Arreglados errores en el commit (REVISAR PORQUE PUEDEN FALTAR COSAS)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglados errores en el commit (REVISAR PORQUE PUEDEN FALTAR COSAS)" />
+    <MESSAGE value="He organizado en paquetes la mayoria de las clases" />
+    <MESSAGE value="Factory Method para la creacion de esbirros." />
+    <MESSAGE value="Implementadas las jerarquías entre demonios y esbirros (compoiste)" />
+    <MESSAGE value="Implementado el inicio de los combates y las estrategias de calculo de potencial." />
+    <MESSAGE value="arreglo de manager" />
+    <MESSAGE value="He avanzado con la implementacion de los combates y el funcionamiento de las rondas." />
+    <MESSAGE value="Terminada (o eso creo) la logica de los combates y las rondas" />
+    <MESSAGE value="La persistencia para los usuarios funciona correctamente. Ahora se guardan en un xml llamado Usuarios.xml en la raiz del proyecto. Se guardan todos los datos, incluidos personajes y esbirros" />
+    <MESSAGE value="Añadido fichero necesario para que la persistencia pueda funcionar" />
+    <MESSAGE value="Arreglado error personajes y persistencia" />
+    <MESSAGE value="error git" />
+    <MESSAGE value="errores" />
+    <MESSAGE value="Corregidos bugs relacionados con el patron adapter" />
+    <MESSAGE value="El metodo guardar personaje no actualizaba la lista XML al registrar el personaje, lo que causaba que los personajes no fueran persistentes. Ahora el programa no pregunta que menu quieres ver, te muestra el correspondiente menu segun tu tipo de cuenta" />
+    <MESSAGE value="Desafios implementados correctamente (por algun motivo el nombre de los usuarios se registra como null)" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;Grupo6/src/App/JuegoCombateManager.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/AlmacenXML.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/SingleStorage.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/Usuarios.xml" />
+    <MESSAGE value="Correccion errores" />
+    <MESSAGE value="Implementacion de desafios entre usuarios,a falta de validadacion por parte de operadores" />
+    <MESSAGE value="mas cosas de la validacion de desafios (no funciona bien todavia)" />
+    <option name="LAST_COMMIT_MESSAGE" value="mas cosas de la validacion de desafios (no funciona bien todavia)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>258</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="file" />
+        <watch expression="nuevo.getNombre()" language="JAVA" />
+        <watch expression="jugador1.getOro()" language="JAVA" />
+        <watch expression="this.usuarios" custom="Grupo6.src.App.JuegoCombateManager" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

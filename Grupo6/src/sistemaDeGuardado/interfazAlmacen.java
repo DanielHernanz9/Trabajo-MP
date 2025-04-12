@@ -1,6 +1,5 @@
 package Grupo6.src.sistemaDeGuardado;
 import Grupo6.src.App.Jugador;
-import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
 
 import java.util.ArrayList;
