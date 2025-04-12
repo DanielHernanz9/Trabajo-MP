@@ -10,7 +10,7 @@ import java.beans.XMLEncoder;
 import java.util.ArrayList;
 
 /**
- * 
+ *
  */
 public class AlmacenXML implements interfazAlmacen {
 
@@ -48,11 +48,11 @@ public class AlmacenXML implements interfazAlmacen {
      */
     public void addFight( Combate combate) {
         // TODO implement here
-            try(XMLEncoder encoder = new XMLEncoder
-                    (new BufferedOutputStream(new FileOutputStream(XMLCombates)))) {
-                encoder.writeObject(combate);
-            }
-            catch(FileNotFoundException ignorar){
+        try(XMLEncoder encoder = new XMLEncoder
+                (new BufferedOutputStream(new FileOutputStream(XMLCombates)))) {
+            encoder.writeObject(combate);
+        }
+        catch(FileNotFoundException ignorar){
 
         }
 
@@ -88,7 +88,7 @@ public class AlmacenXML implements interfazAlmacen {
         try {
             XMLDecoder decoder = new XMLDecoder(
                     new BufferedInputStream(new FileInputStream(route)
-            ));
+                    ));
             if (XMLDesafios.length() > 0){
                 //Sacamos los usuarios del archivo XML
                 desafios = (ArrayList<Desafio>) decoder.readObject();

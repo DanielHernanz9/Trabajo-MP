@@ -141,7 +141,7 @@ public class JuegoCombateManager {
                         System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
                         System.out.println("¿Que quieres hacer?");
                         System.out.println("1. Aceptar el desafio y disputar un combate.");
-                        System.out.println("2. Rechazar el desafio y rapertir el oro.");
+                        System.out.println("2. Rechazar el desafio y repartir el oro.");
                         int opc = sc.nextInt();
                     }
                 }
