@@ -11,6 +11,8 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
+import java.io.Serializable;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -18,7 +20,7 @@ import java.util.Random;
  * Contiene información básica como el nombre, el nick y la contraseña del usuario.
  * Esta clase será extendida por otras clases como Jugador y Operador.
  */
-public abstract class Usuario {
+public abstract class Usuario implements Serializable {
 
     protected String Nombre;  // Nombre del usuario.
     protected String Nick;    // Nick del usuario (nombre de usuario en el sistema).
@@ -67,5 +69,17 @@ public abstract class Usuario {
      */
     public String getName() {
         return this.Nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(Nombre, usuario.Nombre) && Objects.equals(Nick, usuario.Nick) && Objects.equals(Password, usuario.Password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Nombre, Nick, Password);
     }
 }

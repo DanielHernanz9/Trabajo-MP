@@ -5,12 +5,14 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 
 public class Jugador extends Usuario {
 
     private FactoryPersonaje FabricaPersonaje;
-    private final ArrayList<Desafio> DesafiosPendientes;
+    private ArrayList<Desafio> DesafiosPendientes;
     private final int[] HistorialOro;
     private Personaje Personaje;
     private int Oro;
@@ -137,13 +139,13 @@ public class Jugador extends Usuario {
     public void desafiarUsuario(Jugador oponente, int oro) {
         if (oponente != null) { // Verificamos que tanto el desafío como el oponente no sean nulos
             // Agrega el desafío a la lista de desafíos pendientes del jugador
-            Desafio desafio = new Desafio(this, oponente, oro);
+            Desafio desafio = new Desafio(this.Nombre, oponente.getNombre(), oro);
             JuegoCombateManager manager = new JuegoCombateManager();
             ArrayList<Desafio> listaDesafios = new ArrayList<>();
             listaDesafios.add(desafio);
+            // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
             SingleStorage storage = SingleStorage.getInstance();
             storage.saveList(listaDesafios, "Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
-            // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
             System.out.println(this.getNombre() + " ha desafiado a " + oponente.getNombre());
         } else {
             // Si el desafío o el oponente son nulos, se imprime un mensaje de error
@@ -158,10 +160,26 @@ public class Jugador extends Usuario {
     public void aceptarDesafio(Desafio desafio) {
         if (desafio != null) {
             // Asumiendo que `desafio.getJugador1()` y `desafio.getJugador2()` retornan los jugadores involucrados en el desafío
-            Jugador jugador1 = desafio.getJugador1();
-            Jugador jugador2 = desafio.getJugador2();
+            String nombreOrigen = desafio.getUsuarioOrigen();
+            String nombreDestino = desafio.getUsuarioDestino();
 
-            System.out.println(this.getNombre() + " ha aceptado el desafío de " + jugador1.getNombre() + " contra " + jugador2.getNombre());
+            Jugador origen = null;
+            Jugador destino = null;
+
+            JuegoCombateManager manager = new JuegoCombateManager();
+            for (Usuario u : manager.getUsuarios()) {
+                if (u instanceof Jugador j) {
+                    if (j.getNombre().equals(nombreOrigen)) {
+                        origen = j;
+                    }
+                    if (j.getNombre().equals(nombreDestino)) {
+                        destino = j;
+                    }
+                }
+            }
+
+
+            System.out.println(this.getNombre() + " ha aceptado el desafío de " + origen.getNombre() + " contra " + destino.getNombre());
 
             // Aquí puedes agregar más lógica relacionada con el combate.
         } else {
@@ -176,7 +194,7 @@ public class Jugador extends Usuario {
     public void rechazarDesafio(Desafio desafio) {
         if (desafio != null) {
             DesafiosPendientes.remove(desafio);  // Elimina el desafío de la lista
-            System.out.println(this.getNombre() + " ha rechazado el desafío de " + desafio.getJugador1().getNombre());
+            System.out.println(this.getNombre() + " ha rechazado el desafío de " + desafio.getUsuarioOrigen());
         } else {
             System.out.println("Desafío no encontrado.");
         }
@@ -248,5 +266,29 @@ public class Jugador extends Usuario {
 
     public int[] getHistorialOro() {
         return HistorialOro;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Jugador jugador = (Jugador) o;
+        return Oro == jugador.Oro && Objects.equals(FabricaPersonaje, jugador.FabricaPersonaje) && Objects.equals(DesafiosPendientes, jugador.DesafiosPendientes) && Objects.deepEquals(HistorialOro, jugador.HistorialOro) && Objects.equals(Personaje, jugador.Personaje) && Objects.equals(RegNum, jugador.RegNum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(FabricaPersonaje, DesafiosPendientes, Arrays.hashCode(HistorialOro), Personaje, Oro, RegNum);
+    }
+
+    public void setFabricaPersonaje(FactoryPersonaje fabricaPersonaje) {
+        FabricaPersonaje = fabricaPersonaje;
+    }
+
+    public void setOro(int oro) {
+        Oro = oro;
+    }
+
+    public void setDesafiosPendientes(ArrayList<Desafio> desafiosPendientes) {
+        DesafiosPendientes = desafiosPendientes;
     }
 }

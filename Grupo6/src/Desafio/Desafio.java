@@ -2,17 +2,19 @@ package Grupo6.src.Desafio;
 
 import Grupo6.src.App.*;
 
-public class Desafio {
+import java.io.Serializable;
+
+public class Desafio implements Serializable {
 
     private Integer OroApostado;
-    private Jugador UsuarioOrigen;
-    private Jugador UsuarioDestino;
+    private String UsuarioOrigen;
+    private String UsuarioDestino;
 
     public Desafio(){
 
     }
 
-    public Desafio(Jugador jugador1, Jugador jugador2, int oro) {
+    public Desafio(String jugador1, String jugador2, int oro) {
         this.OroApostado = oro;
         this.UsuarioOrigen = jugador1;
         this.UsuarioDestino = jugador2;
@@ -37,27 +39,15 @@ public class Desafio {
         return false;
     }
 
-    public String getName(Jugador jugador1) {
-        return null;
-    }
-
-    public Jugador getJugador1() {
-        return null;
-    }
-
-    public Jugador getJugador2() {
-        return null;
-    }
-
     public Integer getOroApostado() {
         return OroApostado;
     }
 
-    public Jugador getUsuarioOrigen() {
+    public String getUsuarioOrigen() {
         return UsuarioOrigen;
     }
 
-    public Jugador getUsuarioDestino() {
+    public String getUsuarioDestino() {
         return UsuarioDestino;
     }
 
@@ -65,11 +55,11 @@ public class Desafio {
         OroApostado = oroApostado;
     }
 
-    public void setUsuarioOrigen(Jugador usuarioOrigen) {
+    public void setUsuarioOrigen(String usuarioOrigen) {
         UsuarioOrigen = usuarioOrigen;
     }
 
-    public void setUsuarioDestino(Jugador usuarioDestino) {
+    public void setUsuarioDestino(String usuarioDestino) {
         UsuarioDestino = usuarioDestino;
     }
 }

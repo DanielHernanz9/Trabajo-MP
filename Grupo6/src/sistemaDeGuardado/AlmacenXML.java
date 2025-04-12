@@ -83,12 +83,12 @@ public class AlmacenXML implements interfazAlmacen {
         return usuarios;
     }
 
-    public ArrayList<Desafio>  loadChallengesFromXML(){
+    public ArrayList<Desafio>  loadChallengesFromXML(String route){
         ArrayList<Desafio> desafios = new ArrayList<>();
         try {
             XMLDecoder decoder = new XMLDecoder(
-                    new BufferedInputStream(new FileInputStream(XMLDesafios))
-            );
+                    new BufferedInputStream(new FileInputStream(route)
+            ));
             if (XMLDesafios.length() > 0){
                 //Sacamos los usuarios del archivo XML
                 desafios = (ArrayList<Desafio>) decoder.readObject();
@@ -98,7 +98,7 @@ public class AlmacenXML implements interfazAlmacen {
             }
             //Si no encontramos un archivo lo creamos
             else{
-                FileOutputStream output = new FileOutputStream("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
+                FileOutputStream output = new FileOutputStream(route);
             }
 
         } catch (FileNotFoundException e) {

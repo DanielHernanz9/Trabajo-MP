@@ -37,7 +37,7 @@ public class JuegoCombateManager {
 
         //Cargamos los usuarios del disco
         usuarios= storage.loadUsers();
-        desafiosPendientes = storage.loadChallenges();
+        desafiosPendientes = storage.loadChallenges("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
@@ -72,7 +72,9 @@ public class JuegoCombateManager {
         IniciarProcesoRegistro();
 
         //Si se ha registrado un jugador nuevo mostramos el menu
-        MostrarMenuJugador();
+        if (jugador1 != null){
+            MostrarMenuJugador();
+        }
     }
 
     /**
@@ -128,31 +130,45 @@ public class JuegoCombateManager {
                 System.out.println("No has seleccionado ningún personaje");
                 registrarPersonaje(jugador1);
             }
+            File desafiosJugador = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+            if (desafiosJugador.length() != 0){
+                ArrayList<Desafio> listaDesafios = storage.loadChallenges(
+                        "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+                jugador1.setDesafiosPendientes(listaDesafios);
+                if (!jugador1.getDesafiosPendientes().isEmpty()){
+                    for (Desafio d:listaDesafios){
+                        mostrarNotificacionDesafio();
+                        System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
+                        System.out.println("¿Que quieres hacer?");
+                        System.out.println("1. Aceptar el desafio y disputar un combate.");
+                        System.out.println("2. Rechazar el desafio y rapertir el oro.");
+                        int opc = sc.nextInt();
+                    }
+                }
+            }
+            else{
+                System.out.println("\nMenú Principal:");
+                System.out.println("1. Desafiar a otro usuario");
+                System.out.println("2. Ver Ranking");
+                System.out.println("3. Cambiar Personaje");
+                System.out.println("4. Volver");
+                int opcion = sc.nextInt();
+                sc.nextLine();  // Limpiar el buffer de entrada
 
-            if (!jugador1.getDesafiosPendientes().isEmpty()){
-                mostrarNotificacionDesafio();
+                switch (opcion) {
+                    case 1 -> {
+                        iniciarDesafio();
+                    }
+                    case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
+                    case 3 -> {
+                        darDeBajaPersonaje(jugador1);
+                        registrarPersonaje(jugador1);
+                    }
+                    case 4 -> { return; }
+                    default -> System.out.println("Opción inválida.");
+                }
             }
 
-            System.out.println("\nMenú Principal:");
-            System.out.println("1. Desafiar a otro usuario");
-            System.out.println("2. Ver Ranking");
-            System.out.println("3. Cambiar Personaje");
-            System.out.println("4. Volver");
-            int opcion = sc.nextInt();
-            sc.nextLine();  // Limpiar el buffer de entrada
-
-            switch (opcion) {
-                case 1 -> {
-                    iniciarDesafio();
-                }
-                case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
-                case 3 -> {
-                    darDeBajaPersonaje(jugador1);
-                    registrarPersonaje(jugador1);
-                }
-                case 4 -> { return; }
-                default -> System.out.println("Opción inválida.");
-            }
         }
     }
 
@@ -236,9 +252,20 @@ public class JuegoCombateManager {
 
     public void mostrarNotificacionDesafio() {
         ArrayList<Desafio> listaDesafio = jugador1.getDesafiosPendientes();
-        System.out.println("¡Tienes " + listaDesafio.size() + "desafios pendientes!");
+        int length = listaDesafio.size();
+        if (length == 1){
+            System.out.println("¡Tienes " + length + " desafios pendiente!");
+        }
+        else{
+            System.out.println("¡Tienes " + length + " desafios pendientes!");
+        }
+
+
         for(Desafio d: listaDesafio){
-            System.out.println(d.getUsuarioOrigen().getName());
+            if (d.getUsuarioDestino().equals(jugador1.getNombre())){
+                System.out.println(d.getUsuarioOrigen());
+            }
+
         }
     }
 
@@ -247,22 +274,67 @@ public class JuegoCombateManager {
     }
 
     public void gestionarDesafios() {
-        System.out.println("Hay " + desafiosPendientes.size() + " desafios pendientes por validar.");
-        Scanner sc = new Scanner(System.in);
-        for (Desafio d: desafiosPendientes){
-            Jugador origen = d.getUsuarioOrigen();
-            Jugador destino = d.getUsuarioDestino();
-            System.out.println("Desafio de " + origen.getName() + " a " + destino.getName());
-            System.out.println("¿Validar este desafio? (s/n)");
-            String ans = sc.nextLine();
-            if (ans.equals("s")){
-                destino.getDesafiosPendientes().add(d);
-                int index = usuarios.indexOf(destino);
-                usuarios.add(destino);
-                storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Usuarios.xml");
-            }
-            desafiosPendientes.remove(d);
+        int numDesafios = desafiosPendientes.size();
+        if (numDesafios == 1){
+            System.out.println("Hay " + numDesafios + " desafio pendiente por validar.");
         }
+        else{
+            System.out.println("Hay " + numDesafios + " desafios pendientes por validar.");
+
+        }
+        Scanner sc = new Scanner(System.in);
+        Iterator<Desafio> iterator = desafiosPendientes.iterator();
+
+        while (iterator.hasNext()) {
+            Desafio d = iterator.next();
+
+            String nombreOrigen = d.getUsuarioOrigen();
+            String nombreDestino = d.getUsuarioDestino();
+
+            Jugador origen = null;
+            Jugador destino = null;
+
+            for (Usuario u : usuarios) {
+                if (u instanceof Jugador j) {
+                    if (j.getNombre().equals(nombreOrigen)) {
+                        origen = j;
+                    }
+                    if (j.getNombre().equals(nombreDestino)) {
+                        destino = j;
+                    }
+                }
+            }
+
+            System.out.println("Desafío de " + origen.getNombre() + " a " + destino.getNombre());
+            System.out.println("¿Validar este desafío? (s/n)");
+            String ans = sc.nextLine();
+
+            if (ans.equals("s")) {
+                destino.getDesafiosPendientes().add(d);
+
+                // Reemplazar el jugador actualizado (como ya arreglaste antes)
+                int index = -1;
+                int i = 0;
+                boolean found = false;
+
+                while (i < usuarios.size() && !found) {
+                    if (usuarios.get(i).getNombre().equals(destino.getNombre())) {
+                        index = i;
+                        found = true;
+                    } else {
+                        i++;
+                    }
+                }
+                if (found) {
+                    usuarios.set(index, destino);
+                    storage.saveList(destino.getDesafiosPendientes(), "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+                    System.out.println("El desafio de " + origen.getNombre() + " a " + destino.getNombre() + " ha sido validado.");
+                }
+            }
+            iterator.remove();
+            storage.saveList(desafiosPendientes, "Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.XML");
+        }
+
     }
 
     public void registrarPersonaje(Jugador jugador){
@@ -390,7 +462,7 @@ public class JuegoCombateManager {
 
         boolean found = false;
         Usuario u = null;
-        int userIndex = 0;
+        int userIndex = -1;
         Iterator iterator = usuarios.iterator();
         while (! found){
             if (iterator.hasNext()){
@@ -409,5 +481,9 @@ public class JuegoCombateManager {
             System.out.println("El usuario " + playerName + " no se ha encontrado.");
             System.out.println("Asegúrate de que el usuario está registrado e inténtalo de nuevo.");
         }
+    }
+
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
     }
 }
