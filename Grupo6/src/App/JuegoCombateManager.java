@@ -134,16 +134,23 @@ public class JuegoCombateManager {
             if (desafiosJugador.length() != 0){
                 ArrayList<Desafio> listaDesafios = storage.loadChallenges(
                         "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
-                jugador1.setDesafiosPendientes(listaDesafios);
-                if (!jugador1.getDesafiosPendientes().isEmpty()){
-                    for (Desafio d:listaDesafios){
-                        mostrarNotificacionDesafio();
-                        System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
-                        System.out.println("¿Que quieres hacer?");
-                        System.out.println("1. Aceptar el desafio y disputar un combate.");
-                        System.out.println("2. Rechazar el desafio y repartir el oro.");
-                        int opc = sc.nextInt();
+                ArrayList<Desafio> listaDesafiosJugador = new ArrayList<>();
+                for (Desafio d: listaDesafios){
+                    if(d.getUsuarioDestino().equals(jugador1.getNombre())){
+                        listaDesafiosJugador.add(d);
                     }
+                }
+                jugador1.setDesafiosPendientes(listaDesafiosJugador);
+
+            }
+            if (!jugador1.getDesafiosPendientes().isEmpty()){
+                for (Desafio d:jugador1.getDesafiosPendientes()){
+                    mostrarNotificacionDesafio();
+                    System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
+                    System.out.println("¿Que quieres hacer?");
+                    System.out.println("1. Aceptar el desafio y disputar un combate.");
+                    System.out.println("2. Rechazar el desafio y repartir el oro.");
+                    int opc = sc.nextInt();
                 }
             }
             else{
@@ -254,19 +261,12 @@ public class JuegoCombateManager {
         ArrayList<Desafio> listaDesafio = jugador1.getDesafiosPendientes();
         int length = listaDesafio.size();
         if (length == 1){
-            System.out.println("¡Tienes " + length + " desafios pendiente!");
+            System.out.println("¡Tienes " + length + " desafio pendiente!");
         }
         else{
             System.out.println("¡Tienes " + length + " desafios pendientes!");
         }
 
-
-        for(Desafio d: listaDesafio){
-            if (d.getUsuarioDestino().equals(jugador1.getNombre())){
-                System.out.println(d.getUsuarioOrigen());
-            }
-
-        }
     }
 
     public void mostrarResultado(Combate combate) {
