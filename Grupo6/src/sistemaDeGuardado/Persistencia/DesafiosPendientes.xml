@@ -4,13 +4,13 @@
   <void method="add">
    <object class="Grupo6.src.Desafio.Desafio">
     <void property="oroApostado">
-     <int>1</int>
+     <int>100</int>
     </void>
     <void property="usuarioDestino">
-     <string>jugador3</string>
+     <string>jugador1</string>
     </void>
     <void property="usuarioOrigen">
-     <string>jugador1</string>
+     <string>jugador2</string>
     </void>
    </object>
   </void>

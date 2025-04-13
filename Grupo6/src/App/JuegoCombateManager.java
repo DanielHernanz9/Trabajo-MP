@@ -312,21 +312,9 @@ public class JuegoCombateManager {
             if (ans.equals("s")) {
                 destino.getDesafiosPendientes().add(d);
 
-                // Reemplazar el jugador actualizado (como ya arreglaste antes)
-                int index = -1;
-                int i = 0;
-                boolean found = false;
+               boolean found = updateUser(destino);
 
-                while (i < usuarios.size() && !found) {
-                    if (usuarios.get(i).getNombre().equals(destino.getNombre())) {
-                        index = i;
-                        found = true;
-                    } else {
-                        i++;
-                    }
-                }
                 if (found) {
-                    usuarios.set(index, destino);
                     storage.saveList(destino.getDesafiosPendientes(), "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                     System.out.println("El desafio de " + origen.getNombre() + " a " + destino.getNombre() + " ha sido validado.");
                 }
@@ -449,10 +437,15 @@ public class JuegoCombateManager {
         int apuesta = sc.nextInt();
         boolean isCorrect = true;
         do{
-
             if (jugador1.getOro() <= apuesta){
                 System.out.println("No puedes apostar tanto oro (tienes " + jugador1.getOro() + " monedas de oro.)");
                 System.out.println("Introduce una cantidad que puedas permitirte: ");
+                apuesta = sc.nextInt();
+                isCorrect = false;
+            }
+            else if (apuesta < 0){
+                System.out.println("Por favor, introduce una cantidad de oro coherente: ");
+                apuesta = sc.nextInt();
                 isCorrect = false;
             }
             else{
@@ -464,7 +457,7 @@ public class JuegoCombateManager {
         Usuario u = null;
         int userIndex = -1;
         Iterator iterator = usuarios.iterator();
-        while (! found){
+        while (!found && userIndex < usuarios.size() - 1) {
             if (iterator.hasNext()){
                 u = (Usuario) iterator.next();
                 if (u instanceof Jugador && u.getName().equals(playerName)){
@@ -486,4 +479,31 @@ public class JuegoCombateManager {
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
+
+    /**
+     * Actualiza los datos de un usuario en la lista de usuarios (no sobreescribe el XML)
+     * @param user El usuario que se quiere actualizar.
+     * @return si la operacion se completa con exito.
+     */
+    public boolean updateUser(Usuario user){
+        // Reemplazar el jugador actualizado (como ya arreglaste antes)
+        int index = -1;
+        int i = 0;
+        boolean found = false;
+
+        while (i < usuarios.size() && !found) {
+            if (usuarios.get(i).getNombre().equals(user.getNombre())) {
+                index = i;
+                found = true;
+            } else {
+                i++;
+            }
+        }
+
+        if (found) {
+            usuarios.set(index, user);
+        }
+        return found;
+    }
 }
+

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="mas cosas de la validacion de desafios (no funciona bien todavia)" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Proceso principal de desafio entre usuarios funcional, a falta de ciertas cosas que tengo que terminar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +105,7 @@
       <workItem from="1744359732013" duration="2516000" />
       <workItem from="1744362578818" duration="4513000" />
       <workItem from="1744382966901" duration="6865000" />
+      <workItem from="1744449262078" duration="10324000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -314,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744389792745</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Proceso principal de desafio entre usuarios funcional, a falta de ciertas cosas que tengo que terminar">
+      <option name="closed" value="true" />
+      <created>1744459589210</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1744459589210</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,24 +360,47 @@
     <MESSAGE value="Correccion errores" />
     <MESSAGE value="Implementacion de desafios entre usuarios,a falta de validadacion por parte de operadores" />
     <MESSAGE value="mas cosas de la validacion de desafios (no funciona bien todavia)" />
-    <option name="LAST_COMMIT_MESSAGE" value="mas cosas de la validacion de desafios (no funciona bien todavia)" />
+    <MESSAGE value="Proceso principal de desafio entre usuarios funcional, a falta de ciertas cosas que tengo que terminar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proceso principal de desafio entre usuarios funcional, a falta de ciertas cosas que tengo que terminar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>258</line>
-          <option name="timeStamp" value="18" />
+          <line>443</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>276</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="22" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="file" />
-        <watch expression="nuevo.getNombre()" language="JAVA" />
-        <watch expression="jugador1.getOro()" language="JAVA" />
         <watch expression="this.usuarios" custom="Grupo6.src.App.JuegoCombateManager" />
+        <watch expression="desafiosPendientes" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
