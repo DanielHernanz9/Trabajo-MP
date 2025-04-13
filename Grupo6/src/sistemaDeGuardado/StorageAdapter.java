@@ -43,7 +43,10 @@ public class StorageAdapter implements interfazAlmacen {
     }
 
     public ArrayList<Desafio> loadChallenges(){
-        return Adapter.loadChallengesFromXML();
+        return Adapter.loadChallenges();
+    }
+    public ArrayList<Desafio> loadPendingChallenges(){
+        return Adapter.loadPendingChallenges();
     }
 
     public  ArrayList<Jugador> loadRanking(){

@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="21.0.2" class="java.beans.XMLDecoder">
- <object class="java.util.ArrayList">
-  <void method="add">
-   <object class="Grupo6.src.Desafio.Desafio">
-    <void property="oroApostado">
-     <int>100</int>
-    </void>
-    <void property="usuarioDestino">
-     <string>jugador1</string>
-    </void>
-    <void property="usuarioOrigen">
-     <string>dani</string>
-    </void>
-   </object>
-  </void>
- </object>
+ <object class="java.util.ArrayList"/>
 </java>

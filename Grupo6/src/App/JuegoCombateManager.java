@@ -9,7 +9,6 @@ import Grupo6.src.sistemaDeGuardado.SingleStorage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
 public class JuegoCombateManager {
@@ -21,6 +20,7 @@ public class JuegoCombateManager {
     private final ArrayList<Combate> combates;
     private SingleStorage storage;
     private FactoryPersonaje factory;
+    private ArrayList<Desafio> desafiosPendientesPorValidar;
     private ArrayList<Desafio> desafiosPendientes;
 
     /**
@@ -30,7 +30,7 @@ public class JuegoCombateManager {
     public JuegoCombateManager() {
         this.combates = new ArrayList<>();
         this.usuarios = new ArrayList<>();
-        this.desafiosPendientes = new ArrayList();
+        this.desafiosPendientesPorValidar = new ArrayList();
 
         storage=SingleStorage.getInstance();
 
@@ -39,7 +39,8 @@ public class JuegoCombateManager {
 
         //Cargamos los usuarios del disco
         usuarios= storage.loadUsers();
-        desafiosPendientes = storage.loadChallenges();
+        desafiosPendientesPorValidar = storage.loadChallenges();
+        desafiosPendientes = storage.loadPendingChallenges();
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
@@ -136,7 +137,7 @@ public class JuegoCombateManager {
             }
             File desafiosJugador = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
             if (desafiosJugador.length() != 0){
-                ArrayList<Desafio> listaDesafios = storage.loadChallenges();
+                ArrayList<Desafio> listaDesafios = storage.loadPendingChallenges();
                 ArrayList<Desafio> listaDesafiosJugador = new ArrayList<>();
                 for (Desafio d: listaDesafios){
                     if(d.getUsuarioDestino().equals(jugador1.getNombre())){
@@ -146,45 +147,65 @@ public class JuegoCombateManager {
                 jugador1.setDesafiosPendientes(listaDesafiosJugador);
 
             }
-            if (!jugador1.getDesafiosPendientes().isEmpty()){
-                for (Desafio d:jugador1.getDesafiosPendientes()){
-                    mostrarNotificacionDesafio();
-                    System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
-                    System.out.println("¿Que quieres hacer?");
-                    System.out.println("1. Aceptar el desafio y disputar un combate.");
-                    System.out.println("2. Rechazar el desafio y repartir el oro.");
-                    int opc = sc.nextInt();
-                }
-            }
-            else{
-                System.out.println("\nMenú Principal:");
-                System.out.println("1. Desafiar a otro usuario");
-                System.out.println("2. Consultar Ranking global");
-                System.out.println("3. Cambiar Personaje");
-                System.out.println("4. Elegir armas y armaduras activas para el personaje");
-                System.out.println("5. Consultar cantidad global de oro ganado y perdido en combates anteriores");
-                System.out.println("6. Volver");
-                int opcion = sc.nextInt();
-                sc.nextLine();  // Limpiar el buffer de entrada
 
-                switch (opcion) {
-                    case 1 -> {
-                        iniciarDesafio();
+            //Mientras haya desafios pendientes, los mostramos al jugador para que los acepte o rechaze
+            while (!jugador1.getDesafiosPendientes().isEmpty()) {
+                Desafio d= jugador1.getDesafiosPendientes().get(0);
+                mostrarNotificacionDesafio();
+
+                System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
+                System.out.println("¿Que quieres hacer?");
+                System.out.println("1. Aceptar el desafio y disputar un combate.");
+                System.out.println("2. Rechazar el desafio y repartir el oro.");
+                int opc = sc.nextInt();
+                switch (opc){
+                    case 1:{
+                        System.out.println("Iniciar combate (no implementado)");
+                        IniciarCombate();
+                        break;
                     }
-                    case 2 -> {
-                        Ranking ranking = new Ranking();
-                        ranking.showRanking();
+                    case 2:{
+                        System.out.println("Rechazar desafio y descontar 10% de oro al jugador1");
+                        break;
                     }
-                    case 3 -> {
-                        darDeBajaPersonaje(jugador1);
-                        registrarPersonaje(jugador1);
-                    }
-                    case 4 -> {System.out.println("Elección de armas y armaduras: (funcionalidad pendiente)");}
-                    case 5 -> { System.out.println("Consultar cantidad global de oro ganado y perdido (funcionalidad pendiente)"); }
-                    case 6 -> { return; }
-                    default -> System.out.println("Opción inválida.");
+
                 }
+
+                //Eliminamos el desafio pendiente de la lista y lo actualizamos en el XML
+                jugador1.getDesafiosPendientes().removeFirst();
+                desafiosPendientes.remove(d);
+                storage.saveList(desafiosPendientes,"Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
             }
+
+
+            System.out.println("\nMenú Principal:");
+            System.out.println("1. Desafiar a otro usuario");
+            System.out.println("2. Consultar Ranking global");
+            System.out.println("3. Cambiar Personaje");
+            System.out.println("4. Elegir armas y armaduras activas para el personaje");
+            System.out.println("5. Consultar cantidad global de oro ganado y perdido en combates anteriores");
+            System.out.println("6. Volver");
+            int opcion = sc.nextInt();
+            sc.nextLine();  // Limpiar el buffer de entrada
+
+            switch (opcion) {
+                case 1 -> {
+                    iniciarDesafio();
+                }
+                case 2 -> {
+                    Ranking ranking = new Ranking();
+                    ranking.showRanking();
+                }
+                case 3 -> {
+                    darDeBajaPersonaje(jugador1);
+                    registrarPersonaje(jugador1);
+                }
+                case 4 -> {System.out.println("Elección de armas y armaduras: (funcionalidad pendiente)");}
+                case 5 -> { System.out.println("Consultar cantidad global de oro ganado y perdido (funcionalidad pendiente)"); }
+                case 6 -> { return; }
+                default -> System.out.println("Opción inválida.");
+            }
+
 
         }
     }
@@ -284,7 +305,7 @@ public class JuegoCombateManager {
     }
 
     public void gestionarDesafios() {
-        int numDesafios = desafiosPendientes.size();
+        int numDesafios = desafiosPendientesPorValidar.size();
         if (numDesafios == 1){
             System.out.println("Hay " + numDesafios + " desafio pendiente por validar.");
         }
@@ -293,7 +314,7 @@ public class JuegoCombateManager {
 
         }
         Scanner sc = new Scanner(System.in);
-        Iterator<Desafio> iterator = desafiosPendientes.iterator();
+        Iterator<Desafio> iterator = desafiosPendientesPorValidar.iterator();
 
         while (iterator.hasNext()) {
             Desafio d = iterator.next();
@@ -321,16 +342,19 @@ public class JuegoCombateManager {
 
             if (ans.equals("s")) {
                 destino.getDesafiosPendientes().add(d);
+                //El desafio se valida y ahora pasa a ser un desafio pendiente
+                desafiosPendientes.add(d);
+
 
                boolean found = updateUser(destino);
 
                 if (found) {
-                    storage.saveList(destino.getDesafiosPendientes(), "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+                    storage.saveList(desafiosPendientes, "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                     System.out.println("El desafio de " + origen.getNombre() + " a " + destino.getNombre() + " ha sido validado.");
                 }
             }
-            iterator.remove();
-            storage.saveList(desafiosPendientes, "Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.XML");
+            iterator.remove();//Eliminamos el desafio de desafiosPendientesPorValidar
+            storage.saveList(desafiosPendientesPorValidar, "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.XML");
         }
 
     }
@@ -435,8 +459,8 @@ public class JuegoCombateManager {
         this.jugador2 = jugador;
     }
 
-    public ArrayList<Desafio> getDesafiosPendientes() {
-        return desafiosPendientes;
+    public ArrayList<Desafio> getDesafiosPendientesPorValidar() {
+        return desafiosPendientesPorValidar;
     }
     public void iniciarDesafio(){
         Scanner sc = new Scanner(System.in);
@@ -478,6 +502,9 @@ public class JuegoCombateManager {
         }
         if (found){
             jugador1.desafiarUsuario((Jugador) usuarios.get(userIndex), apuesta);
+            Desafio desafio = new Desafio(jugador1.getNombre(), usuarios.get(userIndex).getNombre(), apuesta);
+            desafiosPendientesPorValidar.add(desafio);
+            storage.saveList(desafiosPendientesPorValidar, "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml");
             System.out.println("¡Se ha enviado un desafio a " + playerName + "!");
         }
         else{

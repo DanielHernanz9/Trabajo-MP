@@ -42,6 +42,9 @@ public class SingleStorage {
     public ArrayList<Desafio> loadChallenges(){
         return ((StorageAdapter) almacenAdapter).loadChallenges();
     }
+    public ArrayList<Desafio> loadPendingChallenges(){
+        return ((StorageAdapter) almacenAdapter).loadPendingChallenges();
+    }
 
     public void saveList(ArrayList list, String route) {
         ((StorageAdapter) almacenAdapter).saveList(list, route);

@@ -3,6 +3,7 @@ package Grupo6.src.Desafio;
 import Grupo6.src.App.*;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Desafio implements Serializable {
 
@@ -61,5 +62,17 @@ public class Desafio implements Serializable {
 
     public void setUsuarioDestino(String usuarioDestino) {
         UsuarioDestino = usuarioDestino;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Desafio desafio = (Desafio) o;
+        return Objects.equals(OroApostado, desafio.OroApostado) && Objects.equals(UsuarioOrigen, desafio.UsuarioOrigen) && Objects.equals(UsuarioDestino, desafio.UsuarioDestino);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(OroApostado, UsuarioOrigen, UsuarioDestino);
     }
 }

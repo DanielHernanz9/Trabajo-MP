@@ -18,6 +18,27 @@ public class Jugador extends Usuario {
     private int Oro;
     private String RegNum; // Número de registro, solo lo tienen los jugadores y es único para cada jugador
 
+    private int numCombatesGanados;
+    private int numCombatesPerdidos;
+
+    public int getNumCombatesGanados() {
+        return numCombatesGanados;
+    }
+
+    public void setNumCombatesGanados(int numCombatesGanados) {
+        this.numCombatesGanados = numCombatesGanados;
+    }
+
+
+
+    public int getNumCombatesPerdidos() {
+        return numCombatesPerdidos;
+    }
+
+    public void setNumCombatesPerdidos(int numCombatesPerdidos) {
+        this.numCombatesPerdidos = numCombatesPerdidos;
+    }
+
     /**
      * Constructor por defecto de Jugador.
      * Inicializa la lista de desafíos pendientes y el historial de oro.
@@ -27,6 +48,8 @@ public class Jugador extends Usuario {
         this.DesafiosPendientes = new ArrayList<>();  // Inicializa la lista de desafíos pendientes
         this.HistorialOro = new int[10];  // Inicializa el historial de oro (puedes modificar el tamaño)
         this.Oro = 500;
+        numCombatesGanados=0;
+        numCombatesPerdidos=0;
     }
 
     /**
@@ -144,8 +167,6 @@ public class Jugador extends Usuario {
             ArrayList<Desafio> listaDesafios = new ArrayList<>();
             listaDesafios.add(desafio);
             // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
-            SingleStorage storage = SingleStorage.getInstance();
-            storage.saveList(listaDesafios, "Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
             System.out.println(this.getNombre() + " ha desafiado a " + oponente.getNombre());
         } else {
             // Si el desafío o el oponente son nulos, se imprime un mensaje de error

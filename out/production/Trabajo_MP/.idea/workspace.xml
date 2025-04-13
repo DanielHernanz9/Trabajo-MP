@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="158a6c52-5573-48be-8d7b-46c1c6eeccba" name="Changes" comment="arreglo error commit (porfin)">
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Combate/Ranking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Combate/Ranking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/AlmacenXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/AlmacenXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/SingleStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/SingleStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/StorageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/StorageAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/interfazAlmacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/interfazAlmacen.java" afterDir="false" />
+    <list default="true" id="158a6c52-5573-48be-8d7b-46c1c6eeccba" name="Changes" comment="Reorganizacion de la clase almacen (He puesto al final un metodo para cargar cada cosa por que java no deja hacer castings de genericos al cargar y abstraemos mas lo que hace la clase almacen de las demas) tambien he metido la funcionalidad de mostrar el ranking pero todavia no he puesto para guardarlo y actualizarlo tras cada combate, lo hare en otro momento">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/Jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/Jugador.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,7 @@
       <workItem from="1743774209694" duration="11688000" />
       <workItem from="1744382954705" duration="6869000" />
       <workItem from="1744475929882" duration="1975000" />
-      <workItem from="1744540035387" duration="3331000" />
+      <workItem from="1744540035387" duration="6704000" />
     </task>
     <task id="LOCAL-00001" summary="primer commit">
       <option name="closed" value="true" />
@@ -260,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744477837220</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Reorganizacion de la clase almacen (He puesto al final un metodo para cargar cada cosa por que java no deja hacer castings de genericos al cargar y abstraemos mas lo que hace la clase almacen de las demas) tambien he metido la funcionalidad de mostrar el ranking pero todavia no he puesto para guardarlo y actualizarlo tras cada combate, lo hare en otro momento">
+      <option name="closed" value="true" />
+      <created>1744544903986</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744544903986</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,25 +295,21 @@
     <MESSAGE value="commit prueba" />
     <MESSAGE value="arreglo error commit" />
     <MESSAGE value="arreglo error commit (porfin)" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglo error commit (porfin)" />
+    <MESSAGE value="Reorganizacion de la clase almacen (He puesto al final un metodo para cargar cada cosa por que java no deja hacer castings de genericos al cargar y abstraemos mas lo que hace la clase almacen de las demas) tambien he metido la funcionalidad de mostrar el ranking pero todavia no he puesto para guardarlo y actualizarlo tras cada combate, lo hare en otro momento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganizacion de la clase almacen (He puesto al final un metodo para cargar cada cosa por que java no deja hacer castings de genericos al cargar y abstraemos mas lo que hace la clase almacen de las demas) tambien he metido la funcionalidad de mostrar el ranking pero todavia no he puesto para guardarlo y actualizarlo tras cada combate, lo hare en otro momento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/Esbirros/Demonio.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Esbirros/Demonio.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Esbirros/Demonio.java</url>
           <line>35</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ranking.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

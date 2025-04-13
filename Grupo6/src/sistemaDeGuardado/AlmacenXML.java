@@ -2,7 +2,6 @@ package Grupo6.src.sistemaDeGuardado;
 import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
-import Grupo6.src.Combate.Ranking;
 import Grupo6.src.Desafio.Desafio;
 
 import java.beans.XMLDecoder;
@@ -17,7 +16,8 @@ public class AlmacenXML implements interfazAlmacen {
 
     private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
     private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
-    private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
+    private File XMLDesafiosPendientes = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+    private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml");
     private File XMLRanking= new File("Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
 
     /**
@@ -57,7 +57,33 @@ public class AlmacenXML implements interfazAlmacen {
         return usuarios;
     }
 
-    public ArrayList<Desafio>  loadChallengesFromXML(){
+    @Override
+    public ArrayList<Desafio> loadPendingChallenges() {
+        ArrayList<Desafio> desafios = new ArrayList<>();
+        try {
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(XMLDesafiosPendientes)
+                    ));
+            if (XMLDesafiosPendientes.length() > 0){
+                //Sacamos los usuarios del archivo XML
+                desafios = (ArrayList<Desafio>) decoder.readObject();
+
+                //Cerramos el decoder
+                decoder.close();
+            }
+            //Si no encontramos un archivo lo creamos
+            else{
+                FileOutputStream output = new FileOutputStream(XMLDesafiosPendientes);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return desafios;
+    }
+
+    @Override
+    public ArrayList<Desafio> loadChallenges() {
         ArrayList<Desafio> desafios = new ArrayList<>();
         try {
             XMLDecoder decoder = new XMLDecoder(
@@ -80,6 +106,8 @@ public class AlmacenXML implements interfazAlmacen {
         }
         return desafios;
     }
+
+
 
     public ArrayList<Jugador>  loadRanking(){
         ArrayList<Jugador> jugador = new ArrayList<>();
