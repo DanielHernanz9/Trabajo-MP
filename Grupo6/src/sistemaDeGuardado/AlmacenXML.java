@@ -2,6 +2,7 @@ package Grupo6.src.sistemaDeGuardado;
 import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.Combate.Combate;
+import Grupo6.src.Combate.Ranking;
 import Grupo6.src.Desafio.Desafio;
 
 import java.beans.XMLDecoder;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 public class AlmacenXML implements interfazAlmacen {
 
     private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
-    private File XMLjugadores = new File("src/sistemaDeGuardado/Jugadores.xml");
     private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
     private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
     private File XMLRanking= new File("Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
@@ -27,37 +27,11 @@ public class AlmacenXML implements interfazAlmacen {
     }
 
 
-    public void registrarUsuario(Usuario user) {
-        // TODO implement here
-        try(XMLEncoder encoder = new XMLEncoder
-                (new BufferedOutputStream(new FileOutputStream(XMLjugadores)))) {
-            encoder.writeObject(user);
-        }
-        catch(FileNotFoundException ignorar){
-
-        }
-    }
-
     @Override
     public void registrarJugador(Jugador jugador) {
 
     }
 
-    /**
-     * @param
-     */
-    public void addFight( Combate combate) {
-        // TODO implement here
-        try(XMLEncoder encoder = new XMLEncoder
-                (new BufferedOutputStream(new FileOutputStream(XMLCombates)))) {
-            encoder.writeObject(combate);
-        }
-        catch(FileNotFoundException ignorar){
-
-        }
-
-
-    }
 
     public ArrayList<Usuario>  loadUsersFromXML(){
         ArrayList<Usuario> usuarios = new ArrayList<>();
@@ -83,11 +57,11 @@ public class AlmacenXML implements interfazAlmacen {
         return usuarios;
     }
 
-    public ArrayList<Desafio>  loadChallengesFromXML(String route){
+    public ArrayList<Desafio>  loadChallengesFromXML(){
         ArrayList<Desafio> desafios = new ArrayList<>();
         try {
             XMLDecoder decoder = new XMLDecoder(
-                    new BufferedInputStream(new FileInputStream(route)
+                    new BufferedInputStream(new FileInputStream(XMLDesafios)
                     ));
             if (XMLDesafios.length() > 0){
                 //Sacamos los usuarios del archivo XML
@@ -98,7 +72,7 @@ public class AlmacenXML implements interfazAlmacen {
             }
             //Si no encontramos un archivo lo creamos
             else{
-                FileOutputStream output = new FileOutputStream(route);
+                FileOutputStream output = new FileOutputStream(XMLDesafios);
             }
 
         } catch (FileNotFoundException e) {
@@ -107,30 +81,54 @@ public class AlmacenXML implements interfazAlmacen {
         return desafios;
     }
 
-    public ArrayList<Jugador> loadFromXML(String ruta){
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        File route= new File(ruta);
+    public ArrayList<Jugador>  loadRanking(){
+        ArrayList<Jugador> jugador = new ArrayList<>();
         try {
             XMLDecoder decoder = new XMLDecoder(
-                    new BufferedInputStream(new FileInputStream(route))
-            );
-            if (route.length() > 0){
+                    new BufferedInputStream(new FileInputStream(XMLRanking)
+                    ));
+            if (XMLRanking.length() > 0){
                 //Sacamos los usuarios del archivo XML
-                jugadores = (ArrayList<Jugador>) decoder.readObject();
+                jugador = (ArrayList<Jugador>) decoder.readObject();
 
                 //Cerramos el decoder
                 decoder.close();
             }
             //Si no encontramos un archivo lo creamos
             else{
-                FileOutputStream output = new FileOutputStream(ruta);
+                FileOutputStream output = new FileOutputStream(XMLRanking);
             }
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        return jugadores;
+        return jugador;
     }
+
+    public ArrayList<Combate>  loadCombatesFromXML(){
+        ArrayList<Combate> Combate = new ArrayList<>();
+        try {
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(XMLCombates)
+                    ));
+            if (XMLCombates.length() > 0){
+                //Sacamos los usuarios del archivo XML
+                Combate = (ArrayList<Combate>) decoder.readObject();
+
+                //Cerramos el decoder
+                decoder.close();
+            }
+            //Si no encontramos un archivo lo creamos
+            else{
+                FileOutputStream output = new FileOutputStream(XMLCombates);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return Combate;
+    }
+
 
 
     //METODO PARA GUARDAR LISTAS EN UN ARCHIVO XML

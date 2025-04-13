@@ -9,11 +9,9 @@ public interface interfazAlmacen {
 
     public abstract void registrarJugador(Jugador jugador);
 
-    public abstract void addFight(Combate combate);
+    public abstract void saveList(ArrayList list, String route);
 
-    public  abstract void saveList(ArrayList list, String route);
+    public abstract ArrayList<Jugador> loadRanking();
 
-    public abstract ArrayList<Jugador> loadFromXML(String ruta);
-
-
+    public abstract ArrayList<Combate>  loadCombatesFromXML();
 }

@@ -1,6 +1,7 @@
 package Grupo6.src.App;
 
 import Grupo6.src.Combate.Combate;
+import Grupo6.src.Combate.Ranking;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
@@ -8,6 +9,7 @@ import Grupo6.src.sistemaDeGuardado.SingleStorage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class JuegoCombateManager {
@@ -37,7 +39,7 @@ public class JuegoCombateManager {
 
         //Cargamos los usuarios del disco
         usuarios= storage.loadUsers();
-        desafiosPendientes = storage.loadChallenges("Grupo6/src/sistemaDeGuardado/Persistencia/Desafios.xml");
+        desafiosPendientes = storage.loadChallenges();
 
         //metemos el operador por defecto solo si no lo hemos metido antes
         boolean encontrado=false;
@@ -87,7 +89,8 @@ public class JuegoCombateManager {
             System.out.println("1. Validar Desafíos");
             System.out.println("2. Bloquear Jugador");
             System.out.println("3. Desbloquear Jugador");
-            System.out.println("4. Volver");
+            System.out.println("4. Editar un personaje");
+            System.out.println("5. Volver");
             int opcion = sc.nextInt();
             sc.nextLine();  // Limpiar el buffer de entrada
 
@@ -95,7 +98,8 @@ public class JuegoCombateManager {
                 case 1 -> gestionarDesafios();
                 case 2 -> bloquearDesbloquearJugador(sc, true);
                 case 3 -> bloquearDesbloquearJugador(sc, false);
-                case 4 -> { return; }
+                case 4 ->System.out.println("Sin implementar");//Debe permitirse editar cualquier cosa de un personaje o añadir armas, armaduras, etc
+                case 5 -> { return; }
                 default -> System.out.println("Opción inválida.");
             }
         }
@@ -132,8 +136,7 @@ public class JuegoCombateManager {
             }
             File desafiosJugador = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
             if (desafiosJugador.length() != 0){
-                ArrayList<Desafio> listaDesafios = storage.loadChallenges(
-                        "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+                ArrayList<Desafio> listaDesafios = storage.loadChallenges();
                 ArrayList<Desafio> listaDesafiosJugador = new ArrayList<>();
                 for (Desafio d: listaDesafios){
                     if(d.getUsuarioDestino().equals(jugador1.getNombre())){
@@ -156,9 +159,11 @@ public class JuegoCombateManager {
             else{
                 System.out.println("\nMenú Principal:");
                 System.out.println("1. Desafiar a otro usuario");
-                System.out.println("2. Ver Ranking");
+                System.out.println("2. Consultar Ranking global");
                 System.out.println("3. Cambiar Personaje");
-                System.out.println("4. Volver");
+                System.out.println("4. Elegir armas y armaduras activas para el personaje");
+                System.out.println("5. Consultar cantidad global de oro ganado y perdido en combates anteriores");
+                System.out.println("6. Volver");
                 int opcion = sc.nextInt();
                 sc.nextLine();  // Limpiar el buffer de entrada
 
@@ -166,12 +171,17 @@ public class JuegoCombateManager {
                     case 1 -> {
                         iniciarDesafio();
                     }
-                    case 2 -> System.out.println("Ranking: (funcionalidad pendiente)");
+                    case 2 -> {
+                        Ranking ranking = new Ranking();
+                        ranking.showRanking();
+                    }
                     case 3 -> {
                         darDeBajaPersonaje(jugador1);
                         registrarPersonaje(jugador1);
                     }
-                    case 4 -> { return; }
+                    case 4 -> {System.out.println("Elección de armas y armaduras: (funcionalidad pendiente)");}
+                    case 5 -> { System.out.println("Consultar cantidad global de oro ganado y perdido (funcionalidad pendiente)"); }
+                    case 6 -> { return; }
                     default -> System.out.println("Opción inválida.");
                 }
             }

@@ -25,7 +25,7 @@ public class SingleStorage {
         almacenAdapter= new StorageAdapter();
     }
 
-
+    //Patron singleton
     public static SingleStorage getInstance() {
         // TODO implement here
         if (Instance==null) {
@@ -35,25 +35,26 @@ public class SingleStorage {
 
     }
 
-    public Personaje loadCharacterFromUser(Usuario User) {
-        // TODO implement here
-        return null;
-    }
-
     public ArrayList<Usuario> loadUsers(){
         return ((StorageAdapter) almacenAdapter).loadUsers();
     }
 
-    public ArrayList<Desafio> loadChallenges(String route){
-        return ((StorageAdapter) almacenAdapter).loadChallenges(route);
+    public ArrayList<Desafio> loadChallenges(){
+        return ((StorageAdapter) almacenAdapter).loadChallenges();
     }
 
-    public void saveList(ArrayList Users, String route) {
-        ((StorageAdapter) almacenAdapter).saveList(Users, route);
+    public void saveList(ArrayList list, String route) {
+        ((StorageAdapter) almacenAdapter).saveList(list, route);
 
     }
-    public ArrayList<Jugador> loadFromXML(String ruta){
-        return ((StorageAdapter) almacenAdapter).loadFromXML(ruta);
+
+    public  ArrayList<Jugador> loadRanking(){
+        return ((StorageAdapter) almacenAdapter).loadRanking();
     }
+
+    public  ArrayList<Combate>  loadCombatesFromXML(){
+        return ((StorageAdapter) almacenAdapter).loadCombatesFromXML();
+    }
+
 
 }

@@ -42,16 +42,23 @@ public class StorageAdapter implements interfazAlmacen {
        return Adapter.loadUsersFromXML();
     }
 
-    public ArrayList<Desafio> loadChallenges(String route){
-        return Adapter.loadChallengesFromXML(route);
+    public ArrayList<Desafio> loadChallenges(){
+        return Adapter.loadChallengesFromXML();
+    }
+
+    public  ArrayList<Jugador> loadRanking(){
+        return Adapter.loadRanking();
+    }
+
+    @Override
+    public ArrayList<Combate> loadCombatesFromXML() {
+        return Adapter.loadCombatesFromXML();
     }
 
     public void saveList(ArrayList list, String route) {
+
         Adapter.saveList(list,route);
     }
 
-    public ArrayList<Jugador> loadFromXML(String ruta){
-        return Adapter.loadFromXML(ruta);
-    }
 
 }

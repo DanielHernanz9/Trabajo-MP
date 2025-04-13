@@ -12,26 +12,33 @@ import java.util.List;
 public class Ranking {
     private SingleStorage storage;
     private ArrayList<Jugador> ranking;
-    private final String route="Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml";
 
     public Ranking() {
         storage=SingleStorage.getInstance();
     }
 
 
-    public void LoadRanking() {
+    private void LoadRanking() {
 
-        ranking = storage.loadFromXML(route);
+        ranking = storage.loadRanking();
 
     }
 
     public void SaveRanking() {
-        storage.saveList(ranking,route);
+        storage.saveList(ranking,"Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
     }
 
     public List<Jugador> getRanking() {
 
         return ranking;
+    }
+    public void showRanking(){
+        //ArrayList<Usuario> r=storage.loadUsers();
+        int i=1;
+        for (Usuario jugador:ranking){
+            System.out.println(i+". "+jugador.getNombre());
+            i++;
+        }
     }
 
 }
