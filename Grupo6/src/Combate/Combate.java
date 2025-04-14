@@ -49,11 +49,11 @@ public class Combate {
 
     public void IniciarCombate() {
         if (Desafiante != null && Desafiado != null) {
-            manager.registrarCombate(this);
-            System.out.println("Iniciando combate entre " + Desafiante + " y " + Desafiado);
+            //manager.registrarCombate(this);
+            System.out.println("Iniciando combate entre " + Desafiante.getNombre() + " y " + Desafiado.getNombre());
 
             Personaje personajeDesafiado = Desafiado.getPersonaje();
-            Personaje personajeDesafiante = Desafiado.getPersonaje();
+            Personaje personajeDesafiante = Desafiante.getPersonaje();
 
             if (personajeDesafiado.hasEsbirros()){
                 configEsbirroSalud(personajeDesafiado.getEsbirros());
@@ -67,7 +67,7 @@ public class Combate {
             int numeroRonda = 1;
             boolean swapper = false; //Esta variable va alternando en cada ronda.
             //Segun sea true o false, el peronaje atacante sera uno u otro
-            //Considreamos que el primero en atacar es el personaje del jugador desafiante.
+            //Consideramos que el primero en atacar es el personaje del jugador desafiante.
 
             while (newRonda == null || !newRonda.verificarFinCombate()){
 

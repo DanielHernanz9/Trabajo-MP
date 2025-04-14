@@ -21,8 +21,8 @@ public class FactoryVampiros extends FactoryPersonaje {
     }
 
     @Override
-    public PersonajeBase createPersonaje() {
-        return new Vampiro();
+    public PersonajeBase createPersonaje(String name) {
+        return new Vampiro(name);
     }
 
 }

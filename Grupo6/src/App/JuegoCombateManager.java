@@ -161,8 +161,23 @@ public class JuegoCombateManager {
                 int opc = sc.nextInt();
                 switch (opc){
                     case 1:{
-
-                        IniciarCombate();
+                        jugador2 = (Jugador) usuarios.get(getUserIndexByName(d.getUsuarioOrigen()));
+                        System.out.println("Puedes editar tu personaje antes de comenzar el combate: ");
+                        System.out.println("1. Comenzar el combate contra " + jugador2.getName());
+                        System.out.println("2. Editar personaje");
+                        int opcCombate = sc.nextInt();
+                        switch (opcCombate){
+                            case 1:{
+                                IniciarCombate();
+                                break;
+                            }
+                            case 2:{
+                                registrarPersonaje(jugador1);
+                                //De momento dejo este metodo, pero supongo que habra que implementar
+                                //una ediciónd de personaje con armas, esbirros, etc.
+                                break;
+                            }
+                        }
                         break;
                     }
                     case 2:{
@@ -272,8 +287,8 @@ public class JuegoCombateManager {
 
     public void IniciarCombate() {
         if (jugador1 != null && jugador2 != null) {
-            System.out.println("Iniciando combate entre " + jugador1.getNombre() + " y " + jugador2.getNombre());
             Combate combate = new Combate(jugador1, jugador2);
+            combate.IniciarCombate();
             registrarCombate(combate);
             mostrarResultado(combate);
         } else {
@@ -367,23 +382,22 @@ public class JuegoCombateManager {
             System.out.println("1. Vampiro");
             System.out.println("2. Licántropo");
             System.out.println("3. Cazador");
-            int TipoPersonaje=sc.nextInt();
+            int TipoPersonaje = sc.nextInt();
+            System.out.println("¿Cómo se llama tu personaje?");
+            sc.nextLine();
+            String characterName = sc.nextLine();
 
             if(TipoPersonaje==1){
-
                 factory= new FactoryVampiros();
             }
             else if(TipoPersonaje==2){
-
                 factory= new FactoryLicantropos();
             }else{
-
                 factory= new FactoryCazadores();
             }
-            jugador1.registrarPersonaje(factory);
-            int index = usuarios.indexOf(jugador1);
-            usuarios.remove(index);
-            usuarios.add(jugador1);
+
+            jugador1.registrarPersonaje(factory, characterName);
+            updateUser(jugador1);
             storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
             System.out.println("Personaje registrado para el jugador: " + jugador.getNombre());
 

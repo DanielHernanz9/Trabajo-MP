@@ -23,6 +23,6 @@ public abstract class FactoryPersonaje {
     /**
      * 
      */
-    public abstract PersonajeBase createPersonaje();
+    public abstract PersonajeBase createPersonaje(String name);
 
 }

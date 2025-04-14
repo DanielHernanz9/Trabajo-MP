@@ -11,9 +11,13 @@ public class Cazador extends PersonajeBase {
     private int Voluntad;
     private Talento Talento;
 
-    public Cazador() {
-        //Nombre: Cazador, puede que se tenga q cambiar en el futuro
-        setNombre("Cazador");
+    public Cazador(){
+
+    }
+
+    public Cazador(String nombre) {
+        this.Nombre = nombre;
+        this.Talento = new Talento(100);
         //Creacion de los esbirros de los cazadores
         crearEsbirros();
     }
@@ -46,5 +50,9 @@ public class Cazador extends PersonajeBase {
 
     public void setTalento(Talento talento) {
         Talento = talento;
+    }
+
+    public void setVoluntad(int voluntad) {
+        Voluntad = voluntad;
     }
 }

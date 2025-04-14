@@ -18,17 +18,17 @@ public class Vampiro extends PersonajeBase {
     private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO
     public Disciplina Disciplina;
 
-    public Vampiro() {
+    public Vampiro(){
 
-        setNombre("Vampiro");
-
+    }
+    public Vampiro(String name) {
         Random rand = new Random();
-
         Esbirros= new ArrayList<>();
+        this.Disciplina = new Disciplina(100, 100);
+        this.Nombre = name;
 
         //Creacion de los esbirros de los Vampiros
         crearEsbirros();
-
     }
 
     @Override

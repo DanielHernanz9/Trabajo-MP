@@ -14,10 +14,14 @@ public class Licantropo extends PersonajeBase {
     /**
      * Default constructor
      */
-    public Licantropo() {
-        setNombre("Licantropo");
-
+    public Licantropo(String name) {
+        this.Nombre = name;
+        this.Don = new Don(100, 100);
         crearEsbirros();
+    }
+
+    public Licantropo(){
+
     }
 
     /**

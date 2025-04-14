@@ -85,7 +85,7 @@ public class Ronda {
         if (Atacante.hasEsbirros()){
             int l = Atacante.getEsbirros().size();
             Esbirro esbirro = Atacante.getEsbirros().get(l - 1);
-            System.out.println("¡ " + nombreAtacante + " ha inflingido daño a un esbirro de " + nombreAtacado  + " !");
+            System.out.println("¡" + nombreAtacante + " ha infligido daño a un esbirro de " + nombreAtacado  + " !");
             esbirro.recibirDaño();
 
         }
@@ -99,7 +99,7 @@ public class Ronda {
 
     public void ejecutarRonda(){
         System.out.println();
-        System.out.println("¡Comienza la ronda " + NumeroRonda + " !");
+        System.out.println("¡Comienza la ronda " + NumeroRonda + "!");
         // Si bien el enunciado pide los potenciales de cada tipo para cada personaje,
         // no tiene sentido calcular el potencial de defensa del atacante ni el potencial de
         // ataque del atacado, pues son datos que no se van a utilizar.
@@ -122,13 +122,6 @@ public class Ronda {
             }
         }
 
-        for (int i = 0; i < PotencialAtaqueP1; i++){
-            randomNumber = random.nextInt(6) + 1;
-            if (randomNumber == 5 || randomNumber == 6){
-                totalAtaque += 1;
-            }
-        }
-
         for (int i = 0; i < PotencialDefensaP2; i++){
             randomNumber = random.nextInt(6) + 1;
             if (randomNumber == 5 || randomNumber == 6){
@@ -141,7 +134,6 @@ public class Ronda {
 
         if (totalAtaque >= totalDefensa){
             reducirSalud();
-
         }
         else{
             System.out.println("¡ " + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");

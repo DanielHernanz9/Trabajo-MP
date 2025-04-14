@@ -21,8 +21,8 @@ public class FactoryLicantropos extends FactoryPersonaje {
     }
 
     @Override
-    public PersonajeBase createPersonaje() {
-        return new Licantropo();
+    public PersonajeBase createPersonaje(String name) {
+        return new Licantropo(name);
     }
 
 }

@@ -143,8 +143,8 @@ public class Jugador extends Usuario {
      * Registra un personaje utilizando una fábrica de personajes.
      * @param factory Fábrica de personajes que se utilizará para crear el personaje.
      */
-    public void registrarPersonaje(FactoryPersonaje factory) {
-        Personaje = factory.createPersonaje();  // Crea un personaje usando la fábrica
+    public void registrarPersonaje(FactoryPersonaje factory, String name) {
+        Personaje = factory.createPersonaje(name);  // Crea un personaje usando la fábrica
     }
 
     /**

@@ -7,8 +7,21 @@ public class Disciplina extends Habilidad_Especial {
         this.ValorAtaque = ataque;
         this.Coste = coste;
     }
+
+    public Disciplina(){
+
+    }
+
     @Override
     public void ejecutarHabilidad() {
 
+    }
+
+    public int getCoste() {
+        return Coste;
+    }
+
+    public void setCoste(int coste) {
+        Coste = coste;
     }
 }
