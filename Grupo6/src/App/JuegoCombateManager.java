@@ -161,7 +161,7 @@ public class JuegoCombateManager {
                 int opc = sc.nextInt();
                 switch (opc){
                     case 1:{
-                        System.out.println("Iniciar combate (no implementado)");
+
                         IniciarCombate();
                         break;
                     }
@@ -344,9 +344,7 @@ public class JuegoCombateManager {
                 //El desafio se valida y ahora pasa a ser un desafio pendiente
                 desafiosPendientes.add(d);
 
-
                boolean found = updateUser(destino);
-
                 if (found) {
                     storage.saveList(desafiosPendientes, "Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                     System.out.println("El desafio de " + origen.getNombre() + " a " + destino.getNombre() + " ha sido validado.");
@@ -491,20 +489,8 @@ public class JuegoCombateManager {
             }
         }while(!isCorrect);
 
-        boolean found = false;
-        Usuario u = null;
-        int userIndex = -1;
-        Iterator iterator = usuarios.iterator();
-        while (!found && userIndex < usuarios.size() - 1) {
-            if (iterator.hasNext()){
-                u = (Usuario) iterator.next();
-                if (u instanceof Jugador && u.getName().equals(playerName)){
-                    found = true;
-                }
-                userIndex++;
-            }
-        }
-        if (found){
+       int userIndex = getUserIndexByName(playerName);
+        if (userIndex > -1){
             Usuario destino = usuarios.get(userIndex);
             jugador1.desafiarUsuario((Jugador) usuarios.get(userIndex), apuesta);
             Desafio desafio = new Desafio(jugador1.getNombre(), destino.getNombre(), apuesta);
@@ -549,5 +535,28 @@ public class JuegoCombateManager {
         }
         return found;
     }
-}
 
+    /**
+     * Como los desfafios guardan los nombres y no los objetos jugador,
+     * he creado este metodo que saca el indice de un jugador a partir de su nombre.
+     *
+     * @param playerName El nombre del jugador buscado
+     * @return userIndex El indice del jugador buscado
+     */
+    public int getUserIndexByName(String playerName){
+        boolean found = false;
+        Usuario u = null;
+        int userIndex = -1;
+        Iterator iterator = usuarios.iterator();
+        while (!found && userIndex < usuarios.size() - 1) {
+            if (iterator.hasNext()){
+                u = (Usuario) iterator.next();
+                if (u instanceof Jugador && u.getName().equals(playerName)){
+                    found = true;
+                }
+                userIndex++;
+            }
+        }
+        return userIndex;
+    }
+}
