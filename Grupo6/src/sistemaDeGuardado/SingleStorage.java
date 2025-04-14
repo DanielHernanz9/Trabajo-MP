@@ -4,7 +4,6 @@ import Grupo6.src.COSAS.*;
 import Grupo6.src.App.*;
 import Grupo6.src.Combate.*;
 import Grupo6.src.Desafio.*;
-import Grupo6.src.DesafioNotify.*;
 import Grupo6.src.Equipo.*;
 import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
@@ -57,6 +56,10 @@ public class SingleStorage {
 
     public  ArrayList<Combate>  loadCombatesFromXML(){
         return ((StorageAdapter) almacenAdapter).loadCombatesFromXML();
+    }
+
+    public  ArrayList<Usuario>  loadSubscribers(){
+        return ((StorageAdapter) almacenAdapter).loadSubscribers();
     }
 
 

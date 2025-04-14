@@ -63,5 +63,8 @@ public class StorageAdapter implements interfazAlmacen {
         Adapter.saveList(list,route);
     }
 
+    public  ArrayList<Usuario> loadSubscribers(){
+        return Adapter.loadSubscribers();
+    }
 
 }

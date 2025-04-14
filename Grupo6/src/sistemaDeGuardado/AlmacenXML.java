@@ -19,6 +19,7 @@ public class AlmacenXML implements interfazAlmacen {
     private File XMLDesafiosPendientes = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
     private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml");
     private File XMLRanking= new File("Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
+    private File XMLSubscribers = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml");
 
     /**
      * Default constructor
@@ -157,7 +158,29 @@ public class AlmacenXML implements interfazAlmacen {
         return Combate;
     }
 
+    public ArrayList<Usuario> loadSubscribers(){
+        ArrayList<Usuario> subs = new ArrayList<>();
+        try {
+            XMLDecoder decoder = new XMLDecoder(
+                    new BufferedInputStream(new FileInputStream(XMLSubscribers)
+                    ));
+            if (XMLSubscribers.length() > 0){
+                //Sacamos los usuarios del archivo XML
+                subs = (ArrayList<Usuario>) decoder.readObject();
 
+                //Cerramos el decoder
+                decoder.close();
+            }
+            //Si no encontramos un archivo lo creamos
+            else{
+                FileOutputStream output = new FileOutputStream(XMLSubscribers);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return subs;
+    }
 
     //METODO PARA GUARDAR LISTAS EN UN ARCHIVO XML
     public void saveList(ArrayList list, String route) {
