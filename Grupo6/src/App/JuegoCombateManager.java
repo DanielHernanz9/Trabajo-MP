@@ -352,7 +352,19 @@ public class JuegoCombateManager {
 
             System.out.println("Desafío de " + origen.getNombre() + " a " + destino.getNombre());
             System.out.println("¿Validar este desafío? (s/n)");
-            String ans = sc.nextLine();
+            String ans = "";
+            boolean correctAns = true;
+
+            do{
+                ans = sc.nextLine();
+                if (!ans.equals("s") ^ (ans.equals("n"))){ //^ = XOR
+                    System.out.println("No es una respuesta valida. Escribe s (Si) o n (No)");
+                    correctAns = false;
+                }
+                else{
+                    correctAns = true;
+                }
+            }while(!correctAns);
 
             if (ans.equals("s")) {
                 destino.getDesafiosPendientes().add(d);
@@ -475,8 +487,25 @@ public class JuegoCombateManager {
     }
     public void iniciarDesafio(){
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Escribe el nombre del usuario al que quieres desafiar: ");
-        String playerName = sc.nextLine();
+        boolean CorrectPlayerName = true;
+        String playerName = "";
+
+        do{
+            playerName = sc.nextLine();
+            if (playerName.equals(jugador1.getName())){
+                System.out.println("No puedes desafiarte a ti mismo. Escribe el nombre de usuario de otro jugador: ");
+                CorrectPlayerName = false;
+            }
+            else if (playerName.equals("")){
+                System.out.println("Por favor, escribe el nombre de otro jugador para desafiarle: ");
+                CorrectPlayerName = false;
+            }
+            else{
+                CorrectPlayerName = true;
+            }
+        } while(!CorrectPlayerName);
 
         System.out.println("¿Cuánto oro quieres apostar?");
         int apuesta = sc.nextInt();
@@ -571,6 +600,11 @@ public class JuegoCombateManager {
                 userIndex++;
             }
         }
-        return userIndex;
+        if (found) {
+            return userIndex;
+        }
+        else{
+            return -1;
+        }
     }
 }

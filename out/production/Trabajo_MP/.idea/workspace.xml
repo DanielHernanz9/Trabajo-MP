@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Los combates ya son jugables, pero funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)">
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" afterDir="false" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Corregido un bug que impedía a los personajes tener más de 0 de salud, lo que causaba que el combate no pudiese durar más de una ronda.&#10;Deshabilitada temporalmente la funcion de dañar primero a los esbirros porque provocan bucles infinitos durante los combates.">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Disciplina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Disciplina.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Habilidad_Especial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Habilidad_Especial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Talento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Talento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Esbirros/PatronFactoryEsbirros/EsbirroBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Esbirros/PatronFactoryEsbirros/EsbirroBase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +118,7 @@
       <workItem from="1744554265116" duration="395000" />
       <workItem from="1744575625572" duration="750000" />
       <workItem from="1744632172699" duration="11508000" />
+      <workItem from="1744733623022" duration="3662000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -376,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744648970786</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Corregido un bug que impedía a los personajes tener más de 0 de salud, lo que causaba que el combate no pudiese durar más de una ronda.&#10;Deshabilitada temporalmente la funcion de dañar primero a los esbirros porque provocan bucles infinitos durante los combates.">
+      <option name="closed" value="true" />
+      <created>1744736134245</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1744736134245</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="He organizado en paquetes la mayoria de las clases" />
     <MESSAGE value="Factory Method para la creacion de esbirros." />
     <MESSAGE value="Implementadas las jerarquías entre demonios y esbirros (compoiste)" />
     <MESSAGE value="Implementado el inicio de los combates y las estrategias de calculo de potencial." />
@@ -419,7 +426,8 @@
     <MESSAGE value="Implementado el patrón observer para los desafios (leer comentario clase subscriber)" />
     <MESSAGE value="Metodo para sacar el indice de un usuario a partir de su nombre (lo utilizare en commits posteriores)" />
     <MESSAGE value="Los combates ya son jugables, pero no funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Los combates ya son jugables, pero no funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)" />
+    <MESSAGE value="Corregido un bug que impedía a los personajes tener más de 0 de salud, lo que causaba que el combate no pudiese durar más de una ronda.&#10;Deshabilitada temporalmente la funcion de dañar primero a los esbirros porque provocan bucles infinitos durante los combates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corregido un bug que impedía a los personajes tener más de 0 de salud, lo que causaba que el combate no pudiese durar más de una ronda.&#10;Deshabilitada temporalmente la funcion de dañar primero a los esbirros porque provocan bucles infinitos durante los combates." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -430,18 +438,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Combate.java</url>
-          <line>52</line>
+          <line>53</line>
           <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
@@ -450,8 +448,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="40" />
+          <line>358</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
