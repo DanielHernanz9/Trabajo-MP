@@ -50,10 +50,18 @@ public class Combate {
     public void IniciarCombate() {
         if (Desafiante != null && Desafiado != null) {
             //manager.registrarCombate(this);
+
             System.out.println("Iniciando combate entre " + Desafiante.getNombre() + " y " + Desafiado.getNombre());
 
             Personaje personajeDesafiado = Desafiado.getPersonaje();
             Personaje personajeDesafiante = Desafiante.getPersonaje();
+
+            //Por algún motivo se sobreescriben los datos de los personajes en el xml al registrarlos,
+            //así que inicializo aquí su salud en lugar del constructor. De todos modos tiene más sentido hacerlo
+            //así para que puedan tener el máxmimo de salud (5 según el enunciado) al comenzar el combate.
+
+            personajeDesafiado.setSalud(5);
+            personajeDesafiante.setSalud(5);
 
             if (personajeDesafiado.hasEsbirros()){
                 configEsbirroSalud(personajeDesafiado.getEsbirros());

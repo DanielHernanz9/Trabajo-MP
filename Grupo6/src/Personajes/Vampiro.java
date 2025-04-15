@@ -26,7 +26,7 @@ public class Vampiro extends PersonajeBase {
         Esbirros= new ArrayList<>();
         this.Disciplina = new Disciplina(100, 100);
         this.Nombre = name;
-
+        this.Sangre = rand.nextInt(5) + 1;
         //Creacion de los esbirros de los Vampiros
         crearEsbirros();
     }

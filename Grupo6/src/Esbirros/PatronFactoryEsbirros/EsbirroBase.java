@@ -12,7 +12,7 @@ public abstract class EsbirroBase implements Esbirro {
      */
 
     public int recibirDaño(){
-        if(Salud - 1 < 0){      //Vamos a cosiderar que la vida no puede ser negativa
+        if(Salud - 1 >= 0){      //Vamos a cosiderar que la vida no puede ser negativa
             Salud--;
         }
         return Salud;

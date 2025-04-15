@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/DesafioNotify/ChallengeNotifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Desafio/ChallengeNotifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/DesafioNotify/Subscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Desafio/Subscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/AlmacenXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/AlmacenXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/SingleStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/SingleStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/StorageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/StorageAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Desafio/Desafio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Desafio/Desafio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/DesafioNotify/ChallengeNotifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/DesafioNotify/Subscriber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/sistemaDeGuardado/AlmacenXML.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/sistemaDeGuardado/AlmacenXML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/sistemaDeGuardado/SingleStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/sistemaDeGuardado/SingleStorage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/sistemaDeGuardado/StorageAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/sistemaDeGuardado/StorageAdapter.class" afterDir="false" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Los combates ya son jugables, pero funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)">
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Disciplina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Disciplina.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Habilidad_Especial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Habilidad_Especial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Talento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Talento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.JuegoCombate.executor": "Debug",
+    "Application.JuegoCombate.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -128,7 +118,7 @@
       <workItem from="1744536969557" duration="3681000" />
       <workItem from="1744554265116" duration="395000" />
       <workItem from="1744575625572" duration="750000" />
-      <workItem from="1744632172699" duration="3655000" />
+      <workItem from="1744632172699" duration="11508000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -362,7 +352,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744539337077</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Implementado el patrón observer para los desafios (leer comentario clase subscriber)">
+      <option name="closed" value="true" />
+      <created>1744643175150</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1744643175150</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Metodo para sacar el indice de un usuario a partir de su nombre (lo utilizare en commits posteriores)">
+      <option name="closed" value="true" />
+      <created>1744643735722</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1744643735722</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Los combates ya son jugables, pero no funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)">
+      <option name="closed" value="true" />
+      <created>1744648970786</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1744648970786</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +416,10 @@
     <MESSAGE value="Proceso principal de desafio entre usuarios funcional, a falta de ciertas cosas que tengo que terminar" />
     <MESSAGE value="Correccion de bucles infinitos en desafíos" />
     <MESSAGE value="Corrección de error que hacía que los desafíos llegasen a todos los jugadores en lugar de llegar únicamente al jugador desafiado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrección de error que hacía que los desafíos llegasen a todos los jugadores en lugar de llegar únicamente al jugador desafiado" />
+    <MESSAGE value="Implementado el patrón observer para los desafios (leer comentario clase subscriber)" />
+    <MESSAGE value="Metodo para sacar el indice de un usuario a partir de su nombre (lo utilizare en commits posteriores)" />
+    <MESSAGE value="Los combates ya son jugables, pero no funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Los combates ya son jugables, pero no funcionan mal (solo duran una ronda) . Ahora el usuario puede elegir el nombre del personaje. (es dificil distinguir a los personajes durante el combate si son el mismo tipo porque tendrian el mismo nombre)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -412,16 +429,31 @@
           <option name="timeStamp" value="22" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Desafio/ChallengeNotifier.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Combate.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="XMLSubscribers.length()" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

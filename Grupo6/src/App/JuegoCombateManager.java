@@ -387,7 +387,7 @@ public class JuegoCombateManager {
             sc.nextLine();
             String characterName = sc.nextLine();
 
-            if(TipoPersonaje==1){
+            if(TipoPersonaje == 1){
                 factory= new FactoryVampiros();
             }
             else if(TipoPersonaje==2){

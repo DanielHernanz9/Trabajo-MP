@@ -82,20 +82,24 @@ public class Ronda {
     }
 
     public void reducirSalud() {
+        /*
         if (Atacante.hasEsbirros()){
             int l = Atacante.getEsbirros().size();
             Esbirro esbirro = Atacante.getEsbirros().get(l - 1);
             System.out.println("¡" + nombreAtacante + " ha infligido daño a un esbirro de " + nombreAtacado  + " !");
-            esbirro.recibirDaño();
+            esbirro.setSalud(esbirro.recibirDaño());
 
         }
         else{
-            Atacado.setSalud(Atacado.getSalud() - 1);
-            System.out.println("¡ " + nombreAtacante + " ha inflingido 1 punto de daño a " + nombreAtacado + "!");
-            System.out.println("La salaud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
+         */
+
+        //De momento no dañamos a los esbirros porque produce un bucle infinito, hay que arreglarlo.
+
+        Atacado.setSalud(Atacado.getSalud() - 1);
+        System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de daño a " + nombreAtacado + "!");
+        System.out.println("La salaud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
 
-    }
 
     public void ejecutarRonda(){
         System.out.println();
@@ -136,11 +140,11 @@ public class Ronda {
             reducirSalud();
         }
         else{
-            System.out.println("¡ " + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");
+            System.out.println("¡" + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");
         }
 
         if (verificarFinCombate()){
-            System.out.println("¡ " + nombreAtacado + " ha caido!");
+            System.out.println("¡" + nombreAtacado + " ha caido!");
             System.out.println("¡La victoria es para " + nombreAtacante + "! ");
         }
 
