@@ -67,7 +67,7 @@ public class Cazador extends PersonajeBase {
     }
 
     @Override
-    public void initialicePersonaje(){
+    public void initializePersonaje(){
         Salud = 5;
         Voluntad = 0;
     }

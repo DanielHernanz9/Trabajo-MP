@@ -66,8 +66,8 @@ public class Combate implements Serializable {
             //así que inicializo aquí su salud en lugar del constructor. De todos modos tiene más sentido hacerlo
             //así para que puedan tener el máxmimo de salud (5 según el enunciado) al comenzar el combate.
 
-            personajeDesafiado.initialicePersonaje();
-            personajeDesafiante.initialicePersonaje();
+            personajeDesafiado.initializePersonaje();
+            personajeDesafiante.initializePersonaje();
 
             if (personajeDesafiado.hasEsbirros()){
                 configEsbirroSalud(personajeDesafiado.getEsbirros());
@@ -99,10 +99,15 @@ public class Combate implements Serializable {
                 numeroRonda += 1;
             }
             if (personajeDesafiado.getSalud() == 0){
-                Ganador = Desafiado;
+                Ganador = Desafiante;
+                Ganador.increaseNumCombatesGanados();
+                Desafiado.increaseNumCombatesPerdidos();
             }
             else if (personajeDesafiante.getSalud() == 0){
                 Ganador = Desafiado;
+                Ganador.increaseNumCombatesGanados();
+                Desafiante.increaseNumCombatesPerdidos();
+
             }
         } else {
             System.out.println("No se han registrado suficientes jugadores.");

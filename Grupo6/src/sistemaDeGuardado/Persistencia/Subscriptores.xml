@@ -9,11 +9,37 @@
     <void property="nombre">
      <string>j2</string>
     </void>
+    <void property="oro">
+     <int>400</int>
+    </void>
     <void property="password">
      <string>1234</string>
     </void>
     <void property="personaje">
      <object class="Grupo6.src.Personajes.Cazador">
+      <void property="armaActiva1">
+       <object class="Grupo6.src.Equipo.Arma">
+        <void property="manos">
+         <int>1</int>
+        </void>
+        <void property="modificador">
+         <object class="Grupo6.src.Equipo.Modificador">
+          <void property="tipo">
+           <object class="java.lang.Enum" method="valueOf">
+            <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
+            <string>Fortaleza</string>
+           </object>
+          </void>
+          <void property="valor">
+           <int>1</int>
+          </void>
+         </object>
+        </void>
+        <void property="nombre">
+         <string>Arma1</string>
+        </void>
+       </object>
+      </void>
       <void property="esbirros">
        <object class="java.util.ArrayList">
         <void method="add">

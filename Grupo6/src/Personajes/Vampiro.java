@@ -102,7 +102,7 @@ public class Vampiro extends PersonajeBase {
     }
 
     @Override
-    public void initialicePersonaje(){
+    public void initializePersonaje(){
         Salud = 5;
         Sangre = 10; //No entiendo cómo deberían sacar puntos de sangre los vampiros.
     }

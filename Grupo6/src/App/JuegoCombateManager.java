@@ -1,7 +1,7 @@
 package Grupo6.src.App;
 
 import Grupo6.src.Combate.Combate;
-import Grupo6.src.Combate.Ranking;
+import Grupo6.src.Combate.SingleRanking;
 import Grupo6.src.Desafio.ChallengeNotifier;
 import Grupo6.src.Equipo.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
@@ -11,7 +11,6 @@ import Grupo6.src.sistemaDeGuardado.SingleStorage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
 public class JuegoCombateManager {
@@ -213,7 +212,7 @@ public class JuegoCombateManager {
                         correctOpt = true;
                     }
                     case 2 -> {
-                        Ranking ranking = new Ranking();
+                        SingleRanking ranking= SingleRanking.getInstance();
                         ranking.showRanking();
                         correctOpt = true;
                     }

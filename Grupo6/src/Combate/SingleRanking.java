@@ -7,14 +7,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ * //HE PUESTO QUE SOLO HAYA UN OBJETO RANKING, YA QUE DEBERIA DE SER ÚNICO, SE LO PODEMOS INDICAR QUE HEMOS USADO EL PATRON SINGLETON
  */
-public class Ranking {
+public class SingleRanking {
+
     private SingleStorage storage;
     private ArrayList<Jugador> ranking;
+    private static SingleRanking instance;
 
-    public Ranking() {
+    private SingleRanking() {
+
         storage=SingleStorage.getInstance();
+        LoadRanking();
+
+    }
+    //Patron singleton
+    public static SingleRanking getInstance() {
+        // TODO implement here
+        if (instance==null) {
+            instance = new SingleRanking();
+        }
+        return instance;
+
     }
 
 
@@ -25,6 +39,7 @@ public class Ranking {
     }
 
     public void SaveRanking() {
+
         storage.saveList(ranking,"Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
     }
 

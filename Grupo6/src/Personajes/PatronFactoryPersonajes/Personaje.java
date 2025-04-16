@@ -51,5 +51,5 @@ public interface Personaje {
     void crearEsbirros();
     void reducirSalud();
 
-    void initialicePersonaje();
+    void initializePersonaje();
 }

@@ -17,6 +17,29 @@ public class Jugador extends Usuario {
     private int numCombatesGanados;
     private int numCombatesPerdidos;
 
+    /**
+     * Constructor por defecto de Jugador.
+     * Inicializa la lista de desafíos pendientes y el historial de oro.
+     */
+    public Jugador() {
+        setRegNumber();
+        this.DesafiosPendientes = new ArrayList<>();  // Inicializa la lista de desafíos pendientes
+        this.HistorialOro = new int[10];  // Inicializa el historial de oro (puedes modificar el tamaño)
+        this.Oro = 500;
+        numCombatesGanados=0;
+        numCombatesPerdidos=0;
+    }
+
+    public void increaseNumCombatesGanados(){
+        numCombatesGanados++;
+    }
+    public void increaseNumCombatesPerdidos(){
+        numCombatesPerdidos++;
+    }
+    public float getPorcentajeCombatesGanados(){
+        return (numCombatesGanados/((float)numCombatesPerdidos+numCombatesGanados))*100;
+    }
+
     public int getNumCombatesGanados() {
         return numCombatesGanados;
     }
@@ -33,18 +56,6 @@ public class Jugador extends Usuario {
         this.numCombatesPerdidos = numCombatesPerdidos;
     }
 
-    /**
-     * Constructor por defecto de Jugador.
-     * Inicializa la lista de desafíos pendientes y el historial de oro.
-     */
-    public Jugador() {
-        setRegNumber();
-        this.DesafiosPendientes = new ArrayList<>();  // Inicializa la lista de desafíos pendientes
-        this.HistorialOro = new int[10];  // Inicializa el historial de oro (puedes modificar el tamaño)
-        this.Oro = 500;
-        numCombatesGanados=0;
-        numCombatesPerdidos=0;
-    }
 
     /**
      * Registra los datos del jugador.

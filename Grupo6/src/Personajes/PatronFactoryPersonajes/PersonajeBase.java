@@ -174,7 +174,7 @@ public abstract class PersonajeBase implements Personaje {
     /**
      * Sirve para inicializar las estadísticas de los personajes al inicio de los combates.
      */
-    public abstract void initialicePersonaje();
+    public abstract void initializePersonaje();
 
     public Modificador getDebilidad() {
         return debilidad;

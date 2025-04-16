@@ -102,7 +102,7 @@ public class Ronda implements Serializable {
 
         Atacado.reducirSalud();
         System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de daño a " + nombreAtacado + "!");
-        System.out.println("La salaud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
+        System.out.println("La salud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
 
 

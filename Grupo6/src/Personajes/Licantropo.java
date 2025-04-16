@@ -65,7 +65,7 @@ public class Licantropo extends PersonajeBase {
     }
 
     @Override
-    public void initialicePersonaje(){
+    public void initializePersonaje(){
         Salud = 5;
         Rabia = 3;
     }
