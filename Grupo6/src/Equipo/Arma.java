@@ -10,9 +10,6 @@ import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
-/**
- * 
- */
 public class Arma extends EquipoBase {
 
     private int Manos;
@@ -20,5 +17,11 @@ public class Arma extends EquipoBase {
     public Arma() {
     }
 
+    public int getManos() {
+        return Manos;
+    }
 
+    public void setManos(int manos) {
+        Manos = manos;
+    }
 }

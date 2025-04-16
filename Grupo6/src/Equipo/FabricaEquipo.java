@@ -9,20 +9,13 @@ import Grupo6.src.Esbirros.*;
 import Grupo6.src.Personajes.*;
 import Grupo6.src.sistemaDeGuardado.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
-/**
- * 
- */
+
+
 public abstract class FabricaEquipo {
 
-    /**
-     * Default constructor
-     */
     public FabricaEquipo() {
     }
 
-    /**
-     * @return
-     */
     public abstract Equipo createEquipo();
 
 }

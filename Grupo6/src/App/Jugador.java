@@ -4,10 +4,7 @@ import Grupo6.src.Desafio.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 public class Jugador extends Usuario {
 
@@ -17,7 +14,6 @@ public class Jugador extends Usuario {
     private Personaje Personaje;
     private int Oro;
     private String RegNum; // Número de registro, solo lo tienen los jugadores y es único para cada jugador
-
     private int numCombatesGanados;
     private int numCombatesPerdidos;
 
@@ -28,8 +24,6 @@ public class Jugador extends Usuario {
     public void setNumCombatesGanados(int numCombatesGanados) {
         this.numCombatesGanados = numCombatesGanados;
     }
-
-
 
     public int getNumCombatesPerdidos() {
         return numCombatesPerdidos;

@@ -175,4 +175,20 @@ public abstract class PersonajeBase implements Personaje {
      * Sirve para inicializar las estadísticas de los personajes al inicio de los combates.
      */
     public abstract void initialicePersonaje();
+
+    public Modificador getDebilidad() {
+        return debilidad;
+    }
+
+    public Modificador getFortaleza() {
+        return fortaleza;
+    }
+
+    public void setDebilidad(Modificador debilidad) {
+        this.debilidad = debilidad;
+    }
+
+    public void setFortaleza(Modificador fortaleza) {
+        this.fortaleza = fortaleza;
+    }
 }

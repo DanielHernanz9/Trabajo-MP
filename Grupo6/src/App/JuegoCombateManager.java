@@ -3,6 +3,7 @@ package Grupo6.src.App;
 import Grupo6.src.Combate.Combate;
 import Grupo6.src.Combate.Ranking;
 import Grupo6.src.Desafio.ChallengeNotifier;
+import Grupo6.src.Equipo.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
@@ -10,6 +11,7 @@ import Grupo6.src.sistemaDeGuardado.SingleStorage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class JuegoCombateManager {
@@ -21,6 +23,7 @@ public class JuegoCombateManager {
     private final ArrayList<Combate> combates;
     private SingleStorage storage;
     private FactoryPersonaje factory;
+    private FabricaEquipo factoryEquipo;
     private ArrayList<Desafio> desafiosPendientesPorValidar;
     private ArrayList<Desafio> desafiosPendientes;
     private ChallengeNotifier notifier;
@@ -219,7 +222,7 @@ public class JuegoCombateManager {
                         registrarPersonaje(jugador1);
                         correctOpt = true;
                     }
-                    case 4 -> {System.out.println("Elección de armas y armaduras: (funcionalidad pendiente)");
+                    case 4 -> {elegirEquipoPersonalizado(jugador1);
                                correctOpt = true;
                             }
                     case 5 -> {
@@ -279,7 +282,7 @@ public class JuegoCombateManager {
                 else setJugador2(nuevo);
 
                 registrarUsuario(nuevo);
-                //registrarPersonaje(nuevo); DENTRO DE REGISTRAR USUARIO YA REGISTRAMOS SU PERSONAJE TAMBIEN
+                //registrarPersonaje(nuevo);
 
             }
         }
@@ -302,21 +305,6 @@ public class JuegoCombateManager {
             System.out.println("Usuario dado de baja: " + user.getNombre());
         }
     }
-
-   /* public void registrarCombate(Combate combate) {
-        combates.add(combate);
-        System.out.println("Combate registrado entre: " + combate.getName(jugador1) + " y " + combate.getName(jugador2));
-        try (FileWriter fw = new FileWriter("combates.txt", true);
-             BufferedWriter bw = new BufferedWriter(fw)) {
-            bw.write(combate.toString() + "\n");
-        } catch (IOException e) {
-            System.out.println("Error al guardar combate.");
-        }
-    }
-
-    public void mostrarResultado(Combate combate) {
-        System.out.println("Resultado del combate: " + combate.getResultado());
-    } */
 
     public void gestionarDesafios() {
         int numDesafios = desafiosPendientesPorValidar.size();
@@ -402,10 +390,10 @@ public class JuegoCombateManager {
             if(TipoPersonaje == 1){
                 factory= new FactoryVampiros();
             }
-            else if(TipoPersonaje==2){
-                factory= new FactoryLicantropos();
+            else if(TipoPersonaje == 2){
+                factory = new FactoryLicantropos();
             }else{
-                factory= new FactoryCazadores();
+                factory = new FactoryCazadores();
             }
 
             jugador1.registrarPersonaje(factory, characterName);
@@ -607,4 +595,125 @@ public class JuegoCombateManager {
             return -1;
         }
     }
+
+    public void elegirEquipoPersonalizado(Jugador jugador) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("¿Qué deseas crear?");
+        System.out.println("1. Arma");
+        System.out.println("2. Armadura");
+        int tipoEquipo = sc.nextInt();
+        sc.nextLine();
+        boolean isFull = false;
+
+        switch(tipoEquipo) {
+            case 1 -> {
+                factoryEquipo = new FabricaArmas();
+                System.out.print("Nombre del arma: ");
+                if (jugador.getPersonaje().getArmaActiva1() != null && jugador.getPersonaje().getArmaActiva2() != null){
+                    System.out.println("Como tu personaje ya tiene armas en las dos manos, las armas que crees se sobreescribirán. ");
+                    isFull = true;
+                }
+            }
+            case 2 -> {
+                factoryEquipo = new FabricaArmaduras();
+                System.out.print("Nombre de la armadura: ");
+            }
+            default -> {
+                System.out.println("Opción inválida.");
+                return;
+            }
+        }
+
+        String nombre = sc.nextLine();
+
+        Modificador.TipoModificador tipoModificador = Modificador.TipoModificador.Fortaleza;
+
+        int valor;
+        do {
+            System.out.print("Valor del modificador (1-3): ");
+            valor = sc.nextInt();
+        } while (valor < 1 || valor > 3);
+
+        int manos = 0;
+        if (factoryEquipo instanceof FabricaArmas) {
+            do {
+                System.out.print("¿Cuántas manos requiere el arma? (1 o 2): ");
+                manos = sc.nextInt();
+            } while (manos != 1 && manos != 2);
+        }
+
+        // Crear equipo y aplicar propiedades personalizadas
+        Equipo equipo = factoryEquipo.createEquipo();
+        EquipoBase equipoBase = (EquipoBase) equipo;
+
+        Modificador modificador = new Modificador();
+        modificador.setTipo(tipoModificador);
+        modificador.setValor(valor);
+
+        equipoBase.setNombre(nombre);
+        equipoBase.setModificador(modificador);
+
+        if (equipo instanceof Arma) {
+            ((Arma) equipo).setManos(manos);
+        }
+
+        int precio = calcularPrecio(valor);
+
+        System.out.println("El precio del equipo es de " + precio + " de oro.");
+        System.out.println("Tu oro actual: " + jugador.getOro());
+        System.out.println("¿Quieres realizar la compra del arma? (s/n)");
+        sc.nextLine();
+        String buyConfirm = sc.nextLine();
+
+        if (buyConfirm.equals("s")){
+            if (jugador.getOro() < precio) {
+                System.out.println("No tienes suficiente oro para adquirir este equipo.");
+                return;
+            }
+
+            jugador.setOro(jugador.getOro() - precio);
+
+            if (factoryEquipo instanceof FabricaArmas) {
+                if (!isFull){
+                    if (jugador.getPersonaje().getArmaActiva1() == null){
+                        jugador.getPersonaje().setArmaActiva1((Arma) equipo);
+                    }
+                    else{
+                        jugador.getPersonaje().setArmaActiva2((Arma) equipo);
+                    }
+                }
+                else{
+                    if (manos == 1){
+                        jugador.getPersonaje().setArmaActiva1((Arma) equipo);
+                    }
+                    else{
+                        jugador.getPersonaje().setArmaActiva2((Arma) equipo);
+                    }
+                }
+                System.out.println("¡Arma equipada exitosamente!");
+            } else {
+                jugador.getPersonaje().setArmaduraActiva((Armadura) equipo);
+                System.out.println("¡Armadura equipada exitosamente!");
+            }
+
+            updateUser(jugador);
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+        }
+        else{
+            System.out.println("Compra cancelada.");
+        }
+    }
+
+    private int calcularPrecio(int valor) {
+        return switch (valor) {
+            case 1 -> 100;
+            case 2 -> 200;
+            case 3 -> 350;
+            default -> 0;
+        };
+    }
+
+
+
 }
