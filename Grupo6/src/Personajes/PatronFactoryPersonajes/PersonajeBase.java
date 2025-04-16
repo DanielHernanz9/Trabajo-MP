@@ -168,4 +168,11 @@ public abstract class PersonajeBase implements Personaje {
     public void setSalud(Integer salud) {
         Salud = salud;
     }
+
+    public abstract void reducirSalud();
+
+    /**
+     * Sirve para inicializar las estadísticas de los personajes al inicio de los combates.
+     */
+    public abstract void initialicePersonaje();
 }

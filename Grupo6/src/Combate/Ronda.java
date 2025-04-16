@@ -6,9 +6,10 @@ import Grupo6.src.Personajes.Licantropo;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Personajes.Vampiro;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Ronda {
+public class Ronda implements Serializable {
 
     private Personaje Atacante;
     private Personaje Atacado;
@@ -19,6 +20,10 @@ public class Ronda {
     private int NumeroRonda;
     private String nombreAtacante;
     private String nombreAtacado;
+
+    public Ronda(){
+
+    }
 
     public Ronda(Personaje atacante, Personaje atacado, int numeroRonda) {
         this.Atacante = atacante;
@@ -95,7 +100,7 @@ public class Ronda {
 
         //De momento no dañamos a los esbirros porque produce un bucle infinito, hay que arreglarlo.
 
-        Atacado.setSalud(Atacado.getSalud() - 1);
+        Atacado.reducirSalud();
         System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de daño a " + nombreAtacado + "!");
         System.out.println("La salaud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
@@ -104,6 +109,7 @@ public class Ronda {
     public void ejecutarRonda(){
         System.out.println();
         System.out.println("¡Comienza la ronda " + NumeroRonda + "!");
+
         // Si bien el enunciado pide los potenciales de cada tipo para cada personaje,
         // no tiene sentido calcular el potencial de defensa del atacante ni el potencial de
         // ataque del atacado, pues son datos que no se van a utilizar.
@@ -145,9 +151,79 @@ public class Ronda {
 
         if (verificarFinCombate()){
             System.out.println("¡" + nombreAtacado + " ha caido!");
-            System.out.println("¡La victoria es para " + nombreAtacante + "! ");
         }
 
     }
 
+    public Personaje getAtacante() {
+        return Atacante;
+    }
+
+    public Personaje getAtacado() {
+        return Atacado;
+    }
+
+    public int getPotencialAtaqueP1() {
+        return PotencialAtaqueP1;
+    }
+
+    public int getPotencialDefensaP2() {
+        return PotencialDefensaP2;
+    }
+
+    public EstrategiaPotencial getEstrategiaAtacante() {
+        return EstrategiaAtacante;
+    }
+
+    public EstrategiaPotencial getEstrategiaAtacado() {
+        return EstrategiaAtacado;
+    }
+
+    public int getNumeroRonda() {
+        return NumeroRonda;
+    }
+
+    public String getNombreAtacante() {
+        return nombreAtacante;
+    }
+
+    public String getNombreAtacado() {
+        return nombreAtacado;
+    }
+
+    public void setAtacante(Personaje atacante) {
+        Atacante = atacante;
+    }
+
+    public void setAtacado(Personaje atacado) {
+        Atacado = atacado;
+    }
+
+    public void setPotencialAtaqueP1(int potencialAtaqueP1) {
+        PotencialAtaqueP1 = potencialAtaqueP1;
+    }
+
+    public void setPotencialDefensaP2(int potencialDefensaP2) {
+        PotencialDefensaP2 = potencialDefensaP2;
+    }
+
+    public void setEstrategiaAtacante(EstrategiaPotencial estrategiaAtacante) {
+        EstrategiaAtacante = estrategiaAtacante;
+    }
+
+    public void setEstrategiaAtacado(EstrategiaPotencial estrategiaAtacado) {
+        EstrategiaAtacado = estrategiaAtacado;
+    }
+
+    public void setNumeroRonda(int numeroRonda) {
+        NumeroRonda = numeroRonda;
+    }
+
+    public void setNombreAtacante(String nombreAtacante) {
+        this.nombreAtacante = nombreAtacante;
+    }
+
+    public void setNombreAtacado(String nombreAtacado) {
+        this.nombreAtacado = nombreAtacado;
+    }
 }

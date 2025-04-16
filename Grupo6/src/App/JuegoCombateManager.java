@@ -289,8 +289,8 @@ public class JuegoCombateManager {
         if (jugador1 != null && jugador2 != null) {
             Combate combate = new Combate(jugador1, jugador2);
             combate.IniciarCombate();
-            registrarCombate(combate);
-            mostrarResultado(combate);
+            combate.registrar();
+            combate.mostrarResultado();
         } else {
             System.out.println("No se han registrado suficientes jugadores.");
         }
@@ -303,7 +303,7 @@ public class JuegoCombateManager {
         }
     }
 
-    public void registrarCombate(Combate combate) {
+   /* public void registrarCombate(Combate combate) {
         combates.add(combate);
         System.out.println("Combate registrado entre: " + combate.getName(jugador1) + " y " + combate.getName(jugador2));
         try (FileWriter fw = new FileWriter("combates.txt", true);
@@ -316,7 +316,7 @@ public class JuegoCombateManager {
 
     public void mostrarResultado(Combate combate) {
         System.out.println("Resultado del combate: " + combate.getResultado());
-    }
+    } */
 
     public void gestionarDesafios() {
         int numDesafios = desafiosPendientesPorValidar.size();

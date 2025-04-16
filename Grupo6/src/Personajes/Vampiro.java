@@ -39,14 +39,14 @@ public class Vampiro extends PersonajeBase {
         Esbirros = new ArrayList<>();
 
         int num;
-        for (int i=0;i<20;i++){
-            num= rand.nextInt(2);
+        for (int i = 0; i < 20; i++){
+            num = rand.nextInt(2);
             FabricaEsbirros actualFactory;
-            if (num==0){
-                actualFactory= new FabricaGhouls();
+            if (num == 0){
+                actualFactory = new FabricaGhouls();
 
             }else{
-                actualFactory= new FabricaDemonios();
+                actualFactory = new FabricaDemonios();
 
             }
 
@@ -92,5 +92,18 @@ public class Vampiro extends PersonajeBase {
 
     public void setDisciplina(Disciplina disciplina) {
         Disciplina = disciplina;
+    }
+
+    @Override
+    public void reducirSalud(){
+        if(Salud > 0) {
+            Salud--;
+        }
+    }
+
+    @Override
+    public void initialicePersonaje(){
+        Salud = 5;
+        Sangre = 10; //No entiendo cómo deberían sacar puntos de sangre los vampiros.
     }
 }

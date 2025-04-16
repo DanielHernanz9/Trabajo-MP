@@ -49,7 +49,7 @@ public interface Personaje {
     void hacerHabilidadEspecial();
     void atacar();
     void crearEsbirros();
+    void reducirSalud();
 
-
-
+    void initialicePersonaje();
 }

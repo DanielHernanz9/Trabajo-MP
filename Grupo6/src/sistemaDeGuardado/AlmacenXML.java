@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class AlmacenXML implements interfazAlmacen {
 
-    private File XMLCombates = new File("src/sistemaDeGuardado/Combates.xml");
+    private File XMLCombates = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Combates.xml");
     private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
     private File XMLDesafiosPendientes = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
     private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml");
@@ -134,7 +134,7 @@ public class AlmacenXML implements interfazAlmacen {
         return jugador;
     }
 
-    public ArrayList<Combate>  loadCombatesFromXML(){
+    public ArrayList<Combate> loadCombatesFromXML(){
         ArrayList<Combate> Combate = new ArrayList<>();
         try {
             XMLDecoder decoder = new XMLDecoder(
@@ -182,7 +182,9 @@ public class AlmacenXML implements interfazAlmacen {
         return subs;
     }
 
-    //METODO PARA GUARDAR LISTAS EN UN ARCHIVO XML
+    /**
+     * METODO PARA GUARDAR LISTAS EN UN ARCHIVO XML
+     */
     public void saveList(ArrayList list, String route) {
         //Vaciamos el fichero para evitar duplicados
         try{

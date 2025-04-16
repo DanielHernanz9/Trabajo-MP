@@ -53,4 +53,20 @@ public class Licantropo extends PersonajeBase {
     public void setDon(Don don) {
         Don = don;
     }
+
+    @Override
+    public void reducirSalud(){
+        if(Salud > 0){
+            Salud--;
+        }
+        if (Rabia < 3){
+            Rabia++;
+        }
+    }
+
+    @Override
+    public void initialicePersonaje(){
+        Salud = 5;
+        Rabia = 3;
+    }
 }

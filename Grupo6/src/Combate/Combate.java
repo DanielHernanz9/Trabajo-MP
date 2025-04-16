@@ -4,16 +4,18 @@ import Grupo6.src.App.*;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.Esbirro;
 import Grupo6.src.Esbirros.EsbirrosComposite;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
+import Grupo6.src.sistemaDeGuardado.SingleStorage;
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * No he usado la estructura completa porque solo va a haber un tipo de combate, sino si que podriamos usar una interfaz como esta en el aula con el director, de todas formas hay que preguntar al profe si asi se puede usar
- * 
  * Grupo6.src.Combate.Combate tiene muchos atributos y he intentado con el patron builder evitar hacer un constructor muy grande
  */
-public class Combate {
+public class Combate implements Serializable {
     private Jugador Desafiante;
     private Jugador Desafiado;
     private JuegoCombateManager manager;
@@ -24,6 +26,10 @@ public class Combate {
     private ArrayList<Ronda> Rondas;
     private PersonajeBase PersonajeDesafiante;
     private PersonajeBase PersonajeDesafiado;
+
+    public Combate(){
+
+    }
 
     public Combate(Jugador desafiante, Jugador desafiado) {
         this.Desafiante = desafiante;
@@ -60,8 +66,8 @@ public class Combate {
             //así que inicializo aquí su salud en lugar del constructor. De todos modos tiene más sentido hacerlo
             //así para que puedan tener el máxmimo de salud (5 según el enunciado) al comenzar el combate.
 
-            personajeDesafiado.setSalud(5);
-            personajeDesafiante.setSalud(5);
+            personajeDesafiado.initialicePersonaje();
+            personajeDesafiante.initialicePersonaje();
 
             if (personajeDesafiado.hasEsbirros()){
                 configEsbirroSalud(personajeDesafiado.getEsbirros());
@@ -74,6 +80,7 @@ public class Combate {
             Ronda newRonda = null;
             int numeroRonda = 1;
             boolean swapper = false; //Esta variable va alternando en cada ronda.
+
             //Segun sea true o false, el peronaje atacante sera uno u otro
             //Consideramos que el primero en atacar es el personaje del jugador desafiante.
 
@@ -102,20 +109,102 @@ public class Combate {
         }
     }
 
+    /**
+     * Guarda el combate en la lista y la serializa.
+     */
+    public void registrar(){
+        SingleStorage storage = SingleStorage.getInstance();
+        ArrayList <Combate> listaCombate = storage.loadCombatesFromXML();
+        listaCombate.add(this);
+        storage.saveList(listaCombate, "Grupo6/src/sistemaDeGuardado/Persistencia/Combates.xml");
+        System.out.println("Combate entre "  + Desafiante.getNombre() + " y " + Desafiado.getNombre() + " registrado.");
+    }
+
+    public void mostrarResultado(){
+        System.out.println("¡La victoria es para " + Ganador.getNombre() + "!");
+    }
+
+    public JuegoCombateManager getManager() {
+        return manager;
+    }
+
+    public int getNumRondas() {
+        return NumRondas;
+    }
+
+    public Date getFechaCombate() {
+        return FechaCombate;
+    }
+
+    public Jugador getGanador() {
+        return Ganador;
+    }
+
+    public int getOroGanado() {
+        return OroGanado;
+    }
+
+    public ArrayList<Ronda> getRondas() {
+        return Rondas;
+    }
+
+    public PersonajeBase getPersonajeDesafiante() {
+        return PersonajeDesafiante;
+    }
+
+    public PersonajeBase getPersonajeDesafiado() {
+        return PersonajeDesafiado;
+    }
+
+    public void setDesafiante(Jugador desafiante) {
+        Desafiante = desafiante;
+    }
+
+    public void setDesafiado(Jugador desafiado) {
+        Desafiado = desafiado;
+    }
+
+    public void setManager(JuegoCombateManager manager) {
+        this.manager = manager;
+    }
+
+    public void setNumRondas(int numRondas) {
+        NumRondas = numRondas;
+    }
+
+    public void setFechaCombate(Date fechaCombate) {
+        FechaCombate = fechaCombate;
+    }
+
+    public void setOroGanado(int oroGanado) {
+        OroGanado = oroGanado;
+    }
+
+    public void setGanador(Jugador ganador) {
+        Ganador = ganador;
+    }
+
+    public void setRondas(ArrayList<Ronda> rondas) {
+        Rondas = rondas;
+    }
+
+    public void setPersonajeDesafiante(PersonajeBase personajeDesafiante) {
+        PersonajeDesafiante = personajeDesafiante;
+    }
+
+    public void setPersonajeDesafiado(PersonajeBase personajeDesafiado) {
+        PersonajeDesafiado = personajeDesafiado;
+    }
+
     public Jugador getDesafiante() {
-        return this.Desafiante;
+        return Desafiante;
     }
 
     public Jugador getDesafiado() {
-        return this.Desafiado;
+        return Desafiado;
     }
 
-    public String getResultado() {
-        // TODO implement here
-        return null;
-    }
-
-    public String getName(Jugador jugador1) {
-        return null;
+    public Jugador Ganador(){
+        return Ganador;
     }
 }

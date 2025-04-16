@@ -55,4 +55,21 @@ public class Cazador extends PersonajeBase {
     public void setVoluntad(int voluntad) {
         Voluntad = voluntad;
     }
+
+    @Override
+    public void reducirSalud(){
+        if (Salud > 0){
+            Salud--;
+        }
+        if (Voluntad > 0){
+            Voluntad--;
+        }
+    }
+
+    @Override
+    public void initialicePersonaje(){
+        Salud = 5;
+        Voluntad = 0;
+    }
+
 }
