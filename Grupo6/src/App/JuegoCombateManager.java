@@ -154,23 +154,37 @@ public class JuegoCombateManager {
 
             //Mientras haya desafios pendientes, los mostramos al jugador para que los acepte o rechaze
             while (!jugador1.getDesafiosPendientes().isEmpty()) {
-                Desafio d= jugador1.getDesafiosPendientes().get(0);
+                Desafio d = jugador1.getDesafiosPendientes().get(0);
                 notifier.notifySubscriber(jugador1);
                 System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
                 System.out.println("¿Que quieres hacer?");
                 System.out.println("1. Aceptar el desafio y disputar un combate.");
                 System.out.println("2. Rechazar el desafio y repartir el oro.");
+                jugador2 = (Jugador) usuarios.get(getUserIndexByName(d.getUsuarioOrigen()));
                 int opc = sc.nextInt();
                 switch (opc){
                     case 1:{
-                        jugador2 = (Jugador) usuarios.get(getUserIndexByName(d.getUsuarioOrigen()));
                         System.out.println("Puedes editar tu personaje antes de comenzar el combate: ");
                         System.out.println("1. Comenzar el combate contra " + jugador2.getName());
                         System.out.println("2. Editar personaje");
                         int opcCombate = sc.nextInt();
                         switch (opcCombate){
                             case 1:{
-                                IniciarCombate();
+                                Jugador ganador = IniciarCombate();
+                                ganador.setOro(ganador.getOro() + d.getOroApostado());
+                                if(ganador.equals(jugador1)){
+                                    jugador2.setOro(jugador2.getOro() - d.getOroApostado());
+                                }
+                                else if(ganador.equals(jugador2)){
+                                    jugador1.setOro(2 * d.getOroApostado());
+                                }
+                                System.out.println(jugador1.getName() + " se queda con " + jugador1.getOro() + " de oro.");
+                                System.out.println(jugador2.getName() + " se queda con " + jugador2.getOro() + " de oro.");
+
+                                //Guardamos los cambios de los jugadores en el XML
+                                updateUser(jugador1);
+                                updateUser(jugador2);
+                                storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
                                 break;
                             }
                             case 2:{
@@ -183,7 +197,16 @@ public class JuegoCombateManager {
                         break;
                     }
                     case 2:{
-                        System.out.println("Rechazar desafio y descontar 10% de oro al jugador1");
+                        int oroPerdido = ((d.getOroApostado() * 10) / 100);
+                        if (jugador1.getOro() - oroPerdido < 0){
+                            System.out.println("Debes pagar " + oroPerdido + " a " + jugador2.getNombre());
+                            System.out.println("Como no tienes oro suficiente, debes disputar el combate.");
+                        }
+                        else{
+                            jugador1.setOro(jugador1.getOro() - oroPerdido);
+                            jugador2.setOro(jugador2.getOro() + oroPerdido);
+                            System.out.println("Has pagado " + oroPerdido + " monedas de oro a " + jugador2.getNombre() + ".");
+                        }
                         break;
                     }
 
@@ -193,6 +216,11 @@ public class JuegoCombateManager {
                 desafiosPendientes.remove(d);
                 storage.saveList(desafiosPendientes,"Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                 notifier.unSuscribe(jugador1);
+
+                //Actualizamos también los jugadores.
+                updateUser(jugador1);
+                updateUser(jugador2);
+                storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
             }
 
             boolean correctOpt = true;
@@ -224,8 +252,9 @@ public class JuegoCombateManager {
                     case 4 -> {elegirEquipoPersonalizado(jugador1);
                                correctOpt = true;
                             }
-                    case 5 -> {
-                                System.out.println("Consultar cantidad global de oro ganado y perdido (funcionalidad pendiente)");
+                    case 5 -> {//De momento devuelve solo la cantidad de oro que tiene el jugador que inicia sesion
+                               //Incluso podemos dejar esto cuando implementemos esta opción entera.
+                                System.out.println("Tienes " + jugador1.getOro() + " monedas de oro.");
                                 correctOpt = true;
                     }
                     case 6 -> { return; }
@@ -287,14 +316,16 @@ public class JuegoCombateManager {
         }
     }
 
-    public void IniciarCombate() {
+    public Jugador IniciarCombate() {
         if (jugador1 != null && jugador2 != null) {
             Combate combate = new Combate(jugador1, jugador2);
-            combate.IniciarCombate();
+            Jugador ganador = combate.IniciarCombate();
             combate.registrar();
             combate.mostrarResultado();
+            return ganador;
         } else {
             System.out.println("No se han registrado suficientes jugadores.");
+            return null;
         }
     }
 
@@ -712,7 +743,4 @@ public class JuegoCombateManager {
             default -> 0;
         };
     }
-
-
-
 }

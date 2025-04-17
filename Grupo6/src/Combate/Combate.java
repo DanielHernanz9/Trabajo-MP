@@ -53,7 +53,7 @@ public class Combate implements Serializable {
         }
     }
 
-    public void IniciarCombate() {
+    public Jugador IniciarCombate() {
         if (Desafiante != null && Desafiado != null) {
             //manager.registrarCombate(this);
 
@@ -134,8 +134,11 @@ public class Combate implements Serializable {
             SingleRanking ranking= SingleRanking.getInstance();
             ranking.updateRanking();
 
+            return Ganador;
+
         } else {
             System.out.println("No se han registrado suficientes jugadores.");
+            return null;
         }
     }
 
