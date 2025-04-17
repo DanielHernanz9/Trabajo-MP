@@ -6,7 +6,7 @@ import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.util.*;
 
-public class Jugador extends Usuario {
+public class Jugador extends Usuario implements Comparable<Jugador> {
 
     private FactoryPersonaje FabricaPersonaje;
     private ArrayList<Desafio> DesafiosPendientes;
@@ -30,14 +30,23 @@ public class Jugador extends Usuario {
         numCombatesPerdidos=0;
     }
 
+    @Override
+    public int compareTo(Jugador o) {
+        return Double.compare( o.getPorcentajeCombatesGanados(),getPorcentajeCombatesGanados());
+    }
+
     public void increaseNumCombatesGanados(){
         numCombatesGanados++;
     }
     public void increaseNumCombatesPerdidos(){
         numCombatesPerdidos++;
     }
-    public float getPorcentajeCombatesGanados(){
-        return (numCombatesGanados/((float)numCombatesPerdidos+numCombatesGanados))*100;
+    public double getPorcentajeCombatesGanados(){
+        if (numCombatesGanados+numCombatesPerdidos==0){
+            return 0.0;
+        }
+        double porcentaje=  (double) numCombatesGanados/(numCombatesPerdidos+numCombatesGanados)*100;
+        return (double) numCombatesGanados/(numCombatesPerdidos+numCombatesGanados)*100;
     }
 
     public int getNumCombatesGanados() {

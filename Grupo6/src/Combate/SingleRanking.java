@@ -4,6 +4,7 @@ import Grupo6.src.App.*;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -37,8 +38,16 @@ public class SingleRanking {
         ranking = storage.loadRanking();
 
     }
+    public void updateRanking(){
+        //cargamos los jugadores del XML y reordenamos el ranking
+        ranking=storage.getPlayers();
+        Collections.sort(ranking);
 
-    public void SaveRanking() {
+        //lo guardamos en el XML del ranking
+        SaveRanking();
+    }
+
+    private void SaveRanking() {
 
         storage.saveList(ranking,"Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
     }
@@ -48,10 +57,13 @@ public class SingleRanking {
         return ranking;
     }
     public void showRanking(){
-        //ArrayList<Usuario> r=storage.loadUsers();
+
+        System.out.println("RANKING GLOBAL ACTUALMENTE: ");
+        System.out.println();
         int i=1;
-        for (Usuario jugador:ranking){
-            System.out.println(i+". "+jugador.getNombre());
+        for (Jugador jugador:ranking){
+            int combatesDisputados=jugador.getNumCombatesGanados()+jugador.getNumCombatesPerdidos();
+            System.out.println(i+"º "+jugador.getNombre()+", ha ganado el "+jugador.getPorcentajeCombatesGanados() +"% total de los "+combatesDisputados+" combates que ha disputado");
             i++;
         }
     }

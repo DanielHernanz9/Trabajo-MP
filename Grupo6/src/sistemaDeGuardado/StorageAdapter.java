@@ -45,6 +45,12 @@ public class StorageAdapter implements interfazAlmacen {
     public ArrayList<Desafio> loadChallenges(){
         return Adapter.loadChallenges();
     }
+
+    @Override
+    public ArrayList<Jugador> getPlayers() {
+        return Adapter.getPlayers();
+    }
+
     public ArrayList<Desafio> loadPendingChallenges(){
         return Adapter.loadPendingChallenges();
     }

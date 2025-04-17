@@ -42,25 +42,28 @@ public class SingleStorage {
         return ((StorageAdapter) almacenAdapter).loadChallenges();
     }
     public ArrayList<Desafio> loadPendingChallenges(){
-        return ((StorageAdapter) almacenAdapter).loadPendingChallenges();
+        return  almacenAdapter.loadPendingChallenges();
     }
 
     public void saveList(ArrayList list, String route) {
-        ((StorageAdapter) almacenAdapter).saveList(list, route);
+         almacenAdapter.saveList(list, route);
 
     }
 
     public  ArrayList<Jugador> loadRanking(){
-        return ((StorageAdapter) almacenAdapter).loadRanking();
+        return almacenAdapter.loadRanking();
     }
 
     public  ArrayList<Combate>  loadCombatesFromXML(){
-        return ((StorageAdapter) almacenAdapter).loadCombatesFromXML();
+        return  almacenAdapter.loadCombatesFromXML();
     }
 
     public  ArrayList<Usuario>  loadSubscribers(){
         return ((StorageAdapter) almacenAdapter).loadSubscribers();
     }
 
+    public ArrayList<Jugador> getPlayers(){
+        return almacenAdapter.getPlayers();
+    }
 
 }

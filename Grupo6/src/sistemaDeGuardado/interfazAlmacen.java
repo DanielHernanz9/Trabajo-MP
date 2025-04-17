@@ -20,4 +20,6 @@ public interface interfazAlmacen {
     public  abstract ArrayList<Desafio> loadPendingChallenges();
 
     public abstract ArrayList<Desafio> loadChallenges();
+
+    public abstract ArrayList<Jugador> getPlayers();
 }

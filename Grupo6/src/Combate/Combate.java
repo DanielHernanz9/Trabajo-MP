@@ -109,6 +109,31 @@ public class Combate implements Serializable {
                 Desafiante.increaseNumCombatesPerdidos();
 
             }
+            //Actualizamos los valores de los usuarios en el XML
+            ArrayList<Usuario> usuarios = new ArrayList<>();
+            SingleStorage storage=SingleStorage.getInstance();
+            usuarios=storage.loadUsers();
+
+            //actualizamos los campos de los usuarios que hayan combatido
+            for (int i = 0; i < usuarios.size(); i++){
+
+                Usuario actualUser = usuarios.get(i);
+
+                if (actualUser instanceof Jugador) {
+                    if (actualUser.getNombre().equals(Desafiado.getNombre())) {
+                        usuarios.set(i, Desafiado);
+                    } else if (actualUser.getNombre().equals(Desafiante.getNombre())) {
+                        usuarios.set(i, Desafiante);
+                    }
+                }
+            }
+            //Actualizamos los valores de los usuarios en el XML
+            storage.saveList(usuarios,"Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+
+            //Tras haber actualizado esos valores, se debe de actualizar el ranking
+            SingleRanking ranking= SingleRanking.getInstance();
+            ranking.updateRanking();
+
         } else {
             System.out.println("No se han registrado suficientes jugadores.");
         }

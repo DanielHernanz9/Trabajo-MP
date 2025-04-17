@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="158a6c52-5573-48be-8d7b-46c1c6eeccba" name="Changes" comment="Cambios a la hora de guardar y obtener desafios de los XML, ahora se guardan desafios pendientes(validados) y los no validados aparte, ademas ahora no se sobreescribe el contenido de los ficheros por cada desafio lanzado (antes si lanzabamos 2 desafios sin validar, se sobreescribia el primer desafio por el segundo), y más cambios...">
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Desafio/Desafio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Desafio/Desafio.class" afterDir="false" />
+    <list default="true" id="158a6c52-5573-48be-8d7b-46c1c6eeccba" name="Changes" comment="cambios en la clase ranking, he usado el patrón singleton para que solo haya un objeto ranking ya que este debe ser único (de manera similar pasa con el almacen) he agregado a los jugadores el metodo para calcular la tasa de combates ganados respecto al total de combates, esto me servira para ordenar el ranking, terminare de implementar el ranking en otro momento">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/AlmacenXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/AlmacenXML.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +56,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.JuegoCombate.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JuegoCombate.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -103,7 +105,8 @@
       <workItem from="1744475929882" duration="1975000" />
       <workItem from="1744540035387" duration="6704000" />
       <workItem from="1744566454847" duration="8664000" />
-      <workItem from="1744840481186" duration="823000" />
+      <workItem from="1744840481186" duration="3405000" />
+      <workItem from="1744877837000" duration="1034000" />
     </task>
     <task id="LOCAL-00001" summary="primer commit">
       <option name="closed" value="true" />
@@ -273,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744575007322</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="cambios en la clase ranking, he usado el patrón singleton para que solo haya un objeto ranking ya que este debe ser único (de manera similar pasa con el almacen) he agregado a los jugadores el metodo para calcular la tasa de combates ganados respecto al total de combates, esto me servira para ordenar el ranking, terminare de implementar el ranking en otro momento">
+      <option name="closed" value="true" />
+      <created>1744844086252</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744844086252</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +316,8 @@
     <MESSAGE value="arreglo error commit (porfin)" />
     <MESSAGE value="Reorganizacion de la clase almacen (He puesto al final un metodo para cargar cada cosa por que java no deja hacer castings de genericos al cargar y abstraemos mas lo que hace la clase almacen de las demas) tambien he metido la funcionalidad de mostrar el ranking pero todavia no he puesto para guardarlo y actualizarlo tras cada combate, lo hare en otro momento" />
     <MESSAGE value="Cambios a la hora de guardar y obtener desafios de los XML, ahora se guardan desafios pendientes(validados) y los no validados aparte, ademas ahora no se sobreescribe el contenido de los ficheros por cada desafio lanzado (antes si lanzabamos 2 desafios sin validar, se sobreescribia el primer desafio por el segundo), y más cambios..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios a la hora de guardar y obtener desafios de los XML, ahora se guardan desafios pendientes(validados) y los no validados aparte, ademas ahora no se sobreescribe el contenido de los ficheros por cada desafio lanzado (antes si lanzabamos 2 desafios sin validar, se sobreescribia el primer desafio por el segundo), y más cambios..." />
+    <MESSAGE value="cambios en la clase ranking, he usado el patrón singleton para que solo haya un objeto ranking ya que este debe ser único (de manera similar pasa con el almacen) he agregado a los jugadores el metodo para calcular la tasa de combates ganados respecto al total de combates, esto me servira para ordenar el ranking, terminare de implementar el ranking en otro momento" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios en la clase ranking, he usado el patrón singleton para que solo haya un objeto ranking ya que este debe ser único (de manera similar pasa con el almacen) he agregado a los jugadores el metodo para calcular la tasa de combates ganados respecto al total de combates, esto me servira para ordenar el ranking, terminare de implementar el ranking en otro momento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -316,34 +328,59 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ranking.java</url>
-          <line>37</line>
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/SingleRanking.java</url>
+          <line>42</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>98</line>
+          <line>103</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>307</line>
+          <line>309</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>192</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>355</line>
+          <line>367</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>175</line>
+          <line>193</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>291</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
