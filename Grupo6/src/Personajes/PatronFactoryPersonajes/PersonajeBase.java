@@ -23,6 +23,8 @@ public abstract class PersonajeBase implements Personaje {
     protected int Oro;
     protected int Salud;
     protected int Poder;
+    protected int ValorAtaque = 0;
+    protected int ValorDefensa = 0;
 
     protected Modificador debilidad;
     protected Modificador fortaleza;
@@ -61,10 +63,6 @@ public abstract class PersonajeBase implements Personaje {
 
     public int getOro() {
         return Oro;
-    }
-
-    public int getPoder() {
-        return Poder;
     }
 
     public List<DebilidadHandler> getDebilidades() {
@@ -115,10 +113,6 @@ public abstract class PersonajeBase implements Personaje {
 
     public void setSalud(int salud) {
         Salud = salud;
-    }
-
-    public void setPoder(int poder) {
-        Poder = poder;
     }
 
     public void setDebilidades(List<DebilidadHandler> debilidades) {
@@ -190,5 +184,71 @@ public abstract class PersonajeBase implements Personaje {
 
     public void setFortaleza(Modificador fortaleza) {
         this.fortaleza = fortaleza;
+    }
+
+    /**
+     * Calcula los poderes de ataque y defensa del personaje segun el quipo que lleva.
+     * Notar que se tiene en cuenta la posibilidad de que las armas otorguen defensa y las armaduras ataque,
+     * pues el enunciado dice que esto es posible.
+     */
+    public void calcularValorEquipo(){
+        Modificador modAtaque1;
+        Modificador modAtaque2;
+        Modificador modDefensa;
+
+        if (ArmaActiva1 != null){
+            modAtaque1 = ArmaActiva1.getModificador();
+            if (modAtaque1.getTipo() == Modificador.TipoModificador.Ataque){
+                ValorAtaque += modAtaque1.getValor();
+            }
+            else if(modAtaque1.getTipo() == Modificador.TipoModificador.Defensa){
+                ValorDefensa += modAtaque1.getValor();
+            }
+        }
+
+        if (ArmaActiva2 != null){
+            modAtaque2 = ArmaActiva2.getModificador();
+            if (modAtaque2.getTipo() == Modificador.TipoModificador.Ataque){
+                ValorAtaque += modAtaque2.getValor();
+            }
+            else if(modAtaque2.getTipo() == Modificador.TipoModificador.Defensa){
+                ValorDefensa += modAtaque2.getValor();
+            }
+        }
+
+        if (ArmaduraActiva != null){
+            modDefensa = ArmaduraActiva.getModificador();
+            if (modDefensa.getTipo() == Modificador.TipoModificador.Ataque){
+                ValorAtaque += modDefensa.getValor();
+            }
+            else if(modDefensa.getTipo() == Modificador.TipoModificador.Defensa){
+                ValorDefensa += modDefensa.getValor();
+            }
+        }
+
+    }
+
+    public int getPoder() {
+        return Poder;
+    }
+
+    public void setPoder(int poder) {
+        Poder = poder;
+    }
+
+    public int getValorAtaque() {
+        return ValorAtaque;
+    }
+
+    public int getValorDefensa() {
+        return ValorDefensa;
+    }
+
+    public void setValorAtaque(int valorAtaque) {
+        ValorAtaque = valorAtaque;
+    }
+
+    public void setValorDefensa(int valorDefensa) {
+        ValorDefensa = valorDefensa;
     }
 }

@@ -20,7 +20,7 @@ public class EstrategiaCazador extends EstrategiaPotencial {
     @Override
     public int calcularPotencialAtaque(Object o) {
         if (o instanceof Cazador cazador) {
-            return cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad();
+            return cazador.getPoder() + cazador.getTalento().getAtaque() + cazador.getVoluntad() + cazador.getValorAtaque();
         }
         throw new IllegalArgumentException("Objeto no es un Cazador");
     }
@@ -28,7 +28,7 @@ public class EstrategiaCazador extends EstrategiaPotencial {
     @Override
     public int calcularPotencialDefensa(Object o) {
         if (o instanceof Cazador cazador) {
-            return cazador.getPoder() + cazador.getTalento().getDefensa() + cazador.getVoluntad();
+            return cazador.getPoder() + cazador.getTalento().getDefensa() + cazador.getVoluntad() + cazador.getValorDefensa();
         }
         throw new IllegalArgumentException("Objeto no es un Cazador");
     }

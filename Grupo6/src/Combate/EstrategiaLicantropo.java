@@ -10,7 +10,7 @@ public class EstrategiaLicantropo extends EstrategiaPotencial {
     @Override
     public int calcularPotencialAtaque(Object o) {
         if (o instanceof Licantropo licantropo) {
-            return licantropo.getPoder() + licantropo.getDon().getAtaque() + licantropo.getRabia();
+            return licantropo.getPoder() + licantropo.getDon().getAtaque() + licantropo.getRabia() + licantropo.getValorAtaque();
         }
         throw new IllegalArgumentException("Objeto no es un Licantropo");
     }
@@ -18,7 +18,7 @@ public class EstrategiaLicantropo extends EstrategiaPotencial {
     @Override
     public int calcularPotencialDefensa(Object o) {
         if (o instanceof Licantropo licantropo) {
-            return licantropo.getPoder() + licantropo.getDon().getDefensa() + licantropo.getRabia();
+            return licantropo.getPoder() + licantropo.getDon().getDefensa() + licantropo.getRabia() + licantropo.getValorDefensa();
         }
         throw new IllegalArgumentException("Objeto no es un Licantropo");
     }

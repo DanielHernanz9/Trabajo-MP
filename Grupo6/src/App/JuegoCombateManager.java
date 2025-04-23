@@ -657,13 +657,17 @@ public class JuegoCombateManager {
 
         String nombre = sc.nextLine();
 
-        Modificador.TipoModificador tipoModificador = Modificador.TipoModificador.Fortaleza;
-
         int valor;
         do {
             System.out.print("Valor del modificador (1-3): ");
             valor = sc.nextInt();
         } while (valor < 1 || valor > 3);
+
+        int modType = 0;
+        do{
+            System.out.println("¿Modificador de ataque (1) o de defensa (2)?");
+            modType = sc.nextInt();
+        }while(modType > 2 || modType < 1);
 
         int manos = 0;
         if (factoryEquipo instanceof FabricaArmas) {
@@ -678,10 +682,15 @@ public class JuegoCombateManager {
         EquipoBase equipoBase = (EquipoBase) equipo;
 
         Modificador modificador = new Modificador();
-        modificador.setTipo(tipoModificador);
         modificador.setValor(valor);
-
         equipoBase.setNombre(nombre);
+
+        if (modType == 1){
+            modificador.setTipo(Modificador.TipoModificador.Ataque);
+        }
+        else{
+            modificador.setTipo(Modificador.TipoModificador.Defensa);
+        }
         equipoBase.setModificador(modificador);
 
         if (equipo instanceof Arma) {

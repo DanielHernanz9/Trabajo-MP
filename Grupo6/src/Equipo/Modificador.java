@@ -38,7 +38,7 @@ public class Modificador {
     }
 
     public static enum TipoModificador {
-        Debilidad,
-        Fortaleza;
+        Ataque,
+        Defensa;
     }
 }

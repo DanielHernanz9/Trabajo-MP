@@ -1,5 +1,6 @@
 package Grupo6.src.Personajes;
 
+import Grupo6.src.Equipo.Modificador;
 import Grupo6.src.HabilidadesEspeciales.Talento;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
@@ -70,6 +71,8 @@ public class Cazador extends PersonajeBase {
     public void initializePersonaje(){
         Salud = 5;
         Voluntad = 0;
+        Poder = 5;
+        calcularValorEquipo();
     }
 
 }

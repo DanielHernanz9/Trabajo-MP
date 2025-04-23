@@ -24,7 +24,6 @@ public interface Personaje {
     Armadura getArmaduraActiva();
     List<Esbirro> getEsbirros();
     int getOro();
-    int getPoder();
     int getSalud();
     List<DebilidadHandler> getDebilidades();
     List<FortalezaHandler> getFortalezas();
@@ -40,7 +39,6 @@ public interface Personaje {
     void setArmaduraActiva(Armadura armaduraActiva);
     void setEsbirros(List<Esbirro> esbirros);
     void setOro(int oro);
-    void setPoder(int poder);
     void setSalud(int salud);
     void setDebilidades(List<DebilidadHandler> debilidades);
     void setFortalezas(List<FortalezaHandler> fortalezas);

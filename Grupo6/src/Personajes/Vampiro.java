@@ -24,7 +24,7 @@ public class Vampiro extends PersonajeBase {
     public Vampiro(String name) {
         Random rand = new Random();
         Esbirros= new ArrayList<>();
-        this.Disciplina = new Disciplina(100, 100);
+        this.Disciplina = new Disciplina(3, 10);
         this.Nombre = name;
         this.Sangre = rand.nextInt(5) + 1;
         //Creacion de los esbirros de los Vampiros
@@ -105,5 +105,7 @@ public class Vampiro extends PersonajeBase {
     public void initializePersonaje(){
         Salud = 5;
         Sangre = 10; //No entiendo cómo deberían sacar puntos de sangre los vampiros.
+        Poder = 5; //Entiendo que el poder viene de serie con el personaje. He puesto uno diferente a cada uno.
+        calcularValorEquipo();
     }
 }

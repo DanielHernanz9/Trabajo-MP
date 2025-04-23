@@ -116,7 +116,13 @@ public class Ronda implements Serializable {
         PotencialAtaqueP1 = calcularPotencialDeAtaque(Atacante, 1);
         PotencialDefensaP2 = calcularPotencialDeDefensa(Atacado, 2);
 
-        System.out.println(nombreAtacante + " ataca a " + nombreAtacado);
+        if (Atacante.getArmaActiva1() != null || Atacante.getArmaActiva2() != null){
+            System.out.println(nombreAtacante + " ataca a " + nombreAtacado + " con " + Atacante.getArmaActiva1().getNombre());
+        }
+        else{
+            System.out.println(nombreAtacante + " ataca a " + nombreAtacado + " con un puñetazo.");
+        }
+
         System.out.println("El potencial de ataque de " + nombreAtacante + " es de " + PotencialAtaqueP1);
         System.out.println("El potencial de defensa de " + nombreAtacado + " es de " + PotencialDefensaP2);
 
@@ -146,7 +152,12 @@ public class Ronda implements Serializable {
             reducirSalud();
         }
         else{
-            System.out.println("¡" + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");
+            if (Atacado.getArmaduraActiva() != null){
+                System.out.println("¡" + nombreAtacado + " se defiende de " + nombreAtacante + " con " + Atacado.getArmaduraActiva().getNombre() + "!");
+            }
+            else{
+                System.out.println("¡" + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");
+            }
         }
 
         if (verificarFinCombate()){
