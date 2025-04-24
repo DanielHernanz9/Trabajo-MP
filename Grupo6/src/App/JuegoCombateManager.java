@@ -125,7 +125,7 @@ public class JuegoCombateManager {
         if (mode) {
             System.out.println("Escribe el nombre del jugador que deseas bloquear: ");
         } else {
-            System.out.println("Escribe el nombre del jugador que deseas desbloquear: 5ç");
+            System.out.println("Escribe el nombre del jugador que deseas desbloquear: ");
         }
         int i=0;
         for (Jugador jugador : jugadores) {
