@@ -119,14 +119,9 @@ public class Operador extends Usuario {
      *
      * @param jugador El jugador que será bloqueado.
      */
-    public void bloquearUsuario(Jugador jugador) {
-        if (jugador != null) {
-            // Lógica para bloquear al jugador.
-            // Ejemplo: añadir el jugador a una lista de usuarios bloqueados.
-            System.out.println("Jugador " + jugador.getNombre() + " bloqueado.");
-        } else {
-            System.out.println("No se ha encontrado al jugador para bloquear.");
-        }
+    public void bloquearJugador(Jugador jugador) {
+        jugador.bloquear();
+
     }
 
     /**
@@ -134,13 +129,7 @@ public class Operador extends Usuario {
      *
      * @param jugador El jugador que será desbloqueado.
      */
-    public void desbloquearUsuario(Jugador jugador) {
-        if (jugador != null) {
-            // Lógica para desbloquear al jugador.
-            // Ejemplo: remover al jugador de la lista de bloqueados.
-            System.out.println("Jugador " + jugador.getNombre() + " desbloqueado.");
-        } else {
-            System.out.println("No se ha encontrado al jugador para desbloquear.");
-        }
+    public void desbloquearJugador(Jugador jugador) {
+        jugador.desbloquear();
     }
 }

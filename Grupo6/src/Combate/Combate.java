@@ -11,6 +11,9 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.time.LocalDate;
+
+
 /**
  * No he usado la estructura completa porque solo va a haber un tipo de combate, sino si que podriamos usar una interfaz como esta en el aula con el director, de todas formas hay que preguntar al profe si asi se puede usar
  * Grupo6.src.Combate.Combate tiene muchos atributos y he intentado con el patron builder evitar hacer un constructor muy grande
@@ -37,6 +40,7 @@ public class Combate implements Serializable {
         this.Rondas = new ArrayList<>();
         this.NumRondas = 0;
         this.Ganador = null;
+        FechaCombate = new Date();
     }
 
     public void configEsbirroSalud(List<Esbirro> listaEsbirros){
@@ -240,4 +244,6 @@ public class Combate implements Serializable {
     public Jugador Ganador(){
         return Ganador;
     }
+
+
 }

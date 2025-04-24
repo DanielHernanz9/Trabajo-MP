@@ -2,11 +2,11 @@ package Grupo6.src.App;
 
 import Grupo6.src.Desafio.*;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
-import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Jugador extends Usuario implements Comparable<Jugador> {
+public class Jugador extends Usuario implements Comparable<Jugador>, Serializable {
 
     private FactoryPersonaje FabricaPersonaje;
     private ArrayList<Desafio> DesafiosPendientes;
@@ -16,6 +16,7 @@ public class Jugador extends Usuario implements Comparable<Jugador> {
     private String RegNum; // Número de registro, solo lo tienen los jugadores y es único para cada jugador
     private int numCombatesGanados;
     private int numCombatesPerdidos;
+    private boolean bloqueado;
 
     /**
      * Constructor por defecto de Jugador.
@@ -28,6 +29,7 @@ public class Jugador extends Usuario implements Comparable<Jugador> {
         this.Oro = 500;
         numCombatesGanados=0;
         numCombatesPerdidos=0;
+        bloqueado =false;
     }
 
     @Override
@@ -325,5 +327,20 @@ public class Jugador extends Usuario implements Comparable<Jugador> {
 
     public void setDesafiosPendientes(ArrayList<Desafio> desafiosPendientes) {
         DesafiosPendientes = desafiosPendientes;
+    }
+
+    public void bloquear() {
+        bloqueado = true;
+    }
+    public void desbloquear() {
+        bloqueado = false;
+    }
+
+    public boolean isBloqueado() {
+        return bloqueado;
+    }
+
+    public void setBloqueado(boolean bloqueado) {
+        this.bloqueado = bloqueado;
     }
 }

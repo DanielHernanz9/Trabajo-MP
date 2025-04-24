@@ -37,22 +37,22 @@ public class JuegoCombateManager {
         this.desafiosPendientesPorValidar = new ArrayList();
         this.notifier = new ChallengeNotifier();
 
-        storage=SingleStorage.getInstance();
+        storage = SingleStorage.getInstance();
 
         this.operador = new Operador(); // operador por defecto
         this.operador.registrarDatos("adminSupremo", "admin33", "12345");
 
         //Cargamos los usuarios del disco
-        usuarios= storage.loadUsers();
+        usuarios = storage.loadUsers();
         desafiosPendientesPorValidar = storage.loadChallenges();
         desafiosPendientes = storage.loadPendingChallenges();
 
         //metemos el operador por defecto solo si no lo hemos metido antes
-        boolean encontrado=false;
+        boolean encontrado = false;
         Usuario user = null;
-        int i=0;
-        if (i < usuarios.size()){
-            user=usuarios.get(i);
+        int i = 0;
+        if (i < usuarios.size()) {
+            user = usuarios.get(i);
         }
 
         while (i < usuarios.size() && (!encontrado)) {
@@ -66,7 +66,7 @@ public class JuegoCombateManager {
 
 
         //Si no esta en la lista de usuarios lo metemos
-        if (!encontrado){
+        if (!encontrado) {
             usuarios.add(operador); // registrar operador por defecto
         }
 
@@ -80,7 +80,7 @@ public class JuegoCombateManager {
         IniciarProcesoRegistro();
 
         //Si se ha registrado un jugador nuevo mostramos el menu
-        if (jugador1 != null){
+        if (jugador1 != null) {
             MostrarMenuJugador();
         }
     }
@@ -102,10 +102,13 @@ public class JuegoCombateManager {
 
             switch (opcion) {
                 case 1 -> gestionarDesafios();
-                case 2 -> bloquearDesbloquearJugador(sc, true);
-                case 3 -> bloquearDesbloquearJugador(sc, false);
-                case 4 ->System.out.println("Sin implementar");//Debe permitirse editar cualquier cosa de un personaje o añadir armas, armaduras, etc
-                case 5 -> { return; }
+                case 2 -> MenuBloqueoDesbloqueo(true);
+                case 3 -> MenuBloqueoDesbloqueo(false);
+                case 4 ->
+                        System.out.println("Sin implementar");//Debe permitirse editar cualquier cosa de un personaje o añadir armas, armaduras, etc
+                case 5 -> {
+                    return;
+                }
                 default -> System.out.println("Opción inválida.");
             }
         }
@@ -114,18 +117,44 @@ public class JuegoCombateManager {
     /**
      * Bloquea o desbloquea a un jugador según la opción seleccionada.
      */
-    private void bloquearDesbloquearJugador(Scanner sc, boolean bloquear) {
-        System.out.print("Nombre del jugador: ");
-        String nombre = sc.nextLine();
-        Jugador j = buscarJugador(nombre);
-        if (j != null) {
-            if (bloquear) {
-                bloquearJugadores(j);
-            } else {
-                desbloquearJugadores(j);
-            }
+    private void MenuBloqueoDesbloqueo(Boolean mode) {
+
+        ArrayList<Jugador> jugadores = storage.getPlayers();
+        Scanner sc = new Scanner(System.in);
+
+        if (mode) {
+            System.out.println("Selecciona el jugador que deseas bloquear");
+        } else {
+            System.out.println("Selecciona el jugador que deseas desbloquear");
         }
+        int i=0;
+        for (Jugador jugador : jugadores) {
+            System.out.println(i+". " + jugador.getNombre());
+            i++;
+        }
+
+        String nombreJugador = sc.nextLine();
+
+        Jugador jugador = buscarJugador(nombreJugador);
+
+        jugadores.remove(jugador);
+        if (mode) {
+            operador.bloquearJugador(jugador);
+            System.out.println("El jugador " + jugador.getNombre() + " ha sido bloqueado.");
+        } else {
+            operador.desbloquearJugador(jugador);
+            System.out.println("El jugador " + jugador.getNombre() + " ha sido desbloqueado.");
+        }
+        jugadores.add(jugador);
+        //actualizamos el jugador y el archivo xml
+        updateUser(jugador);
+        storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+
     }
+
+
+
+
 
     /**
      * Muestra el menú de opciones para el jugador.
@@ -318,6 +347,7 @@ public class JuegoCombateManager {
 
     public Jugador IniciarCombate() {
         if (jugador1 != null && jugador2 != null) {
+            //Creamos el combate entre el jugador 1 y 2
             Combate combate = new Combate(jugador1, jugador2);
             Jugador ganador = combate.IniciarCombate();
             combate.registrar();
@@ -447,16 +477,6 @@ public class JuegoCombateManager {
         } else {
             System.out.println("Desafío no válido.");
         }
-    }
-
-    public void bloquearJugadores(Jugador jugador) {
-        operador.bloquearUsuario(jugador);
-        System.out.println("Jugador bloqueado: " + jugador.getNombre());
-    }
-
-    public void desbloquearJugadores(Jugador jugador) {
-        operador.desbloquearUsuario(jugador);
-        System.out.println("Jugador desbloqueado: " + jugador.getNombre());
     }
 
     /**
