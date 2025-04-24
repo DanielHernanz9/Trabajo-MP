@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.6" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Grupo6.src.App.Jugador">
+    <void property="bloqueado">
+     <boolean>true</boolean>
+    </void>
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>dani</string>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Grupo6.src.Personajes.Vampiro" id="Vampiro0">
+      <void class="Grupo6.src.Personajes.Vampiro" method="getField">
+       <string>Disciplina</string>
+       <void method="set">
+        <object idref="Vampiro0"/>
+        <object class="Grupo6.src.HabilidadesEspeciales.Disciplina">
+         <void property="coste">
+          <int>10</int>
+         </void>
+         <void property="valorAtaque">
+          <int>3</int>
+         </void>
+        </object>
+       </void>
+      </void>
+      <void property="esbirros">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_0</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_1</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Demonio">
+          <void property="nombre">
+           <string>Demonio_2</string>
+          </void>
+          <void property="pacto">
+           <string>Pacto Normal</string>
+          </void>
+          <void property="subordinados">
+           <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+            <void property="nombre">
+             <string>Demonio_2_Subordinados</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Demonio">
+          <void property="nombre">
+           <string>Demonio_3</string>
+          </void>
+          <void property="pacto">
+           <string>Pacto Normal</string>
+          </void>
+          <void property="subordinados">
+           <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+            <void property="nombre">
+             <string>Demonio_3_Subordinados</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_4</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="nombre">
+       <string>pepe</string>
+      </void>
+      <void property="sangre">
+       <int>5</int>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>U60QZ</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Grupo6.src.App.Jugador" id="Jugador0">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j1</string>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Grupo6.src.Personajes.Vampiro" id="Vampiro1">
+      <void class="Grupo6.src.Personajes.Vampiro" method="getField">
+       <string>Disciplina</string>
+       <void method="set">
+        <object idref="Vampiro1"/>
+        <object class="Grupo6.src.HabilidadesEspeciales.Disciplina">
+         <void property="coste">
+          <int>10</int>
+         </void>
+         <void property="valorAtaque">
+          <int>3</int>
+         </void>
+        </object>
+       </void>
+      </void>
+      <void property="esbirros">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_0</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Demonio">
+          <void property="nombre">
+           <string>Demonio_1</string>
+          </void>
+          <void property="pacto">
+           <string>Pacto Normal</string>
+          </void>
+          <void property="subordinados">
+           <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+            <void property="nombre">
+             <string>Demonio_1_Subordinados</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Demonio">
+          <void property="nombre">
+           <string>Demonio_2</string>
+          </void>
+          <void property="pacto">
+           <string>Pacto Normal</string>
+          </void>
+          <void property="subordinados">
+           <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+            <void property="nombre">
+             <string>Demonio_2_Subordinados</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_3</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Grupo6.src.Esbirros.Demonio">
+          <void property="nombre">
+           <string>Demonio_4</string>
+          </void>
+          <void property="pacto">
+           <string>Pacto Normal</string>
+          </void>
+          <void property="subordinados">
+           <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+            <void property="nombre">
+             <string>Demonio_4_Subordinados</string>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="nombre">
+       <string>pepe</string>
+      </void>
+      <void property="sangre">
+       <int>5</int>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>M15OE</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Grupo6.src.App.Jugador">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j1</string>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="regNum">
+     <string>X60VS</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Grupo6.src.App.Jugador">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j1</string>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="regNum">
+     <string>R29JY</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object idref="Jugador0"/>
+  </void>
+  <void method="add">
+   <object class="Grupo6.src.App.Jugador">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j2</string>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Grupo6.src.Personajes.Licantropo">
+      <void property="don">
+       <object class="Grupo6.src.HabilidadesEspeciales.Don">
+        <void property="rabia">
+         <int>100</int>
+        </void>
+        <void property="valorAtaque">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void property="nombre">
+       <string>ss</string>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>T56YX</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

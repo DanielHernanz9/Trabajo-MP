@@ -76,13 +76,27 @@ public class JuegoCombateManager {
      * Inicia el juego y gestiona los menús de interacción con el usuario.
      */
     public void IniciarJuego() {
-        System.out.println("¡Bienvenido!");
+        String colorBienvenida="\u001B[38;5;114m";
+        String reset = "\u001B[0m";
+        String rojo = "\u001B[91m";
+
+        System.out.println(colorBienvenida+"¡Bienvenido!"+reset);
         IniciarProcesoRegistro();
 
+
+        Scanner sc = new Scanner(System.in);
         //Si se ha registrado un jugador nuevo mostramos el menu
-        if (jugador1 != null) {
+        while (jugador1!=null && jugador1.isBloqueado()){
+            System.out.println("Este usuario está "+rojo+"bloqueado"+reset+" y no puede acceder al videojuego hasta que sea desbloqueado");
+            System.out.println("¿Quieres iniciar sesión con otro usuario? (s/n)");
+            IniciarProcesoRegistro();
+
+        }
+
+        if ((jugador1 != null) &&(!jugador1.isBloqueado())){
             MostrarMenuJugador();
         }
+
     }
 
     /**
@@ -121,35 +135,64 @@ public class JuegoCombateManager {
 
         ArrayList<Jugador> jugadores = storage.getPlayers();
         Scanner sc = new Scanner(System.in);
+        String reset = "\u001B[0m";
+        String rojo = "\u001B[91m";
+        String verde = "\u001B[32m";
 
+        int i=1;
         if (mode) {
-            System.out.println("Escribe el nombre del jugador que deseas bloquear: ");
+            System.out.println("Jugadores "+verde+"no bloqueados"+reset+": ");
+
+            for (Jugador jugador : jugadores) {
+                if (!jugador.isBloqueado()) {
+                    System.out.println(i+". " + jugador.getNombre());
+                    i++;
+                }
+
+            }
+
         } else {
-            System.out.println("Escribe el nombre del jugador que deseas desbloquear: ");
+            System.out.println("Jugadores "+rojo+"bloqueados"+reset+": ");
+
+            for (Jugador jugador : jugadores) {
+                if (jugador.isBloqueado()) {
+                System.out.println(i+". " + jugador.getNombre());
+                i++;
+                }
+            }
         }
-        int i=0;
-        for (Jugador jugador : jugadores) {
-            System.out.println(i+". " + jugador.getNombre());
-            i++;
+
+        if (i>1) {//Si se han mostrado jugadores que esten baneados o desbaneados (la opción seleccionada), entonces:
+            String nombreJugador = sc.nextLine();
+
+            if (mode) System.out.println("Escribe el nombre del jugador que deseas "+rojo+"bloquear"+reset+": ");
+            else System.out.println("Escribe el nombre del jugador que deseas "+verde+"desbloquear"+reset+": ");
+
+            Jugador jugador = buscarJugador(nombreJugador);
+            while (jugador == null) {
+                System.out.println("El jugador buscado " + rojo + "no existe" + reset + ", porfavor escribe un nombre de jugador válido");
+                sc.nextLine();
+                jugador = buscarJugador(nombreJugador);
+            }
+            jugadores.remove(jugador);
+            if (mode) {
+                operador.bloquearJugador(jugador);
+                System.out.println("El jugador " + jugador.getNombre() + " ha sido Bloqueado");
+            } else {
+                operador.desbloquearJugador(jugador);
+                System.out.println("El jugador " + jugador.getNombre() + " ha sido desbloqueado.");
+            }
+            jugadores.add(jugador);
+            //actualizamos el jugador y el archivo xml
+            updateUser(jugador);
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
         }
-
-        String nombreJugador = sc.nextLine();
-
-        Jugador jugador = buscarJugador(nombreJugador);
-
-        jugadores.remove(jugador);
-        if (mode) {
-            operador.bloquearJugador(jugador);
-            System.out.println("El jugador " + jugador.getNombre() + " ha sido bloqueado.");
-        } else {
-            operador.desbloquearJugador(jugador);
-            System.out.println("El jugador " + jugador.getNombre() + " ha sido desbloqueado.");
+        else if (mode){ //Si no se ha mostrado ningún usuario que este bloqueado o desbloqueado(la opción seleccionada), entonces:
+            System.out.println("No hay jugadores para bloquear");
         }
-        jugadores.add(jugador);
-        //actualizamos el jugador y el archivo xml
-        updateUser(jugador);
-        storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
-
+        else{
+            System.out.println("No hay jugadores para desbloquear");
+        }
     }
 
 
@@ -301,6 +344,9 @@ public class JuegoCombateManager {
      */
     public void IniciarProcesoRegistro() {
         boolean registered = false;
+
+        String reset = "\u001B[0m";
+        String azul= "\u001B[38;5;153m";
         Scanner sc = new Scanner(System.in);
 
         while (!registered) {
@@ -317,12 +363,14 @@ public class JuegoCombateManager {
                 for (Usuario u : usuarios) {
                     if (u.getNombre().equals(nombre) && u.getPassword().equals(pass)) {
                         if (u instanceof Operador) {
-                            System.out.println("Bienvenido Operador: " + u.getName());
+                            System.out.println("Bienvenido"+"\u001B[38;5;166m"+" Operador"+reset+": "+ u.getName());
                             MostrarMenuOperador();
+                            setJugador1(null);
 
                         } else if (u instanceof Jugador j) {
-                            System.out.println("Bienvenido Jugador: " + u.getName());
+                            System.out.println("Bienvenido"+azul+" Jugador"+reset+": " + u.getName());
                             if (jugador1 == null) setJugador1(j);
+                            else if (jugador1.isBloqueado()) setJugador1(j);
                             else setJugador2(j);
                         }
                         return;
@@ -336,6 +384,7 @@ public class JuegoCombateManager {
 
                 nuevo.registrarDatos("Jugador", nombre ,pass);
                 if (jugador1 == null) setJugador1(nuevo);
+                else if (jugador1.isBloqueado()) setJugador1(nuevo);
                 else setJugador2(nuevo);
 
                 registrarUsuario(nuevo);
