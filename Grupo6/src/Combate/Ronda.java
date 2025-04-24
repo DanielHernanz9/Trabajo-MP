@@ -90,7 +90,7 @@ public class Ronda implements Serializable {
 
         if (Atacante.hasEsbirros()) {
             Esbirro esbirro = Atacante.getEsbirros().getLast();
-            System.out.println("¡" + nombreAtacante + " ha infligido daño ael esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
+            System.out.println("¡" + nombreAtacante + " ha infligido daño al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
             esbirro.setSalud(esbirro.recibirDaño());
             if (esbirro.getSalud() == 0){
                 Atacante.getEsbirros().removeLast();
