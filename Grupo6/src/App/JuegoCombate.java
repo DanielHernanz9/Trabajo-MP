@@ -18,5 +18,4 @@ public class JuegoCombate {
         JuegoCombateManager juegoCombateManager = new JuegoCombateManager();
         juegoCombateManager.IniciarJuego();  // Inicia el juego de combate.
     }
-
 }
