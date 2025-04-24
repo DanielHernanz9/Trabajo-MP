@@ -19,8 +19,6 @@ public class Cazador extends PersonajeBase {
     public Cazador(String nombre) {
         this.Nombre = nombre;
         this.Talento = new Talento(100);
-        //Creacion de los esbirros de los cazadores
-        crearEsbirros();
     }
 
     public void setVoluntad(Integer voluntad) {
@@ -73,6 +71,6 @@ public class Cazador extends PersonajeBase {
         Voluntad = 0;
         Poder = 5;
         calcularValorEquipo();
+        crearEsbirros();
     }
-
 }

@@ -129,26 +129,28 @@ public abstract class PersonajeBase implements Personaje {
 
     public abstract void atacar();
 
+    /**
+     * Creación de los esbirros de los personajes.
+     */
     public void crearEsbirros() {
         Random rand = new Random();
         Esbirros = new ArrayList<>();
-
-        //Creacion de los esbirros de los personajes
+        String nombre;
         int num;
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 5; i++) {
             num = rand.nextInt(3);
             FabricaEsbirros currentFactory;
             if (num == 0) {
                 currentFactory = new FabricaGhouls();
+                nombre = "Ghoul_";
             } else if (num == 1) {
-
                 currentFactory = new FabricaHumanos();
+                nombre = "Humano_";
             } else {
-
                 currentFactory = new FabricaDemonios();
-
+                nombre = "Demonio_";
             }
-            Esbirros.add(currentFactory.createEsbirro("Esbirro_" + i));
+            Esbirros.add(currentFactory.createEsbirro(nombre + i));
         }
     }
 

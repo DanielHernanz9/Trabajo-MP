@@ -28,30 +28,27 @@ public class Vampiro extends PersonajeBase {
         this.Nombre = name;
         this.Sangre = rand.nextInt(5) + 1;
         //Creacion de los esbirros de los Vampiros
-        crearEsbirros();
+        this.crearEsbirros();
     }
 
     @Override
     //Este metodo sobreescribe al original ya que los vampiros no pueden tener esbirros humanos
     public void crearEsbirros() {
         Random rand = new Random();
-
         Esbirros = new ArrayList<>();
-
         int num;
-        for (int i = 0; i < 20; i++){
+        String nombre;
+        for (int i = 0; i < 5; i++){
             num = rand.nextInt(2);
             FabricaEsbirros actualFactory;
             if (num == 0){
                 actualFactory = new FabricaGhouls();
-
+                nombre = "Ghoul_";
             }else{
                 actualFactory = new FabricaDemonios();
-
+                nombre = "Demonio_";
             }
-
-            Esbirros.add(actualFactory.createEsbirro("Esbirro_"+i));
-
+            Esbirros.add(actualFactory.createEsbirro(nombre + i));
         }
     }
 
@@ -65,7 +62,6 @@ public class Vampiro extends PersonajeBase {
 
     @Override
     public void hacerHabilidadEspecial() {
-
 
     }
 
@@ -107,5 +103,6 @@ public class Vampiro extends PersonajeBase {
         Sangre = 10; //No entiendo cómo deberían sacar puntos de sangre los vampiros.
         Poder = 5; //Entiendo que el poder viene de serie con el personaje. He puesto uno diferente a cada uno.
         calcularValorEquipo();
+        crearEsbirros();
     }
 }

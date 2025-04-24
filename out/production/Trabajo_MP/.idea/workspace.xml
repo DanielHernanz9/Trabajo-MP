@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Ahora el oro se reparte según corresponda cuando un combate termina">
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaCazador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaCazador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaLicantropo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaLicantropo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaPotencial.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaPotencial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaVampiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaVampiro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Equipo/Modificador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Equipo/Modificador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Personajes/Cazador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Personajes/Cazador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.java" afterDir="false" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Las armas ya son utilizables en combate.&#10;Las estadísticas de de ataque de los personajes y habilidades se han ajustado (antes el ataque era mucho mas grande que la defensa y eso hacía que los personajes nunca pudiesen defenderse)">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/Personajes/Vampiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Personajes/Vampiro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +120,9 @@
       <workItem from="1744884136703" duration="1236000" />
       <workItem from="1744906981318" duration="2787000" />
       <workItem from="1744971241295" duration="67000" />
-      <workItem from="1745440753561" duration="3053000" />
+      <workItem from="1745440753561" duration="5956000" />
+      <workItem from="1745447053473" duration="385000" />
+      <workItem from="1745484227591" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -435,7 +428,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744909770665</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Las armas ya son utilizables en combate.&#10;Las estadísticas de de ataque de los personajes y habilidades se han ajustado (antes el ataque era mucho mas grande que la defensa y eso hacía que los personajes nunca pudiesen defenderse)">
+      <option name="closed" value="true" />
+      <created>1745447176546</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1745447176546</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="He avanzado con la implementacion de los combates y el funcionamiento de las rondas." />
     <MESSAGE value="Terminada (o eso creo) la logica de los combates y las rondas" />
     <MESSAGE value="La persistencia para los usuarios funciona correctamente. Ahora se guardan en un xml llamado Usuarios.xml en la raiz del proyecto. Se guardan todos los datos, incluidos personajes y esbirros" />
     <MESSAGE value="Añadido fichero necesario para que la persistencia pueda funcionar" />
@@ -478,7 +478,8 @@
     <MESSAGE value="Ahora los combates se serializan. Los licantropos ganan puntos de rabia cuando reciben daño y los cazadores pierden puntos de voluntad cuando reciben daño" />
     <MESSAGE value="Implementado sistema de adquisición de armas para utilizar en combate" />
     <MESSAGE value="Ahora el oro se reparte según corresponda cuando un combate termina" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ahora el oro se reparte según corresponda cuando un combate termina" />
+    <MESSAGE value="Las armas ya son utilizables en combate.&#10;Las estadísticas de de ataque de los personajes y habilidades se han ajustado (antes el ataque era mucho mas grande que la defensa y eso hacía que los personajes nunca pudiesen defenderse)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Las armas ya son utilizables en combate.&#10;Las estadísticas de de ataque de los personajes y habilidades se han ajustado (antes el ataque era mucho mas grande que la defensa y eso hacía que los personajes nunca pudiesen defenderse)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -488,21 +489,32 @@
           <option name="timeStamp" value="22" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaCazador.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/Grupo6/src/Personajes/Cazador.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaVampiro.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaCazador.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaLicantropo.java</url>
           <line>12</line>
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Combate.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="vampiro.getPoder()" language="JAVA" />
+        <watch expression="vampiro.getDisciplina().getAtaque()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

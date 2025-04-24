@@ -87,24 +87,20 @@ public class Ronda implements Serializable {
     }
 
     public void reducirSalud() {
-        /*
-        if (Atacante.hasEsbirros()){
-            int l = Atacante.getEsbirros().size();
-            Esbirro esbirro = Atacante.getEsbirros().get(l - 1);
-            System.out.println("¡" + nombreAtacante + " ha infligido daño a un esbirro de " + nombreAtacado  + " !");
+
+        if (Atacante.hasEsbirros()) {
+            Esbirro esbirro = Atacante.getEsbirros().getLast();
+            System.out.println("¡" + nombreAtacante + " ha infligido daño ael esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
             esbirro.setSalud(esbirro.recibirDaño());
-
+            if (esbirro.getSalud() == 0){
+                Atacante.getEsbirros().removeLast();
+            }
+        } else {
+            Atacado.reducirSalud();
+            System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de daño a " + nombreAtacado + "!");
+            System.out.println("La salud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
-        else{
-         */
-
-        //De momento no dañamos a los esbirros porque produce un bucle infinito, hay que arreglarlo.
-
-        Atacado.reducirSalud();
-        System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de daño a " + nombreAtacado + "!");
-        System.out.println("La salud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
-        }
-
+    }
 
     public void ejecutarRonda(){
         System.out.println();

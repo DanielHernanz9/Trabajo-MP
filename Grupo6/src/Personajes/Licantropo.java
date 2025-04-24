@@ -17,7 +17,6 @@ public class Licantropo extends PersonajeBase {
     public Licantropo(String name) {
         this.Nombre = name;
         this.Don = new Don(100, 2);
-        crearEsbirros();
     }
 
     public Licantropo(){
@@ -70,5 +69,6 @@ public class Licantropo extends PersonajeBase {
         Rabia = 3;
         Poder = 10;
         calcularValorEquipo();
+        crearEsbirros();
     }
 }
