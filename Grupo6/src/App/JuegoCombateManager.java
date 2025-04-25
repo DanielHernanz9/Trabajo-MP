@@ -117,13 +117,145 @@ public class JuegoCombateManager {
                 case 1 -> gestionarDesafios();
                 case 2 -> MenuBloqueoDesbloqueo(true);
                 case 3 -> MenuBloqueoDesbloqueo(false);
-                case 4 ->
-                        System.out.println("Sin implementar");//Debe permitirse editar cualquier cosa de un personaje o añadir armas, armaduras, etc
+                case 4 -> MenuEdicionPersonaje();//Debe permitirse editar cualquier cosa de un personaje o añadir armas, armaduras, etc
                 case 5 -> {
                     return;
                 }
                 default -> System.out.println("Opción inválida.");
             }
+        }
+    }
+    public void MenuEdicionPersonaje(){
+
+        ArrayList<Jugador> jugadores = storage.getPlayers();
+        ArrayList<Personaje> personajes = new ArrayList<>();
+        Set<String> personajeSet = new HashSet<>();
+
+        System.out.println("Escribe el nombre del personaje que desea editar");
+        int i=1;
+        for (Jugador jugador : jugadores) {
+            System.out.println(i+". "+jugador.getPersonaje().getNombre());
+            personajes.add(jugador.getPersonaje());
+            personajeSet.add(jugador.getPersonaje().getNombre());
+            i++;
+        }
+        Scanner sc = new Scanner(System.in);
+        String nombrePersonaje=sc.nextLine();
+        Personaje personajeEditable=null;
+        Personaje personajeSinEditar=null;
+        while (!personajeSet.contains(nombrePersonaje)) {
+            System.out.println("El nombre del personaje buscado no existe, por favor escribe un nombre válido");
+            nombrePersonaje=sc.nextLine();
+
+        }
+        int pos=0;
+        while ((personajeEditable ==null)&&(pos<personajes.size())) {
+           Personaje personajeActual=personajes.get(pos);
+           if(nombrePersonaje.equals(personajeActual.getNombre())){
+               personajeEditable=personajeActual;
+               personajeSinEditar=personajeActual;
+           }
+           pos++;
+        }
+        if (personajeEditable!=null) {
+        System.out.println("Seleccione la característica que desea modificar del personaje: "+nombrePersonaje);
+        System.out.println("1. Cambiar nombre");
+        System.out.println("2. Modificar habilidad especial");
+        System.out.println("3. Modificar conjunto de armas");
+        System.out.println("4. Modificar conjunto de armas activas");
+        System.out.println("5. Modificar conjunto de armaduras");
+        System.out.println("6. Modificar armadura activa");
+        System.out.println("7. Modificar conjunto de esbirros");
+        System.out.println("8. Modificar cantidad de oro");
+        System.out.println("9. Modificar salud del personaje");
+        System.out.println("10. Modificar el valor de poder");
+        System.out.println("11. Modificar conjunto de debilidades");
+        System.out.println("12. Modificar conjunto de fortalezas");
+        System.out.println("13. Salir sin modificar");
+
+        int opcion = sc.nextInt();
+        sc.nextLine();
+        switch (opcion) {
+            case 1:{
+                System.out.println("Escribe nuevo nombre que le desea poner al personaje");
+                String nuevoNombre = sc.nextLine();
+                personajeEditable.setNombre(nuevoNombre);
+                break;
+            }
+            case 2:
+                System.out.println("Sin implementar");
+                // Lógica para modificar habilidad especial
+                break;
+            case 3:
+                System.out.println("Sin implementar");
+                // Lógica para modificar armas
+                break;
+            case 4:
+                System.out.println("Sin implementar");
+                // Lógica para modificar armas activas
+                break;
+            case 5:
+                System.out.println("Sin implementar");
+                // Lógica para modificar armaduras
+                break;
+            case 6:
+                System.out.println("Sin implementar");
+                // Lógica para modificar armadura activa
+                break;
+            case 7:
+                System.out.println("Sin implementar");
+                // Lógica para modificar esbirros
+                break;
+            case 8:
+                System.out.println("Sin implementar");
+                // Lógica para modificar oro
+                break;
+            case 9:
+                System.out.println("Sin implementar");
+                // Lógica para modificar salud (0 a 5)
+                break;
+            case 10:
+                System.out.println("Sin implementar");
+                // Lógica para modificar poder (1 a 5)
+                break;
+            case 11:
+                System.out.println("Sin implementar");
+                // Lógica para modificar debilidades
+                break;
+            case 12:
+                System.out.println("Sin implementar");
+                // Lógica para modificar fortalezas
+                break;
+            case 13:
+                System.out.println("Saliendo del menú de edición del personaje...");
+                break;
+            default:
+                System.out.println("⚠️ Opción inválida. Intenta de nuevo.");
+        }
+
+        //Ahora buscamos el jugador que tenía ese personaje
+            int p=0;
+            Jugador jugador = null;
+            while ((personajeSinEditar.equals(jugadores.get(p).getPersonaje()))&&(p<jugadores.size())){
+                jugador=jugadores.get(p);
+                p++;
+            }
+            //Si hemos salido del while porque hemos encontrado el jugador con ese personaje
+            ArrayList<Usuario> usuarios= storage.loadUsers();
+            if (personajeSinEditar.equals(jugador.getPersonaje())){
+                //actualizamos el jugador
+                //jugadores.remove(jugador);
+                usuarios.remove(jugador);
+                jugador.setPersonaje(personajeEditable);
+                //jugadores.add(jugador);
+                usuarios.add(jugador);
+            }
+            //ahora actualizamos la lista de usuarios en el xml
+            storage.saveList(usuarios,"Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+
+
+        }else{
+            System.out.println("Ha ocurrido un error, el personaje no existe");
         }
     }
 
