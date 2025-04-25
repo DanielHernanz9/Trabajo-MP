@@ -9,6 +9,7 @@ import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class JuegoCombateManager {
@@ -228,7 +229,7 @@ public class JuegoCombateManager {
                         System.out.println("2. Editar personaje");
                         int opcCombate = sc.nextInt();
                         switch (opcCombate){
-                            case 1:{
+                            case 1:
                                 Jugador ganador = IniciarCombate();
                                 ganador.setOro(ganador.getOro() + d.getOroApostado());
                                 if(ganador.equals(jugador1)){
@@ -245,7 +246,7 @@ public class JuegoCombateManager {
                                 updateUser(jugador2);
                                 storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
                                 break;
-                            }
+
                             case 2:{
                                 registrarPersonaje(jugador1);
                                 //De momento dejo este metodo, pero supongo que habra que implementar
@@ -287,8 +288,8 @@ public class JuegoCombateManager {
                 System.out.println("\nMenú Principal:");
                 System.out.println("1. Desafiar a otro usuario");
                 System.out.println("2. Consultar Ranking global");
-                System.out.println("3. Cambiar Personaje");
-                System.out.println("4. Elegir armas y armaduras activas para el personaje");
+                System.out.println("3. Cambiar personaje");
+                System.out.println("4. Gestionar equipo del personaje");
                 System.out.println("5. Consultar cantidad global de oro ganado y perdido en combates anteriores");
                 System.out.println("6. Volver");
                 int opcion = sc.nextInt();
@@ -308,7 +309,21 @@ public class JuegoCombateManager {
                         registrarPersonaje(jugador1);
                         correctOpt = true;
                     }
-                    case 4 -> {elegirEquipoPersonalizado(jugador1);
+                    case 4 -> {
+                            System.out.println("¿Qué quieres hacer?");
+                            System.out.println("1. " + "🏪​" + "Acceder a la tienda de armas");
+                            System.out.println("2. " + "⚔️​🛡️​" + "Utilizar equipo en posesión");
+                            int equipoOpt = sc.nextInt();
+                            switch (equipoOpt) {
+                                case 1: {
+                                    elegirEquipoPersonalizado(jugador1);
+                                    break;
+                                }
+                                case 2: {
+                                    elegirEquipoPersonajes();
+                                    break;
+                                }
+                            }
                                correctOpt = true;
                             }
                     case 5 -> {//De momento devuelve solo la cantidad de oro que tiene el jugador que inicia sesion
@@ -833,25 +848,29 @@ public class JuegoCombateManager {
                 if (!isFull){
                     if (jugador.getPersonaje().getArmaActiva1() == null){
                         jugador.getPersonaje().setArmaActiva1((Arma) equipo);
+                        jugador.getPersonaje().getArmas().add((Arma) equipo);
                     }
                     else{
                         jugador.getPersonaje().setArmaActiva2((Arma) equipo);
+                        jugador.getPersonaje().getArmas().add((Arma) equipo);
                     }
                 }
                 else{
                     if (manos == 1){
                         jugador.getPersonaje().setArmaActiva1((Arma) equipo);
+                        jugador.getPersonaje().getArmas().add((Arma) equipo);
                     }
-                    else{
+                    else {
                         jugador.getPersonaje().setArmaActiva2((Arma) equipo);
+                        jugador.getPersonaje().getArmas().add((Arma) equipo);
                     }
                 }
                 System.out.println("¡Arma equipada exitosamente!");
             } else {
                 jugador.getPersonaje().setArmaduraActiva((Armadura) equipo);
+                jugador.getPersonaje().getArmaduras().add((Armadura) equipo);
                 System.out.println("¡Armadura equipada exitosamente!");
             }
-
             updateUser(jugador);
             storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
         }
@@ -868,4 +887,77 @@ public class JuegoCombateManager {
             default -> 0;
         };
     }
+
+    public void elegirEquipoPersonajes(){
+        Scanner sc = new Scanner(System.in);
+        boolean equiped = false;
+        System.out.println("\u001B[91m" + "⚔\uFE0F\u200B" + "ELIGE TU ARMA: " + "\u001B[0m");
+        PersonajeBase personaje = (PersonajeBase) jugador1.getPersonaje();
+        ArrayList<Arma> listaArmas = (ArrayList<Arma>) personaje.getArmas();
+        if (listaArmas.size() != 0){
+            int i = 0;
+            for(Arma a: listaArmas){
+                System.out.println(i + ". " + a.getNombre());
+                i++;
+            }
+            System.out.println("Escribe el nombre del arma que deseas equipar: ");
+            String nombreArma = sc.nextLine();
+            Arma arma = getArmaByName(nombreArma, listaArmas);
+            if (arma.getManos() == 1) {
+                personaje.setArmaActiva1(arma);
+            }
+            else{
+                personaje.setArmaActiva2(arma);
+            }
+            System.out.println(nombreArma + " equipada.");
+            equiped = true;
+        }
+        else{
+            System.out.println("No posees armas. Puedes ir a la tienda y adquirir alguna utilizando tu oro.");
+        }
+
+        System.out.println("\u001B[94m" + "\uD83D\uDEE1\uFE0F" + " ELIGE TU ARMADURA: " + "\u001B[0m");
+        ArrayList <Armadura> listaArmaduras = (ArrayList<Armadura>) personaje.getArmaduras();
+        if (listaArmaduras.size() != 0){
+            int j = 0;
+            for (Armadura arm : listaArmaduras) {
+                System.out.println(j + ". " + arm.getNombre());
+                j++;
+            }
+            System.out.println("Escribe el nombre de la armadura que deseas equipar: ");
+            String nombreArm = sc.nextLine();
+            Armadura arm = getArmaduraByName(nombreArm, listaArmaduras);
+            personaje.setArmaduraActiva(arm);
+            System.out.println(nombreArm + " equipada");
+            equiped = true;
+        }
+        else{
+            System.out.println("No posees armaduras. Puedes ir a la tienda y adquirir alguna utilizando tu oro.");
+        }
+
+        if (equiped){ //Solo se actualiza si se han producido cambios.
+            updateUser(jugador1);
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+        }
+
+    }
+
+    private Arma getArmaByName(String name, ArrayList<Arma> listaArmas){
+        for (Arma a : listaArmas) {
+            if (a.getNombre().equalsIgnoreCase(name)) {
+                return a;
+            }
+        }
+        return null;
+    }
+
+    private Armadura getArmaduraByName(String name, ArrayList<Armadura> listaArmaduras) {
+        for (Armadura arm : listaArmaduras) {
+            if (arm.getNombre().equalsIgnoreCase(name)) {
+                return arm;
+            }
+        }
+        return null;
+    }
+
 }

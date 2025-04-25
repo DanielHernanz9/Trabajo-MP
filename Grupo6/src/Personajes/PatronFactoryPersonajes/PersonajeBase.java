@@ -16,10 +16,10 @@ public abstract class PersonajeBase implements Personaje {
 
     protected String Nombre;
     protected Habilidad_Especial Habilidad;
-    protected List<Arma> Armas;
+    protected List<Arma> Armas = new ArrayList<>();
     protected Arma ArmaActiva1;
     protected Arma ArmaActiva2;
-    protected List<Armadura> Armaduras;
+    protected List<Armadura> Armaduras = new ArrayList<>();
     protected Armadura ArmaduraActiva;
     protected List<Esbirro> Esbirros;
     protected int Oro;
