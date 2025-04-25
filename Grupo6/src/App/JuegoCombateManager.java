@@ -9,9 +9,7 @@ import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class JuegoCombateManager {
 
@@ -88,7 +86,7 @@ public class JuegoCombateManager {
         //Si se ha registrado un jugador nuevo mostramos el menu
         while (jugador1!=null && jugador1.isBloqueado()){
             System.out.println("Este usuario está "+rojo+"bloqueado"+reset+" y no puede acceder al videojuego hasta que sea desbloqueado");
-            System.out.println("¿Quieres iniciar sesión con otro usuario? (s/n)");
+            System.out.println("Por favor prueba a iniciar sesión con otro usuario");
             IniciarProcesoRegistro();
 
         }
@@ -139,34 +137,23 @@ public class JuegoCombateManager {
         String rojo = "\u001B[91m";
         String verde = "\u001B[32m";
 
-        int i=1;
+        int i=0;
         if (mode) {
             System.out.println("Jugadores "+verde+"no bloqueados"+reset+": ");
-
-            for (Jugador jugador : jugadores) {
-                if (!jugador.isBloqueado()) {
-                    System.out.println(i+". " + jugador.getNombre());
-                    i++;
-                }
-
-            }
+            i=mostrarJugadoresNoBloqueados();
+            if(i>0) System.out.println("Escribe el nombre del jugador que deseas "+rojo+"bloquear"+reset+": ");
 
         } else {
+
             System.out.println("Jugadores "+rojo+"bloqueados"+reset+": ");
 
-            for (Jugador jugador : jugadores) {
-                if (jugador.isBloqueado()) {
-                System.out.println(i+". " + jugador.getNombre());
-                i++;
-                }
-            }
+            i=mostrarJugadoresBloqueados();
+            if(i>0) System.out.println("Escribe el nombre del jugador que deseas "+verde+"desbloquear"+reset+": ");
         }
 
-        if (i>1) {//Si se han mostrado jugadores que esten baneados o desbaneados (la opción seleccionada), entonces:
-            String nombreJugador = sc.nextLine();
 
-            if (mode) System.out.println("Escribe el nombre del jugador que deseas "+rojo+"bloquear"+reset+": ");
-            else System.out.println("Escribe el nombre del jugador que deseas "+verde+"desbloquear"+reset+": ");
+        if (i>0) {//Si se han mostrado jugadores que esten baneados o desbaneados (la opción seleccionada), entonces:
+            String nombreJugador = sc.nextLine();
 
             Jugador jugador = buscarJugador(nombreJugador);
             while (jugador == null) {
@@ -188,10 +175,10 @@ public class JuegoCombateManager {
             storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
         }
         else if (mode){ //Si no se ha mostrado ningún usuario que este bloqueado o desbloqueado(la opción seleccionada), entonces:
-            System.out.println("No hay jugadores para bloquear");
+            System.out.println("No hay jugadores para "+rojo+"bloquear"+reset);
         }
         else{
-            System.out.println("No hay jugadores para desbloquear");
+            System.out.println("No hay jugadores para "+verde+"desbloquear"+reset);
         }
     }
 
@@ -368,10 +355,15 @@ public class JuegoCombateManager {
                             setJugador1(null);
 
                         } else if (u instanceof Jugador j) {
-                            System.out.println("Bienvenido"+azul+" Jugador"+reset+": " + u.getName());
-                            if (jugador1 == null) setJugador1(j);
-                            else if (jugador1.isBloqueado()) setJugador1(j);
+                            if ((jugador1 == null) ||(jugador1.isBloqueado())) setJugador1(j);
+                            //jugador1.isBloqueado() esto ocurre cuando hemos intentado acceder al usuario de un jugador bloqueado y despues accedemos a otro usuario
                             else setJugador2(j);
+
+                            //Si el jugador no esta bloqueado le damos la bienvenida
+                            if (!j.isBloqueado()) {
+                                System.out.println("Bienvenido"+azul+" Jugador"+reset+": " + u.getName());
+                            }
+
                         }
                         return;
                     }
@@ -574,24 +566,49 @@ public class JuegoCombateManager {
     }
     public void iniciarDesafio(){
         Scanner sc = new Scanner(System.in);
+        String azul ="\u001B[38;5;117m";
+        String reset = "\u001B[0m";
+        System.out.println("Selecciona el personaje que deseas "+azul+"Desafiar"+reset);
+
+        mostrarJugadoresNoBloqueados(); //Los jugadores que no estan bloqueados son los que se pueden desafiar
+
+        //cargamos los jugadores del videojuego
+        ArrayList<Jugador> totalplayers =storage.getPlayers();
+
+        //metemos los jugadores no bloqueados y los bloqueados en conjuntos
+        Set<String> jugadoresNoBloqueados= new HashSet<>();
+        Set<String> jugadoresBloqueados= new HashSet<>();
+
+        for (Jugador j : totalplayers) {
+            if (!j.isBloqueado()){
+                jugadoresNoBloqueados.add(j.getNombre());
+            }else{
+                jugadoresBloqueados.add(j.getNombre());
+            }
+        }
 
         System.out.println("Escribe el nombre del usuario al que quieres desafiar: ");
-        boolean CorrectPlayerName = true;
+        boolean CorrectPlayerName = false;
         String playerName = "";
 
         do{
             playerName = sc.nextLine();
             if (playerName.equals(jugador1.getName())){
                 System.out.println("No puedes desafiarte a ti mismo. Escribe el nombre de usuario de otro jugador: ");
-                CorrectPlayerName = false;
             }
             else if (playerName.equals("")){
                 System.out.println("Por favor, escribe el nombre de otro jugador para desafiarle: ");
-                CorrectPlayerName = false;
             }
-            else{
+            else if (jugadoresNoBloqueados.contains(playerName)){
                 CorrectPlayerName = true;
             }
+            else if (jugadoresBloqueados.contains(playerName)){
+                System.out.println("El jugador "+playerName+" se encuentra "+"\u001B[91m"+"bloqueado"+"\u001B[0m"+" y no puede ser desafiado, por favor escribe otro jugador: ");
+            }
+            else{
+                System.out.println("El jugador "+playerName+" no existe, escribe el nombre de un jugador válido: ");
+            }
+
         } while(!CorrectPlayerName);
 
         System.out.println("¿Cuánto oro quieres apostar?");
@@ -638,6 +655,36 @@ public class JuegoCombateManager {
 
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
+    }
+    public int mostrarJugadoresNoBloqueados(){ //Devuelve el numero de jugadores no bloqueados
+        ArrayList<Jugador> jugadores =storage.getPlayers();
+
+        int i=1;
+
+        for (Jugador jugador : jugadores) {
+            if (!jugador.isBloqueado()) {
+                System.out.println(i+". " + jugador.getNombre());
+                i++;
+            }
+
+
+        }
+        return i-1;
+    }
+
+
+    public int mostrarJugadoresBloqueados(){ //Devuelve el numero de jugadores bloqueados
+        ArrayList<Jugador> jugadores =storage.getPlayers();
+
+        int i =1;
+
+        for (Jugador jugador : jugadores) {
+            if (jugador.isBloqueado()) {
+                System.out.println(i+". " + jugador.getNombre());
+                i++;
+            }
+        }
+        return i-1;
     }
 
     /**

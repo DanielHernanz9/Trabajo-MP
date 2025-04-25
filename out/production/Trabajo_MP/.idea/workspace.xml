@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c62df6-ca48-4f92-aec9-e4433ae2979c" name="Changes" comment="cambios menores, archivos xml inicializados">
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
+    <list default="true" id="91c62df6-ca48-4f92-aec9-e4433ae2979c" name="Changes" comment="Arreglados todos los errores que tebian que ver con el los usuarios bloqueados y desbloqueados.Los usuarios bloqueados no pueden hacer nada, y los no bloqueados pueden hacer lo de siempre. Por otro lado cambios en la interfaz, ahora se muestran ciertos colores de vez en cuando, cambios en el ranking, ahora se muestra mas bonito, y algun cambio mas">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,11 @@
     &quot;accountId&quot;: &quot;daca47a5-d70a-4391-be5e-a5a4c9ea8da2&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-21.0.6/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-21.0.6/lib/src.zip!/java.desktop/java/beans/Encoder.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-21.0.6/lib/src.zip!/java.desktop/java/beans/XMLEncoder.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -45,21 +50,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JuegoCombate.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JuegoCombate.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Colors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DANIEL\IdeaProjects\Trabajo-MP\Grupo6\src\sistemaDeGuardado" />
@@ -89,6 +95,8 @@
       <workItem from="1744364936119" duration="2480000" />
       <workItem from="1745362183399" duration="1045000" />
       <workItem from="1745440162378" duration="8619000" />
+      <workItem from="1745529150743" duration="8444000" />
+      <workItem from="1745565534019" duration="788000" />
     </task>
     <task id="LOCAL-00001" summary="Reorganización y arreglo de algunas clases">
       <option name="closed" value="true" />
@@ -178,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745449409973</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Arreglados todos los errores que tebian que ver con el los usuarios bloqueados y desbloqueados.Los usuarios bloqueados no pueden hacer nada, y los no bloqueados pueden hacer lo de siempre. Por otro lado cambios en la interfaz, ahora se muestran ciertos colores de vez en cuando, cambios en el ranking, ahora se muestra mas bonito, y algun cambio mas">
+      <option name="closed" value="true" />
+      <created>1745537546198</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1745537546198</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +221,8 @@
     <MESSAGE value="cambios en las clases que almacenan los usuarios  algun detalle mas" />
     <MESSAGE value="Ahora se pueden bloquear y desbloquear usuarios" />
     <MESSAGE value="cambios menores, archivos xml inicializados" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios menores, archivos xml inicializados" />
+    <MESSAGE value="Arreglados todos los errores que tebian que ver con el los usuarios bloqueados y desbloqueados.Los usuarios bloqueados no pueden hacer nada, y los no bloqueados pueden hacer lo de siempre. Por otro lado cambios en la interfaz, ahora se muestran ciertos colores de vez en cuando, cambios en el ranking, ahora se muestra mas bonito, y algun cambio mas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglados todos los errores que tebian que ver con el los usuarios bloqueados y desbloqueados.Los usuarios bloqueados no pueden hacer nada, y los no bloqueados pueden hacer lo de siempre. Por otro lado cambios en la interfaz, ahora se muestran ciertos colores de vez en cuando, cambios en el ranking, ahora se muestra mas bonito, y algun cambio mas" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -232,8 +249,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/Combate/SingleRanking.java</url>
-          <line>63</line>
+          <line>69</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -245,5 +277,9 @@
         <watch expression="usuarios.get(2)" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -87,22 +87,29 @@ public class Ronda implements Serializable {
     }
 
     public void reducirSalud() {
+        String reset = "\u001B[0m";
+        String rojo = "\u001B[91m";
+        String verde = "\u001B[32m";
 
         if (Atacante.hasEsbirros()) {
             Esbirro esbirro = Atacante.getEsbirros().getLast();
-            System.out.println("¡" + nombreAtacante + " ha infligido daño al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
+            System.out.println("¡" + nombreAtacante + " ha infligido "+rojo+"daño"+reset+" al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
             esbirro.setSalud(esbirro.recibirDaño());
             if (esbirro.getSalud() == 0){
                 Atacante.getEsbirros().removeLast();
             }
         } else {
             Atacado.reducirSalud();
-            System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de daño a " + nombreAtacado + "!");
-            System.out.println("La salud de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
+            System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de "+rojo+"daño"+reset+" a " + nombreAtacado + "!");
+            System.out.println("La "+verde+"salud"+reset+" de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
     }
 
     public void ejecutarRonda(){
+        String colorAtaque = "\u001B[38;5;196m";
+        String colorDefensa = "\u001B[36m";
+        String reset = "\u001B[0m";
+
         System.out.println();
         System.out.println("¡Comienza la ronda " + NumeroRonda + "!");
 
@@ -119,8 +126,8 @@ public class Ronda implements Serializable {
             System.out.println(nombreAtacante + " ataca a " + nombreAtacado + " con un puñetazo.");
         }
 
-        System.out.println("El potencial de ataque de " + nombreAtacante + " es de " + PotencialAtaqueP1);
-        System.out.println("El potencial de defensa de " + nombreAtacado + " es de " + PotencialDefensaP2);
+        System.out.println("El "+colorAtaque+"potencial de ataque"+reset+" de " + nombreAtacante + " es de " + PotencialAtaqueP1);
+        System.out.println("El "+colorDefensa+"potencial de defensa"+reset+" de " + nombreAtacado + " es de " + PotencialDefensaP2);
 
         Random random = new Random();
         int totalAtaque = 0;

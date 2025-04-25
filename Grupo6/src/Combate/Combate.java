@@ -158,7 +158,7 @@ public class Combate implements Serializable {
     }
 
     public void mostrarResultado(){
-        System.out.println("¡La victoria es para " + Ganador.getNombre() + "!");
+        System.out.println("¡La "+"\u001B[38;5;229m"+"victoria"+"\uD83C\uDFC6"+"\u001B[0m"+" es para " + Ganador.getNombre() + "!");
     }
 
     public JuegoCombateManager getManager() {
