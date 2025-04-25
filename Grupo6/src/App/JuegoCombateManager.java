@@ -568,7 +568,7 @@ public class JuegoCombateManager {
         Scanner sc = new Scanner(System.in);
         String azul ="\u001B[38;5;117m";
         String reset = "\u001B[0m";
-        System.out.println("Selecciona el personaje que deseas "+azul+"Desafiar"+reset);
+        System.out.println("Se muestran los jugadores que pueden ser "+azul+"desafiados"+reset+": ");
 
         mostrarJugadoresNoBloqueados(); //Los jugadores que no estan bloqueados son los que se pueden desafiar
 
@@ -587,7 +587,7 @@ public class JuegoCombateManager {
             }
         }
 
-        System.out.println("Escribe el nombre del usuario al que quieres desafiar: ");
+        System.out.println("Escribe el nombre del usuario al que quieres "+azul+"desafiar"+reset+": ");
         boolean CorrectPlayerName = false;
         String playerName = "";
 
