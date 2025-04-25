@@ -662,7 +662,7 @@ public class JuegoCombateManager {
         int i=1;
 
         for (Jugador jugador : jugadores) {
-            if (!jugador.isBloqueado()) {
+            if (!jugador.isBloqueado() && !jugador.getNombre().equals(jugador1.getNombre())) {
                 System.out.println(i+". " + jugador.getNombre());
                 i++;
             }
