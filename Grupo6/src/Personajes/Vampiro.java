@@ -1,12 +1,13 @@
 package Grupo6.src.Personajes;
 
-import Grupo6.src.Esbirros.PatronFactoryEsbirros.FabricaDemonios;
-import Grupo6.src.Esbirros.PatronFactoryEsbirros.FabricaEsbirros;
-import Grupo6.src.Esbirros.PatronFactoryEsbirros.FabricaGhouls;
+import Grupo6.src.Esbirros.Demonio;
+import Grupo6.src.Esbirros.EsbirrosComposite;
+import Grupo6.src.Esbirros.PatronFactoryEsbirros.*;
 import Grupo6.src.HabilidadesEspeciales.Disciplina;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -40,15 +41,40 @@ public class Vampiro extends PersonajeBase {
         String nombre;
         for (int i = 0; i < 5; i++){
             num = rand.nextInt(2);
-            FabricaEsbirros actualFactory;
+            FabricaEsbirros currentFactory;
             if (num == 0){
-                actualFactory = new FabricaGhouls();
+                currentFactory = new FabricaGhouls();
                 nombre = "Ghoul_";
             }else{
-                actualFactory = new FabricaDemonios();
+                currentFactory = new FabricaDemonios();
                 nombre = "Demonio_";
             }
-            Esbirros.add(actualFactory.createEsbirro(nombre + i));
+            if (currentFactory instanceof FabricaDemonios){
+                Demonio nuevoDemonio = (Demonio) currentFactory.createEsbirro(nombre + i);
+                List<Esbirro> subordinados = new ArrayList<>();
+                for (int j = 0; j < 3; j++){
+                    FabricaEsbirros subFactory = null;
+                    int subType = rand.nextInt(3);
+                    if (subType == 0){
+                        subFactory = new FabricaGhouls();
+                        nombre = "GhoulSub_";
+                    }
+                    if (subType == 1){
+                        subFactory = new FabricaHumanos();
+                        nombre = "HumanoSub_";
+                    }
+                    if (subType == 2){
+                        subFactory = new FabricaDemonios();
+                        nombre = "DemonioSub_";
+                    }
+                    subordinados.add(subFactory.createEsbirro(nombre + i));
+                }
+                EsbirrosComposite composite = new EsbirrosComposite(subordinados);
+                nuevoDemonio.setSubordinados(composite);
+                Esbirros.add(nuevoDemonio);
+            }else{
+                Esbirros.add(currentFactory.createEsbirro(nombre + i));
+            }
         }
     }
 

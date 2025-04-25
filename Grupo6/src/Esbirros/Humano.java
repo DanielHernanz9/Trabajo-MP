@@ -21,7 +21,7 @@ public class Humano extends EsbirroBase {
 
     @Override
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.Nombre = nombre;
     }
 
 

@@ -3,6 +3,8 @@ package Grupo6.src.Personajes.PatronFactoryPersonajes;
 import Grupo6.src.Desafio.DebilidadHandler;
 import Grupo6.src.Desafio.FortalezaHandler;
 import Grupo6.src.Equipo.*;
+import Grupo6.src.Esbirros.Demonio;
+import Grupo6.src.Esbirros.EsbirrosComposite;
 import Grupo6.src.HabilidadesEspeciales.Habilidad_Especial;
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.*;
 
@@ -150,7 +152,32 @@ public abstract class PersonajeBase implements Personaje {
                 currentFactory = new FabricaDemonios();
                 nombre = "Demonio_";
             }
-            Esbirros.add(currentFactory.createEsbirro(nombre + i));
+            if (currentFactory instanceof FabricaDemonios){
+                Demonio nuevoDemonio = (Demonio) currentFactory.createEsbirro(nombre + i);
+                List<Esbirro> subordinados = new ArrayList<>();
+                for (int j = 0; j < 3; j++){
+                    FabricaEsbirros subFactory = null;
+                    int subType = rand.nextInt(3);
+                    if (subType == 0){
+                        subFactory = new FabricaGhouls();
+                        nombre = "GhoulSub_";
+                    }
+                    if (subType == 1){
+                        subFactory = new FabricaHumanos();
+                        nombre = "HumanoSub_";
+                    }
+                    if (subType == 2){
+                        subFactory = new FabricaDemonios();
+                        nombre = "DemonioSub_";
+                    }
+                    subordinados.add(subFactory.createEsbirro(nombre + i));
+                }
+                    EsbirrosComposite composite = new EsbirrosComposite(subordinados);
+                    nuevoDemonio.setSubordinados(composite);
+                    Esbirros.add(nuevoDemonio);
+            }else{
+                Esbirros.add(currentFactory.createEsbirro(nombre + i));
+            }
         }
     }
 

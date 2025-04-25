@@ -87,20 +87,22 @@ public class Ronda implements Serializable {
     }
 
     public void reducirSalud() {
-        String reset = "\u001B[0m";
-        String rojo = "\u001B[91m";
-        String verde = "\u001B[32m";
+        String reset = "\u001B[0m";     //Restablece el color blanco
+        String rojo = "\u001B[91m";     //Ataque
+        String verde = "\u001B[32m";    //Defensa
+        String morado = "\u001B[35m";   //Jugdor atacante
+        String amarillo = "\u001B[33m"; //Jugdor atacado
 
         if (Atacante.hasEsbirros()) {
             Esbirro esbirro = Atacante.getEsbirros().getLast();
-            System.out.println("¡" + nombreAtacante + " ha infligido "+rojo+"daño"+reset+" al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
+            System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset + " ha infligido "+rojo+"daño"+reset+" al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
             esbirro.setSalud(esbirro.recibirDaño());
             if (esbirro.getSalud() == 0){
                 Atacante.getEsbirros().removeLast();
             }
         } else {
             Atacado.reducirSalud();
-            System.out.println("¡" + nombreAtacante + " ha infligido 1 punto de "+rojo+"daño"+reset+" a " + nombreAtacado + "!");
+            System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset +" ha infligido 1 punto de "+rojo+"daño"+reset+" a " + nombreAtacado + "!");
             System.out.println("La "+verde+"salud"+reset+" de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
     }
@@ -109,30 +111,28 @@ public class Ronda implements Serializable {
         String colorAtaque = "\u001B[38;5;196m";
         String colorDefensa = "\u001B[36m";
         String reset = "\u001B[0m";
+        String morado = "\u001B[35m";
+        String amarillo = "\u001B[33m";
 
         System.out.println();
         System.out.println("¡Comienza la ronda " + NumeroRonda + "!");
 
-        // Si bien el enunciado pide los potenciales de cada tipo para cada personaje,
-        // no tiene sentido calcular el potencial de defensa del atacante ni el potencial de
-        // ataque del atacado, pues son datos que no se van a utilizar.
         PotencialAtaqueP1 = calcularPotencialDeAtaque(Atacante, 1);
         PotencialDefensaP2 = calcularPotencialDeDefensa(Atacado, 2);
 
         if (Atacante.getArmaActiva1() != null || Atacante.getArmaActiva2() != null){
-            System.out.println(nombreAtacante + " ataca a " + nombreAtacado + " con " + Atacante.getArmaActiva1().getNombre());
-        }
-        else{
-            System.out.println(nombreAtacante + " ataca a " + nombreAtacado + " con un puñetazo.");
+            System.out.println(morado + nombreAtacante + reset + " ataca a " + amarillo + nombreAtacado + reset + " con " + Atacante.getArmaActiva1().getNombre());
+        } else {
+            System.out.println(morado + nombreAtacante + reset + " ataca a " + amarillo + nombreAtacado + reset + " con un puñetazo.");
         }
 
-        System.out.println("El "+colorAtaque+"potencial de ataque"+reset+" de " + nombreAtacante + " es de " + PotencialAtaqueP1);
-        System.out.println("El "+colorDefensa+"potencial de defensa"+reset+" de " + nombreAtacado + " es de " + PotencialDefensaP2);
+        System.out.println("El " + colorAtaque + "potencial de ataque" + reset + " de " + morado + nombreAtacante + reset + " es de " + PotencialAtaqueP1);
+        System.out.println("El " + colorDefensa + "potencial de defensa" + reset + " de " + amarillo + nombreAtacado + reset + " es de " + PotencialDefensaP2);
 
         Random random = new Random();
         int totalAtaque = 0;
         int totalDefensa = 0;
-        int randomNumber = 0;
+        int randomNumber;
 
         for (int i = 0; i < PotencialAtaqueP1; i++){
             randomNumber = random.nextInt(6) + 1;
@@ -148,25 +148,22 @@ public class Ronda implements Serializable {
             }
         }
 
-        System.out.println(nombreAtacante + " ha obtenido un ataque de " + totalAtaque);
-        System.out.println((nombreAtacado) + " ha obtenido una defensa de " + totalDefensa);
+        System.out.println(morado + nombreAtacante + reset + " ha obtenido un ataque de " + totalAtaque);
+        System.out.println(amarillo + nombreAtacado + reset + " ha obtenido una defensa de " + totalDefensa);
 
         if (totalAtaque >= totalDefensa){
             reducirSalud();
-        }
-        else{
+        } else {
             if (Atacado.getArmaduraActiva() != null){
-                System.out.println("¡" + nombreAtacado + " se defiende de " + nombreAtacante + " con " + Atacado.getArmaduraActiva().getNombre() + "!");
-            }
-            else{
-                System.out.println("¡" + nombreAtacante + " no logra dañar a " + nombreAtacado + " en esta ronda!");
+                System.out.println("¡" + amarillo + nombreAtacado + reset + " se defiende de " + morado + nombreAtacante + reset + " con " + Atacado.getArmaduraActiva().getNombre() + "!");
+            } else {
+                System.out.println("¡" + morado + nombreAtacante + reset + " no logra dañar a " + amarillo + nombreAtacado + reset + " en esta ronda!");
             }
         }
 
         if (verificarFinCombate()){
-            System.out.println("¡" + nombreAtacado + " ha caido!");
+            System.out.println("¡" + amarillo + nombreAtacado + reset + " ha caido!");
         }
-
     }
 
     public Personaje getAtacante() {
