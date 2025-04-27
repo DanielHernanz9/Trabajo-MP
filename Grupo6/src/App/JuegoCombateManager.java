@@ -4,6 +4,9 @@ import Grupo6.src.Combate.Combate;
 import Grupo6.src.Combate.SingleRanking;
 import Grupo6.src.Desafio.ChallengeNotifier;
 import Grupo6.src.Equipo.*;
+import Grupo6.src.HabilidadesEspeciales.Disciplina;
+import Grupo6.src.HabilidadesEspeciales.Don;
+import Grupo6.src.HabilidadesEspeciales.Habilidad_Especial;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
@@ -125,124 +128,245 @@ public class JuegoCombateManager {
             }
         }
     }
-    public void MenuEdicionPersonaje(){
+    public void MenuEdicionPersonaje() {
 
         ArrayList<Jugador> jugadores = storage.getPlayers();
         ArrayList<Personaje> personajes = new ArrayList<>();
         Set<String> personajeSet = new HashSet<>();
 
         System.out.println("Escribe el nombre del personaje que desea editar");
-        int i=1;
+        int i = 1;
         for (Jugador jugador : jugadores) {
-            System.out.println(i+". "+jugador.getPersonaje().getNombre());
+            System.out.println(i + ". " + jugador.getPersonaje().getNombre());
             personajes.add(jugador.getPersonaje());
             personajeSet.add(jugador.getPersonaje().getNombre());
             i++;
         }
-        Scanner sc = new Scanner(System.in);
-        String nombrePersonaje=sc.nextLine();
-        Personaje personajeEditable=null;
-        Personaje personajeSinEditar=null;
-        while (!personajeSet.contains(nombrePersonaje)) {
-            System.out.println("El nombre del personaje buscado no existe, por favor escribe un nombre válido");
-            nombrePersonaje=sc.nextLine();
+        //Si hay personajes (i>1) entonces continuamos
+        if (i > 1) {
+            Scanner sc = new Scanner(System.in);
+            String nombrePersonaje = sc.nextLine();
+            Personaje personajeEditable = null;
+            Personaje personajeSinEditar = null;
+            while (!personajeSet.contains(nombrePersonaje)) {
+                System.out.println("El nombre del personaje buscado no existe, por favor escribe un nombre válido");
+                nombrePersonaje = sc.nextLine();
 
-        }
-        int pos=0;
-        while ((personajeEditable ==null)&&(pos<personajes.size())) {
-           Personaje personajeActual=personajes.get(pos);
-           if(nombrePersonaje.equals(personajeActual.getNombre())){
-               personajeEditable=personajeActual;
-               personajeSinEditar=personajeActual;
-           }
-           pos++;
-        }
-        if (personajeEditable!=null) {
-        System.out.println("Seleccione la característica que desea modificar del personaje: "+nombrePersonaje);
-        System.out.println("1. Cambiar nombre");
-        System.out.println("2. Modificar habilidad especial");
-        System.out.println("3. Modificar conjunto de armas");
-        System.out.println("4. Modificar conjunto de armas activas");
-        System.out.println("5. Modificar conjunto de armaduras");
-        System.out.println("6. Modificar armadura activa");
-        System.out.println("7. Modificar conjunto de esbirros");
-        System.out.println("8. Modificar cantidad de oro");
-        System.out.println("9. Modificar salud del personaje");
-        System.out.println("10. Modificar el valor de poder");
-        System.out.println("11. Modificar conjunto de debilidades");
-        System.out.println("12. Modificar conjunto de fortalezas");
-        System.out.println("13. Salir sin modificar");
-
-        int opcion = sc.nextInt();
-        sc.nextLine();
-        switch (opcion) {
-            case 1:{
-                System.out.println("Escribe nuevo nombre que le desea poner al personaje");
-                String nuevoNombre = sc.nextLine();
-                personajeEditable.setNombre(nuevoNombre);
-                break;
             }
-            case 2:
-                System.out.println("Sin implementar");
-                // Lógica para modificar habilidad especial
-                break;
-            case 3:
-                System.out.println("Sin implementar");
-                // Lógica para modificar armas
-                break;
-            case 4:
-                System.out.println("Sin implementar");
-                // Lógica para modificar armas activas
-                break;
-            case 5:
-                System.out.println("Sin implementar");
-                // Lógica para modificar armaduras
-                break;
-            case 6:
-                System.out.println("Sin implementar");
-                // Lógica para modificar armadura activa
-                break;
-            case 7:
-                System.out.println("Sin implementar");
-                // Lógica para modificar esbirros
-                break;
-            case 8:
-                System.out.println("Sin implementar");
-                // Lógica para modificar oro
-                break;
-            case 9:
-                System.out.println("Sin implementar");
-                // Lógica para modificar salud (0 a 5)
-                break;
-            case 10:
-                System.out.println("Sin implementar");
-                // Lógica para modificar poder (1 a 5)
-                break;
-            case 11:
-                System.out.println("Sin implementar");
-                // Lógica para modificar debilidades
-                break;
-            case 12:
-                System.out.println("Sin implementar");
-                // Lógica para modificar fortalezas
-                break;
-            case 13:
-                System.out.println("Saliendo del menú de edición del personaje...");
-                break;
-            default:
-                System.out.println("⚠️ Opción inválida. Intenta de nuevo.");
-        }
+            int pos = 0;
+            while ((personajeEditable == null) && (pos < personajes.size())) {
+                Personaje personajeActual = personajes.get(pos);
+                if (nombrePersonaje.equals(personajeActual.getNombre())) {
+                    personajeEditable = personajeActual;
+                    personajeSinEditar = personajeActual;
+                }
+                pos++;
+            }
 
-        //Ahora buscamos el jugador que tenía ese personaje
-            int p=0;
+            System.out.println("Seleccione la característica que desea modificar del personaje: " + nombrePersonaje);
+            System.out.println("1. Cambiar nombre");
+            System.out.println("2. Modificar habilidad especial");
+            System.out.println("3. Modificar conjunto de armas");
+            System.out.println("4. Modificar conjunto de armas activas");
+            System.out.println("5. Modificar conjunto de armaduras");
+            System.out.println("6. Modificar armadura activa");
+            System.out.println("7. Modificar conjunto de esbirros");
+            System.out.println("8. Modificar cantidad de oro");
+            System.out.println("9. Modificar salud del personaje");
+            System.out.println("10. Modificar el valor de poder");
+            System.out.println("11. Modificar conjunto de debilidades");
+            System.out.println("12. Modificar conjunto de fortalezas");
+            System.out.println("13. Salir sin modificar");
+
+            int opcion = sc.nextInt();
+            sc.nextLine();
+            switch (opcion) {
+                case 1: {
+                    System.out.println("Escribe nuevo nombre que le desea poner al personaje");
+                    String nuevoNombre = sc.nextLine();
+                    personajeEditable.setNombre(nuevoNombre);
+                    break;
+                }
+                case 2:
+                    System.out.println("\uD83D\uDD2E Habilidad especial de: " + personajeEditable.getNombre());
+
+
+                    Habilidad_Especial habilidad = personajeEditable.getHabilidad();
+                    if (habilidad!=null){
+
+                    System.out.println("● Nombre: " + habilidad.getNombre());
+                    System.out.println("● Valor de ataque: " + habilidad.getAtaque());
+                    System.out.println("● Valor de defensa: " + habilidad.getDefensa());
+                    System.out.println();
+
+                    System.out.println("Seleccione la característica que desea modificar de la habilidad: ");
+                    System.out.println("1. Cambiar nombre");
+                    System.out.println("2. Modificar valor de ataque");
+                    System.out.println("3. Modificar valor de defensa");
+
+                    //ahora mostramos las opciones de modificar de las disciplinas y dones en el respectivo caso
+                    if (habilidad instanceof Disciplina) {
+                        System.out.println("4. Modificar puntos de sangre");
+
+                    } else if (habilidad instanceof Don) {
+                        System.out.println("4. Modificar valor de rabia mínimo");
+
+                    }
+
+                    boolean valida = false;
+                    while (!valida) {
+                        String opcion2 = sc.nextLine();
+                        switch (opcion2) {
+                            case "1":
+                                valida = true;
+                                System.out.println("Escribe el nuevo nombre que le desee poner a la habilidad");
+                                String nuevoNombre = sc.nextLine();
+
+                                //modificamos el nombre de la habilidad
+                                personajeEditable.getHabilidad().setNombre(nuevoNombre);
+
+                                break;
+                            case "2":
+                                valida = true;
+                                System.out.println("Escribe el nuevo valor de ataque que le desee poner a la habilidad (Entre 1 y 3)");
+                                int valorAtaque = sc.nextInt();
+                                sc.nextLine();
+
+                                //Si el valor de ataque esta fuera del rango [1,3] , entonces:
+                                while ((valorAtaque <= 0) || (valorAtaque >= 4)) {
+                                    System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
+                                    valorAtaque = sc.nextInt();
+                                    sc.nextLine();
+
+                                }
+
+                                //modificamos el valor de ataque de la habilidad
+                                personajeEditable.getHabilidad().setValorAtaque(valorAtaque);
+
+                                break;
+                            case "3":
+                                valida = true;
+
+                                System.out.println("Escribe el nuevo valor de defensa que le desee poner a la habilidad (entre 1 y 3)");
+                                int valorDefensa = sc.nextInt();
+                                sc.nextLine();
+
+                                //Si el valor de ataque esta fuera del rango [1,3] , entonces:
+                                while ((valorDefensa <= 0) || (valorDefensa >= 4)) {
+                                    System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
+                                    valorDefensa = sc.nextInt();
+                                    sc.nextLine();
+
+                                }
+
+                                //modificamos el valor de ataque de la habilidad
+                                personajeEditable.getHabilidad().setValorDefensa(valorDefensa);
+
+                                break;
+                            default:
+                                if (habilidad instanceof Disciplina) {
+                                    int coste = ((Disciplina) habilidad).getCoste();
+
+                                    System.out.println("● Puntos de sangre: " + coste);
+                                    System.out.println("Escriba el nuevo valor de puntos de sangre que le desee poner a la habilidad (entre 1 y 3)");
+
+                                    int valorPuntos = sc.nextInt();
+                                    sc.nextLine();
+                                    while ((valorPuntos <= 0) || (valorPuntos >= 4)) {
+                                        System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
+                                        valorPuntos = sc.nextInt();
+                                        sc.nextLine();
+                                    }
+
+                                    //Actualizamos la habilidad
+                                    ((Disciplina) habilidad).setCoste(valorPuntos);
+                                    personajeEditable.setHabilidad(habilidad);
+
+                                } else if (habilidad instanceof Don) {
+                                    int rabia = ((Don) habilidad).getRabia();
+                                    System.out.println("● Valor de rabía minimo: " + rabia);
+                                    System.out.println("Escriba el nuevo valor de rabia mínimo que le desee poner a la habilidad ");
+                                    int valorRabia = sc.nextInt();
+                                    sc.nextLine();
+
+                                    //OJO SE TIENE QUE COMPROBAR EN ALGUN LADO QUE Si la rabia del licántropo es inferior al valor de rabia minima de la habilidad,
+                                    // no se puede usar ese don.
+                                    ((Don) habilidad).setRabia(valorRabia);
+                                    personajeEditable.setHabilidad(habilidad);
+
+                                } else {
+
+                                    System.out.println("La opción seleccionada no es válida");
+                                    System.out.println("Seleccione una opción valida: ");
+
+                                }
+
+                        }
+                    }
+
+                    } else{
+                        System.out.println("Este personaje no tiene asignada ninguna habilidad todavía");
+                        return; //esto lo he puesto de forma provisional, ya lo revisare para evitar el return en una funcion con void
+                    }
+
+                    break;
+                case 3:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar armas
+                    break;
+                case 4:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar armas activas
+                    break;
+                case 5:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar armaduras
+                    break;
+                case 6:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar armadura activa
+                    break;
+                case 7:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar esbirros
+                    break;
+                case 8:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar oro
+                    break;
+                case 9:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar salud (0 a 5)
+                    break;
+                case 10:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar poder (1 a 5)
+                    break;
+                case 11:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar debilidades
+                    break;
+                case 12:
+                    System.out.println("Sin implementar");
+                    // Lógica para modificar fortalezas
+                    break;
+                case 13:
+                    System.out.println("Saliendo del menú de edición del personaje...");
+                    break;
+                default:
+                    System.out.println("⚠️ Opción inválida. Intenta de nuevo.");
+            }
+
+            //Ahora buscamos el jugador que tenía ese personaje
+            int p = 0;
             Jugador jugador = null;
-            while ((personajeSinEditar.equals(jugadores.get(p).getPersonaje()))&&(p<jugadores.size())){
-                jugador=jugadores.get(p);
+            while ((p < jugadores.size())&&(personajeSinEditar.equals(jugadores.get(p).getPersonaje()))) {
+                jugador = jugadores.get(p);
                 p++;
             }
             //Si hemos salido del while porque hemos encontrado el jugador con ese personaje
-            ArrayList<Usuario> usuarios= storage.loadUsers();
-            if (personajeSinEditar.equals(jugador.getPersonaje())){
+            ArrayList<Usuario> usuarios = storage.loadUsers();
+            if (personajeSinEditar.equals(jugador.getPersonaje())) {
                 //actualizamos el jugador
                 //jugadores.remove(jugador);
                 usuarios.remove(jugador);
@@ -251,12 +375,12 @@ public class JuegoCombateManager {
                 usuarios.add(jugador);
             }
             //ahora actualizamos la lista de usuarios en el xml
-            storage.saveList(usuarios,"Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+            storage.saveList(usuarios, "Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
 
+        } else {
+            System.out.println("No hay personajes disponibles actualmente");
+           }
 
-        }else{
-            System.out.println("Ha ocurrido un error, el personaje no existe");
-        }
     }
 
     /**
