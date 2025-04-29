@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Ahora los demonios tienen 3 esbirros como subordinados. Aunque los subordinados pueden tener subordinados, etc, no los metemos porque ya los combates duran 80 rondas, si hacemos arboles más complejos serían demasiado largos. He añadido también colorines a los nombres de los personajes en los combates.">
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Esbirros/EsbirrosComposite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Esbirros/EsbirrosComposite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" afterDir="false" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Se permite al usuario almacenar las armas de sus personajes">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,8 @@
       <workItem from="1745484227591" duration="3319000" />
       <workItem from="1745487623790" duration="188000" />
       <workItem from="1745571205717" duration="4600000" />
-      <workItem from="1745593872764" duration="321000" />
+      <workItem from="1745593872764" duration="5249000" />
+      <workItem from="1745952141729" duration="685000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -487,7 +487,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745575767366</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="No se muestra al propio jugador que está logueado cuando quiere hacer un desfío">
+      <option name="closed" value="true" />
+      <created>1745595336173</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1745595336173</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Se permite al usuario almacenar las armas de sus personajes">
+      <option name="closed" value="true" />
+      <created>1745599143151</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1745599143151</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,8 +521,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="errores" />
-    <MESSAGE value="Corregidos bugs relacionados con el patron adapter" />
     <MESSAGE value="El metodo guardar personaje no actualizaba la lista XML al registrar el personaje, lo que causaba que los personajes no fueran persistentes. Ahora el programa no pregunta que menu quieres ver, te muestra el correspondiente menu segun tu tipo de cuenta" />
     <MESSAGE value="Desafios implementados correctamente (por algun motivo el nombre de los usuarios se registra como null)" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;Grupo6/src/App/JuegoCombateManager.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/AlmacenXML.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/SingleStorage.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/Usuarios.xml" />
@@ -530,7 +544,9 @@
     <MESSAGE value="Aclaración en bloqueo de usuarios para evitar confusiones (he estado un rato sin saber por qué no me funcionaba porque había que escribir el nombre de los usuarios de la lista y no el índice )" />
     <MESSAGE value="Falta ortografia" />
     <MESSAGE value="Ahora los demonios tienen 3 esbirros como subordinados. Aunque los subordinados pueden tener subordinados, etc, no los metemos porque ya los combates duran 80 rondas, si hacemos arboles más complejos serían demasiado largos. He añadido también colorines a los nombres de los personajes en los combates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ahora los demonios tienen 3 esbirros como subordinados. Aunque los subordinados pueden tener subordinados, etc, no los metemos porque ya los combates duran 80 rondas, si hacemos arboles más complejos serían demasiado largos. He añadido también colorines a los nombres de los personajes en los combates." />
+    <MESSAGE value="No se muestra al propio jugador que está logueado cuando quiere hacer un desfío" />
+    <MESSAGE value="Se permite al usuario almacenar las armas de sus personajes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se permite al usuario almacenar las armas de sus personajes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -553,6 +569,16 @@
           <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Combate.java</url>
           <line>63</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>891</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

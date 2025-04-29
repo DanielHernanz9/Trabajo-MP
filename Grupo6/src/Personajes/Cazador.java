@@ -73,4 +73,25 @@ public class Cazador extends PersonajeBase {
         calcularValorEquipo();
         crearEsbirros();
     }
+
+    /**
+     * El enunciado no especifica como aumenta la voluntad de los cazadores.
+     *  le he puesto el mismo método que a los licántropos
+     * @param atacado
+     */
+    @Override
+    public void gestionarRecursosHabilidad(boolean atacado){
+        if(!atacado){
+            Voluntad += 4;
+        }
+    }
+
+    /**
+     * En el enunciado no se describe cómo gasta la voluntad un cazador para hacer un talento.
+     * @return valor booleano false.
+     */
+    @Override
+    public boolean habilidadPosible(){
+        return false;
+    }
 }

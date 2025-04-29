@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- */
 public class Vampiro extends PersonajeBase {
 
     private int Sangre;
@@ -22,6 +19,7 @@ public class Vampiro extends PersonajeBase {
     public Vampiro(){
 
     }
+
     public Vampiro(String name) {
         Random rand = new Random();
         Esbirros= new ArrayList<>();
@@ -32,8 +30,10 @@ public class Vampiro extends PersonajeBase {
         this.crearEsbirros();
     }
 
+    /**
+     * Este metodo sobreescribe al original ya que los vampiros no pueden tener esbirros humanos
+     */
     @Override
-    //Este metodo sobreescribe al original ya que los vampiros no pueden tener esbirros humanos
     public void crearEsbirros() {
         Random rand = new Random();
         Esbirros = new ArrayList<>();
@@ -104,7 +104,7 @@ public class Vampiro extends PersonajeBase {
         return 0;
     }
 
-    public Integer getSangre() {
+    public int getSangre() {
         return Sangre;
     }
 
@@ -126,9 +126,25 @@ public class Vampiro extends PersonajeBase {
     @Override
     public void initializePersonaje(){
         Salud = 5;
-        Sangre = 10; //No entiendo cómo deberían sacar puntos de sangre los vampiros.
+        Sangre = 0;
         Poder = 5; //Entiendo que el poder viene de serie con el personaje. He puesto uno diferente a cada uno.
         calcularValorEquipo();
         crearEsbirros();
+    }
+
+    @Override
+    public void gestionarRecursosHabilidad(boolean atacado){
+        String morado = "\u001B[35m";
+        String reset = "\u001B[0m";
+        if(atacado){
+            Sangre += 4; //El enunciado dice que aumenta 4 si ataca
+        }
+        System.out.println("¡ " + morado + Nombre + reset + " roba 4 puntos de sangre a su rival!");
+        System.out.println(morado + Nombre + reset + " ahora tiene " + Sangre + " puntos de Sangre y necesita " + Disciplina.getCoste() + " para hacer su Disciplina.");
+    }
+
+    @Override
+    public boolean habilidadPosible(){
+        return Disciplina.getCoste() <= Sangre;
     }
 }

@@ -1,3 +1,12 @@
+/**
+ * METODOLOGÍA DE LA PROGRAMACIÓN: PRÁCTICA DE CODIFICACIÓN
+ * GRUPO 6:
+ *
+ * @author Marcos Hernández Martín
+ * @author Daniel Hernanz Corral
+ * @author Jorge Naranjo Ballesteros
+ */
+
 package Grupo6.src.App;
 
 /**

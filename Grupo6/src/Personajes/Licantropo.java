@@ -3,29 +3,19 @@ package Grupo6.src.Personajes;
 import Grupo6.src.HabilidadesEspeciales.Don;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
-/**
- * 
- */
 public class Licantropo extends PersonajeBase {
 
     private int Rabia;
     private Don Don;
 
-    /**
-     * Default constructor
-     */
     public Licantropo(String name) {
         this.Nombre = name;
-        this.Don = new Don(100, 2);
+        this.Don = new Don(10, 2);
     }
 
     public Licantropo(){
 
     }
-
-    /**
-     * 
-     */
 
     @Override
     public void hacerHabilidadEspecial() {
@@ -45,7 +35,7 @@ public class Licantropo extends PersonajeBase {
         return this.Rabia;
     }
 
-    public void setRabia(Integer rabia) {
+    public void setRabia(int rabia) {
         Rabia = rabia;
     }
 
@@ -66,9 +56,25 @@ public class Licantropo extends PersonajeBase {
     @Override
     public void initializePersonaje(){
         Salud = 5;
-        Rabia = 3;
+        Rabia = 0;
         Poder = 10;
         calcularValorEquipo();
         crearEsbirros();
+    }
+
+    @Override
+    public void gestionarRecursosHabilidad(boolean atacado){
+        String amarillo = "\u001B[33m";
+        String reset = "\u001B[0m";
+        if(atacado){
+            Rabia += 4;
+        }
+        System.out.println("¡A " + amarillo + Nombre + reset + " le da mucha Rabia (4 puntos) haber sido atacado!");
+        System.out.println(amarillo + Nombre + reset + " ahora tiene " + Rabia + " puntos de Rabia, y necesita " + Don.getRabia() + " para hacer su Don." );
+    }
+
+    @Override
+    public boolean habilidadPosible(){
+        return Don.getRabia() <= Rabia;
     }
 }

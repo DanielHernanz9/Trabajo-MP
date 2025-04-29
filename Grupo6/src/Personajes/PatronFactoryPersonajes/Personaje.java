@@ -48,6 +48,7 @@ public interface Personaje {
     void atacar();
     void crearEsbirros();
     void reducirSalud();
-
     void initializePersonaje();
+    void gestionarRecursosHabilidad(boolean atacado);
+    boolean habilidadPosible();
 }

@@ -313,6 +313,7 @@ public class JuegoCombateManager {
                             System.out.println("¿Qué quieres hacer?");
                             System.out.println("1. " + "🏪​" + "Acceder a la tienda de armas");
                             System.out.println("2. " + "⚔️​🛡️​" + "Utilizar equipo en posesión");
+                            System.out.println("3. " + "\uD83D\uDD19\u200B" + " Volver al menú principal.");
                             int equipoOpt = sc.nextInt();
                             switch (equipoOpt) {
                                 case 1: {

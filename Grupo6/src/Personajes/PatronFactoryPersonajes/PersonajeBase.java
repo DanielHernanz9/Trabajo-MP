@@ -188,10 +188,6 @@ public abstract class PersonajeBase implements Personaje {
         return !this.Esbirros.isEmpty();
     }
 
-    public void setSalud(Integer salud) {
-        Salud = salud;
-    }
-
     public abstract void reducirSalud();
 
     /**
@@ -280,4 +276,8 @@ public abstract class PersonajeBase implements Personaje {
     public void setValorDefensa(int valorDefensa) {
         ValorDefensa = valorDefensa;
     }
+
+    public abstract void gestionarRecursosHabilidad(boolean atacado);
+
+    public abstract boolean habilidadPosible();
 }

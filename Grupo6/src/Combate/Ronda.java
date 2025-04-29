@@ -86,24 +86,38 @@ public class Ronda implements Serializable {
         EstrategiaAtacado = strategyAtacado;
     }
 
-    public void reducirSalud() {
+    public void reducirSalud(int damage) {
         String reset = "\u001B[0m";     //Restablece el color blanco
         String rojo = "\u001B[91m";     //Ataque
         String verde = "\u001B[32m";    //Defensa
-        String morado = "\u001B[35m";   //Jugdor atacante
-        String amarillo = "\u001B[33m"; //Jugdor atacado
 
         if (Atacante.hasEsbirros()) {
             Esbirro esbirro = Atacante.getEsbirros().getLast();
-            System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset + " ha infligido "+rojo+"daño"+reset+" al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
-            esbirro.setSalud(esbirro.recibirDaño());
+            System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset + " ha infligido " +rojo+ "daño"+reset+" al esbirro " + esbirro.getNombre() + " de " + nombreAtacado + " !");
+
+            for (int i = 0; i < damage; i++){
+                esbirro.setSalud(esbirro.recibirDaño());
+            }
+
+            System.out.println("La "+ verde + "salud"+ reset +" de " + esbirro.getNombre() + " ahora es de " + esbirro.getSalud());
+
             if (esbirro.getSalud() == 0){
                 Atacante.getEsbirros().removeLast();
             }
         } else {
-            Atacado.reducirSalud();
-            System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset +" ha infligido 1 punto de "+rojo+"daño"+reset+" a " + nombreAtacado + "!");
-            System.out.println("La "+verde+"salud"+reset+" de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
+            for (int i = 0; i < damage; i++){
+                Atacado.reducirSalud();
+            }
+
+            if (damage == 1){
+                System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset +" ha infligido " + damage + " punto de "+ rojo +"daño"+reset+" a " + nombreAtacado + "!");
+            }
+            else{
+                System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset +" ha infligido " + damage + " puntos de "+ rojo +"daño"+reset+" a " + nombreAtacado + "!");
+            }
+
+            System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset +" ha infligido " + damage + " punto de "+ rojo +"daño"+reset+" a " + nombreAtacado + "!");
+            System.out.println("La "+ verde + "salud"+ reset +" de " + nombreAtacado + " ahora es de " + Atacado.getSalud());
         }
     }
 
@@ -151,8 +165,33 @@ public class Ronda implements Serializable {
         System.out.println(morado + nombreAtacante + reset + " ha obtenido un ataque de " + totalAtaque);
         System.out.println(amarillo + nombreAtacado + reset + " ha obtenido una defensa de " + totalDefensa);
 
+        //En el enunciado no se aclara qué hacen las habilidade una vez se ejecutan.
+        //Por eso, he decidido que hagan el doble de daño.
+        //Nos ayudará a que los combates no tengan tantas rondas.
+
+        boolean atacado = false;
         if (totalAtaque >= totalDefensa){
-            reducirSalud();
+            if (Atacante.habilidadPosible()){
+                if (Atacante instanceof Vampiro){
+                    ((Vampiro) Atacante).setSangre(((Vampiro) Atacante).getSangre() - ((Vampiro) Atacante).getDisciplina().getCoste());
+                    System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset + " utiliza una Disciplina!");
+                }
+                else if (Atacante instanceof Licantropo){
+                    ((Licantropo) Atacante).setRabia(((Licantropo) Atacante).getRabia() - ((Licantropo) Atacante).getDon().getRabia());
+                    System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset + " utiliza un Don!");
+                }
+                else{
+                    System.out.println("¡" + "\u001B[35m" + nombreAtacante + reset + " utiliza una Talento!");
+                }
+                reducirSalud(2);
+            }
+            else{
+                reducirSalud(1);
+                if(Atacante instanceof Vampiro){
+                    Atacante.gestionarRecursosHabilidad(true);
+                }
+            }
+            atacado = true;
         } else {
             if (Atacado.getArmaduraActiva() != null){
                 System.out.println("¡" + amarillo + nombreAtacado + reset + " se defiende de " + morado + nombreAtacante + reset + " con " + Atacado.getArmaduraActiva().getNombre() + "!");
@@ -163,6 +202,9 @@ public class Ronda implements Serializable {
 
         if (verificarFinCombate()){
             System.out.println("¡" + amarillo + nombreAtacado + reset + " ha caido!");
+        }
+        else if (!(Atacado instanceof Vampiro)){
+            Atacado.gestionarRecursosHabilidad(true);
         }
     }
 

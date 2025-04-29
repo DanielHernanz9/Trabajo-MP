@@ -66,9 +66,8 @@ public class Combate implements Serializable {
             Personaje personajeDesafiado = Desafiado.getPersonaje();
             Personaje personajeDesafiante = Desafiante.getPersonaje();
 
-            //Por algún motivo se sobreescriben los datos de los personajes en el xml al registrarlos,
-            //así que inicializo aquí su salud en lugar del constructor. De todos modos tiene más sentido hacerlo
-            //así para que puedan tener el máxmimo de salud (5 según el enunciado) al comenzar el combate.
+            //Se inicializan los datos del personaje cada vez que comienza un combate.
+            //Si no, comenzarían con 0 de salud o esbirros, etc.
 
             personajeDesafiado.initializePersonaje();
             personajeDesafiante.initializePersonaje();
@@ -114,19 +113,18 @@ public class Combate implements Serializable {
 
             }
             //Actualizamos los valores de los usuarios en el XML
+            JuegoCombateManager manager = new JuegoCombateManager();
             ArrayList<Usuario> usuarios = new ArrayList<>();
-            SingleStorage storage=SingleStorage.getInstance();
-            usuarios=storage.loadUsers();
+            SingleStorage storage = SingleStorage.getInstance();
+            usuarios = storage.loadUsers();
 
             //actualizamos los campos de los usuarios que hayan combatido
             for (int i = 0; i < usuarios.size(); i++){
-
-                Usuario actualUser = usuarios.get(i);
-
-                if (actualUser instanceof Jugador) {
-                    if (actualUser.getNombre().equals(Desafiado.getNombre())) {
+                Usuario currentUser = usuarios.get(i);
+                if (currentUser instanceof Jugador) {
+                    if (currentUser.getNombre().equals(Desafiado.getNombre())) {
                         usuarios.set(i, Desafiado);
-                    } else if (actualUser.getNombre().equals(Desafiante.getNombre())) {
+                    } else if (currentUser.getNombre().equals(Desafiante.getNombre())) {
                         usuarios.set(i, Desafiante);
                     }
                 }

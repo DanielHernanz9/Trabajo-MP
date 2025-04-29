@@ -22,8 +22,11 @@
     <void property="nombre">
      <string>j1</string>
     </void>
+    <void property="numCombatesPerdidos">
+     <int>3</int>
+    </void>
     <void property="oro">
-     <int>99250</int>
+     <int>200</int>
     </void>
     <void property="password">
      <string>1234</string>
@@ -47,112 +50,27 @@
       <void property="armaActiva1">
        <object class="Grupo6.src.Equipo.Arma" id="Arma0">
         <void property="manos">
-         <int>1</int>
-        </void>
-        <void property="modificador">
-         <object class="Grupo6.src.Equipo.Modificador">
-          <void property="tipo">
-           <object class="java.lang.Enum" id="Modificador$TipoModificador0" method="valueOf">
-            <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
-            <string>Defensa</string>
-           </object>
-          </void>
-          <void property="valor">
-           <int>2</int>
-          </void>
-         </object>
-        </void>
-        <void property="nombre">
-         <string>Ballesta</string>
-        </void>
-       </object>
-      </void>
-      <void property="armaActiva2">
-       <object class="Grupo6.src.Equipo.Arma" id="Arma1">
-        <void property="manos">
          <int>2</int>
         </void>
         <void property="modificador">
          <object class="Grupo6.src.Equipo.Modificador">
           <void property="tipo">
-           <object class="java.lang.Enum" id="Modificador$TipoModificador1" method="valueOf">
+           <object class="java.lang.Enum" method="valueOf">
             <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
             <string>Ataque</string>
            </object>
           </void>
           <void property="valor">
-           <int>1</int>
+           <int>3</int>
           </void>
          </object>
         </void>
         <void property="nombre">
-         <string>Mandoble</string>
+         <string>Impuestos</string>
         </void>
        </object>
-      </void>
-      <void property="armaduraActiva">
-       <object class="Grupo6.src.Equipo.Armadura" id="Armadura0">
-        <void property="modificador">
-         <object class="Grupo6.src.Equipo.Modificador">
-          <void property="tipo">
-           <object idref="Modificador$TipoModificador1"/>
-          </void>
-          <void property="valor">
-           <int>1</int>
-          </void>
-         </object>
-        </void>
-        <void property="nombre">
-         <string>Armadura1</string>
-        </void>
-       </object>
-      </void>
-      <void property="armaduras">
-       <void method="add">
-        <object idref="Armadura0"/>
-       </void>
-       <void method="add">
-        <object class="Grupo6.src.Equipo.Armadura">
-         <void property="modificador">
-          <object class="Grupo6.src.Equipo.Modificador">
-           <void property="tipo">
-            <object idref="Modificador$TipoModificador0"/>
-           </void>
-           <void property="valor">
-            <int>3</int>
-           </void>
-          </object>
-         </void>
-         <void property="nombre">
-          <string>Armadura de plata</string>
-         </void>
-        </object>
-       </void>
       </void>
       <void property="armas">
-       <void method="add">
-        <object class="Grupo6.src.Equipo.Arma">
-         <void property="manos">
-          <int>1</int>
-         </void>
-         <void property="modificador">
-          <object class="Grupo6.src.Equipo.Modificador">
-           <void property="tipo">
-            <object idref="Modificador$TipoModificador1"/>
-           </void>
-           <void property="valor">
-            <int>1</int>
-           </void>
-          </object>
-         </void>
-         <void property="nombre">
-          <string>Espada1</string>
-         </void>
-        </object>
-       </void>
-       <void method="add">
-        <object idref="Arma1"/>
-       </void>
        <void method="add">
         <object idref="Arma0"/>
        </void>
@@ -160,55 +78,12 @@
       <void property="esbirros">
        <object class="java.util.ArrayList">
         <void method="add">
-         <object class="Grupo6.src.Esbirros.Demonio">
+         <object class="Grupo6.src.Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
           <void property="nombre">
-           <string>Demonio_0</string>
-          </void>
-          <void property="pacto">
-           <string>Pacto Normal</string>
-          </void>
-          <void property="subordinados">
-           <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite0">
-            <void property="childrenComposite">
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_0</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_0</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Demonio">
-               <void property="nombre">
-                <string>DemonioSub_0</string>
-               </void>
-               <void property="pacto">
-                <string>Pacto Normal</string>
-               </void>
-               <void property="subordinados">
-                <object class="Grupo6.src.Esbirros.EsbirrosComposite">
-                 <void property="nombre">
-                  <string>DemonioSub_0_Subordinados</string>
-                 </void>
-                </object>
-               </void>
-              </object>
-             </void>
-            </void>
-           </object>
+           <string>Ghoul_0</string>
           </void>
          </object>
         </void>
@@ -221,118 +96,12 @@
            <string>Pacto Normal</string>
           </void>
           <void property="subordinados">
-           <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite1">
+           <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite0">
             <void property="childrenComposite">
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Humano">
-               <void property="nombre">
-                <string>HumanoSub_1</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Humano">
-               <void property="nombre">
-                <string>HumanoSub_1</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_1</string>
-               </void>
-              </object>
-             </void>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-        <void method="add">
-         <object class="Grupo6.src.Esbirros.Demonio">
-          <void property="nombre">
-           <string>Demonio_2</string>
-          </void>
-          <void property="pacto">
-           <string>Pacto Normal</string>
-          </void>
-          <void property="subordinados">
-           <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite2">
-            <void property="childrenComposite">
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_2</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_2</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_2</string>
-               </void>
-              </object>
-             </void>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-        <void method="add">
-         <object class="Grupo6.src.Esbirros.Demonio">
-          <void property="nombre">
-           <string>Demonio_3</string>
-          </void>
-          <void property="pacto">
-           <string>Pacto Normal</string>
-          </void>
-          <void property="subordinados">
-           <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite3">
-            <void property="childrenComposite">
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_3</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_3</string>
-               </void>
-              </object>
-             </void>
              <void method="add">
               <object class="Grupo6.src.Esbirros.Demonio">
                <void property="nombre">
-                <string>DemonioSub_3</string>
+                <string>DemonioSub_1</string>
                </void>
                <void property="pacto">
                 <string>Pacto Normal</string>
@@ -340,52 +109,16 @@
                <void property="subordinados">
                 <object class="Grupo6.src.Esbirros.EsbirrosComposite">
                  <void property="nombre">
-                  <string>DemonioSub_3_Subordinados</string>
+                  <string>DemonioSub_1_Subordinados</string>
                  </void>
                 </object>
                </void>
               </object>
              </void>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-        <void method="add">
-         <object class="Grupo6.src.Esbirros.Demonio">
-          <void property="nombre">
-           <string>Demonio_4</string>
-          </void>
-          <void property="pacto">
-           <string>Pacto Normal</string>
-          </void>
-          <void property="subordinados">
-           <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite4">
-            <void property="childrenComposite">
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_4</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Grupo6.src.Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
-               <void property="nombre">
-                <string>GhoulSub_4</string>
-               </void>
-              </object>
-             </void>
              <void method="add">
               <object class="Grupo6.src.Esbirros.Demonio">
                <void property="nombre">
-                <string>DemonioSub_4</string>
+                <string>DemonioSub_1</string>
                </void>
                <void property="pacto">
                 <string>Pacto Normal</string>
@@ -393,7 +126,7 @@
                <void property="subordinados">
                 <object class="Grupo6.src.Esbirros.EsbirrosComposite">
                  <void property="nombre">
-                  <string>DemonioSub_4_Subordinados</string>
+                  <string>DemonioSub_1_Subordinados</string>
                  </void>
                 </object>
                </void>
@@ -407,15 +140,97 @@
        </object>
       </void>
       <void property="nombre">
-       <string>ppe</string>
+       <string>Pedro Sánchez</string>
       </void>
-      <void property="sangre">
+      <void property="poder">
+       <int>5</int>
+      </void>
+      <void property="valorAtaque">
+       <int>9</int>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>V53NY</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Grupo6.src.App.Jugador">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j2</string>
+    </void>
+    <void property="numCombatesGanados">
+     <int>3</int>
+    </void>
+    <void property="oro">
+     <int>252</int>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Grupo6.src.Personajes.Licantropo" id="Licantropo0">
+      <void property="armaduraActiva">
+       <object class="Grupo6.src.Equipo.Armadura" id="Armadura0">
+        <void property="modificador">
+         <object class="Grupo6.src.Equipo.Modificador">
+          <void property="tipo">
+           <object class="java.lang.Enum" method="valueOf">
+            <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
+            <string>Defensa</string>
+           </object>
+          </void>
+          <void property="valor">
+           <int>3</int>
+          </void>
+         </object>
+        </void>
+        <void property="nombre">
+         <string>Bandera Española</string>
+        </void>
+       </object>
+      </void>
+      <void property="armaduras">
+       <void method="add">
+        <object idref="Armadura0"/>
+       </void>
+      </void>
+      <void property="don">
+       <object class="Grupo6.src.HabilidadesEspeciales.Don">
+        <void property="rabia">
+         <int>10</int>
+        </void>
+        <void property="valorAtaque">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void property="esbirros">
+       <object class="java.util.ArrayList"/>
+      </void>
+      <void property="nombre">
+       <string>Santiago Abascal</string>
+      </void>
+      <void property="poder">
+       <int>10</int>
+      </void>
+      <void property="rabia">
+       <int>2</int>
+      </void>
+      <void property="salud">
+       <int>5</int>
+      </void>
+      <void property="valorDefensa">
        <int>3</int>
       </void>
      </object>
     </void>
     <void property="regNum">
-     <string>M46AB</string>
+     <string>L25VP</string>
     </void>
    </object>
   </void>
