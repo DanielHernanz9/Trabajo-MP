@@ -542,7 +542,7 @@ public class JuegoCombateManager {
                 System.out.println("2. Consultar Ranking global");
                 System.out.println("3. Cambiar personaje");
                 System.out.println("4. Gestionar equipo del personaje");
-                System.out.println("5. Consultar cantidad global de oro ganado y perdido en combates anteriores");
+                System.out.println("5. Consultar oro en posesión");
                 System.out.println("6. Volver");
                 int opcion = sc.nextInt();
                 sc.nextLine();  // Limpiar el buffer de entrada
@@ -563,7 +563,7 @@ public class JuegoCombateManager {
                     }
                     case 4 -> {
                             System.out.println("¿Qué quieres hacer?");
-                            System.out.println("1. " + "🏪​" + "Acceder a la tienda de armas");
+                            System.out.println("1. " + "🏪​" + "Acceder a la tienda de equipo");
                             System.out.println("2. " + "⚔️​🛡️​" + "Utilizar equipo en posesión");
                             System.out.println("3. " + "\uD83D\uDD19\u200B" + " Volver al menú principal.");
                             int equipoOpt = sc.nextInt();
