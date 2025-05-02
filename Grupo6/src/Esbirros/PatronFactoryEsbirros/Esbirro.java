@@ -1,6 +1,6 @@
 package Grupo6.src.Esbirros.PatronFactoryEsbirros;
 
-public interface Esbirro {
+public interface Esbirro extends Cloneable {
 
     // Método para recibir daño y devolver la salud restante
     int recibirDaño();
@@ -17,4 +17,5 @@ public interface Esbirro {
     // Obtener el nombre
     String getNombre();
 
+    EsbirroBase clone();
 }

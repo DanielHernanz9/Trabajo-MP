@@ -1,6 +1,5 @@
 package Grupo6.src.Personajes.PatronFactoryPersonajes;
 
-import Grupo6.src.COSAS.*;
 import Grupo6.src.App.*;
 import Grupo6.src.Combate.*;
 import Grupo6.src.Desafio.*;

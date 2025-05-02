@@ -154,8 +154,8 @@ public class JuegoCombateManager {
             while ((personajeEditable == null) && (pos < personajes.size())) {
                 Personaje personajeActual = personajes.get(pos);
                 if (nombrePersonaje.equals(personajeActual.getNombre())) {
-                    personajeEditable = personajeActual;
-                    personajeSinEditar = personajeActual;
+                    personajeEditable = personajeActual.clone();
+                    personajeSinEditar = personajeActual.clone();
                 }
                 pos++;
             }
@@ -356,8 +356,10 @@ public class JuegoCombateManager {
 
             //Ahora buscamos el jugador que tenía ese personaje
             int p = 0;
-            Jugador jugador = null;
-            while ((p < jugadores.size())&&(personajeSinEditar.equals(jugadores.get(p).getPersonaje()))) {
+            Jugador jugador = jugadores.get(p);
+            p++;
+            while ((p < jugadores.size())&&(!personajeSinEditar.equals(jugador.getPersonaje()))) {
+
                 jugador = jugadores.get(p);
                 p++;
             }

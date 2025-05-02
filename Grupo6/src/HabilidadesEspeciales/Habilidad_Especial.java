@@ -1,6 +1,8 @@
 package Grupo6.src.HabilidadesEspeciales;
 
-public abstract class Habilidad_Especial {
+import java.util.Objects;
+
+public abstract class Habilidad_Especial implements Cloneable {
 
     protected String Nombre;
     protected int ValorAtaque;
@@ -30,4 +32,24 @@ public abstract class Habilidad_Especial {
         ValorDefensa = valorDefensa;
     }
 
+    @Override
+    public Habilidad_Especial clone() {
+        try {
+            return (Habilidad_Especial) super.clone(); // Clon superficial es suficiente porque los campos son primitivos o inmutables
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError("Clonación fallida en Habilidad_Especial", e);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Habilidad_Especial that = (Habilidad_Especial) o;
+        return ValorAtaque == that.ValorAtaque && ValorDefensa == that.ValorDefensa && Objects.equals(Nombre, that.Nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Nombre, ValorAtaque, ValorDefensa);
+    }
 }

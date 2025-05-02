@@ -8,9 +8,10 @@ import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
-public class Vampiro extends PersonajeBase {
+public class Vampiro extends PersonajeBase implements Cloneable {
 
     private int Sangre;
     private String Pacto; //DESCRIPCION DEL PACTO ENTRE EL ESBIRRO Y SU AMO
@@ -146,5 +147,31 @@ public class Vampiro extends PersonajeBase {
     @Override
     public boolean habilidadPosible(){
         return Disciplina.getCoste() <= Sangre;
+    }
+
+    @Override
+    public Vampiro clone() {
+        // Primero, clonamos el objeto base (PersonajeBase) con super.clone()
+        Vampiro cloned = (Vampiro) super.clone();
+
+        // Clonamos el objeto Disciplina de forma profunda
+        cloned.Disciplina = this.Disciplina.clone();  // Disciplina también debe tener un método clone() adecuado
+
+        // Clonamos otros atributos que no sean simples tipos primitivos (en este caso Sangre y Pacto no necesitan clonación profunda)
+
+        return cloned;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Vampiro vampiro = (Vampiro) o;
+        return Sangre == vampiro.Sangre && Objects.equals(Pacto, vampiro.Pacto) && Objects.equals(Disciplina, vampiro.Disciplina);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), Sangre, Pacto, Disciplina);
     }
 }

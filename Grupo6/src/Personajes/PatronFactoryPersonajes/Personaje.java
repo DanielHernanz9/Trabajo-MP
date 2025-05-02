@@ -51,4 +51,6 @@ public interface Personaje {
     void initializePersonaje();
     void gestionarRecursosHabilidad(boolean atacado);
     boolean habilidadPosible();
+
+    PersonajeBase clone();
 }

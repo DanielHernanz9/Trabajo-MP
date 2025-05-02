@@ -1,6 +1,8 @@
 package Grupo6.src.Equipo;
 
-public class Modificador {
+import java.util.Objects;
+
+public class Modificador implements Cloneable {
 
     private String nombre;
     private int valor;
@@ -31,6 +33,27 @@ public class Modificador {
 
     public TipoModificador getTipo() {
         return Tipo;
+    }
+
+    @Override
+    public Modificador clone() {
+        try {
+            return (Modificador) super.clone(); // String y enumerados tienen implementados los metodos de clone, no necesitamos copiarlos nosotros
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError("Error al clonar Modificador", e);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Modificador that = (Modificador) o;
+        return valor == that.valor && Objects.equals(nombre, that.nombre) && Tipo == that.Tipo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, valor, Tipo);
     }
 
     public enum TipoModificador {

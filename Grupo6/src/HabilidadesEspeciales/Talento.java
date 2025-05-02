@@ -1,6 +1,6 @@
 package Grupo6.src.HabilidadesEspeciales;
 
-public class Talento extends Habilidad_Especial {
+public class Talento extends Habilidad_Especial implements Cloneable {
 
     public Talento(){
 
@@ -9,5 +9,11 @@ public class Talento extends Habilidad_Especial {
     public Talento(int Ataque) {
         this.ValorAtaque = Ataque;
     }
+    @Override
+    public Talento clone() {
 
+        Talento cloned = (Talento) super.clone();  // Llamamos al método clone() de la superclase (Habilidad_Especial)
+        return cloned;
+    }
 }
+

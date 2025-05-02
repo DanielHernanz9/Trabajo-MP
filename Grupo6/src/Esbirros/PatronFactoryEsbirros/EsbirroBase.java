@@ -1,6 +1,6 @@
 package Grupo6.src.Esbirros.PatronFactoryEsbirros;
 
-public abstract class EsbirroBase implements Esbirro {
+public abstract class EsbirroBase implements Esbirro,Cloneable{
 
     protected String Nombre;
     private int Salud = 3;
@@ -30,5 +30,16 @@ public abstract class EsbirroBase implements Esbirro {
 
     public String getNombre() {
         return Nombre;
+    }
+
+    @Override
+    public EsbirroBase clone() {
+        try {
+            EsbirroBase clone = (EsbirroBase) super.clone();
+
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
