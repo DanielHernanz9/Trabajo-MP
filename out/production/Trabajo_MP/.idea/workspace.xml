@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Se permite al usuario almacenar las armas de sus personajes">
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml" afterDir="false" />
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +131,8 @@
       <workItem from="1745487623790" duration="188000" />
       <workItem from="1745571205717" duration="4600000" />
       <workItem from="1745593872764" duration="5249000" />
-      <workItem from="1745952141729" duration="685000" />
+      <workItem from="1745952141729" duration="9940000" />
+      <workItem from="1746183645431" duration="358000" />
     </task>
     <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
       <option name="closed" value="true" />
@@ -503,7 +510,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745599143151</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)">
+      <option name="closed" value="true" />
+      <created>1745965218057</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1745965218057</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="El metodo guardar personaje no actualizaba la lista XML al registrar el personaje, lo que causaba que los personajes no fueran persistentes. Ahora el programa no pregunta que menu quieres ver, te muestra el correspondiente menu segun tu tipo de cuenta" />
     <MESSAGE value="Desafios implementados correctamente (por algun motivo el nombre de los usuarios se registra como null)" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;Grupo6/src/App/JuegoCombateManager.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/AlmacenXML.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/SingleStorage.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/Usuarios.xml" />
     <MESSAGE value="Correccion errores" />
@@ -546,7 +560,8 @@
     <MESSAGE value="Ahora los demonios tienen 3 esbirros como subordinados. Aunque los subordinados pueden tener subordinados, etc, no los metemos porque ya los combates duran 80 rondas, si hacemos arboles más complejos serían demasiado largos. He añadido también colorines a los nombres de los personajes en los combates." />
     <MESSAGE value="No se muestra al propio jugador que está logueado cuando quiere hacer un desfío" />
     <MESSAGE value="Se permite al usuario almacenar las armas de sus personajes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se permite al usuario almacenar las armas de sus personajes" />
+    <MESSAGE value="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,19 +581,24 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Combate.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>891</line>
+          <line>1144</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="48" />
+          <line>124</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Ronda.java</url>
+          <line>206</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

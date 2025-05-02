@@ -439,10 +439,6 @@ public class JuegoCombateManager {
         }
     }
 
-
-
-
-
     /**
      * Muestra el menú de opciones para el jugador.
      */
@@ -492,7 +488,7 @@ public class JuegoCombateManager {
                                     jugador2.setOro(jugador2.getOro() - d.getOroApostado());
                                 }
                                 else if(ganador.equals(jugador2)){
-                                    jugador1.setOro(2 * d.getOroApostado());
+                                    jugador1.setOro(jugador1.getOro() - d.getOroApostado());
                                 }
                                 System.out.println(jugador1.getName() + " se queda con " + jugador1.getOro() + " de oro.");
                                 System.out.println(jugador2.getName() + " se queda con " + jugador2.getOro() + " de oro.");
@@ -887,7 +883,7 @@ public class JuegoCombateManager {
         int apuesta = sc.nextInt();
         boolean isCorrect = true;
         do{
-            if (jugador1.getOro() <= apuesta){
+            if (jugador1.getOro() < apuesta){
                 System.out.println("No puedes apostar tanto oro (tienes " + jugador1.getOro() + " monedas de oro.)");
                 System.out.println("Introduce una cantidad que puedas permitirte: ");
                 apuesta = sc.nextInt();
