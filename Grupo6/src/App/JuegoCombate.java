@@ -1,6 +1,6 @@
 /**
  * METODOLOGÍA DE LA PROGRAMACIÓN: PRÁCTICA DE CODIFICACIÓN
- * GRUPO 6:
+ * MIEMBROS DEL GRUPO 6 QUE HAN PARTICIPADO EN EL DESARROLLO DE ESTE CÓDIGO FUENTE:
  *
  * @author Marcos Hernández Martín
  * @author Daniel Hernanz Corral
