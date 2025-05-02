@@ -33,17 +33,6 @@ public class Humano extends EsbirroBase {
         BAJA,
         MEDIA,
         ALTA;
-        public Lealtad subir() {
-            int next = this.ordinal() + 1;
-            if (next >= 3) return this;
-            return values()[next];
-        }
-
-        public Lealtad bajar() {
-            int prev = this.ordinal() - 1;
-            if (prev < 0) return this;
-            return values()[prev];
-        }
 
         public String lealtadString() {
             return switch (this) {
@@ -55,7 +44,6 @@ public class Humano extends EsbirroBase {
     }
 
     public Lealtad getLealtad() {
-
         return this.lealtad;
     }
 }

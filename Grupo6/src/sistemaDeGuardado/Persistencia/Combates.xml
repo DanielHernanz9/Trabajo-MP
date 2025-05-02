@@ -14,11 +14,67 @@
       <void property="numCombatesGanados">
        <int>1</int>
       </void>
+      <void property="oro">
+       <int>50</int>
+      </void>
       <void property="password">
        <string>1234</string>
       </void>
       <void property="personaje">
        <object class="Grupo6.src.Personajes.Licantropo" id="Licantropo0">
+        <void property="armaActiva1">
+         <object class="Grupo6.src.Equipo.Arma" id="Arma0">
+          <void property="manos">
+           <int>1</int>
+          </void>
+          <void property="modificador">
+           <object class="Grupo6.src.Equipo.Modificador">
+            <void property="tipo">
+             <object class="java.lang.Enum" id="Modificador$TipoModificador0" method="valueOf">
+              <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
+              <string>Ataque</string>
+             </object>
+            </void>
+            <void property="valor">
+             <int>1</int>
+            </void>
+           </object>
+          </void>
+          <void property="nombre">
+           <string>Bandera de España</string>
+          </void>
+         </object>
+        </void>
+        <void property="armaduraActiva">
+         <object class="Grupo6.src.Equipo.Armadura" id="Armadura0">
+          <void property="modificador">
+           <object class="Grupo6.src.Equipo.Modificador">
+            <void property="tipo">
+             <object class="java.lang.Enum" method="valueOf">
+              <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
+              <string>Defensa</string>
+             </object>
+            </void>
+            <void property="valor">
+             <int>3</int>
+            </void>
+           </object>
+          </void>
+          <void property="nombre">
+           <string>Cara al Sol</string>
+          </void>
+         </object>
+        </void>
+        <void property="armaduras">
+         <void method="add">
+          <object idref="Armadura0"/>
+         </void>
+        </void>
+        <void property="armas">
+         <void method="add">
+          <object idref="Arma0"/>
+         </void>
+        </void>
         <void property="don">
          <object class="Grupo6.src.HabilidadesEspeciales.Don">
           <void property="rabia">
@@ -35,16 +91,19 @@
         <void property="poder">
          <int>10</int>
         </void>
-        <void property="rabia">
-         <int>2</int>
-        </void>
         <void property="salud">
          <int>5</int>
+        </void>
+        <void property="valorAtaque">
+         <int>1</int>
+        </void>
+        <void property="valorDefensa">
+         <int>3</int>
         </void>
        </object>
       </void>
       <void property="regNum">
-       <string>D36LM</string>
+       <string>E95LG</string>
       </void>
      </object>
     </void>
@@ -54,7 +113,7 @@
        <void method="add">
         <object class="Grupo6.src.Desafio.Desafio">
          <void property="oroApostado">
-          <int>100</int>
+          <int>50</int>
          </void>
          <void property="usuarioDestino">
           <string>j1</string>
@@ -74,6 +133,9 @@
       <void property="numCombatesPerdidos">
        <int>1</int>
       </void>
+      <void property="oro">
+       <int>150</int>
+      </void>
       <void property="password">
        <string>1234</string>
       </void>
@@ -90,23 +152,40 @@
           </object>
          </void>
         </void>
+        <void property="armaActiva1">
+         <object class="Grupo6.src.Equipo.Arma" id="Arma1">
+          <void property="manos">
+           <int>2</int>
+          </void>
+          <void property="modificador">
+           <object class="Grupo6.src.Equipo.Modificador">
+            <void property="tipo">
+             <object idref="Modificador$TipoModificador0"/>
+            </void>
+            <void property="valor">
+             <int>3</int>
+            </void>
+           </object>
+          </void>
+          <void property="nombre">
+           <string>Impuestos</string>
+          </void>
+         </object>
+        </void>
+        <void property="armaActiva2">
+         <object idref="Arma1"/>
+        </void>
+        <void property="armas">
+         <void method="add">
+          <object idref="Arma1"/>
+         </void>
+        </void>
         <void property="esbirros">
          <object class="java.util.ArrayList">
           <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul" id="Ghoul0">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_0</string>
-            </void>
-            <void id="Integer0" property="salud"/>
-           </object>
-          </void>
-          <void method="add">
            <object class="Grupo6.src.Esbirros.Demonio">
             <void property="nombre">
-             <string>Demonio_1</string>
+             <string>Demonio_0</string>
             </void>
             <void property="pacto">
              <string>Pacto Normal</string>
@@ -117,7 +196,7 @@
                <void method="add">
                 <object class="Grupo6.src.Esbirros.Demonio">
                  <void property="nombre">
-                  <string>DemonioSub_1</string>
+                  <string>DemonioSub_0</string>
                  </void>
                  <void property="pacto">
                   <string>Pacto Normal</string>
@@ -125,7 +204,7 @@
                  <void property="subordinados">
                   <object class="Grupo6.src.Esbirros.EsbirrosComposite">
                    <void property="nombre">
-                    <string>DemonioSub_1_Subordinados</string>
+                    <string>DemonioSub_0_Subordinados</string>
                    </void>
                   </object>
                  </void>
@@ -134,7 +213,7 @@
                <void method="add">
                 <object class="Grupo6.src.Esbirros.Demonio">
                  <void property="nombre">
-                  <string>DemonioSub_1</string>
+                  <string>DemonioSub_0</string>
                  </void>
                  <void property="pacto">
                   <string>Pacto Normal</string>
@@ -142,7 +221,7 @@
                  <void property="subordinados">
                   <object class="Grupo6.src.Esbirros.EsbirrosComposite">
                    <void property="nombre">
-                    <string>DemonioSub_1_Subordinados</string>
+                    <string>DemonioSub_0_Subordinados</string>
                    </void>
                   </object>
                  </void>
@@ -154,12 +233,22 @@
                   <int>50</int>
                  </void>
                  <void property="nombre">
-                  <string>GhoulSub_1</string>
+                  <string>GhoulSub_0</string>
                  </void>
                 </object>
                </void>
               </void>
              </object>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="Grupo6.src.Esbirros.Ghoul">
+            <void property="dependencia">
+             <int>50</int>
+            </void>
+            <void property="nombre">
+             <string>Ghoul_1</string>
             </void>
            </object>
           </void>
@@ -175,16 +264,19 @@
              <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite1">
               <void property="childrenComposite">
                <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
+                <object class="Grupo6.src.Esbirros.Demonio">
                  <void property="nombre">
-                  <string>HumanoSub_2</string>
+                  <string>DemonioSub_2</string>
                  </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
-                 <void property="nombre">
-                  <string>HumanoSub_2</string>
+                 <void property="pacto">
+                  <string>Pacto Normal</string>
+                 </void>
+                 <void property="subordinados">
+                  <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+                   <void property="nombre">
+                    <string>DemonioSub_2_Subordinados</string>
+                   </void>
+                  </object>
                  </void>
                 </object>
                </void>
@@ -198,51 +290,35 @@
                  </void>
                 </object>
                </void>
+               <void method="add">
+                <object class="Grupo6.src.Esbirros.Demonio">
+                 <void property="nombre">
+                  <string>DemonioSub_2</string>
+                 </void>
+                 <void property="pacto">
+                  <string>Pacto Normal</string>
+                 </void>
+                 <void property="subordinados">
+                  <object class="Grupo6.src.Esbirros.EsbirrosComposite">
+                   <void property="nombre">
+                    <string>DemonioSub_2_Subordinados</string>
+                   </void>
+                  </object>
+                 </void>
+                </object>
+               </void>
               </void>
              </object>
             </void>
            </object>
           </void>
           <void method="add">
-           <object class="Grupo6.src.Esbirros.Demonio">
+           <object class="Grupo6.src.Esbirros.Ghoul">
+            <void property="dependencia">
+             <int>50</int>
+            </void>
             <void property="nombre">
-             <string>Demonio_3</string>
-            </void>
-            <void property="pacto">
-             <string>Pacto Normal</string>
-            </void>
-            <void property="subordinados">
-             <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite2">
-              <void property="childrenComposite">
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Ghoul">
-                 <void property="dependencia">
-                  <int>50</int>
-                 </void>
-                 <void property="nombre">
-                  <string>GhoulSub_3</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Ghoul">
-                 <void property="dependencia">
-                  <int>50</int>
-                 </void>
-                 <void property="nombre">
-                  <string>GhoulSub_3</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
-                 <void property="nombre">
-                  <string>HumanoSub_3</string>
-                 </void>
-                </object>
-               </void>
-              </void>
-             </object>
+             <string>Ghoul_3</string>
             </void>
            </object>
           </void>
@@ -254,28 +330,11 @@
             <void property="pacto">
              <string>Pacto Normal</string>
             </void>
+            <void property="salud">
+             <int>2</int>
+            </void>
             <void property="subordinados">
-             <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite3">
-              <void property="childrenComposite">
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Demonio">
-                 <void property="nombre">
-                  <string>DemonioSub_4</string>
-                 </void>
-                 <void property="pacto">
-                  <string>Pacto Normal</string>
-                 </void>
-                 <void property="subordinados">
-                  <object class="Grupo6.src.Esbirros.EsbirrosComposite">
-                   <void property="nombre">
-                    <string>DemonioSub_4_Subordinados</string>
-                   </void>
-                  </object>
-                 </void>
-                </object>
-               </void>
-              </void>
-             </object>
+             <object class="Grupo6.src.Esbirros.EsbirrosComposite"/>
             </void>
            </object>
           </void>
@@ -287,16 +346,19 @@
         <void property="poder">
          <int>5</int>
         </void>
+        <void property="valorAtaque">
+         <int>6</int>
+        </void>
        </object>
       </void>
       <void property="regNum">
-       <string>J61PD</string>
+       <string>K98VU</string>
       </void>
      </object>
     </void>
     <void property="fechaCombate">
      <object class="java.util.Date">
-      <long>1746184393107</long>
+      <long>1746187923030</long>
      </object>
     </void>
     <void property="ganador">
@@ -328,10 +390,10 @@
          <int>1</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>10</int>
+         <int>13</int>
         </void>
        </object>
       </void>
@@ -359,7 +421,7 @@
          <int>2</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>14</int>
+         <int>15</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -387,13 +449,13 @@
          <string>Pedro Sánchez</string>
         </void>
         <void property="numeroRonda">
-         <object idref="Integer0"/>
+         <int>3</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>14</int>
+         <int>17</int>
         </void>
        </object>
       </void>
@@ -421,7 +483,7 @@
          <int>4</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
+         <int>19</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -452,10 +514,10 @@
          <int>5</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>18</int>
+         <int>21</int>
         </void>
        </object>
       </void>
@@ -483,7 +545,7 @@
          <int>6</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>22</int>
+         <int>23</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -514,10 +576,10 @@
          <int>7</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>12</int>
+         <int>15</int>
         </void>
        </object>
       </void>
@@ -545,7 +607,7 @@
          <int>8</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>16</int>
+         <int>17</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -576,10 +638,10 @@
          <int>9</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>16</int>
+         <int>19</int>
         </void>
        </object>
       </void>
@@ -607,7 +669,7 @@
          <int>10</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>20</int>
+         <int>21</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -638,10 +700,10 @@
          <int>11</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>10</int>
+         <int>13</int>
         </void>
        </object>
       </void>
@@ -669,7 +731,7 @@
          <int>12</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>14</int>
+         <int>15</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -700,10 +762,10 @@
          <int>13</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>14</int>
+         <int>17</int>
         </void>
        </object>
       </void>
@@ -731,7 +793,7 @@
          <int>14</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
+         <int>19</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -762,10 +824,10 @@
          <int>15</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>18</int>
+         <int>21</int>
         </void>
        </object>
       </void>
@@ -793,7 +855,7 @@
          <int>16</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>22</int>
+         <int>23</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -824,10 +886,10 @@
          <int>17</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>12</int>
+         <int>15</int>
         </void>
        </object>
       </void>
@@ -855,7 +917,7 @@
          <int>18</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>16</int>
+         <int>17</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -886,10 +948,10 @@
          <int>19</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>16</int>
+         <int>19</int>
         </void>
        </object>
       </void>
@@ -917,7 +979,7 @@
          <int>20</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>20</int>
+         <int>21</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -948,10 +1010,10 @@
          <int>21</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>10</int>
+         <int>13</int>
         </void>
        </object>
       </void>
@@ -979,7 +1041,7 @@
          <int>22</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>14</int>
+         <int>15</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1010,10 +1072,10 @@
          <int>23</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>14</int>
+         <int>17</int>
         </void>
        </object>
       </void>
@@ -1041,7 +1103,7 @@
          <int>24</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
+         <int>19</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1072,10 +1134,10 @@
          <int>25</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>18</int>
+         <int>21</int>
         </void>
        </object>
       </void>
@@ -1103,7 +1165,7 @@
          <int>26</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>22</int>
+         <int>23</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1134,10 +1196,10 @@
          <int>27</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>12</int>
+         <int>15</int>
         </void>
        </object>
       </void>
@@ -1165,7 +1227,7 @@
          <int>28</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>16</int>
+         <int>17</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1196,10 +1258,10 @@
          <int>29</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>16</int>
+         <int>19</int>
         </void>
        </object>
       </void>
@@ -1227,7 +1289,7 @@
          <int>30</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>20</int>
+         <int>21</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1258,10 +1320,10 @@
          <int>31</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>10</int>
+         <int>13</int>
         </void>
        </object>
       </void>
@@ -1289,7 +1351,7 @@
          <int>32</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>14</int>
+         <int>15</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1320,10 +1382,10 @@
          <int>33</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>14</int>
+         <int>17</int>
         </void>
        </object>
       </void>
@@ -1351,7 +1413,7 @@
          <int>34</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
+         <int>19</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1382,10 +1444,10 @@
          <int>35</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>18</int>
+         <int>21</int>
         </void>
        </object>
       </void>
@@ -1413,7 +1475,7 @@
          <int>36</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>22</int>
+         <int>23</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1444,10 +1506,10 @@
          <int>37</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>12</int>
+         <int>15</int>
         </void>
        </object>
       </void>
@@ -1475,7 +1537,7 @@
          <int>38</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>16</int>
+         <int>17</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1506,10 +1568,10 @@
          <int>39</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>16</int>
+         <int>19</int>
         </void>
        </object>
       </void>
@@ -1537,7 +1599,7 @@
          <int>40</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>20</int>
+         <int>21</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1568,10 +1630,10 @@
          <int>41</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>10</int>
+         <int>13</int>
         </void>
        </object>
       </void>
@@ -1599,7 +1661,7 @@
          <int>42</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>14</int>
+         <int>15</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1630,10 +1692,10 @@
          <int>43</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>14</int>
+         <int>17</int>
         </void>
        </object>
       </void>
@@ -1661,7 +1723,7 @@
          <int>44</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
+         <int>19</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -1692,10 +1754,10 @@
          <int>45</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
-         <int>18</int>
+         <int>21</int>
         </void>
        </object>
       </void>
@@ -1723,934 +1785,8 @@
          <int>46</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-     </object>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="Grupo6.src.Combate.Combate">
-    <void property="desafiado">
-     <object class="Grupo6.src.App.Jugador">
-      <void property="nick">
-       <string>Jugador</string>
-      </void>
-      <void property="nombre">
-       <string>j1</string>
-      </void>
-      <void property="numCombatesPerdidos">
-       <int>2</int>
-      </void>
-      <void property="password">
-       <string>1234</string>
-      </void>
-      <void property="personaje">
-       <object class="Grupo6.src.Personajes.Vampiro" id="Vampiro1">
-        <void class="Grupo6.src.Personajes.Vampiro" method="getField">
-         <string>Disciplina</string>
-         <void method="set">
-          <object idref="Vampiro1"/>
-          <object class="Grupo6.src.HabilidadesEspeciales.Disciplina">
-           <void property="coste">
-            <int>10</int>
-           </void>
-          </object>
-         </void>
-        </void>
-        <void property="esbirros">
-         <object class="java.util.ArrayList">
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_0</string>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_1</string>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_2</string>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_3</string>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Demonio">
-            <void property="nombre">
-             <string>Demonio_4</string>
-            </void>
-            <void property="pacto">
-             <string>Pacto Normal</string>
-            </void>
-            <void property="subordinados">
-             <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite4">
-              <void property="childrenComposite">
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Demonio">
-                 <void property="nombre">
-                  <string>DemonioSub_4</string>
-                 </void>
-                 <void property="pacto">
-                  <string>Pacto Normal</string>
-                 </void>
-                 <void property="subordinados">
-                  <object class="Grupo6.src.Esbirros.EsbirrosComposite">
-                   <void property="nombre">
-                    <string>DemonioSub_4_Subordinados</string>
-                   </void>
-                  </object>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Ghoul">
-                 <void property="dependencia">
-                  <int>50</int>
-                 </void>
-                 <void property="nombre">
-                  <string>GhoulSub_4</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
-                 <void property="nombre">
-                  <string>HumanoSub_4</string>
-                 </void>
-                 <void property="salud">
-                  <int>1</int>
-                 </void>
-                </object>
-               </void>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-        <void property="nombre">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="poder">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void property="regNum">
-       <string>J61PD</string>
-      </void>
-     </object>
-    </void>
-    <void property="desafiante">
-     <object class="Grupo6.src.App.Jugador" id="Jugador2">
-      <void property="desafiosPendientes">
-       <void method="add">
-        <object class="Grupo6.src.Desafio.Desafio">
-         <void property="oroApostado">
-          <int>100</int>
-         </void>
-         <void property="usuarioDestino">
-          <string>j2</string>
-         </void>
-         <void property="usuarioOrigen">
-          <string>j1</string>
-         </void>
-        </object>
-       </void>
-      </void>
-      <void property="nick">
-       <string>Jugador</string>
-      </void>
-      <void property="nombre">
-       <string>j2</string>
-      </void>
-      <void property="numCombatesGanados">
-       <int>2</int>
-      </void>
-      <void property="password">
-       <string>1234</string>
-      </void>
-      <void property="personaje">
-       <object class="Grupo6.src.Personajes.Licantropo" id="Licantropo1">
-        <void property="don">
-         <object class="Grupo6.src.HabilidadesEspeciales.Don">
-          <void property="rabia">
-           <int>10</int>
-          </void>
-         </object>
-        </void>
-        <void property="esbirros">
-         <object class="java.util.ArrayList"/>
-        </void>
-        <void property="nombre">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="poder">
-         <int>10</int>
-        </void>
-        <void property="rabia">
-         <int>8</int>
-        </void>
-        <void property="salud">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void property="regNum">
-       <string>D36LM</string>
-      </void>
-     </object>
-    </void>
-    <void property="fechaCombate">
-     <object class="java.util.Date">
-      <long>1746184518371</long>
-     </object>
-    </void>
-    <void property="ganador">
-     <object idref="Jugador2"/>
-    </void>
-    <void property="rondas">
-     <object class="java.util.ArrayList">
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>1</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>10</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>2</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>10</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <object idref="Integer0"/>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>4</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>14</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>5</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>6</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>18</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>7</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>8</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>12</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>9</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>16</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>10</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>16</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>11</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>20</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>12</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>10</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>13</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>14</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>14</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>15</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>16</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>18</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>17</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>18</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>12</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>19</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>16</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>20</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>16</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>21</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>20</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>22</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>10</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
          <int>23</int>
         </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
         <void property="potencialDefensaP2">
          <int>5</int>
         </void>
@@ -2659,10 +1795,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Licantropo1"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="atacante">
-         <object idref="Vampiro1"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
@@ -2677,1095 +1813,10 @@
          <string>Pedro Sánchez</string>
         </void>
         <void property="numeroRonda">
-         <int>24</int>
+         <int>47</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>14</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>25</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>26</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>18</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>27</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>28</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>12</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>29</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>16</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>30</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>16</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>31</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>20</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>32</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>10</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>33</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>34</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>14</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>35</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>36</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>18</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>37</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>38</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>12</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>39</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>16</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>40</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>16</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>41</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>20</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>42</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>10</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>43</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>44</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>5</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>14</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro1"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo1"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>45</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-     </object>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="Grupo6.src.Combate.Combate">
-    <void property="desafiado">
-     <object class="Grupo6.src.App.Jugador" id="Jugador3">
-      <void property="nick">
-       <string>Jugador</string>
-      </void>
-      <void property="nombre">
-       <string>j2</string>
-      </void>
-      <void property="numCombatesGanados">
-       <int>1</int>
-      </void>
-      <void property="oro">
-       <int>400</int>
-      </void>
-      <void property="password">
-       <string>1234</string>
-      </void>
-      <void property="personaje">
-       <object class="Grupo6.src.Personajes.Licantropo" id="Licantropo2">
-        <void property="armaduraActiva">
-         <object class="Grupo6.src.Equipo.Armadura" id="Armadura0">
-          <void property="modificador">
-           <object class="Grupo6.src.Equipo.Modificador">
-            <void property="tipo">
-             <object class="java.lang.Enum" method="valueOf">
-              <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
-              <string>Defensa</string>
-             </object>
-            </void>
-            <void property="valor">
-             <int>1</int>
-            </void>
-           </object>
-          </void>
-          <void property="nombre">
-           <string>Cara al Sol</string>
-          </void>
-         </object>
-        </void>
-        <void property="armaduras">
-         <void method="add">
-          <object idref="Armadura0"/>
-         </void>
-        </void>
-        <void property="don">
-         <object class="Grupo6.src.HabilidadesEspeciales.Don">
-          <void property="rabia">
-           <int>10</int>
-          </void>
-         </object>
-        </void>
-        <void property="esbirros">
-         <object class="java.util.ArrayList"/>
-        </void>
-        <void property="nombre">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="poder">
-         <int>10</int>
-        </void>
-        <void property="rabia">
-         <int>8</int>
-        </void>
-        <void property="salud">
-         <int>5</int>
-        </void>
-        <void property="valorDefensa">
-         <int>1</int>
-        </void>
-       </object>
-      </void>
-      <void property="regNum">
-       <string>L14FR</string>
-      </void>
-     </object>
-    </void>
-    <void property="desafiante">
-     <object class="Grupo6.src.App.Jugador" id="Jugador4">
-      <void property="desafiosPendientes">
-       <void method="add">
-        <object class="Grupo6.src.Desafio.Desafio">
-         <void property="oroApostado">
-          <int>10</int>
-         </void>
-         <void property="usuarioDestino">
-          <string>j1</string>
-         </void>
-         <void property="usuarioOrigen">
-          <string>j2</string>
-         </void>
-        </object>
-       </void>
-      </void>
-      <void property="nick">
-       <string>Jugador</string>
-      </void>
-      <void property="nombre">
-       <string>j1</string>
-      </void>
-      <void property="numCombatesPerdidos">
-       <int>1</int>
-      </void>
-      <void property="oro">
-       <int>300</int>
-      </void>
-      <void property="password">
-       <string>1234</string>
-      </void>
-      <void property="personaje">
-       <object class="Grupo6.src.Personajes.Vampiro" id="Vampiro2">
-        <void class="Grupo6.src.Personajes.Vampiro" method="getField">
-         <string>Disciplina</string>
-         <void method="set">
-          <object idref="Vampiro2"/>
-          <object class="Grupo6.src.HabilidadesEspeciales.Disciplina">
-           <void property="coste">
-            <int>10</int>
-           </void>
-          </object>
-         </void>
-        </void>
-        <void property="armaActiva1">
-         <object class="Grupo6.src.Equipo.Arma" id="Arma0">
-          <void property="manos">
-           <int>1</int>
-          </void>
-          <void property="modificador">
-           <object class="Grupo6.src.Equipo.Modificador">
-            <void property="tipo">
-             <object class="java.lang.Enum" method="valueOf">
-              <class>Grupo6.src.Equipo.Modificador$TipoModificador</class>
-              <string>Ataque</string>
-             </object>
-            </void>
-            <void property="valor">
-             <int>2</int>
-            </void>
-           </object>
-          </void>
-          <void property="nombre">
-           <string>Impuestos</string>
-          </void>
-         </object>
-        </void>
-        <void property="armas">
-         <void method="add">
-          <object idref="Arma0"/>
-         </void>
-        </void>
-        <void property="esbirros">
-         <object class="java.util.ArrayList">
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Demonio">
-            <void property="nombre">
-             <string>Demonio_0</string>
-            </void>
-            <void property="pacto">
-             <string>Pacto Normal</string>
-            </void>
-            <void property="subordinados">
-             <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite5">
-              <void property="childrenComposite">
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Demonio">
-                 <void property="nombre">
-                  <string>DemonioSub_0</string>
-                 </void>
-                 <void property="pacto">
-                  <string>Pacto Normal</string>
-                 </void>
-                 <void property="subordinados">
-                  <object class="Grupo6.src.Esbirros.EsbirrosComposite">
-                   <void property="nombre">
-                    <string>DemonioSub_0_Subordinados</string>
-                   </void>
-                  </object>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
-                 <void property="nombre">
-                  <string>HumanoSub_0</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Ghoul">
-                 <void property="dependencia">
-                  <int>50</int>
-                 </void>
-                 <void property="nombre">
-                  <string>GhoulSub_0</string>
-                 </void>
-                </object>
-               </void>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_1</string>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Ghoul">
-            <void property="dependencia">
-             <int>50</int>
-            </void>
-            <void property="nombre">
-             <string>Ghoul_2</string>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Demonio">
-            <void property="nombre">
-             <string>Demonio_3</string>
-            </void>
-            <void property="pacto">
-             <string>Pacto Normal</string>
-            </void>
-            <void property="subordinados">
-             <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite6">
-              <void property="childrenComposite">
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Ghoul">
-                 <void property="dependencia">
-                  <int>50</int>
-                 </void>
-                 <void property="nombre">
-                  <string>GhoulSub_3</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
-                 <void property="nombre">
-                  <string>HumanoSub_3</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Demonio">
-                 <void property="nombre">
-                  <string>DemonioSub_3</string>
-                 </void>
-                 <void property="pacto">
-                  <string>Pacto Normal</string>
-                 </void>
-                 <void property="subordinados">
-                  <object class="Grupo6.src.Esbirros.EsbirrosComposite">
-                   <void property="nombre">
-                    <string>DemonioSub_3_Subordinados</string>
-                   </void>
-                  </object>
-                 </void>
-                </object>
-               </void>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
-          <void method="add">
-           <object class="Grupo6.src.Esbirros.Demonio">
-            <void property="nombre">
-             <string>Demonio_4</string>
-            </void>
-            <void property="pacto">
-             <string>Pacto Normal</string>
-            </void>
-            <void property="subordinados">
-             <object class="Grupo6.src.Esbirros.EsbirrosComposite" id="EsbirrosComposite7">
-              <void property="childrenComposite">
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Humano">
-                 <void property="nombre">
-                  <string>HumanoSub_4</string>
-                 </void>
-                </object>
-               </void>
-               <void method="add">
-                <object class="Grupo6.src.Esbirros.Ghoul">
-                 <void property="dependencia">
-                  <int>50</int>
-                 </void>
-                 <void property="nombre">
-                  <string>GhoulSub_4</string>
-                 </void>
-                 <void property="salud">
-                  <int>1</int>
-                 </void>
-                </object>
-               </void>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-        <void property="nombre">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="poder">
-         <int>5</int>
-        </void>
-        <void property="valorAtaque">
-         <int>2</int>
-        </void>
-       </object>
-      </void>
-      <void property="regNum">
-       <string>J66KN</string>
-      </void>
-     </object>
-    </void>
-    <void property="fechaCombate">
-     <object class="java.util.Date">
-      <long>1746185337147</long>
-     </object>
-    </void>
-    <void property="ganador">
-     <object idref="Jugador3"/>
-    </void>
-    <void property="rondas">
-     <object class="java.util.ArrayList">
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>1</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
          <int>11</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>2</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <object idref="Integer0"/>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
         </void>
         <void property="potencialDefensaP2">
          <int>15</int>
@@ -3775,10 +1826,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="atacante">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
@@ -3793,197 +1844,11 @@
          <string>Santiago Abascal</string>
         </void>
         <void property="numeroRonda">
-         <int>4</int>
+         <int>48</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>5</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>19</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>6</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>7</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>13</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>8</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>16</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>9</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
          <int>17</int>
         </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>10</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>20</int>
-        </void>
         <void property="potencialDefensaP2">
          <int>5</int>
         </void>
@@ -3992,10 +1857,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="atacante">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
@@ -4010,135 +1875,11 @@
          <string>Pedro Sánchez</string>
         </void>
         <void property="numeroRonda">
+         <int>49</int>
+        </void>
+        <void property="potencialAtaqueP1">
          <int>11</int>
         </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>11</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>12</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>13</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>15</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>14</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>15</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
         <void property="potencialDefensaP2">
          <int>19</int>
         </void>
@@ -4147,10 +1888,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="atacante">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
@@ -4165,351 +1906,41 @@
          <string>Santiago Abascal</string>
         </void>
         <void property="numeroRonda">
-         <int>16</int>
+         <int>50</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>17</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>13</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>18</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>16</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>19</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>17</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>20</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>20</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
          <int>21</int>
         </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
         <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Grupo6.src.Combate.Ronda">
+        <void property="atacado">
+         <object idref="Licantropo0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Santiago Abascal</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sánchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>51</int>
+        </void>
+        <void property="potencialAtaqueP1">
          <int>11</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>22</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>14</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>23</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>15</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>24</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>18</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>25</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>19</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="numeroRonda">
-         <int>26</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>22</int>
-        </void>
-        <void property="potencialDefensaP2">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Grupo6.src.Combate.Ronda">
-        <void property="atacado">
-         <object idref="Licantropo2"/>
-        </void>
-        <void property="atacante">
-         <object idref="Vampiro2"/>
-        </void>
-        <void property="estrategiaAtacado">
-         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
-        </void>
-        <void property="estrategiaAtacante">
-         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
-        </void>
-        <void property="nombreAtacado">
-         <string>Santiago Abascal</string>
-        </void>
-        <void property="nombreAtacante">
-         <string>Pedro Sánchez</string>
-        </void>
-        <void property="numeroRonda">
-         <int>27</int>
-        </void>
-        <void property="potencialAtaqueP1">
-         <int>7</int>
         </void>
         <void property="potencialDefensaP2">
          <int>13</int>
@@ -4519,10 +1950,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="atacante">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
@@ -4537,10 +1968,10 @@
          <string>Santiago Abascal</string>
         </void>
         <void property="numeroRonda">
-         <int>28</int>
+         <int>52</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>16</int>
+         <int>15</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -4550,10 +1981,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="atacante">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
@@ -4568,10 +1999,10 @@
          <string>Pedro Sánchez</string>
         </void>
         <void property="numeroRonda">
-         <int>29</int>
+         <int>53</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>7</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
          <int>17</int>
@@ -4581,10 +2012,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="atacante">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
@@ -4599,10 +2030,10 @@
          <string>Santiago Abascal</string>
         </void>
         <void property="numeroRonda">
-         <int>30</int>
+         <int>54</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>20</int>
+         <int>19</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -4612,10 +2043,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="atacante">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
@@ -4630,23 +2061,23 @@
          <string>Pedro Sánchez</string>
         </void>
         <void property="numeroRonda">
-         <int>31</int>
+         <int>55</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>7</int>
-        </void>
-        <void property="potencialDefensaP2">
          <int>11</int>
         </void>
+        <void property="potencialDefensaP2">
+         <int>21</int>
+        </void>
        </object>
       </void>
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="atacante">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
@@ -4661,10 +2092,10 @@
          <string>Santiago Abascal</string>
         </void>
         <void property="numeroRonda">
-         <int>32</int>
+         <int>56</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>14</int>
+         <int>23</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>
@@ -4674,10 +2105,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="atacante">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
@@ -4692,10 +2123,10 @@
          <string>Pedro Sánchez</string>
         </void>
         <void property="numeroRonda">
-         <int>33</int>
+         <int>57</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>7</int>
+         <int>11</int>
         </void>
         <void property="potencialDefensaP2">
          <int>15</int>
@@ -4705,10 +2136,10 @@
       <void method="add">
        <object class="Grupo6.src.Combate.Ronda">
         <void property="atacado">
-         <object idref="Vampiro2"/>
+         <object idref="Vampiro0"/>
         </void>
         <void property="atacante">
-         <object idref="Licantropo2"/>
+         <object idref="Licantropo0"/>
         </void>
         <void property="estrategiaAtacado">
          <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
@@ -4723,10 +2154,72 @@
          <string>Santiago Abascal</string>
         </void>
         <void property="numeroRonda">
-         <int>34</int>
+         <int>58</int>
         </void>
         <void property="potencialAtaqueP1">
-         <int>18</int>
+         <int>17</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Grupo6.src.Combate.Ronda">
+        <void property="atacado">
+         <object idref="Licantropo0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Santiago Abascal</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sánchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>59</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>11</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>19</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Grupo6.src.Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Licantropo0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Grupo6.src.Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Grupo6.src.Combate.EstrategiaLicantropo"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sánchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Santiago Abascal</string>
+        </void>
+        <void property="numeroRonda">
+         <int>60</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>21</int>
         </void>
         <void property="potencialDefensaP2">
          <int>5</int>

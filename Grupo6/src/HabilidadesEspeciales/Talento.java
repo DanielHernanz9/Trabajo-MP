@@ -1,8 +1,5 @@
 package Grupo6.src.HabilidadesEspeciales;
 
-/**
- * 
- */
 public class Talento extends Habilidad_Especial {
 
     public Talento(){
@@ -13,8 +10,4 @@ public class Talento extends Habilidad_Especial {
         this.ValorAtaque = Ataque;
     }
 
-    @Override
-    public void ejecutarHabilidad() {
-
-    }
 }

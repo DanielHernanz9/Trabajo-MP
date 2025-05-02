@@ -1,12 +1,10 @@
 package Grupo6.src.Desafio;
 
-import Grupo6.src.App.JuegoCombateManager;
 import Grupo6.src.App.Jugador;
 import Grupo6.src.App.Usuario;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ChallengeNotifier {
 

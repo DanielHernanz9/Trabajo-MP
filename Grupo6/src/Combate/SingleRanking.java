@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class SingleRanking {
 
-    private SingleStorage storage;
+    private final SingleStorage storage;
     private ArrayList<Jugador> ranking;
     private static SingleRanking instance;
 
@@ -53,9 +53,9 @@ public class SingleRanking {
     }
 
     public List<Jugador> getRanking() {
-
         return ranking;
     }
+
     public void showRanking(){
 
         String dorado  = "\u001B[93m";

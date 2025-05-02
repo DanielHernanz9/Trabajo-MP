@@ -19,14 +19,6 @@ public class Demonio extends EsbirroBase {
         this.subordinados = NewSubordinados;
     }
 
-    public void addSubordinado(EsbirroBase esbirro) {
-        subordinados.add(esbirro);
-    }
-
-    public void removeSubordinado(EsbirroBase esbirro) {
-        subordinados.remove(esbirro);
-    }
-
     public EsbirrosComposite getSubordinados() {
         return subordinados;
     }

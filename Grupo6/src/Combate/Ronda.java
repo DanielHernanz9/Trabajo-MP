@@ -57,22 +57,12 @@ public class Ronda implements Serializable {
         this.NumeroRonda = numeroRonda;
     }
 
-    private int calcularPotencialDeAtaque(Personaje personaje, int personajeIndex) {
-        switch (personajeIndex){
-            case 1: return EstrategiaAtacante.calcularPotencialAtaque(personaje);
-            case 2: return EstrategiaAtacado.calcularPotencialAtaque(personaje);
-            default: return -1;
-        }
-
+    private int calcularPotencialDeAtaque(Personaje personaje) {
+        return EstrategiaAtacante.calcularPotencialAtaque(personaje);
     }
 
-    private int calcularPotencialDeDefensa(Personaje personaje, int personajeIndex) {
-        switch (personajeIndex){
-            case 1: return EstrategiaAtacante.calcularPotencialDefensa(personaje);
-            case 2: return EstrategiaAtacado.calcularPotencialDefensa(personaje);
-            default: return -1;
-        }
-
+    private int calcularPotencialDeDefensa(Personaje personaje) {
+        return EstrategiaAtacado.calcularPotencialDefensa(personaje);
     }
 
     //Como solo puede cambiar la salud del atacado, sera la que comprobemos para verificar si ha terminado el combate.
@@ -131,8 +121,8 @@ public class Ronda implements Serializable {
         System.out.println();
         System.out.println("¡Comienza la ronda " + NumeroRonda + "!");
 
-        PotencialAtaqueP1 = calcularPotencialDeAtaque(Atacante, 1);
-        PotencialDefensaP2 = calcularPotencialDeDefensa(Atacado, 2);
+        PotencialAtaqueP1 = calcularPotencialDeAtaque(Atacante);
+        PotencialDefensaP2 = calcularPotencialDeDefensa(Atacado);
 
         if (Atacante.getArmaActiva1() != null || Atacante.getArmaActiva2() != null){
             System.out.println(morado + nombreAtacante + reset + " ataca a " + amarillo + nombreAtacado + reset + " con " + Atacante.getArmaActiva1().getNombre());
@@ -191,7 +181,6 @@ public class Ronda implements Serializable {
                     Atacante.gestionarRecursosHabilidad(true);
                 }
             }
-            atacado = true;
         } else {
             if (Atacado.getArmaduraActiva() != null){
                 System.out.println("¡" + amarillo + nombreAtacado + reset + " se defiende de " + morado + nombreAtacante + reset + " con " + Atacado.getArmaduraActiva().getNombre() + "!");

@@ -1,8 +1,5 @@
 package Grupo6.src.Esbirros.PatronFactoryEsbirros;
 
-/**
- * 
- */
 public interface Esbirro {
 
     // Método para recibir daño y devolver la salud restante

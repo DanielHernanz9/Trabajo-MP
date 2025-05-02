@@ -1,7 +1,5 @@
 package Grupo6.src.Desafio;
 
-import Grupo6.src.App.*;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -19,20 +17,6 @@ public class Desafio implements Serializable {
         this.OroApostado = oro;
         this.UsuarioOrigen = jugador1;
         this.UsuarioDestino = jugador2;
-    }
-
-    /**
-     * @param
-     */
-    public void descontarOro(int oro) {
-        // TODO implement here
-    }
-
-    /**
-     * @param
-     */
-    public void IniciarDesafio(int oro) {
-        // TODO implement here
     }
 
     public boolean isEmpty() {

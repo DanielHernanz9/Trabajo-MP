@@ -21,10 +21,6 @@ public class EsbirrosComposite extends EsbirroBase {
         childrenComposite.add(esbirro);
     }
 
-    public void remove(Esbirro esbirro) {
-        childrenComposite.remove(esbirro);
-    }
-
     public List<Esbirro> getChildren() {
         return childrenComposite;
     }

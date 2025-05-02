@@ -14,11 +14,6 @@ public class Don extends Habilidad_Especial {
         ValorAtaque = ataque;
     }
 
-    @Override
-    public void ejecutarHabilidad() {
-
-    }
-
     public int getRabia() {
         return Rabia;
     }

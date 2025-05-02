@@ -11,21 +11,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-/**
- *
- */
 public class AlmacenXML implements interfazAlmacen {
 
-    private File XMLCombates = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Combates.xml");
-    private File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
-    private File XMLDesafiosPendientes = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
-    private File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml");
-    private File XMLRanking= new File("Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
-    private File XMLSubscribers = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml");
+    private final File XMLCombates = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Combates.xml");
+    private final File XMLUsuarios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Usuarios.xml");
+    private final File XMLDesafiosPendientes = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
+    private final File XMLDesafios = new File("Grupo6/src/sistemaDeGuardado/Persistencia/DesafiosPorValidar.xml");
+    private final File XMLRanking= new File("Grupo6/src/sistemaDeGuardado/Persistencia/Ranking.xml");
+    private final File XMLSubscribers = new File("Grupo6/src/sistemaDeGuardado/Persistencia/Subscriptores.xml");
 
-    /**
-     * Default constructor
-     */
     public AlmacenXML() {
     }
 
@@ -113,7 +107,7 @@ public class AlmacenXML implements interfazAlmacen {
 
 
     public ArrayList<Jugador>  loadRanking(){
-        ArrayList<Jugador> jugadores = new ArrayList<>();
+        ArrayList<Jugador> jugadores;
         try {
             XMLDecoder decoder = new XMLDecoder(
                     new BufferedInputStream(new FileInputStream(XMLRanking)

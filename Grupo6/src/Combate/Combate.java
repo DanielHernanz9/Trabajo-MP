@@ -5,14 +5,10 @@ import Grupo6.src.Esbirros.PatronFactoryEsbirros.Esbirro;
 import Grupo6.src.Esbirros.EsbirrosComposite;
 import Grupo6.src.Personajes.PatronFactoryPersonajes.*;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
-
-import java.time.LocalDate;
-
 
 /**
  * No he usado la estructura completa porque solo va a haber un tipo de combate, sino si que podriamos usar una interfaz como esta en el aula con el director, de todas formas hay que preguntar al profe si asi se puede usar
@@ -21,7 +17,6 @@ import java.time.LocalDate;
 public class Combate implements Serializable {
     private Jugador Desafiante;
     private Jugador Desafiado;
-    private JuegoCombateManager manager;
     private int NumRondas;
     private Date FechaCombate;
     private Jugador Ganador;
@@ -113,8 +108,7 @@ public class Combate implements Serializable {
 
             }
             //Actualizamos los valores de los usuarios en el XML
-            JuegoCombateManager manager = new JuegoCombateManager();
-            ArrayList<Usuario> usuarios = new ArrayList<>();
+            ArrayList<Usuario> usuarios;
             SingleStorage storage = SingleStorage.getInstance();
             usuarios = storage.loadUsers();
 
@@ -159,10 +153,6 @@ public class Combate implements Serializable {
         System.out.println("¡La "+"\u001B[38;5;229m"+"victoria"+"\uD83C\uDFC6"+"\u001B[0m"+" es para " + Ganador.getNombre() + "!");
     }
 
-    public JuegoCombateManager getManager() {
-        return manager;
-    }
-
     public int getNumRondas() {
         return NumRondas;
     }
@@ -197,10 +187,6 @@ public class Combate implements Serializable {
 
     public void setDesafiado(Jugador desafiado) {
         Desafiado = desafiado;
-    }
-
-    public void setManager(JuegoCombateManager manager) {
-        this.manager = manager;
     }
 
     public void setNumRondas(int numRondas) {

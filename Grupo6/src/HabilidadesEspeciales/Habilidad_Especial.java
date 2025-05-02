@@ -1,8 +1,5 @@
 package Grupo6.src.HabilidadesEspeciales;
 
-/**
- * 
- */
 public abstract class Habilidad_Especial {
 
     protected String Nombre;
@@ -16,8 +13,6 @@ public abstract class Habilidad_Especial {
     public int getDefensa(){
         return this.ValorDefensa;
     }
-
-    public abstract void ejecutarHabilidad();
 
     public String getNombre() {
         return Nombre;

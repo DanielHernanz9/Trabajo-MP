@@ -179,7 +179,6 @@ public class Jugador extends Usuario implements Comparable<Jugador>, Serializabl
         if (oponente != null) { // Verificamos que tanto el desafío como el oponente no sean nulos
             // Agrega el desafío a la lista de desafíos pendientes del jugador
             Desafio desafio = new Desafio(this.Nombre, oponente.getNombre(), oro);
-            JuegoCombateManager manager = new JuegoCombateManager();
             ArrayList<Desafio> listaDesafios = new ArrayList<>();
             listaDesafios.add(desafio);
             // Imprime un mensaje confirmando que el jugador ha desafiado a otro jugador
@@ -191,53 +190,6 @@ public class Jugador extends Usuario implements Comparable<Jugador>, Serializabl
     }
 
     /**
-     * Acepta un desafío.
-     * @param desafio Desafío a aceptar.
-     */
-    public void aceptarDesafio(Desafio desafio) {
-        if (desafio != null) {
-            // Asumiendo que `desafio.getJugador1()` y `desafio.getJugador2()` retornan los jugadores involucrados en el desafío
-            String nombreOrigen = desafio.getUsuarioOrigen();
-            String nombreDestino = desafio.getUsuarioDestino();
-
-            Jugador origen = null;
-            Jugador destino = null;
-
-            JuegoCombateManager manager = new JuegoCombateManager();
-            for (Usuario u : manager.getUsuarios()) {
-                if (u instanceof Jugador j) {
-                    if (j.getNombre().equals(nombreOrigen)) {
-                        origen = j;
-                    }
-                    if (j.getNombre().equals(nombreDestino)) {
-                        destino = j;
-                    }
-                }
-            }
-
-
-            System.out.println(this.getNombre() + " ha aceptado el desafío de " + origen.getNombre() + " contra " + destino.getNombre());
-
-            // Aquí puedes agregar más lógica relacionada con el combate.
-        } else {
-            System.out.println("Desafío no encontrado.");
-        }
-    }
-
-    /**
-     * Rechaza un desafío eliminándolo de la lista de pendientes.
-     * @param desafio Desafío a rechazar.
-     */
-    public void rechazarDesafio(Desafio desafio) {
-        if (desafio != null) {
-            DesafiosPendientes.remove(desafio);  // Elimina el desafío de la lista
-            System.out.println(this.getNombre() + " ha rechazado el desafío de " + desafio.getUsuarioOrigen());
-        } else {
-            System.out.println("Desafío no encontrado.");
-        }
-    }
-
-    /**
      * Consulta y muestra el historial de oro del jugador.
      */
     public void consultarHistorial() {
@@ -245,36 +197,6 @@ public class Jugador extends Usuario implements Comparable<Jugador>, Serializabl
         for (int i = 0; i < HistorialOro.length; i++) {
             System.out.println("Mes " + (i + 1) + ": " + HistorialOro[i] + " de oro.");
         }
-    }
-
-    /**
-     * Muestra una notificación de desafío pendiente.
-     */
-    public void mostrarNotificacionDesafio() {
-        System.out.println("¡Tienes un nuevo desafío pendiente!");
-        // Aquí puedes agregar más detalles si es necesario.
-    }
-
-    /**
-     * Muestra el resultado del combate.
-     */
-    public void mostrarResultado() {
-        // Este bloque podría mostrar el resultado de un combate, por ejemplo:
-        System.out.println("El combate ha terminado.");
-    }
-
-    /**
-     * Muestra una notificación de bloqueo de la cuenta.
-     */
-    public void mostrarNotificacionBloqueo() {
-        System.out.println("¡Tu cuenta ha sido bloqueada!");
-    }
-
-    /**
-     * Muestra una notificación de desbloqueo de la cuenta.
-     */
-    public void mostrarNotificacionDesbloqueo() {
-        System.out.println("¡Tu cuenta ha sido desbloqueada!");
     }
 
     /**

@@ -1,14 +1,10 @@
 package Grupo6.src.Equipo;
 
-/**
- * 
- */
 public class Modificador {
 
     private String nombre;
     private int valor;
     private TipoModificador Tipo; //ataque o defensa
-
 
     public Modificador() {
     }
@@ -37,8 +33,8 @@ public class Modificador {
         return Tipo;
     }
 
-    public static enum TipoModificador {
+    public enum TipoModificador {
         Ataque,
-        Defensa;
+        Defensa
     }
 }

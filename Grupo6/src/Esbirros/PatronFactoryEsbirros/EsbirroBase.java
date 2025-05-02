@@ -6,9 +6,8 @@ public abstract class EsbirroBase implements Esbirro {
     private int Salud = 3;
 
     /**
-     * Conviene implementar aquí el metodo recibir daño ya que es comun para todos
-     * tambien conviene implementar los getters y setters de los atributos comunes
-     * @return
+     * Reduce un punto de salud
+     * @return la salud resultante
      */
     @Override
     public int recibirDaño(){

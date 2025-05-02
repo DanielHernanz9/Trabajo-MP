@@ -12,7 +12,6 @@ import Grupo6.src.Desafio.Desafio;
 import Grupo6.src.sistemaDeGuardado.SingleStorage;
 
 import java.io.*;
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class JuegoCombateManager {
@@ -22,12 +21,12 @@ public class JuegoCombateManager {
     private Jugador jugador2;
     private final Operador operador;
     private final ArrayList<Combate> combates;
-    private SingleStorage storage;
+    private final SingleStorage storage;
     private FactoryPersonaje factory;
     private FabricaEquipo factoryEquipo;
     private ArrayList<Desafio> desafiosPendientesPorValidar;
-    private ArrayList<Desafio> desafiosPendientes;
-    private ChallengeNotifier notifier;
+    private final ArrayList<Desafio> desafiosPendientes;
+    private final ChallengeNotifier notifier;
 
     /**
      * Constructor por defecto de JuegoCombateManager.
@@ -85,8 +84,6 @@ public class JuegoCombateManager {
         System.out.println(colorBienvenida+"¡Bienvenido!"+reset);
         IniciarProcesoRegistro();
 
-
-        Scanner sc = new Scanner(System.in);
         //Si se ha registrado un jugador nuevo mostramos el menu
         while (jugador1!=null && jugador1.isBloqueado()){
             System.out.println("Este usuario está "+rojo+"bloqueado"+reset+" y no puede acceder al videojuego hasta que sea desbloqueado");
@@ -394,7 +391,7 @@ public class JuegoCombateManager {
         String rojo = "\u001B[91m";
         String verde = "\u001B[32m";
 
-        int i=0;
+        int i;
         if (mode) {
             System.out.println("Jugadores "+verde+"no bloqueados"+reset+": ");
             i=mostrarJugadoresNoBloqueados();
@@ -466,7 +463,7 @@ public class JuegoCombateManager {
 
             //Mientras haya desafios pendientes, los mostramos al jugador para que los acepte o rechaze
             while (!jugador1.getDesafiosPendientes().isEmpty()) {
-                Desafio d = jugador1.getDesafiosPendientes().get(0);
+                Desafio d = jugador1.getDesafiosPendientes().getFirst();
                 notifier.notifySubscriber(jugador1);
                 System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
                 System.out.println("¿Que quieres hacer?");
@@ -709,8 +706,8 @@ public class JuegoCombateManager {
 
             System.out.println("Desafío de " + origen.getNombre() + " a " + destino.getNombre());
             System.out.println("¿Validar este desafío? (s/n)");
-            String ans = "";
-            boolean correctAns = true;
+            String ans;
+            boolean correctAns;
 
             do{
                 ans = sc.nextLine();
@@ -780,14 +777,6 @@ public class JuegoCombateManager {
         }
     }
 
-    public void validarDesafio(Desafio desafio) {
-        if (operador.validarDesafio(desafio)) {
-            System.out.println("Desafío validado por el operador.");
-        } else {
-            System.out.println("Desafío no válido.");
-        }
-    }
-
     /**
      * Busca un jugador por su nombre.
      */
@@ -815,9 +804,6 @@ public class JuegoCombateManager {
         }
     }
 
-    /**
-     * Guarda la lista de usuarios en un archivo XML.
-     */
     /**
      * Establece el jugador1.
      */
@@ -857,14 +843,14 @@ public class JuegoCombateManager {
 
         System.out.println("Escribe el nombre del usuario al que quieres "+azul+"desafiar"+reset+": ");
         boolean CorrectPlayerName = false;
-        String playerName = "";
+        String playerName;
 
         do{
             playerName = sc.nextLine();
             if (playerName.equals(jugador1.getName())){
                 System.out.println("No puedes desafiarte a ti mismo. Escribe el nombre de usuario de otro jugador: ");
             }
-            else if (playerName.equals("")){
+            else if (playerName.isEmpty()){
                 System.out.println("Por favor, escribe el nombre de otro jugador para desafiarle: ");
             }
             else if (jugadoresNoBloqueados.contains(playerName)){
@@ -881,7 +867,7 @@ public class JuegoCombateManager {
 
         System.out.println("¿Cuánto oro quieres apostar?");
         int apuesta = sc.nextInt();
-        boolean isCorrect = true;
+        boolean isCorrect;
         do{
             if (jugador1.getOro() < apuesta){
                 System.out.println("No puedes apostar tanto oro (tienes " + jugador1.getOro() + " monedas de oro.)");
@@ -990,7 +976,7 @@ public class JuegoCombateManager {
      */
     public int getUserIndexByName(String playerName){
         boolean found = false;
-        Usuario u = null;
+        Usuario u;
         int userIndex = -1;
         Iterator iterator = usuarios.iterator();
         while (!found && userIndex < usuarios.size() - 1) {
@@ -1047,7 +1033,7 @@ public class JuegoCombateManager {
             valor = sc.nextInt();
         } while (valor < 1 || valor > 3);
 
-        int modType = 0;
+        int modType;
         do{
             System.out.println("¿Modificador de ataque (1) o de defensa (2)?");
             modType = sc.nextInt();
@@ -1147,7 +1133,7 @@ public class JuegoCombateManager {
         System.out.println("\u001B[91m" + "⚔\uFE0F\u200B" + "ELIGE TU ARMA: " + "\u001B[0m");
         PersonajeBase personaje = (PersonajeBase) jugador1.getPersonaje();
         ArrayList<Arma> listaArmas = (ArrayList<Arma>) personaje.getArmas();
-        if (listaArmas.size() != 0){
+        if (!listaArmas.isEmpty()){
             int i = 0;
             for(Arma a: listaArmas){
                 System.out.println(i + ". " + a.getNombre());
@@ -1171,7 +1157,7 @@ public class JuegoCombateManager {
 
         System.out.println("\u001B[94m" + "\uD83D\uDEE1\uFE0F" + " ELIGE TU ARMADURA: " + "\u001B[0m");
         ArrayList <Armadura> listaArmaduras = (ArrayList<Armadura>) personaje.getArmaduras();
-        if (listaArmaduras.size() != 0){
+        if (!listaArmaduras.isEmpty()){
             int j = 0;
             for (Armadura arm : listaArmaduras) {
                 System.out.println(j + ". " + arm.getNombre());

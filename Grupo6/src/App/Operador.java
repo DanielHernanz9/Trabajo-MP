@@ -8,8 +8,6 @@ import Grupo6.src.Desafio.*;
  */
 public class Operador extends Usuario {
 
-    private Handler ValidadorDesafio;  // Este handler debería ser utilizado para validar los desafíos.
-
     /**
      * Constructor por defecto para la clase Operador.
      * Inicializa la información heredada del usuario.
@@ -86,20 +84,6 @@ public class Operador extends Usuario {
     }
 
     /**
-     * Valida un desafío utilizando el validador configurado.
-     * Este método debería ser implementado para validar los desafíos de acuerdo con las reglas del sistema.
-     *
-     * @param desafio El desafío que se quiere validar.
-     * @return true si el desafío es válido, false si no lo es.
-     */
-    public Boolean validarDesafio(Desafio desafio) {
-        // Aquí debería añadirse la lógica para validar el desafío.
-        // Ejemplo: se podría verificar si los jugadores están disponibles o si el desafío cumple con ciertos criterios.
-        return desafio != null;  // Esta es una implementación temporal. Deberás agregar las condiciones de validación.
-        // Si el desafío es null, no es válido.
-    }
-
-    /**
      * Permite editar el personaje de un jugador.
      *
      * @param jugador El jugador cuyo personaje se va a editar.
@@ -126,7 +110,6 @@ public class Operador extends Usuario {
 
     /**
      * Desbloquea a un jugador previamente bloqueado, permitiéndole acceder de nuevo a ciertas funcionalidades.
-     *
      * @param jugador El jugador que será desbloqueado.
      */
     public void desbloquearJugador(Jugador jugador) {

@@ -2,9 +2,6 @@ package Grupo6.src.Esbirros;
 
 import Grupo6.src.Esbirros.PatronFactoryEsbirros.EsbirroBase;
 
-/**
- *
- */
 public class Ghoul extends EsbirroBase {
     private int dependencia;
 

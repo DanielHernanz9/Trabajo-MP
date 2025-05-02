@@ -12,11 +12,6 @@ public class Disciplina extends Habilidad_Especial {
 
     }
 
-    @Override
-    public void ejecutarHabilidad() {
-
-    }
-
     public int getCoste() {
         return Coste;
     }
