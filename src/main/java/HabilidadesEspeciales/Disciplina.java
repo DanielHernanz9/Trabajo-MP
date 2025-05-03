@@ -1,6 +1,8 @@
 package HabilidadesEspeciales;
 
-public class Disciplina extends Habilidad_Especial {
+import java.util.Objects;
+
+public class Disciplina extends Habilidad_Especial implements Cloneable {
     private int Coste;
 
     public Disciplina(int ataque, int coste) {
@@ -18,5 +20,26 @@ public class Disciplina extends Habilidad_Especial {
 
     public void setCoste(int coste) {
         Coste = coste;
+    }
+
+    @Override
+    public Disciplina clone() {
+
+        Disciplina clone = (Disciplina) super.clone();
+
+        return clone;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Disciplina that = (Disciplina) o;
+        return Coste == that.Coste;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), Coste);
     }
 }

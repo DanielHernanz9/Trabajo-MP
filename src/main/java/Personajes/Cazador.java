@@ -3,7 +3,9 @@ package Personajes;
 import HabilidadesEspeciales.Talento;
 import Personajes.PatronFactoryPersonajes.*;
 
-public class Cazador extends PersonajeBase {
+import java.util.Objects;
+
+public class Cazador extends PersonajeBase implements Cloneable {
 
     private int Voluntad;
     private Talento Talento;
@@ -15,11 +17,17 @@ public class Cazador extends PersonajeBase {
     public Cazador(String nombre) {
         this.Nombre = nombre;
         this.Talento = new Talento(100);
+        this.crearEsbirros(); //revisar si hace falta aqui
+
     }
 
     public void setVoluntad(Integer voluntad) {
         Voluntad = voluntad;
     }
+
+    /**
+     *
+     */
 
     @Override
     public void hacerHabilidadEspecial() {
@@ -85,5 +93,32 @@ public class Cazador extends PersonajeBase {
     @Override
     public boolean habilidadPosible(){
         return false;
+    }
+
+    @Override
+    public Cazador clone() {
+        Cazador clon = (Cazador) super.clone();
+
+        // Clonación profunda de atributos propios de Cazador
+        clon.Voluntad = this.Voluntad;
+
+        if (this.Talento != null) {
+            clon.Talento = this.Talento.clone();
+        }
+
+        return clon;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Cazador cazador = (Cazador) o;
+        return Voluntad == cazador.Voluntad && Objects.equals(Talento, cazador.Talento);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), Voluntad, Talento);
     }
 }

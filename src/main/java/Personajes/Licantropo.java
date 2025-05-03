@@ -3,7 +3,9 @@ package Personajes;
 import HabilidadesEspeciales.Don;
 import Personajes.PatronFactoryPersonajes.*;
 
-public class Licantropo extends PersonajeBase {
+import java.util.Objects;
+
+public class Licantropo extends PersonajeBase implements Cloneable {
 
     private int Rabia;
     private Don Don;
@@ -11,6 +13,7 @@ public class Licantropo extends PersonajeBase {
     public Licantropo(String name) {
         this.Nombre = name;
         this.Don = new Don(10, 2);
+        this.crearEsbirros(); //revisar si hace falta aqui
     }
 
     public Licantropo(){
@@ -76,5 +79,31 @@ public class Licantropo extends PersonajeBase {
     @Override
     public boolean habilidadPosible(){
         return Don.getRabia() <= Rabia;
+    }
+
+    @Override
+    public Licantropo clone() {
+        // Primero, clonamos el objeto base (PersonajeBase) con super.clone()
+        Licantropo cloned = (Licantropo ) super.clone();
+
+        // Clonamos el objeto Don de forma profunda
+        cloned.Don = this.Don.clone();  // Don también debe tener un método clone() adecuado
+
+        // Clonamos cualquier otro atributo mutable si existiera. En este caso, no necesitamos hacerlo para `Rabia` porque es un tipo primitivo.
+
+        return cloned;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Licantropo that = (Licantropo) o;
+        return Rabia == that.Rabia && Objects.equals(Don, that.Don);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), Rabia, Don);
     }
 }

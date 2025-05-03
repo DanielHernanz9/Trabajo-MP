@@ -9,9 +9,10 @@ import HabilidadesEspeciales.Habilidad_Especial;
 import Esbirros.PatronFactoryEsbirros.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
-public abstract class PersonajeBase implements Personaje {
+public abstract class PersonajeBase implements Personaje,Cloneable {
 
     protected String Nombre;
     protected Habilidad_Especial Habilidad;
@@ -26,6 +27,7 @@ public abstract class PersonajeBase implements Personaje {
     protected int Poder;
     protected int ValorAtaque = 0;
     protected int ValorDefensa = 0;
+
     protected Modificador debilidad;
     protected Modificador fortaleza;
 
@@ -170,9 +172,9 @@ public abstract class PersonajeBase implements Personaje {
                     }
                     subordinados.add(subFactory.createEsbirro(nombre + i));
                 }
-                    EsbirrosComposite composite = new EsbirrosComposite(subordinados);
-                    nuevoDemonio.setSubordinados(composite);
-                    Esbirros.add(nuevoDemonio);
+                EsbirrosComposite composite = new EsbirrosComposite(subordinados);
+                nuevoDemonio.setSubordinados(composite);
+                Esbirros.add(nuevoDemonio);
             }else{
                 Esbirros.add(currentFactory.createEsbirro(nombre + i));
             }
@@ -278,4 +280,47 @@ public abstract class PersonajeBase implements Personaje {
     public abstract void gestionarRecursosHabilidad(boolean atacado);
 
     public abstract boolean habilidadPosible();
+
+    public PersonajeBase clone() {
+        try {
+            // Clonación superficial del objeto base
+            PersonajeBase clon = (PersonajeBase) super.clone();
+
+            // Clonación profunda de las listas y sus elementos
+            clon.Armas = new ArrayList<>();
+            for (Arma arma : this.Armas) {
+                clon.Armas.add(arma.clone());  // Asumiendo que Arma tiene su propio método clone()
+            }
+
+            clon.Armaduras = new ArrayList<>();
+            for (Armadura armadura : this.Armaduras) {
+                clon.Armaduras.add(armadura.clone());  // Asumiendo que Armadura tiene su propio método clone()
+            }
+
+            clon.Esbirros = new ArrayList<>();
+            for (Esbirro esbirro : this.Esbirros) {
+                clon.Esbirros.add(esbirro.clone());  // Asumiendo que Esbirro tiene su propio método clone()
+            }
+
+            //clon.Debilidades = new ArrayList<>(this.Debilidades);
+            //clon.Fortalezas = new ArrayList<>(this.Fortalezas);
+
+
+            return clon;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError("Clonación no soportada en PersonajeBase", e);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonajeBase that = (PersonajeBase) o;
+        return Oro == that.Oro && Salud == that.Salud && Poder == that.Poder && ValorAtaque == that.ValorAtaque && ValorDefensa == that.ValorDefensa && Objects.equals(Nombre, that.Nombre) && Objects.equals(Habilidad, that.Habilidad) && Objects.equals(Armas, that.Armas) && Objects.equals(ArmaActiva1, that.ArmaActiva1) && Objects.equals(ArmaActiva2, that.ArmaActiva2) && Objects.equals(Armaduras, that.Armaduras) && Objects.equals(ArmaduraActiva, that.ArmaduraActiva) && Objects.equals(Esbirros, that.Esbirros) && Objects.equals(debilidad, that.debilidad) && Objects.equals(fortaleza, that.fortaleza) && Objects.equals(Debilidades, that.Debilidades) && Objects.equals(Fortalezas, that.Fortalezas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Nombre, Habilidad, Armas, ArmaActiva1, ArmaActiva2, Armaduras, ArmaduraActiva, Esbirros, Oro, Salud, Poder, ValorAtaque, ValorDefensa, debilidad, fortaleza, Debilidades, Fortalezas);
+    }
 }

@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface Personaje {
 
+
+
     // Getters
     Habilidad_Especial getHabilidad();
     String getNombre();
@@ -47,4 +49,6 @@ public interface Personaje {
     void initializePersonaje();
     void gestionarRecursosHabilidad(boolean atacado);
     boolean habilidadPosible();
+
+    PersonajeBase clone();
 }

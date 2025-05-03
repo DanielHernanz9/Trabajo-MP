@@ -7,12 +7,16 @@ import Equipo.*;
 import HabilidadesEspeciales.Disciplina;
 import HabilidadesEspeciales.Don;
 import HabilidadesEspeciales.Habilidad_Especial;
+import Personajes.Cazador;
+import Personajes.Licantropo;
 import Personajes.PatronFactoryPersonajes.*;
 import Desafio.Desafio;
+import Personajes.Vampiro;
 import sistemaDeGuardado.SingleStorage;
 
 import java.io.*;
 import java.util.*;
+
 
 public class JuegoCombateManager {
 
@@ -81,9 +85,6 @@ public class JuegoCombateManager {
         String reset = "\u001B[0m";
         String rojo = "\u001B[91m";
 
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
         System.out.println(colorBienvenida+"¡Bienvenido!"+reset);
         IniciarProcesoRegistro();
 
@@ -134,6 +135,11 @@ public class JuegoCombateManager {
         ArrayList<Personaje> personajes = new ArrayList<>();
         Set<String> personajeSet = new HashSet<>();
 
+        String reset = "\u001B[0m";
+        String rojo = "\u001B[91m";
+        String verde = "\u001B[32m";
+        String dorado = "\u001B[93m";
+
         System.out.println("Escribe el nombre del personaje que desea editar");
         int i = 1;
         for (Jugador jugador : jugadores) {
@@ -157,8 +163,8 @@ public class JuegoCombateManager {
             while ((personajeEditable == null) && (pos < personajes.size())) {
                 Personaje personajeActual = personajes.get(pos);
                 if (nombrePersonaje.equals(personajeActual.getNombre())) {
-                    personajeEditable = personajeActual;
-                    personajeSinEditar = personajeActual;
+                    personajeEditable = personajeActual.clone();
+                    personajeSinEditar = personajeActual.clone();
                 }
                 pos++;
             }
@@ -170,12 +176,12 @@ public class JuegoCombateManager {
             System.out.println("4. Modificar conjunto de armas activas");
             System.out.println("5. Modificar conjunto de armaduras");
             System.out.println("6. Modificar armadura activa");
-            System.out.println("7. Modificar conjunto de esbirros");
-            System.out.println("8. Modificar cantidad de oro");
-            System.out.println("9. Modificar salud del personaje");
-            System.out.println("10. Modificar el valor de poder");
-            System.out.println("11. Modificar conjunto de debilidades");
-            System.out.println("12. Modificar conjunto de fortalezas");
+            System.out.println("7. Modificar cantidad de "+dorado+"oro"+reset);
+            System.out.println("8. Modificar "+verde+"salud"+reset+" del personaje");
+            System.out.println("9. Modificar el valor de poder");
+            System.out.println("10. Modificar conjunto de debilidades");
+            System.out.println("11. Modificar conjunto de fortalezas");
+            System.out.println("12. Modificar característica específica del tipo de personaje");
             System.out.println("13. Salir sin modificar");
 
             int opcion = sc.nextInt();
@@ -194,119 +200,119 @@ public class JuegoCombateManager {
                     Habilidad_Especial habilidad = personajeEditable.getHabilidad();
                     if (habilidad!=null){
 
-                    System.out.println("● Nombre: " + habilidad.getNombre());
-                    System.out.println("● Valor de ataque: " + habilidad.getAtaque());
-                    System.out.println("● Valor de defensa: " + habilidad.getDefensa());
-                    System.out.println();
+                        System.out.println("● Nombre: " + habilidad.getNombre());
+                        System.out.println("● Valor de ataque: " + habilidad.getAtaque());
+                        System.out.println("● Valor de defensa: " + habilidad.getDefensa());
+                        System.out.println();
 
-                    System.out.println("Seleccione la característica que desea modificar de la habilidad: ");
-                    System.out.println("1. Cambiar nombre");
-                    System.out.println("2. Modificar valor de ataque");
-                    System.out.println("3. Modificar valor de defensa");
+                        System.out.println("Seleccione la característica que desea modificar de la habilidad: ");
+                        System.out.println("1. Cambiar nombre");
+                        System.out.println("2. Modificar valor de ataque");
+                        System.out.println("3. Modificar valor de defensa");
 
-                    //ahora mostramos las opciones de modificar de las disciplinas y dones en el respectivo caso
-                    if (habilidad instanceof Disciplina) {
-                        System.out.println("4. Modificar puntos de sangre");
+                        //ahora mostramos las opciones de modificar de las disciplinas y dones en el respectivo caso
+                        if (habilidad instanceof Disciplina) {
+                            System.out.println("4. Modificar puntos de sangre");
 
-                    } else if (habilidad instanceof Don) {
-                        System.out.println("4. Modificar valor de rabia mínimo");
-
-                    }
-
-                    boolean valida = false;
-                    while (!valida) {
-                        String opcion2 = sc.nextLine();
-                        switch (opcion2) {
-                            case "1":
-                                valida = true;
-                                System.out.println("Escribe el nuevo nombre que le desee poner a la habilidad");
-                                String nuevoNombre = sc.nextLine();
-
-                                //modificamos el nombre de la habilidad
-                                personajeEditable.getHabilidad().setNombre(nuevoNombre);
-
-                                break;
-                            case "2":
-                                valida = true;
-                                System.out.println("Escribe el nuevo valor de ataque que le desee poner a la habilidad (Entre 1 y 3)");
-                                int valorAtaque = sc.nextInt();
-                                sc.nextLine();
-
-                                //Si el valor de ataque esta fuera del rango [1,3] , entonces:
-                                while ((valorAtaque <= 0) || (valorAtaque >= 4)) {
-                                    System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
-                                    valorAtaque = sc.nextInt();
-                                    sc.nextLine();
-
-                                }
-
-                                //modificamos el valor de ataque de la habilidad
-                                personajeEditable.getHabilidad().setValorAtaque(valorAtaque);
-
-                                break;
-                            case "3":
-                                valida = true;
-
-                                System.out.println("Escribe el nuevo valor de defensa que le desee poner a la habilidad (entre 1 y 3)");
-                                int valorDefensa = sc.nextInt();
-                                sc.nextLine();
-
-                                //Si el valor de ataque esta fuera del rango [1,3] , entonces:
-                                while ((valorDefensa <= 0) || (valorDefensa >= 4)) {
-                                    System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
-                                    valorDefensa = sc.nextInt();
-                                    sc.nextLine();
-
-                                }
-
-                                //modificamos el valor de ataque de la habilidad
-                                personajeEditable.getHabilidad().setValorDefensa(valorDefensa);
-
-                                break;
-                            default:
-                                if (habilidad instanceof Disciplina) {
-                                    int coste = ((Disciplina) habilidad).getCoste();
-
-                                    System.out.println("● Puntos de sangre: " + coste);
-                                    System.out.println("Escriba el nuevo valor de puntos de sangre que le desee poner a la habilidad (entre 1 y 3)");
-
-                                    int valorPuntos = sc.nextInt();
-                                    sc.nextLine();
-                                    while ((valorPuntos <= 0) || (valorPuntos >= 4)) {
-                                        System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
-                                        valorPuntos = sc.nextInt();
-                                        sc.nextLine();
-                                    }
-
-                                    //Actualizamos la habilidad
-                                    ((Disciplina) habilidad).setCoste(valorPuntos);
-                                    personajeEditable.setHabilidad(habilidad);
-
-                                } else if (habilidad instanceof Don) {
-                                    int rabia = ((Don) habilidad).getRabia();
-                                    System.out.println("● Valor de rabía minimo: " + rabia);
-                                    System.out.println("Escriba el nuevo valor de rabia mínimo que le desee poner a la habilidad ");
-                                    int valorRabia = sc.nextInt();
-                                    sc.nextLine();
-
-                                    //OJO SE TIENE QUE COMPROBAR EN ALGUN LADO QUE Si la rabia del licántropo es inferior al valor de rabia minima de la habilidad,
-                                    // no se puede usar ese don.
-                                    ((Don) habilidad).setRabia(valorRabia);
-                                    personajeEditable.setHabilidad(habilidad);
-
-                                } else {
-
-                                    System.out.println("La opción seleccionada no es válida");
-                                    System.out.println("Seleccione una opción valida: ");
-
-                                }
+                        } else if (habilidad instanceof Don) {
+                            System.out.println("4. Modificar valor de rabia mínimo");
 
                         }
-                    }
+
+                        boolean valida = false;
+                        while (!valida) {
+                            String opcion2 = sc.nextLine();
+                            switch (opcion2) {
+                                case "1":
+                                    valida = true;
+                                    System.out.println("Escribe el nuevo nombre que le desee poner a la habilidad");
+                                    String nuevoNombre = sc.nextLine();
+
+                                    //modificamos el nombre de la habilidad
+                                    personajeEditable.getHabilidad().setNombre(nuevoNombre);
+
+                                    break;
+                                case "2":
+                                    valida = true;
+                                    System.out.println("Escribe el nuevo valor de ataque que le desee poner a la habilidad (Entre 1 y 3)");
+                                    int valorAtaque = sc.nextInt();
+                                    sc.nextLine();
+
+                                    //Si el valor de ataque esta fuera del rango [1,3] , entonces:
+                                    while ((valorAtaque <= 0) || (valorAtaque >= 4)) {
+                                        System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
+                                        valorAtaque = sc.nextInt();
+                                        sc.nextLine();
+
+                                    }
+
+                                    //modificamos el valor de ataque de la habilidad
+                                    personajeEditable.getHabilidad().setValorAtaque(valorAtaque);
+
+                                    break;
+                                case "3":
+                                    valida = true;
+
+                                    System.out.println("Escribe el nuevo valor de defensa que le desee poner a la habilidad (entre 1 y 3)");
+                                    int valorDefensa = sc.nextInt();
+                                    sc.nextLine();
+
+                                    //Si el valor de ataque esta fuera del rango [1,3] , entonces:
+                                    while ((valorDefensa <= 0) || (valorDefensa >= 4)) {
+                                        System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
+                                        valorDefensa = sc.nextInt();
+                                        sc.nextLine();
+
+                                    }
+
+                                    //modificamos el valor de ataque de la habilidad
+                                    personajeEditable.getHabilidad().setValorDefensa(valorDefensa);
+
+                                    break;
+                                default:
+                                    if (habilidad instanceof Disciplina) {
+                                        int coste = ((Disciplina) habilidad).getCoste();
+
+                                        System.out.println("● Puntos de sangre: " + coste);
+                                        System.out.println("Escriba el nuevo valor de puntos de sangre que le desee poner a la habilidad (entre 1 y 3)");
+
+                                        int valorPuntos = sc.nextInt();
+                                        sc.nextLine();
+                                        while ((valorPuntos <= 0) || (valorPuntos >= 4)) {
+                                            System.out.println("El valor introducido no es válido tiene que estar entre 1 y 3, por favor escribe un valor válido");
+                                            valorPuntos = sc.nextInt();
+                                            sc.nextLine();
+                                        }
+
+                                        //Actualizamos la habilidad
+                                        ((Disciplina) habilidad).setCoste(valorPuntos);
+                                        personajeEditable.setHabilidad(habilidad);
+
+                                    } else if (habilidad instanceof Don) {
+                                        int rabia = ((Don) habilidad).getRabia();
+                                        System.out.println("● Valor de rabía minimo: " + rabia);
+                                        System.out.println("Escriba el nuevo valor de rabia mínimo que le desee poner a la habilidad ");
+                                        int valorRabia = sc.nextInt();
+                                        sc.nextLine();
+
+                                        //OJO SE TIENE QUE COMPROBAR EN ALGUN LADO QUE Si la rabia del licántropo es inferior al valor de rabia minima de la habilidad,
+                                        // no se puede usar ese don.
+                                        ((Don) habilidad).setRabia(valorRabia);
+                                        personajeEditable.setHabilidad(habilidad);
+
+                                    } else {
+
+                                        System.out.println("La opción seleccionada no es válida");
+                                        System.out.println("Seleccione una opción valida: ");
+
+                                    }
+
+                            }
+                        }
 
                     } else{
                         System.out.println("Este personaje no tiene asignada ninguna habilidad todavía");
-                        return; //esto lo he puesto de forma provisional, ya lo revisare para evitar el return en una funcion con void
+                        //return; //esto lo he puesto de forma provisional, ya lo revisare para evitar el return en una funcion con void
                     }
 
                     break;
@@ -315,40 +321,194 @@ public class JuegoCombateManager {
                     // Lógica para modificar armas
                     break;
                 case 4:
-                    System.out.println("Sin implementar");
-                    // Lógica para modificar armas activas
+                    System.out.println("Armas activas del personaje: ");
+                    if (personajeEditable.getArmaActiva1()==null){
+
+                        System.out.println("Arma 1: Sin seleccionar");
+                    }else{
+
+                        System.out.println("Arma 1: "+personajeEditable.getArmaActiva1());
+                    }
+                    if (personajeEditable.getArmaActiva1()==null){
+
+                        System.out.println("Arma 2: Sin seleccionar");
+                    }else{
+
+                        System.out.println("Arma 2: "+personajeEditable.getArmaActiva2());
+                    }
+
+
+                    List<Arma> armas= personajeEditable.getArmas();
+                    if (armas.isEmpty()){
+                        System.out.println("No hay armas para seleccionar como activas");
+                    }else{
+                        System.out.println("Seleccione una de las armas que tiene en el inventario para ponerla como activa: ");
+                        int k=1;
+                        for(Arma arma : armas){
+                            System.out.println(k+". "+arma);
+                            k++;
+                        }
+                        int armaSeleccionada= sc.nextInt();
+                        sc.nextLine();
+                        Arma nuevaArma =armas.get(armaSeleccionada-1);
+                        if (nuevaArma.getManos()==2){
+                            personajeEditable.setArmaActiva1(nuevaArma);
+                            personajeEditable.setArmaActiva2(null);
+                        }
+                        else{
+
+                            System.out.println("¿Desea sustituir el Arma activa 1 o el Arma activa 2 (1/2) ? Si quiere salir sin modificar escriba cualquier otro caracter");
+                            int armaActiva= sc.nextInt();
+                            sc.nextLine();
+
+                            if (armaActiva==1){
+
+                                personajeEditable.setArmaActiva1(armas.get(armaSeleccionada));
+                            }
+                            else if (armaActiva==2){
+
+                                personajeEditable.setArmaActiva2(armas.get(armaSeleccionada));
+                            }
+
+                        }
+                    }
                     break;
                 case 5:
                     System.out.println("Sin implementar");
                     // Lógica para modificar armaduras
                     break;
                 case 6:
-                    System.out.println("Sin implementar");
+                    System.out.println("Armadura activa del personaje: ");
+                    Armadura armaduraAct= personajeEditable.getArmaduraActiva();
+                    System.out.println("Armadura Activa: "+armaduraAct);
+
+                    System.out.println("Seleccione la armadura que desee ponerle como activa al personaje: ");
+                    List<Armadura> armaduras= personajeEditable.getArmaduras();
+                    int k=1;
+                    for (Armadura armadura:armaduras){
+                        System.out.println(k+". "+armadura);
+                        k++;
+                    }
+                    int armaduraSeleccionada= sc.nextInt();
+                    sc.nextLine();
+                    personajeEditable.setArmaduraActiva(armaduras.get(armaduraSeleccionada-1));
+
                     // Lógica para modificar armadura activa
                     break;
                 case 7:
-                    System.out.println("Sin implementar");
-                    // Lógica para modificar esbirros
+                    System.out.println("Cantidad de "+dorado+"oro"+reset+" del personaje actualmente: "+personajeEditable.getOro());
+                    System.out.println("Escriba la nueva cantidad de "+dorado+"oro"+reset+": ");
+                    int valorOro = sc.nextInt();
+                    sc.nextLine();
+                    while(valorOro < 0) {
+                        System.out.println("El valor de oro introducido "+rojo+"no es válido"+reset+", por favor escribe un valor válido (Positivo): ");
+                        valorOro = sc.nextInt();
+                        sc.nextLine();
+                    }
+
+                    personajeEditable.setOro(valorOro);
                     break;
                 case 8:
-                    System.out.println("Sin implementar");
-                    // Lógica para modificar oro
+                    System.out.println(verde+"Salud "+reset+"del personaje actualmente: "+personajeEditable.getSalud());
+                    System.out.println("Escribe la nueva "+verde+"salud"+reset+" que le desee poner al personaje (0-5): ");
+
+                    int valorSalud = sc.nextInt();
+                    sc.nextLine();
+                    while (!(valorSalud<5)||!(valorSalud>0)){
+                        System.out.println("El valor introducido de "+verde+"salud"+reset+" no es válido, por favor escribe un valor válido (0-5): ");
+                        valorSalud = sc.nextInt();
+                        sc.nextLine();
+                    }
+
+                    personajeEditable.setSalud(valorSalud);
                     break;
                 case 9:
-                    System.out.println("Sin implementar");
-                    // Lógica para modificar salud (0 a 5)
+                    System.out.println("Escribe el nuevo valor de poder que le desee poner al personaje (1-5): ");
+                    int valorPoder = sc.nextInt();
+                    sc.nextLine();
+                    while (!(valorPoder<1)||!(valorPoder>5)){
+                        System.out.println("El valor de poder introducido "+rojo+"no es válido"+reset+", por favor escribe un valor válido (1-5): ");
+                        valorPoder = sc.nextInt();
+                        sc.nextLine();
+                    }
+                    personajeEditable.setPoder(valorPoder);
+
                     break;
                 case 10:
                     System.out.println("Sin implementar");
-                    // Lógica para modificar poder (1 a 5)
+                    // Lógica para modificar debilidades
                     break;
                 case 11:
                     System.out.println("Sin implementar");
-                    // Lógica para modificar debilidades
+                    // Lógica para modificar fortalezas
                     break;
                 case 12:
-                    System.out.println("Sin implementar");
-                    // Lógica para modificar fortalezas
+                    System.out.println("Elije la característica específica a modificar: ");
+                    if (personajeEditable instanceof Vampiro){
+                        System.out.println("1. Modificar puntos de sangre del Vampiro");
+                        System.out.println("2. Modificar pacto del Vampiro con el Esbirro");
+                        int opc= sc.nextInt();
+                        sc.nextLine();
+                        switch (opc){
+                            case 1:
+                                int puntosDeSangre= ((Vampiro) personajeEditable).getSangre();
+                                System.out.println("Puntos de sangre en este momento: "+puntosDeSangre);
+                                System.out.println("Escribe el nuevo valor de puntos de sangre para el personaje: ");
+                                int valorSangre = sc.nextInt();
+                                sc.nextLine();
+                                ((Vampiro) personajeEditable).setSangre(valorSangre);
+
+                                break;
+                            case 2:
+                                String pactoActual= ((Vampiro) personajeEditable).getPacto();
+                                System.out.println("Pacto descrito actualmente: "+pactoActual);
+                                System.out.println("Describe el nuevo pacto que tiene su amo con el esbirro: ");
+                                String pacto =sc.nextLine();
+                                ((Vampiro) personajeEditable).setPacto(pacto);
+
+                                break;
+                        }
+
+                    }else if (personajeEditable instanceof Licantropo){
+                        System.out.println("1. Modificar puntos de rabia del Licántropo");
+                        int opc=sc.nextInt();
+                        sc.nextLine();
+                        if (opc == 1) {
+                            int rabiaActual= ((Licantropo) personajeEditable).getRabia();
+                            System.out.println("Valor de rabia en este momento: "+rabiaActual);
+                            System.out.println("Escribe el nuevo valor de rabia para el personaje (0-3): ");
+                            int rabia = sc.nextInt();
+                            sc.nextLine();
+                            while ((rabia<0)||(rabia>3)){
+                                System.out.println("El valor introducido de rabia "+rojo+"no es válido"+reset+", por favor escribe un valor válido (0-3): ");
+                                rabia = sc.nextInt();
+                                sc.nextLine();
+                            }
+                            ((Licantropo) personajeEditable).setRabia(rabia);
+                        }else{
+                            System.out.println("Opción seleccionada no válida ");
+                        }
+
+
+                    }else if (personajeEditable instanceof Cazador) {
+                        System.out.println("1. Modificar puntos de Voluntad del Cazador");
+                        int opc=sc.nextInt();
+                        sc.nextLine();
+                        if (opc == 1) {
+                            int puntosDeVoluntad= ((Cazador) personajeEditable).getVoluntad();
+                            System.out.println("Puntos de voluntad en este momento: "+puntosDeVoluntad);
+                            System.out.println("Escriba el nuevo valor de Voluntad para el personaje: ");
+                            int voluntad = sc.nextInt();
+                            sc.nextLine();
+                            while ((voluntad<0)||(voluntad>3)){
+                                System.out.println("El valor introducido "+rojo+"no es válido"+reset+", por favor escribe un valor de voluntad válido (0-3): ");
+                                voluntad = sc.nextInt();
+                                sc.nextLine();
+                            }
+                            ((Cazador) personajeEditable).setVoluntad(voluntad);
+                        }
+                    }
+
                     break;
                 case 13:
                     System.out.println("Saliendo del menú de edición del personaje...");
@@ -359,27 +519,29 @@ public class JuegoCombateManager {
 
             //Ahora buscamos el jugador que tenía ese personaje
             int p = 0;
-            Jugador jugador = null;
-            while ((p < jugadores.size())&&(personajeSinEditar.equals(jugadores.get(p).getPersonaje()))) {
+            Jugador jugador = jugadores.get(p);
+            p++;
+            while ((p < jugadores.size())&&(!personajeSinEditar.equals(jugador.getPersonaje()))) {
+
                 jugador = jugadores.get(p);
                 p++;
             }
             //Si hemos salido del while porque hemos encontrado el jugador con ese personaje
             ArrayList<Usuario> usuarios = storage.loadUsers();
-            if (personajeSinEditar.equals(jugador.getPersonaje())) {
+            if (personajeSinEditar.equals(jugador.getPersonaje())&&!(personajeSinEditar.equals(personajeEditable))) { //si encontramos el personaje original y lo hemos editado, entonces lo actualizamos
                 //actualizamos el jugador
-                //jugadores.remove(jugador);
+
                 usuarios.remove(jugador);
                 jugador.setPersonaje(personajeEditable);
-                //jugadores.add(jugador);
                 usuarios.add(jugador);
+
+                //ahora actualizamos la lista de usuarios en el xml
+                storage.saveList(usuarios, "src/main/java/sistemaDeGuardado/Persistencia/Usuarios.xml");
             }
-            //ahora actualizamos la lista de usuarios en el xml
-            storage.saveList(usuarios, "src/main/java/sistemaDeGuardado/Persistencia/Usuarios.xml");
 
         } else {
-            System.out.println("No hay personajes disponibles actualmente");
-           }
+            System.out.println(rojo+"No hay personajes disponibles actualmente"+reset);
+        }
 
     }
 
@@ -466,7 +628,7 @@ public class JuegoCombateManager {
 
             //Mientras haya desafios pendientes, los mostramos al jugador para que los acepte o rechaze
             while (!jugador1.getDesafiosPendientes().isEmpty()) {
-                Desafio d = jugador1.getDesafiosPendientes().get(0);
+                Desafio d = jugador1.getDesafiosPendientes().getFirst();
                 notifier.notifySubscriber(jugador1);
                 System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
                 System.out.println("¿Que quieres hacer?");
@@ -524,7 +686,7 @@ public class JuegoCombateManager {
 
                 }
                 //Eliminamos el desafio pendiente de la lista y lo actualizamos en el XML
-                jugador1.getDesafiosPendientes().remove(0);
+                jugador1.getDesafiosPendientes().removeFirst();
                 desafiosPendientes.remove(d);
                 storage.saveList(desafiosPendientes,"src/main/java/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                 notifier.unSuscribe(jugador1);
@@ -562,27 +724,27 @@ public class JuegoCombateManager {
                         correctOpt = true;
                     }
                     case 4 -> {
-                            System.out.println("¿Qué quieres hacer?");
-                            System.out.println("1. " + "🏪​" + "Acceder a la tienda de equipo");
-                            System.out.println("2. " + "⚔️​🛡️​" + "Utilizar equipo en posesión");
-                            System.out.println("3. " + "\uD83D\uDD19\u200B" + " Volver al menú principal.");
-                            int equipoOpt = sc.nextInt();
-                            switch (equipoOpt) {
-                                case 1: {
-                                    elegirEquipoPersonalizado(jugador1);
-                                    break;
-                                }
-                                case 2: {
-                                    elegirEquipoPersonajes();
-                                    break;
-                                }
+                        System.out.println("¿Qué quieres hacer?");
+                        System.out.println("1. " + "🏪​" + "Acceder a la tienda de equipo");
+                        System.out.println("2. " + "⚔️​🛡️​" + "Utilizar equipo en posesión");
+                        System.out.println("3. " + "\uD83D\uDD19\u200B" + " Volver al menú principal.");
+                        int equipoOpt = sc.nextInt();
+                        switch (equipoOpt) {
+                            case 1: {
+                                elegirEquipoPersonalizado(jugador1);
+                                break;
                             }
-                               correctOpt = true;
+                            case 2: {
+                                elegirEquipoPersonajes();
+                                break;
                             }
+                        }
+                        correctOpt = true;
+                    }
                     case 5 -> {//De momento devuelve solo la cantidad de oro que tiene el jugador que inicia sesion
-                               //Incluso podemos dejar esto cuando implementemos esta opción entera.
-                                System.out.println("Tienes " + jugador1.getOro() + " monedas de oro.");
-                                correctOpt = true;
+                        //Incluso podemos dejar esto cuando implementemos esta opción entera.
+                        System.out.println("Tienes " + jugador1.getOro() + " monedas de oro.");
+                        correctOpt = true;
                     }
                     case 6 -> { return; }
                     default -> {
@@ -624,7 +786,7 @@ public class JuegoCombateManager {
 
                         } else if (u instanceof Jugador j) {
                             if ((jugador1 == null) ||(jugador1.isBloqueado())) setJugador1(j);
-                            //jugador1.isBloqueado() esto ocurre cuando hemos intentado acceder al usuario de un jugador bloqueado y despues accedemos a otro usuario
+                                //jugador1.isBloqueado() esto ocurre cuando hemos intentado acceder al usuario de un jugador bloqueado y despues accedemos a otro usuario
                             else setJugador2(j);
 
                             //Si el jugador no esta bloqueado le damos la bienvenida
@@ -728,7 +890,7 @@ public class JuegoCombateManager {
                 //El desafio se valida y ahora pasa a ser un desafio pendiente
                 desafiosPendientes.add(d);
 
-               boolean found = updateUser(destino);
+                boolean found = updateUser(destino);
                 if (found) {
                     storage.saveList(desafiosPendientes, "src/main/java/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                     System.out.println("El desafio de " + origen.getNombre() + " a " + destino.getNombre() + " ha sido validado.");
@@ -893,7 +1055,7 @@ public class JuegoCombateManager {
             }
         }while(!isCorrect);
 
-       int userIndex = getUserIndexByName(playerName);
+        int userIndex = getUserIndexByName(playerName);
         if (userIndex > -1){
             Usuario destino = usuarios.get(userIndex);
             jugador1.desafiarUsuario((Jugador) usuarios.get(userIndex), apuesta);
