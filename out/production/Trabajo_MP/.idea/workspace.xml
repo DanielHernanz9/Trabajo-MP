@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)">
-      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/App/JuegoCombate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Combate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Combate/Ronda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Cazador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Licantropo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/Vampiro.class" afterDir="false" />
-    </list>
+    <list default="true" id="7d2fa0d2-340d-43b5-b852-87469204a549" name="Changes" comment="Aclaración autores" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +55,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/IdeaProjects/TrabajoMP/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/IdeaProjects/TrabajoMP/Grupo6/src/Combate&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -78,6 +69,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\Grupo6\src\Combate" />
       <recent name="C:\Users\usuario\IdeaProjects\TrabajoMP\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -132,39 +124,8 @@
       <workItem from="1745571205717" duration="4600000" />
       <workItem from="1745593872764" duration="5249000" />
       <workItem from="1745952141729" duration="9940000" />
-      <workItem from="1746183645431" duration="358000" />
-    </task>
-    <task id="LOCAL-00001" summary="He organizado en paquetes la mayoria de las clases">
-      <option name="closed" value="true" />
-      <created>1742643479783</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1742643479783</updated>
-    </task>
-    <task id="LOCAL-00002" summary="He organizado en paquetes la mayoria de las clases">
-      <option name="closed" value="true" />
-      <created>1742643509998</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1742643509998</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Factory Method para la creacion de esbirros.">
-      <option name="closed" value="true" />
-      <created>1743777693169</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1743777693169</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Factory Method para la creacion de esbirros.">
-      <option name="closed" value="true" />
-      <created>1743777733585</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1743777733585</updated>
+      <workItem from="1746183645431" duration="4652000" />
+      <workItem from="1746211618280" duration="1688000" />
     </task>
     <task id="LOCAL-00005" summary="Implementadas las jerarquías entre demonios y esbirros (compoiste)">
       <option name="closed" value="true" />
@@ -518,7 +479,47 @@
       <option name="project" value="LOCAL" />
       <updated>1745965218057</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Ajustes en el reparto de oro al final de los combates (se repartía mal y a veces acababa habiendo menos oro en total del que había al comenzar entre los dos jugadores, cuando el oro debe reaprtirse y no puede perderse)">
+      <option name="closed" value="true" />
+      <created>1746184815505</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1746184815505</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Clases inútiles eliminadas:&#10;-&gt; Carpeta COSAS&#10;-&gt; DemonioLeaf&#10;-&gt; Director&#10;-&gt; InterfazEditar&#10;-&gt; Proxy&#10;-&gt; UserInfoBuilder&#10;&#10;El programa funciona perfectamente sin todos esos ficheros.&#10;Builder se reubica en la carpeta Combate.">
+      <option name="closed" value="true" />
+      <created>1746185516258</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1746185516273</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Limpieza de código:&#10;-&gt; Eliminacion de todos los⚠️​ que no afectan al comportameinto del codigo.&#10;-&gt; Eliminacion de imports innecesarios&#10;-&gt; Eliminación de métodos sin uso&#10;-&gt;Clases Builder, combatBuilder y Subsrciber elimindadas (no se usaban para nada)&#10;-&gt; JavaDoc vacío eliminado">
+      <option name="closed" value="true" />
+      <created>1746188271228</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1746188271228</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Limpieza de código:&#10;-&gt; Eliminacion de todos los⚠️​ que no afectan al comportameinto del codigo.&#10;-&gt; Eliminacion de imports innecesarios&#10;-&gt; Eliminación de métodos sin uso&#10;-&gt;Clases Builder, combatBuilder y Subsrciber elimindadas (no se usaban para nada)&#10;-&gt; JavaDoc vacío eliminado">
+      <option name="closed" value="true" />
+      <created>1746188301187</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1746188301187</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Aclaración autores">
+      <option name="closed" value="true" />
+      <created>1746213549473</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1746213549473</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,10 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Desafios implementados correctamente (por algun motivo el nombre de los usuarios se registra como null)" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;Grupo6/src/App/JuegoCombateManager.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/AlmacenXML.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/SingleStorage.java&#10;#&#9;Grupo6/src/sistemaDeGuardado/Usuarios.xml" />
-    <MESSAGE value="Correccion errores" />
-    <MESSAGE value="Implementacion de desafios entre usuarios,a falta de validadacion por parte de operadores" />
     <MESSAGE value="mas cosas de la validacion de desafios (no funciona bien todavia)" />
     <MESSAGE value="Proceso principal de desafio entre usuarios funcional, a falta de ciertas cosas que tengo que terminar" />
     <MESSAGE value="Correccion de bucles infinitos en desafíos" />
@@ -561,7 +558,11 @@
     <MESSAGE value="No se muestra al propio jugador que está logueado cuando quiere hacer un desfío" />
     <MESSAGE value="Se permite al usuario almacenar las armas de sus personajes" />
     <MESSAGE value="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Las habiliades especiales ya se pueden utilizar en combate. Con ello podemos dar por terminada la implemenatcion del combate. He solcuionado los errores del encoder (todo venia de un metodo setter de salud, estaba duplicado en personajeBase)" />
+    <MESSAGE value="Ajustes en el reparto de oro al final de los combates (se repartía mal y a veces acababa habiendo menos oro en total del que había al comenzar entre los dos jugadores, cuando el oro debe reaprtirse y no puede perderse)" />
+    <MESSAGE value="Clases inútiles eliminadas:&#10;-&gt; Carpeta COSAS&#10;-&gt; DemonioLeaf&#10;-&gt; Director&#10;-&gt; InterfazEditar&#10;-&gt; Proxy&#10;-&gt; UserInfoBuilder&#10;&#10;El programa funciona perfectamente sin todos esos ficheros.&#10;Builder se reubica en la carpeta Combate." />
+    <MESSAGE value="Limpieza de código:&#10;-&gt; Eliminacion de todos los⚠️​ que no afectan al comportameinto del codigo.&#10;-&gt; Eliminacion de imports innecesarios&#10;-&gt; Eliminación de métodos sin uso&#10;-&gt;Clases Builder, combatBuilder y Subsrciber elimindadas (no se usaban para nada)&#10;-&gt; JavaDoc vacío eliminado" />
+    <MESSAGE value="Aclaración autores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aclaración autores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -576,13 +577,8 @@
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Grupo6/src/Combate/EstrategiaCazador.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>1144</line>
+          <line>1141</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
