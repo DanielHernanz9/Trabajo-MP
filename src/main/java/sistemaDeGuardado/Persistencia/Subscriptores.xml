@@ -10,10 +10,10 @@
      <string>j2</string>
     </void>
     <void property="numCombatesGanados">
-     <int>4</int>
+     <int>5</int>
     </void>
     <void property="oro">
-     <int>701</int>
+     <int>702</int>
     </void>
     <void property="password">
      <string>1234</string>
@@ -68,7 +68,7 @@
        <int>5</int>
       </void>
       <void property="valorAtaque">
-       <int>4</int>
+       <int>5</int>
       </void>
      </object>
     </void>

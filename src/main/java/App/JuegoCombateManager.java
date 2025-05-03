@@ -559,7 +559,7 @@ public class JuegoCombateManager {
         int i;
         if (mode) {
             System.out.println("Jugadores "+verde+"no bloqueados"+reset+": ");
-            i=mostrarJugadoresNoBloqueados();
+            i = mostrarJugadoresNoBloqueados();
             if(i>0) System.out.println("Escribe el nombre del jugador que deseas "+rojo+"bloquear"+reset+": ");
 
         } else {
@@ -1080,14 +1080,23 @@ public class JuegoCombateManager {
 
         int i=1;
 
-        for (Jugador jugador : jugadores) {
-            if (!jugador.isBloqueado() && !jugador.getNombre().equals(jugador1.getNombre())) {
-                System.out.println(i+". " + jugador.getNombre());
-                i++;
+        if (jugador1 != null){
+            for (Jugador jugador : jugadores) {
+                if (!jugador.isBloqueado() && !jugador.getNombre().equals(jugador1.getNombre())) {
+                    System.out.println(i+". " + jugador.getNombre());
+                    i++;
+                }
             }
-
-
         }
+        else{
+            for (Jugador jugador : jugadores) {
+                if (!jugador.isBloqueado()) {
+                    System.out.println(i+". " + jugador.getNombre());
+                    i++;
+                }
+            }
+        }
+
         return i-1;
     }
 
