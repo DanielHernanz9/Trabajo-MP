@@ -28,6 +28,7 @@ public interface Personaje {
     List<DebilidadHandler> getDebilidades();
     List<FortalezaHandler> getFortalezas();
     boolean hasEsbirros();
+    int getPoder();
 
     // Setters
     void setNombre(String nombre);
@@ -42,6 +43,7 @@ public interface Personaje {
     void setSalud(int salud);
     void setDebilidades(List<DebilidadHandler> debilidades);
     void setFortalezas(List<FortalezaHandler> fortalezas);
+    void setPoder(int poder);
 
     // Métodos de comportamiento
     void hacerHabilidadEspecial();

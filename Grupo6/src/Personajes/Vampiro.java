@@ -83,7 +83,7 @@ public class Vampiro extends PersonajeBase implements Cloneable {
         Pacto = pacto;
     }
 
-    public void setSangre(Integer sangre) {
+    public void setSangre(int sangre) {
         Sangre = sangre;
     }
 

@@ -161,6 +161,7 @@ public class Jugador extends Usuario implements Comparable<Jugador>, Serializabl
      */
     public void registrarPersonaje(FactoryPersonaje factory, String name) {
         Personaje = factory.createPersonaje(name);  // Crea un personaje usando la fábrica
+        Personaje.setOro(Oro); //El personaje y el jugador tienen el mismo oro
     }
 
     /**

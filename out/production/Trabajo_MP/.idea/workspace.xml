@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c62df6-ca48-4f92-aec9-e4433ae2979c" name="Changes" comment="Implementada la modificación de las habilidades especiales por parte de los operadores (falta probarlo bien porque de momento los personajes no tienen habilidades establecidas) (todavia hay algun error mas, al cambiar el nombre por ej se quedan guardados ambos personajes en el xml...)">
-      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Habilidad_Especial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/HabilidadesEspeciales/Habilidad_Especial.class" afterDir="false" />
+    <list default="true" id="91c62df6-ca48-4f92-aec9-e4433ae2979c" name="Changes" comment="Arreglados todos los errores que tenian que ver con la actualización de los personajes editados, ya se guarda bien sin duplicarse personajes o usuarios en los XML. Implementados metodos clone y equals en practicamente todas las clases para hacer posible que funcionase la edición del personaje correctamente">
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/Personaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grupo6/src/Personajes/Vampiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Grupo6/src/Personajes/Vampiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Esbirros/PatronFactoryEsbirros/Esbirro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Esbirros/PatronFactoryEsbirros/Esbirro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryCazadores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryCazadores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryLicantropos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryLicantropos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryPersonaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryPersonaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryVampiros.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo_MP/Grupo6/src/Personajes/PatronFactoryPersonajes/FactoryVampiros.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +105,8 @@
       <workItem from="1745529150743" duration="8444000" />
       <workItem from="1745565534019" duration="4937000" />
       <workItem from="1745791777785" duration="5500000" />
+      <workItem from="1746213632052" duration="7551000" />
+      <workItem from="1746262964774" duration="4934000" />
     </task>
     <task id="LOCAL-00001" summary="Reorganización y arreglo de algunas clases">
       <option name="closed" value="true" />
@@ -219,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745797198643</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Arreglados todos los errores que tenian que ver con la actualización de los personajes editados, ya se guarda bien sin duplicarse personajes o usuarios en los XML. Implementados metodos clone y equals en practicamente todas las clases para hacer posible que funcionase la edición del personaje correctamente">
+      <option name="closed" value="true" />
+      <created>1746223129108</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746223129108</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +268,8 @@
     <MESSAGE value="Cambios en el estilo de los combates, arreglados mas errores y ahora se muestran los usuarios que se pueden desafiar.Si el usuario escribe un usuario bloqueado la aplicación lo dice y le indica que escriba un jugador valido y algun cambio mas" />
     <MESSAGE value="commit" />
     <MESSAGE value="Implementada la modificación de las habilidades especiales por parte de los operadores (falta probarlo bien porque de momento los personajes no tienen habilidades establecidas) (todavia hay algun error mas, al cambiar el nombre por ej se quedan guardados ambos personajes en el xml...)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementada la modificación de las habilidades especiales por parte de los operadores (falta probarlo bien porque de momento los personajes no tienen habilidades establecidas) (todavia hay algun error mas, al cambiar el nombre por ej se quedan guardados ambos personajes en el xml...)" />
+    <MESSAGE value="Arreglados todos los errores que tenian que ver con la actualización de los personajes editados, ya se guarda bien sin duplicarse personajes o usuarios en los XML. Implementados metodos clone y equals en practicamente todas las clases para hacer posible que funcionase la edición del personaje correctamente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglados todos los errores que tenian que ver con la actualización de los personajes editados, ya se guarda bien sin duplicarse personajes o usuarios en los XML. Implementados metodos clone y equals en practicamente todas las clases para hacer posible que funcionase la edición del personaje correctamente" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -263,7 +281,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/Combate/Combate.java</url>
-          <line>152</line>
+          <line>144</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -298,13 +316,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>193</line>
+          <line>194</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
-          <line>362</line>
+          <line>451</line>
           <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>286</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/App/JuegoCombateManager.java</url>
+          <line>458</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Grupo6/src/Personajes/PatronFactoryPersonajes/PersonajeBase.java</url>
+          <line>300</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
