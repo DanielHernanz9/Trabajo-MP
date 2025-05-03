@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="App.Jugador">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j2</string>
+    </void>
+    <void property="numCombatesGanados">
+     <int>4</int>
+    </void>
+    <void property="oro">
+     <int>701</int>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Personajes.Licantropo" id="Licantropo0">
+      <void property="armaduraActiva">
+       <object class="Equipo.Armadura" id="Armadura0">
+        <void property="modificador">
+         <object class="Equipo.Modificador">
+          <void property="tipo">
+           <object class="java.lang.Enum" method="valueOf">
+            <class>Equipo.Modificador$TipoModificador</class>
+            <string>Ataque</string>
+           </object>
+          </void>
+          <void property="valor">
+           <int>1</int>
+          </void>
+         </object>
+        </void>
+        <void property="nombre">
+         <string>España</string>
+        </void>
+       </object>
+      </void>
+      <void property="armaduras">
+       <void method="add">
+        <object idref="Armadura0"/>
+       </void>
+      </void>
+      <void property="don">
+       <object class="HabilidadesEspeciales.Don">
+        <void property="rabia">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+      <void property="esbirros">
+       <object class="java.util.ArrayList"/>
+      </void>
+      <void property="nombre">
+       <string>Santiago Abascal</string>
+      </void>
+      <void property="poder">
+       <int>10</int>
+      </void>
+      <void property="rabia">
+       <int>8</int>
+      </void>
+      <void property="salud">
+       <int>5</int>
+      </void>
+      <void property="valorAtaque">
+       <int>4</int>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>S58GD</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
