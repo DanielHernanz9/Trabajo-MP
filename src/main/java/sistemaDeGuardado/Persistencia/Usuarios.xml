@@ -22,11 +22,55 @@
     <void property="nombre">
      <string>j1</string>
     </void>
+    <void property="numCombatesGanados">
+     <int>1</int>
+    </void>
     <void property="numCombatesPerdidos">
      <int>1</int>
     </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Personajes.Cazador">
+      <void property="esbirros">
+       <object class="java.util.ArrayList"/>
+      </void>
+      <void property="nombre">
+       <string>Feijoo</string>
+      </void>
+      <void property="oro">
+       <int>400</int>
+      </void>
+      <void property="poder">
+       <int>5</int>
+      </void>
+      <void property="salud">
+       <int>5</int>
+      </void>
+      <void property="talento">
+       <object class="HabilidadesEspeciales.Talento"/>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>K27UV</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="App.Jugador" id="Jugador1">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j2</string>
+    </void>
+    <void property="numCombatesPerdidos">
+     <int>2</int>
+    </void>
     <void property="oro">
-     <int>400</int>
+     <int>399</int>
     </void>
     <void property="password">
      <string>1234</string>
@@ -58,16 +102,12 @@
            <object class="Esbirros.EsbirrosComposite" id="EsbirrosComposite0">
             <void property="childrenComposite">
              <void method="add">
-              <object class="Esbirros.Humano">
-               <void property="nombre">
-                <string>HumanoSub_0</string>
+              <object class="Esbirros.Ghoul">
+               <void property="dependencia">
+                <int>50</int>
                </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Esbirros.Humano">
                <void property="nombre">
-                <string>HumanoSub_0</string>
+                <string>GhoulSub_0</string>
                </void>
               </object>
              </void>
@@ -81,63 +121,16 @@
                </void>
               </object>
              </void>
-            </void>
-           </object>
-          </void>
-         </object>
-        </void>
-        <void method="add">
-         <object class="Esbirros.Demonio">
-          <void property="nombre">
-           <string>Demonio_1</string>
-          </void>
-          <void property="pacto">
-           <string>Pacto Normal</string>
-          </void>
-          <void property="subordinados">
-           <object class="Esbirros.EsbirrosComposite" id="EsbirrosComposite1">
-            <void property="childrenComposite">
              <void method="add">
-              <object class="Esbirros.Demonio">
+              <object class="Esbirros.Ghoul">
+               <void property="dependencia">
+                <int>50</int>
+               </void>
                <void property="nombre">
-                <string>DemonioSub_1</string>
-               </void>
-               <void property="pacto">
-                <string>Pacto Normal</string>
-               </void>
-               <void property="subordinados">
-                <object class="Esbirros.EsbirrosComposite">
-                 <void property="nombre">
-                  <string>DemonioSub_1_Subordinados</string>
-                 </void>
-                </object>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Esbirros.Humano">
-               <void property="nombre">
-                <string>HumanoSub_1</string>
-               </void>
-              </object>
-             </void>
-             <void method="add">
-              <object class="Esbirros.Demonio">
-               <void property="nombre">
-                <string>DemonioSub_1</string>
-               </void>
-               <void property="pacto">
-                <string>Pacto Normal</string>
+                <string>GhoulSub_0</string>
                </void>
                <void property="salud">
-                <int>1</int>
-               </void>
-               <void property="subordinados">
-                <object class="Esbirros.EsbirrosComposite">
-                 <void property="nombre">
-                  <string>DemonioSub_1_Subordinados</string>
-                 </void>
-                </object>
+                <int>2</int>
                </void>
               </object>
              </void>
@@ -149,7 +142,7 @@
        </object>
       </void>
       <void property="nombre">
-       <string>1</string>
+       <string>Pedro Sanchez</string>
       </void>
       <void property="oro">
        <int>500</int>
@@ -158,14 +151,20 @@
        <int>5</int>
       </void>
       <void property="sangre">
-       <int>8</int>
+       <int>4</int>
       </void>
      </object>
     </void>
     <void property="regNum">
-     <string>K27UV</string>
+     <string>T05VB</string>
     </void>
    </object>
+  </void>
+  <void method="add">
+   <object idref="Jugador0"/>
+  </void>
+  <void method="add">
+   <object idref="Jugador1"/>
   </void>
   <void method="add">
    <object class="App.Jugador">
@@ -173,13 +172,13 @@
      <string>Jugador</string>
     </void>
     <void property="nombre">
-     <string>j2</string>
+     <string>j3</string>
     </void>
     <void property="numCombatesGanados">
-     <int>2</int>
+     <int>1</int>
     </void>
     <void property="oro">
-     <int>700</int>
+     <int>501</int>
     </void>
     <void property="password">
      <string>1234</string>
@@ -201,10 +200,10 @@
        <object class="java.util.ArrayList"/>
       </void>
       <void property="nombre">
-       <string>Pedro Sanchez</string>
+       <string>vampiro</string>
       </void>
       <void property="oro">
-       <int>600</int>
+       <int>500</int>
       </void>
       <void property="poder">
        <int>5</int>
@@ -218,12 +217,9 @@
      </object>
     </void>
     <void property="regNum">
-     <string>S55PI</string>
+     <string>I71MJ</string>
     </void>
    </object>
-  </void>
-  <void method="add">
-   <object idref="Jugador0"/>
   </void>
  </object>
 </java>

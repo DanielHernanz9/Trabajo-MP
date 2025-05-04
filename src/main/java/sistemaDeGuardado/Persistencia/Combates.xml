@@ -3868,5 +3868,3998 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="Combate.Combate">
+    <void property="desafiado">
+     <object class="App.Jugador">
+      <void property="nick">
+       <string>Jugador</string>
+      </void>
+      <void property="nombre">
+       <string>j2</string>
+      </void>
+      <void property="numCombatesPerdidos">
+       <int>1</int>
+      </void>
+      <void property="password">
+       <string>1234</string>
+      </void>
+      <void property="personaje">
+       <object class="Personajes.Vampiro" id="Vampiro3">
+        <void class="Personajes.Vampiro" method="getField">
+         <string>Disciplina</string>
+         <void method="set">
+          <object idref="Vampiro3"/>
+          <object class="HabilidadesEspeciales.Disciplina">
+           <void property="coste">
+            <int>10</int>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="esbirros">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="Esbirros.Ghoul">
+            <void property="dependencia">
+             <int>50</int>
+            </void>
+            <void property="nombre">
+             <string>Ghoul_0</string>
+            </void>
+           </object>
+          </void>
+          <void method="add">
+           <object class="Esbirros.Demonio">
+            <void property="nombre">
+             <string>Demonio_1</string>
+            </void>
+            <void property="pacto">
+             <string>Pacto Normal</string>
+            </void>
+            <void property="subordinados">
+             <object class="Esbirros.EsbirrosComposite" id="EsbirrosComposite5">
+              <void property="childrenComposite">
+               <void method="add">
+                <object class="Esbirros.Humano">
+                 <void property="nombre">
+                  <string>HumanoSub_1</string>
+                 </void>
+                </object>
+               </void>
+               <void method="add">
+                <object class="Esbirros.Ghoul">
+                 <void property="dependencia">
+                  <int>50</int>
+                 </void>
+                 <void property="nombre">
+                  <string>GhoulSub_1</string>
+                 </void>
+                </object>
+               </void>
+               <void method="add">
+                <object class="Esbirros.Ghoul">
+                 <void property="dependencia">
+                  <int>50</int>
+                 </void>
+                 <void property="nombre">
+                  <string>GhoulSub_1</string>
+                 </void>
+                </object>
+               </void>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void property="nombre">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="oro">
+         <int>500</int>
+        </void>
+        <void property="poder">
+         <int>5</int>
+        </void>
+        <void property="sangre">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+      <void property="regNum">
+       <string>T05VB</string>
+      </void>
+     </object>
+    </void>
+    <void property="desafiante">
+     <object class="App.Jugador" id="Jugador3">
+      <void property="desafiosPendientes">
+       <void method="add">
+        <object class="Desafio.Desafio">
+         <void property="oroApostado">
+          <int>100</int>
+         </void>
+         <void property="usuarioDestino">
+          <string>j1</string>
+         </void>
+         <void property="usuarioOrigen">
+          <string>j2</string>
+         </void>
+        </object>
+       </void>
+      </void>
+      <void property="nick">
+       <string>Jugador</string>
+      </void>
+      <void property="nombre">
+       <string>j1</string>
+      </void>
+      <void property="numCombatesGanados">
+       <int>1</int>
+      </void>
+      <void property="numCombatesPerdidos">
+       <int>1</int>
+      </void>
+      <void property="oro">
+       <int>400</int>
+      </void>
+      <void property="password">
+       <string>1234</string>
+      </void>
+      <void property="personaje">
+       <object class="Personajes.Cazador" id="Cazador0">
+        <void property="esbirros">
+         <object class="java.util.ArrayList"/>
+        </void>
+        <void property="nombre">
+         <string>Feijoo</string>
+        </void>
+        <void property="oro">
+         <int>400</int>
+        </void>
+        <void property="poder">
+         <int>5</int>
+        </void>
+        <void property="salud">
+         <int>5</int>
+        </void>
+        <void property="talento">
+         <object class="HabilidadesEspeciales.Talento"/>
+        </void>
+       </object>
+      </void>
+      <void property="regNum">
+       <string>K27UV</string>
+      </void>
+     </object>
+    </void>
+    <void property="fechaCombate">
+     <object class="java.util.Date">
+      <long>1746354506946</long>
+     </object>
+    </void>
+    <void property="ganador">
+     <object idref="Jugador3"/>
+    </void>
+    <void property="rondas">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>1</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>2</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <object idref="Integer0"/>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>4</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>5</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>6</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>7</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>8</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>9</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>10</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>11</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>12</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>13</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>14</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>15</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>16</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>17</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>18</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>19</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>20</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>21</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>22</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>23</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>24</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>25</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>26</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>27</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>28</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>29</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>30</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>31</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>32</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>33</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>34</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>35</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>36</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>37</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Feijoo</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>38</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro3"/>
+        </void>
+        <void property="atacante">
+         <object idref="Cazador0"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaCazador"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Feijoo</string>
+        </void>
+        <void property="numeroRonda">
+         <int>39</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>105</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Combate.Combate">
+    <void property="desafiado">
+     <object class="App.Jugador" id="Jugador4">
+      <void property="nick">
+       <string>Jugador</string>
+      </void>
+      <void property="nombre">
+       <string>j3</string>
+      </void>
+      <void property="numCombatesGanados">
+       <int>1</int>
+      </void>
+      <void property="password">
+       <string>1234</string>
+      </void>
+      <void property="personaje">
+       <object class="Personajes.Vampiro" id="Vampiro4">
+        <void class="Personajes.Vampiro" method="getField">
+         <string>Disciplina</string>
+         <void method="set">
+          <object idref="Vampiro4"/>
+          <object class="HabilidadesEspeciales.Disciplina">
+           <void property="coste">
+            <int>10</int>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="esbirros">
+         <object class="java.util.ArrayList"/>
+        </void>
+        <void property="nombre">
+         <string>vampiro</string>
+        </void>
+        <void property="oro">
+         <int>500</int>
+        </void>
+        <void property="poder">
+         <int>5</int>
+        </void>
+        <void property="salud">
+         <int>5</int>
+        </void>
+        <void property="sangre">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void property="regNum">
+       <string>I71MJ</string>
+      </void>
+     </object>
+    </void>
+    <void property="desafiante">
+     <object class="App.Jugador" id="Jugador5">
+      <void property="desafiosPendientes">
+       <void method="add">
+        <object class="Desafio.Desafio">
+         <void property="oroApostado">
+          <int>1</int>
+         </void>
+         <void property="usuarioDestino">
+          <string>j2</string>
+         </void>
+         <void property="usuarioOrigen">
+          <string>j3</string>
+         </void>
+        </object>
+       </void>
+      </void>
+      <void property="nick">
+       <string>Jugador</string>
+      </void>
+      <void property="nombre">
+       <string>j2</string>
+      </void>
+      <void property="numCombatesPerdidos">
+       <int>2</int>
+      </void>
+      <void property="oro">
+       <int>400</int>
+      </void>
+      <void property="password">
+       <string>1234</string>
+      </void>
+      <void property="personaje">
+       <object class="Personajes.Vampiro" id="Vampiro5">
+        <void class="Personajes.Vampiro" method="getField">
+         <string>Disciplina</string>
+         <void method="set">
+          <object idref="Vampiro5"/>
+          <object class="HabilidadesEspeciales.Disciplina">
+           <void property="coste">
+            <int>10</int>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="esbirros">
+         <object class="java.util.ArrayList">
+          <void method="add">
+           <object class="Esbirros.Demonio">
+            <void property="nombre">
+             <string>Demonio_0</string>
+            </void>
+            <void property="pacto">
+             <string>Pacto Normal</string>
+            </void>
+            <void property="subordinados">
+             <object class="Esbirros.EsbirrosComposite" id="EsbirrosComposite6">
+              <void property="childrenComposite">
+               <void method="add">
+                <object class="Esbirros.Ghoul">
+                 <void property="dependencia">
+                  <int>50</int>
+                 </void>
+                 <void property="nombre">
+                  <string>GhoulSub_0</string>
+                 </void>
+                </object>
+               </void>
+               <void method="add">
+                <object class="Esbirros.Ghoul">
+                 <void property="dependencia">
+                  <int>50</int>
+                 </void>
+                 <void property="nombre">
+                  <string>GhoulSub_0</string>
+                 </void>
+                </object>
+               </void>
+               <void method="add">
+                <object class="Esbirros.Ghoul">
+                 <void property="dependencia">
+                  <int>50</int>
+                 </void>
+                 <void property="nombre">
+                  <string>GhoulSub_0</string>
+                 </void>
+                 <void property="salud">
+                  <int>2</int>
+                 </void>
+                </object>
+               </void>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void property="nombre">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="oro">
+         <int>500</int>
+        </void>
+        <void property="poder">
+         <int>5</int>
+        </void>
+        <void property="sangre">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void property="regNum">
+       <string>T05VB</string>
+      </void>
+     </object>
+    </void>
+    <void property="fechaCombate">
+     <object class="java.util.Date">
+      <long>1746358946743</long>
+     </object>
+    </void>
+    <void property="ganador">
+     <object idref="Jugador4"/>
+    </void>
+    <void property="rondas">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>1</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>2</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <object idref="Integer0"/>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>4</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>5</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>6</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>7</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>8</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>9</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>10</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>11</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>12</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>13</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>14</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>15</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>16</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>17</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>18</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>19</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>20</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>21</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>22</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>23</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>24</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>25</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>26</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>27</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>28</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>29</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>30</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>31</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>32</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>33</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>34</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>35</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>36</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>37</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>38</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>39</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>40</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>41</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>42</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>43</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>44</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>45</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>46</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>47</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>48</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>49</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>50</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>51</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>52</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>53</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>54</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>55</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>56</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>57</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>58</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>59</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>60</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>61</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>62</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>63</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>64</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>65</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>66</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>67</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>68</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>69</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>70</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>71</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>72</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>73</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>74</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>75</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>76</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>vampiro</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="numeroRonda">
+         <int>77</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Combate.Ronda">
+        <void property="atacado">
+         <object idref="Vampiro5"/>
+        </void>
+        <void property="atacante">
+         <object idref="Vampiro4"/>
+        </void>
+        <void property="estrategiaAtacado">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="estrategiaAtacante">
+         <object class="Combate.EstrategiaVampiro"/>
+        </void>
+        <void property="nombreAtacado">
+         <string>Pedro Sanchez</string>
+        </void>
+        <void property="nombreAtacante">
+         <string>vampiro</string>
+        </void>
+        <void property="numeroRonda">
+         <int>78</int>
+        </void>
+        <void property="potencialAtaqueP1">
+         <int>5</int>
+        </void>
+        <void property="potencialDefensaP2">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
  </object>
 </java>

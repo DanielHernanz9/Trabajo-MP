@@ -54,16 +54,12 @@ public class Vampiro extends PersonajeBase implements Cloneable {
                 List<Esbirro> subordinados = new ArrayList<>();
                 for (int j = 0; j < 3; j++){
                     FabricaEsbirros subFactory = null;
-                    int subType = rand.nextInt(3);
+                    int subType = rand.nextInt(2);
                     if (subType == 0){
                         subFactory = new FabricaGhouls();
                         nombre = "GhoulSub_";
                     }
                     if (subType == 1){
-                        subFactory = new FabricaHumanos();
-                        nombre = "HumanoSub_";
-                    }
-                    if (subType == 2){
                         subFactory = new FabricaDemonios();
                         nombre = "DemonioSub_";
                     }
