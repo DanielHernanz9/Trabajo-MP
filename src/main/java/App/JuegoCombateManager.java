@@ -631,60 +631,61 @@ public class JuegoCombateManager {
                 Desafio d = jugador1.getDesafiosPendientes().getFirst();
                 notifier.notifySubscriber(jugador1);
                 System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
-                System.out.println("¿Que quieres hacer?");
-                System.out.println("1. Aceptar el desafio y disputar un combate.");
-                System.out.println("2. Rechazar el desafio y repartir el oro.");
-                jugador2 = (Jugador) usuarios.get(getUserIndexByName(d.getUsuarioOrigen()));
-                int opc = sc.nextInt();
-                switch (opc){
-                    case 1:{
-                        System.out.println("Puedes editar tu personaje antes de comenzar el combate: ");
-                        System.out.println("1. Comenzar el combate contra " + jugador2.getName());
-                        System.out.println("2. Editar personaje");
-                        int opcCombate = sc.nextInt();
-                        switch (opcCombate){
-                            case 1:
-                                Jugador ganador = IniciarCombate();
-                                ganador.setOro(ganador.getOro() + d.getOroApostado());
-                                if(ganador.equals(jugador1)){
-                                    jugador2.setOro(jugador2.getOro() - d.getOroApostado());
-                                }
-                                else if(ganador.equals(jugador2)){
-                                    jugador1.setOro(jugador1.getOro() - d.getOroApostado());
-                                }
-                                System.out.println(jugador1.getName() + " se queda con " + jugador1.getOro() + " de oro.");
-                                System.out.println(jugador2.getName() + " se queda con " + jugador2.getOro() + " de oro.");
+                int opc;
+                int opcCombate = 0;
+                do{
+                    System.out.println("¿Que quieres hacer?");
+                    System.out.println("1. Aceptar el desafio y disputar un combate.");
+                    System.out.println("2. Rechazar el desafio y repartir el oro.");
+                    jugador2 = (Jugador) usuarios.get(getUserIndexByName(d.getUsuarioOrigen()));
+                    opc = sc.nextInt();
+                    switch (opc){
+                        case 1:{
+                            System.out.println("Puedes editar tu personaje antes de comenzar el combate: ");
+                            System.out.println("1. Comenzar el combate contra " + jugador2.getName());
+                            System.out.println("2. Editar personaje");
+                            opcCombate = sc.nextInt();
+                            switch (opcCombate){
+                                case 1:
+                                    Jugador ganador = IniciarCombate();
+                                    ganador.setOro(ganador.getOro() + d.getOroApostado());
+                                    if(ganador.equals(jugador1)){
+                                        jugador2.setOro(jugador2.getOro() - d.getOroApostado());
+                                    }
+                                    else if(ganador.equals(jugador2)){
+                                        jugador1.setOro(jugador1.getOro() - d.getOroApostado());
+                                    }
+                                    System.out.println(jugador1.getName() + " se queda con " + jugador1.getOro() + " de oro.");
+                                    System.out.println(jugador2.getName() + " se queda con " + jugador2.getOro() + " de oro.");
 
-                                //Guardamos los cambios de los jugadores en el XML
-                                updateUser(jugador1);
-                                updateUser(jugador2);
-                                storage.saveList(usuarios, "src/main/java/sistemaDeGuardado/Persistencia/Usuarios.xml");
-                                break;
-
-                            case 2:{
-                                registrarPersonaje(jugador1);
-                                //De momento dejo este metodo, pero supongo que habra que implementar
-                                //una ediciónd de personaje con armas, esbirros, etc.
-                                break;
+                                    //Guardamos los cambios de los jugadores en el XML
+                                    updateUser(jugador1);
+                                    updateUser(jugador2);
+                                    storage.saveList(usuarios, "src/main/java/sistemaDeGuardado/Persistencia/Usuarios.xml");
+                                    break;
+                                case 2:{
+                                    registrarPersonaje(jugador1);
+                                    break;
+                                }
                             }
+                            break;
                         }
-                        break;
+                        case 2:{
+                            int oroPerdido = ((d.getOroApostado() * 10) / 100);
+                            if (jugador1.getOro() - oroPerdido < 0){
+                                System.out.println("Debes pagar " + oroPerdido + " a " + jugador2.getNombre());
+                                System.out.println("Como no tienes oro suficiente, debes disputar el combate.");
+                            }
+                            else{
+                                jugador1.setOro(jugador1.getOro() - oroPerdido);
+                                jugador2.setOro(jugador2.getOro() + oroPerdido);
+                                System.out.println("Has pagado " + oroPerdido + " monedas de oro a " + jugador2.getNombre() + ".");
+                            }
+                            break;
+                        }
                     }
-                    case 2:{
-                        int oroPerdido = ((d.getOroApostado() * 10) / 100);
-                        if (jugador1.getOro() - oroPerdido < 0){
-                            System.out.println("Debes pagar " + oroPerdido + " a " + jugador2.getNombre());
-                            System.out.println("Como no tienes oro suficiente, debes disputar el combate.");
-                        }
-                        else{
-                            jugador1.setOro(jugador1.getOro() - oroPerdido);
-                            jugador2.setOro(jugador2.getOro() + oroPerdido);
-                            System.out.println("Has pagado " + oroPerdido + " monedas de oro a " + jugador2.getNombre() + ".");
-                        }
-                        break;
-                    }
+                }while (opcCombate != 1);
 
-                }
                 //Eliminamos el desafio pendiente de la lista y lo actualizamos en el XML
                 jugador1.getDesafiosPendientes().removeFirst();
                 desafiosPendientes.remove(d);

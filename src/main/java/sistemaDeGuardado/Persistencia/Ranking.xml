@@ -25,86 +25,10 @@
      <string>j2</string>
     </void>
     <void property="numCombatesGanados">
-     <int>6</int>
+     <int>2</int>
     </void>
     <void property="oro">
-     <int>702</int>
-    </void>
-    <void property="password">
-     <string>1234</string>
-    </void>
-    <void property="personaje">
-     <object class="Personajes.Licantropo" id="Licantropo0">
-      <void property="armaduraActiva">
-       <object class="Equipo.Armadura" id="Armadura0">
-        <void property="modificador">
-         <object class="Equipo.Modificador">
-          <void property="tipo">
-           <object class="java.lang.Enum" id="Modificador$TipoModificador0" method="valueOf">
-            <class>Equipo.Modificador$TipoModificador</class>
-            <string>Ataque</string>
-           </object>
-          </void>
-          <void property="valor">
-           <int>1</int>
-          </void>
-         </object>
-        </void>
-        <void property="nombre">
-         <string>España</string>
-        </void>
-       </object>
-      </void>
-      <void property="armaduras">
-       <void method="add">
-        <object idref="Armadura0"/>
-       </void>
-      </void>
-      <void property="don">
-       <object class="HabilidadesEspeciales.Don">
-        <void property="rabia">
-         <int>10</int>
-        </void>
-       </object>
-      </void>
-      <void property="esbirros">
-       <object class="java.util.ArrayList"/>
-      </void>
-      <void property="nombre">
-       <string>Santiago Abascal</string>
-      </void>
-      <void property="poder">
-       <int>10</int>
-      </void>
-      <void property="rabia">
-       <int>8</int>
-      </void>
-      <void property="salud">
-       <int>5</int>
-      </void>
-      <void property="valorAtaque">
-       <int>6</int>
-      </void>
-     </object>
-    </void>
-    <void property="regNum">
-     <string>S58GD</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="App.Jugador" id="Jugador1">
-    <void property="nick">
-     <string>Jugador</string>
-    </void>
-    <void property="nombre">
-     <string>j1</string>
-    </void>
-    <void property="numCombatesPerdidos">
-     <int>3</int>
-    </void>
-    <void property="oro">
-     <int>299</int>
+     <int>600</int>
     </void>
     <void property="password">
      <string>1234</string>
@@ -122,29 +46,56 @@
         </object>
        </void>
       </void>
-      <void property="armaActiva1">
-       <object class="Equipo.Arma" id="Arma0">
-        <void property="manos">
-         <int>1</int>
-        </void>
-        <void property="modificador">
-         <object class="Equipo.Modificador">
-          <void property="tipo">
-           <object idref="Modificador$TipoModificador0"/>
-          </void>
-          <void property="valor">
-           <int>1</int>
-          </void>
-         </object>
-        </void>
-        <void property="nombre">
-         <string>Impuestos</string>
-        </void>
-       </object>
+      <void property="esbirros">
+       <object class="java.util.ArrayList"/>
       </void>
-      <void property="armas">
-       <void method="add">
-        <object idref="Arma0"/>
+      <void property="nombre">
+       <string>Pedro Sanchez</string>
+      </void>
+      <void property="oro">
+       <int>600</int>
+      </void>
+      <void property="poder">
+       <int>5</int>
+      </void>
+      <void property="salud">
+       <int>5</int>
+      </void>
+      <void property="sangre">
+       <int>4</int>
+      </void>
+     </object>
+    </void>
+    <void property="regNum">
+     <string>S55PI</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="App.Jugador" id="Jugador1">
+    <void property="nick">
+     <string>Jugador</string>
+    </void>
+    <void property="nombre">
+     <string>j1</string>
+    </void>
+    <void property="numCombatesPerdidos">
+     <int>1</int>
+    </void>
+    <void property="password">
+     <string>1234</string>
+    </void>
+    <void property="personaje">
+     <object class="Personajes.Vampiro" id="Vampiro1">
+      <void class="Personajes.Vampiro" method="getField">
+       <string>Disciplina</string>
+       <void method="set">
+        <object idref="Vampiro1"/>
+        <object class="HabilidadesEspeciales.Disciplina">
+         <void property="coste">
+          <int>10</int>
+         </void>
+        </object>
        </void>
       </void>
       <void property="esbirros">
@@ -168,6 +119,13 @@
               </object>
              </void>
              <void method="add">
+              <object class="Esbirros.Humano">
+               <void property="nombre">
+                <string>HumanoSub_0</string>
+               </void>
+              </object>
+             </void>
+             <void method="add">
               <object class="Esbirros.Ghoul">
                <void property="dependencia">
                 <int>50</int>
@@ -177,10 +135,63 @@
                </void>
               </object>
              </void>
+            </void>
+           </object>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Esbirros.Demonio">
+          <void property="nombre">
+           <string>Demonio_1</string>
+          </void>
+          <void property="pacto">
+           <string>Pacto Normal</string>
+          </void>
+          <void property="subordinados">
+           <object class="Esbirros.EsbirrosComposite" id="EsbirrosComposite1">
+            <void property="childrenComposite">
+             <void method="add">
+              <object class="Esbirros.Demonio">
+               <void property="nombre">
+                <string>DemonioSub_1</string>
+               </void>
+               <void property="pacto">
+                <string>Pacto Normal</string>
+               </void>
+               <void property="subordinados">
+                <object class="Esbirros.EsbirrosComposite">
+                 <void property="nombre">
+                  <string>DemonioSub_1_Subordinados</string>
+                 </void>
+                </object>
+               </void>
+              </object>
+             </void>
              <void method="add">
               <object class="Esbirros.Humano">
                <void property="nombre">
-                <string>HumanoSub_0</string>
+                <string>HumanoSub_1</string>
+               </void>
+              </object>
+             </void>
+             <void method="add">
+              <object class="Esbirros.Demonio">
+               <void property="nombre">
+                <string>DemonioSub_1</string>
+               </void>
+               <void property="pacto">
+                <string>Pacto Normal</string>
+               </void>
+               <void property="salud">
+                <int>1</int>
+               </void>
+               <void property="subordinados">
+                <object class="Esbirros.EsbirrosComposite">
+                 <void property="nombre">
+                  <string>DemonioSub_1_Subordinados</string>
+                 </void>
+                </object>
                </void>
               </object>
              </void>
@@ -189,46 +200,26 @@
           </void>
          </object>
         </void>
-        <void method="add">
-         <object class="Esbirros.Ghoul">
-          <void property="dependencia">
-           <int>50</int>
-          </void>
-          <void property="nombre">
-           <string>Ghoul_1</string>
-          </void>
-         </object>
-        </void>
-        <void method="add">
-         <object class="Esbirros.Ghoul">
-          <void property="dependencia">
-           <int>50</int>
-          </void>
-          <void property="nombre">
-           <string>Ghoul_2</string>
-          </void>
-         </object>
-        </void>
        </object>
       </void>
       <void property="nombre">
-       <string>Sanche</string>
+       <string>1</string>
+      </void>
+      <void property="oro">
+       <int>500</int>
       </void>
       <void property="poder">
        <int>5</int>
       </void>
-      <void property="valorAtaque">
-       <int>2</int>
+      <void property="sangre">
+       <int>8</int>
       </void>
      </object>
     </void>
     <void property="regNum">
-     <string>N98AI</string>
+     <string>K27UV</string>
     </void>
    </object>
-  </void>
-  <void method="add">
-   <object idref="Jugador1"/>
   </void>
   <void method="add">
    <object idref="Jugador1"/>
