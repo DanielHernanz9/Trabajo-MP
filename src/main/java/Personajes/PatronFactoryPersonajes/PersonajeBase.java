@@ -1,7 +1,5 @@
 package Personajes.PatronFactoryPersonajes;
 
-import Desafio.DebilidadHandler;
-import Desafio.FortalezaHandler;
 import Equipo.*;
 import Esbirros.Demonio;
 import Esbirros.EsbirrosComposite;
@@ -67,16 +65,6 @@ public abstract class PersonajeBase implements Personaje,Cloneable {
         return Oro;
     }
 
-    public List<DebilidadHandler> getDebilidades() {
-        return Debilidades;
-    }
-
-    public List<FortalezaHandler> getFortalezas() {
-        return Fortalezas;
-    }
-
-    protected List<DebilidadHandler> Debilidades;
-
     public void setNombre(String nombre) {
         Nombre = nombre;
     }
@@ -116,16 +104,6 @@ public abstract class PersonajeBase implements Personaje,Cloneable {
     public void setSalud(int salud) {
         Salud = salud;
     }
-
-    public void setDebilidades(List<DebilidadHandler> debilidades) {
-        Debilidades = debilidades;
-    }
-
-    public void setFortalezas(List<FortalezaHandler> fortalezas) {
-        Fortalezas = fortalezas;
-    }
-
-    protected List<FortalezaHandler> Fortalezas;
 
     public abstract void hacerHabilidadEspecial();
 
@@ -316,11 +294,11 @@ public abstract class PersonajeBase implements Personaje,Cloneable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         PersonajeBase that = (PersonajeBase) o;
-        return Oro == that.Oro && Salud == that.Salud && Poder == that.Poder && ValorAtaque == that.ValorAtaque && ValorDefensa == that.ValorDefensa && Objects.equals(Nombre, that.Nombre) && Objects.equals(Habilidad, that.Habilidad) && Objects.equals(Armas, that.Armas) && Objects.equals(ArmaActiva1, that.ArmaActiva1) && Objects.equals(ArmaActiva2, that.ArmaActiva2) && Objects.equals(Armaduras, that.Armaduras) && Objects.equals(ArmaduraActiva, that.ArmaduraActiva) && Objects.equals(Esbirros, that.Esbirros) && Objects.equals(debilidad, that.debilidad) && Objects.equals(fortaleza, that.fortaleza) && Objects.equals(Debilidades, that.Debilidades) && Objects.equals(Fortalezas, that.Fortalezas);
+        return Oro == that.Oro && Salud == that.Salud && Poder == that.Poder && ValorAtaque == that.ValorAtaque && ValorDefensa == that.ValorDefensa && Objects.equals(Nombre, that.Nombre) && Objects.equals(Habilidad, that.Habilidad) && Objects.equals(Armas, that.Armas) && Objects.equals(ArmaActiva1, that.ArmaActiva1) && Objects.equals(ArmaActiva2, that.ArmaActiva2) && Objects.equals(Armaduras, that.Armaduras) && Objects.equals(ArmaduraActiva, that.ArmaduraActiva) && Objects.equals(Esbirros, that.Esbirros) && Objects.equals(debilidad, that.debilidad) && Objects.equals(fortaleza, that.fortaleza);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Nombre, Habilidad, Armas, ArmaActiva1, ArmaActiva2, Armaduras, ArmaduraActiva, Esbirros, Oro, Salud, Poder, ValorAtaque, ValorDefensa, debilidad, fortaleza, Debilidades, Fortalezas);
+        return Objects.hash(Nombre, Habilidad, Armas, ArmaActiva1, ArmaActiva2, Armaduras, ArmaduraActiva, Esbirros, Oro, Salud, Poder, ValorAtaque, ValorDefensa, debilidad, fortaleza);
     }
 }

@@ -7,13 +7,7 @@
      <string>Jugador</string>
     </void>
     <void property="nombre">
-     <string>j2</string>
-    </void>
-    <void property="numCombatesPerdidos">
-     <int>1</int>
-    </void>
-    <void property="oro">
-     <int>400</int>
+     <string>j1</string>
     </void>
     <void property="password">
      <string>1234</string>
@@ -44,9 +38,39 @@
          </object>
         </void>
         <void method="add">
+         <object class="Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_1</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_2</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="Esbirros.Ghoul">
+          <void property="dependencia">
+           <int>50</int>
+          </void>
+          <void property="nombre">
+           <string>Ghoul_3</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
          <object class="Esbirros.Demonio">
           <void property="nombre">
-           <string>Demonio_1</string>
+           <string>Demonio_4</string>
           </void>
           <void property="pacto">
            <string>Pacto Normal</string>
@@ -55,9 +79,19 @@
            <object class="Esbirros.EsbirrosComposite" id="EsbirrosComposite0">
             <void property="childrenComposite">
              <void method="add">
-              <object class="Esbirros.Humano">
+              <object class="Esbirros.Demonio">
                <void property="nombre">
-                <string>HumanoSub_1</string>
+                <string>DemonioSub_4</string>
+               </void>
+               <void property="pacto">
+                <string>Pacto Normal</string>
+               </void>
+               <void property="subordinados">
+                <object class="Esbirros.EsbirrosComposite">
+                 <void property="nombre">
+                  <string>DemonioSub_4_Subordinados</string>
+                 </void>
+                </object>
                </void>
               </object>
              </void>
@@ -67,17 +101,24 @@
                 <int>50</int>
                </void>
                <void property="nombre">
-                <string>GhoulSub_1</string>
+                <string>GhoulSub_4</string>
                </void>
               </object>
              </void>
              <void method="add">
-              <object class="Esbirros.Ghoul">
-               <void property="dependencia">
-                <int>50</int>
-               </void>
+              <object class="Esbirros.Demonio">
                <void property="nombre">
-                <string>GhoulSub_1</string>
+                <string>DemonioSub_4</string>
+               </void>
+               <void property="pacto">
+                <string>Pacto Normal</string>
+               </void>
+               <void property="subordinados">
+                <object class="Esbirros.EsbirrosComposite">
+                 <void property="nombre">
+                  <string>DemonioSub_4_Subordinados</string>
+                 </void>
+                </object>
                </void>
               </object>
              </void>
@@ -94,16 +135,13 @@
       <void property="oro">
        <int>500</int>
       </void>
-      <void property="poder">
-       <int>5</int>
-      </void>
       <void property="sangre">
-       <int>10</int>
+       <int>1</int>
       </void>
      </object>
     </void>
     <void property="regNum">
-     <string>T05VB</string>
+     <string>Q45VM</string>
     </void>
    </object>
   </void>

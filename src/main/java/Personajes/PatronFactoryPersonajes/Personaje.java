@@ -21,8 +21,6 @@ public interface Personaje {
     List<Esbirro> getEsbirros();
     int getOro();
     int getSalud();
-    List<DebilidadHandler> getDebilidades();
-    List<FortalezaHandler> getFortalezas();
     boolean hasEsbirros();
     int getPoder();
 
@@ -37,8 +35,6 @@ public interface Personaje {
     void setEsbirros(List<Esbirro> esbirros);
     void setOro(int oro);
     void setSalud(int salud);
-    void setDebilidades(List<DebilidadHandler> debilidades);
-    void setFortalezas(List<FortalezaHandler> fortalezas);
     void setPoder(int poder);
 
     // Métodos de comportamiento

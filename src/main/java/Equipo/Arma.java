@@ -20,7 +20,6 @@ public class Arma extends EquipoBase implements Cloneable {
     @Override
     public Arma clone() {
         Arma clon = (Arma) super.clone();  // Llama al clone() de EquipoBase
-
         return clon;
     }
 
