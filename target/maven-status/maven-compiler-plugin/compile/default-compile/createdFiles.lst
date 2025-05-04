@@ -7,7 +7,6 @@ Personajes\PatronFactoryPersonajes\FactoryCazadores.class
 Esbirros\Humano.class
 HabilidadesEspeciales\Talento.class
 Esbirros\Demonio.class
-Desafio\EquipoActivoHandler.class
 Desafio\Desafio.class
 Equipo\EquipoBase.class
 Esbirros\Ghoul.class
@@ -35,13 +34,10 @@ sistemaDeGuardado\SingleStorage.class
 Equipo\Armadura.class
 Equipo\Arma.class
 Personajes\Licantropo.class
-Desafio\FortalezaHandler.class
 HabilidadesEspeciales\Habilidad_Especial.class
 Combate\EstrategiaVampiro.class
 Personajes\PatronFactoryPersonajes\FactoryLicantropos.class
 Esbirros\PatronFactoryEsbirros\FabricaHumanos.class
-Desafio\BaseHandler.class
-Desafio\DebilidadHandler.class
 Esbirros\EsbirrosComposite.class
 Personajes\PatronFactoryPersonajes\FactoryPersonaje.class
 App\Usuario.class

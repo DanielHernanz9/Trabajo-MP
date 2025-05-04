@@ -628,7 +628,7 @@ public class JuegoCombateManager {
 
             //Mientras haya desafios pendientes, los mostramos al jugador para que los acepte o rechaze
             while (!jugador1.getDesafiosPendientes().isEmpty()) {
-                Desafio d = jugador1.getDesafiosPendientes().getFirst();
+                Desafio d = jugador1.getDesafiosPendientes().get(0);
                 notifier.notifySubscriber(jugador1);
                 System.out.println("¡Te ha desafiado " + d.getUsuarioOrigen() + "!");
                 int opc;
@@ -687,7 +687,7 @@ public class JuegoCombateManager {
                 }while (opcCombate != 1);
 
                 //Eliminamos el desafio pendiente de la lista y lo actualizamos en el XML
-                jugador1.getDesafiosPendientes().removeFirst();
+                jugador1.getDesafiosPendientes().remove(0);
                 desafiosPendientes.remove(d);
                 storage.saveList(desafiosPendientes,"src/main/java/sistemaDeGuardado/Persistencia/DesafiosPendientes.xml");
                 notifier.unSuscribe(jugador1);

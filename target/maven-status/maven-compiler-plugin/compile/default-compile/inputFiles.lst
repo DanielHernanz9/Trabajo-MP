@@ -1,11 +1,9 @@
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Equipo\Equipo.java
-C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Desafio\DebilidadHandler.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\sistemaDeGuardado\interfazAlmacen.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Esbirros\PatronFactoryEsbirros\FabricaEsbirros.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\HabilidadesEspeciales\Talento.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Equipo\Modificador.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Combate\EstrategiaVampiro.java
-C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Desafio\BaseHandler.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Personajes\Cazador.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Personajes\Vampiro.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Equipo\FabricaArmaduras.java
@@ -15,11 +13,9 @@ C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Combate\EstrategiaLicantro
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Personajes\Licantropo.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\sistemaDeGuardado\AlmacenXML.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Equipo\FabricaEquipo.java
-C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Desafio\EquipoActivoHandler.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Personajes\PatronFactoryPersonajes\FactoryPersonaje.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Combate\Combate.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Esbirros\Ghoul.java
-C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Desafio\FortalezaHandler.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Combate\Ronda.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\Personajes\PatronFactoryPersonajes\Personaje.java
 C:\Users\usuario\IdeaProjects\TrabajoMP\src\main\java\HabilidadesEspeciales\Disciplina.java
