@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Combate.Combate">
+    <void property="desafiado">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador2</string>
+      </void>
+      <void property="regNum">
+       <string>F15OK</string>
+      </void>
+     </object>
+    </void>
+    <void property="desafiante">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador1</string>
+      </void>
+      <void property="regNum">
+       <string>Y78HR</string>
+      </void>
+     </object>
+    </void>
+    <void property="fechaCombate">
+     <object class="java.util.Date">
+      <long>1746439731698</long>
+     </object>
+    </void>
+    <void property="rondas">
+     <object class="java.util.ArrayList"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Combate.Combate">
+    <void property="desafiado">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador2</string>
+      </void>
+      <void property="regNum">
+       <string>S37YA</string>
+      </void>
+     </object>
+    </void>
+    <void property="desafiante">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador1</string>
+      </void>
+      <void property="regNum">
+       <string>B33KI</string>
+      </void>
+     </object>
+    </void>
+    <void property="fechaCombate">
+     <object class="java.util.Date">
+      <long>1746439927662</long>
+     </object>
+    </void>
+    <void property="rondas">
+     <object class="java.util.ArrayList"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Combate.Combate">
+    <void property="desafiado">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador2</string>
+      </void>
+      <void property="regNum">
+       <string>X02IB</string>
+      </void>
+     </object>
+    </void>
+    <void property="desafiante">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador1</string>
+      </void>
+      <void property="regNum">
+       <string>V92ZR</string>
+      </void>
+     </object>
+    </void>
+    <void property="fechaCombate">
+     <object class="java.util.Date">
+      <long>1746440110223</long>
+     </object>
+    </void>
+    <void property="rondas">
+     <object class="java.util.ArrayList"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Combate.Combate">
+    <void property="desafiado">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador2</string>
+      </void>
+      <void property="regNum">
+       <string>H91OY</string>
+      </void>
+     </object>
+    </void>
+    <void property="desafiante">
+     <object class="App.Jugador">
+      <void property="nombre">
+       <string>Jugador1</string>
+      </void>
+      <void property="regNum">
+       <string>R03AX</string>
+      </void>
+     </object>
+    </void>
+    <void property="fechaCombate">
+     <object class="java.util.Date">
+      <long>1746440137027</long>
+     </object>
+    </void>
+    <void property="rondas">
+     <object class="java.util.ArrayList"/>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
