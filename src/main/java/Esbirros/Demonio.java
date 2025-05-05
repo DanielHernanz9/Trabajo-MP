@@ -27,7 +27,7 @@ public class Demonio extends EsbirroBase implements Cloneable {
 
     @Override
     public int recibirDaño() {
-        if (!subordinados.getChildren().isEmpty()) {
+        if (!(this.subordinados == null) || !subordinados.getChildren().isEmpty()) {
             // Aplica daño al último esbirro subordinado
             subordinados.recibirDaño();
         } else {
