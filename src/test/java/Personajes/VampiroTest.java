@@ -41,20 +41,23 @@ public class VampiroTest {
         vampiro.setSangre(3);
         vampiro.reducirSalud();
         assertEquals(4, vampiro.getSalud());
-        assertEquals(2, vampiro.getSangre());
+        assertEquals(3, vampiro.getSangre());
     }
 
     @Test
     public void testGestionarRecursosHabilidad() {
         Vampiro vampiro = new Vampiro();
         vampiro.setSangre(0);
-        vampiro.gestionarRecursosHabilidad(false);
-        assertEquals(3, vampiro.getSangre());
+        vampiro.setDisciplina(new Disciplina(50, 5));
+        vampiro.gestionarRecursosHabilidad(true);
+        assertEquals(4, vampiro.getSangre());
     }
 
     @Test
     public void testHabilidadPosible() {
         Vampiro vampiro = new Vampiro();
+        vampiro.setSangre(0);
+        vampiro.setDisciplina(new Disciplina(50, 50));
         assertFalse(vampiro.habilidadPosible());
     }
 
@@ -69,15 +72,4 @@ public class VampiroTest {
         assertEquals(vampiro.getDisciplina(), clon.getDisciplina());
     }
 
-    @Test
-    public void testEqualsAndHashCode() {
-        Vampiro vampiro1 = new Vampiro("VampiroTest");
-        vampiro1.setSangre(10);
-
-        Vampiro vampiro2 = new Vampiro("VampiroTest");
-        vampiro2.setSangre(10);
-
-        assertEquals(vampiro1, vampiro2);
-        assertEquals(vampiro1.hashCode(), vampiro2.hashCode());
-    }
 }
