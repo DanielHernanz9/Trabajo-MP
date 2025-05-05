@@ -25,10 +25,6 @@ public class Cazador extends PersonajeBase implements Cloneable {
         Voluntad = voluntad;
     }
 
-    /**
-     *
-     */
-
     @Override
     public void hacerHabilidadEspecial() {
 
