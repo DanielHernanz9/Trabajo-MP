@@ -2,7 +2,11 @@ package Combate;
 
 import App.Jugador;
 import org.junit.jupiter.api.Test;
+import sistemaDeGuardado.SingleStorage;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class CombateTest {
@@ -68,8 +72,10 @@ public class CombateTest {
         Combate combate = new Combate(desafiante, desafiado);
         combate.registrar();
 
-        // No se puede verificar directamente el archivo XML, pero se puede comprobar que no lanza excepciones.
-        assertNotNull(combate);
+        SingleStorage storage = SingleStorage.getInstance();
+        ArrayList<Combate> listaCombate = storage.loadCombatesFromXML();
+        Combate combateGuardado = listaCombate.get(0);
+        assertNotNull(combateGuardado);
     }
 
     @Test
@@ -79,7 +85,6 @@ public class CombateTest {
         Combate combate = new Combate();
         combate.setGanador(ganador);
 
-        // Verifica que el método no lanza excepciones al ejecutarse.
         combate.mostrarResultado();
     }
 

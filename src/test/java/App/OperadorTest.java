@@ -4,9 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Tests funcionales para la clase Operador.
- */
 public class OperadorTest {
 
     private Operador operador;
@@ -21,7 +18,7 @@ public class OperadorTest {
 
     @Test
     public void testRegistrarDatos() {
-        operador.registrarDatos("admin1", "Carlos", "securepass");
+        operador.registrarDatos(null, "Carlos", "securepass");
         assertEquals("Carlos", operador.getNombre());
         assertNotNull(operador.getNick()); // generado por hashCode
         assertEquals("securepass", operador.getPassword());
@@ -29,7 +26,6 @@ public class OperadorTest {
 
     @Test
     public void testEditarPersonajeJugadorExistente() {
-        // Aquí simulamos la edición de un personaje (aunque no haya lógica real aún)
         assertDoesNotThrow(() -> operador.editarPersonaje(jugador));
     }
 
